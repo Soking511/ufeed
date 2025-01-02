@@ -1,0 +1,78 @@
+
+<section class="workflow">
+    <h2 class="w-75 m-auto text-center mb-5">
+      Does Your Business Struggle to Optimize <span> Workforce Performance ?</span>
+    </h2>
+
+    <div class="bg-filled">
+      <svg xmlns="http://www.w3.org/2000/svg" width="912" height="1571" viewBox="0 0 912 1571" fill="none">
+        <g opacity="0.5" filter="url(#filter0_f_70_3403)">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M181.834 503.224C254.371 510.308 323.049 541.043 367.649 602.925C411.471 663.728 417.278 741.443 408.54 817.775C398.094 909.029 392.579 1020.55 315.321 1060.05C238.204 1099.48 159.877 1022.63 82.1289 984.661C0.467392 944.78 -106.423 931.214 -135.331 839.963C-166.056 742.976 -119.598 633.969 -51.778 561.964C8.07674 498.415 98.039 495.04 181.834 503.224Z" fill="#F86341" fill-opacity="0.3"/>
+        </g>
+        <defs>
+          <filter id="filter0_f_70_3403" x="-645" y="0" width="1557" height="1571" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="250" result="effect1_foregroundBlur_70_3403"/>
+          </filter>
+        </defs>
+      </svg>
+    </div>
+    <div class="container">
+      
+      <div 
+      class="row single-workflow py-5" 
+      *ngFor="let item of [1, 2, 3, 4, 5]; let i = index" 
+      [class.hovered]="hoveredIndex === i"
+      (mouseover)="onMouseOver(i)" 
+      (mouseout)="onMouseOut()"
+    >
+      <div class="col-md-6" 
+      [class.hovered]="hoveredIndex"
+      (mouseover)="onMouseOver(i)" 
+      (mouseout)="onMouseOut()">
+        <p class="workflow-num">{{ i + 1 }}.</p>
+        <h3 *ngIf="i === 0">Complex Workforce Management</h3>
+        <h3 *ngIf="i === 1">Lack of Data-Driven Insights</h3>
+        <h3 *ngIf="i === 2">Low Employee Engagement</h3>
+        <h3 *ngIf="i === 3">Ineffective Job Role Evaluations</h3>
+        <h3 *ngIf="i === 4">Need for Customized Solutions</h3>
+    
+        <p *ngIf="i === 0">
+          Managing various HR tasks, from recruitment to performance evaluations, 
+          <br/>can be overwhelming and time-consuming without streamlined processes.
+        </p>
+        <p *ngIf="i === 1">
+          Making informed decisions is challenging without access to accurate and actionable data, 
+          leading to inefficiencies and missed opportunities.
+        </p>
+        <p *ngIf="i === 2">
+          Keeping employees motivated and satisfied is crucial for productivity, 
+          yet many organizations struggle to effectively engage their workforce.
+        </p>
+        <p *ngIf="i === 3">
+          Fair and clear job evaluations are essential for aligning roles with business goals 
+          and maintaining employee satisfaction, but many organizations find this difficult to implement.
+        </p>
+        <p *ngIf="i === 4">
+          Every organization has unique challenges and requirements, 
+          making it essential to have tailored solutions that address specific business needs effectively.
+        </p>
+      </div>
+    
+      <div class="col-md-6 featured-workflow">
+        <img 
+          class="img-fluid" 
+          [src]="'/workflow/0' + (i + 1) + '.png'" 
+          alt="" 
+        />
+      </div>  
+    </div>
+    
+
+    
+    </div>
+  </section>
+  
+  <!-- end workflow performance section -->
+  

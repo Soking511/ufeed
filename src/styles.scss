@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.cdnfonts.com/css/century-gothic-paneuropean');
+  
+  body {
+    font-family: 'Century Gothic Paneuropean', sans-serif;                                             
+  }
+  
+  
+  $mainFont:'Century Gothic';
+  $fontSizeLinks:16px;
+  $fontWeightLinks:600;
+  $mainColor:#f86645;
+  $secondaryColor:#375D95;
+  
+  h1, h2, h3,h4,h5,h6 p {
+    font-family: 'Century Gothic Paneuropean', sans-serif;                                         
+  }
+  p{
+    color: #625e5e;
+  }
+  
+  @media (max-width:768px) {
+    h2{
+      font-size: 40px!important;
+    }
+  }

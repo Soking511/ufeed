@@ -1,0 +1,146 @@
+
+$mainFont:'Century Gothic';
+$fontSizeLinks:16px;
+$fontWeightLinks:600;
+$mainColor:#f86645;
+$secondaryColor:#375D95;
+.navbar{
+    z-index: 20000;
+}
+
+.dropdown-menu{
+    background-color: #272d35;
+}
+
+.nav-item a{
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    font-family: $mainFont;
+    text-transform: uppercase;
+}
+.nav-item a:hover{
+    color: $mainColor;
+}
+
+.header-cta{
+    border: solid 2px $mainColor;
+    border-radius: 50px;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: .5s;
+    color: #fff;
+    font-family: $mainFont;
+}
+.header-cta:hover{
+    background-color:$mainColor;
+    color: #fff;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: transparent;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    padding: 20px 0;
+  
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .nav-links {
+      display: flex;
+      list-style: none;
+  
+      li {
+        margin: 0 15px;
+  
+        a {
+          text-decoration: none;
+          color: black; // Set text color for links
+          font-weight: bold;
+          transition: color 0.3s ease;
+  
+          &:hover {
+            color: #f86341; // Change this to your preferred hover color
+          }
+        }
+      }
+    }
+  }
+  
+  .navbar.scrolled {
+    background-color: #ffffff; // White background
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Add bottom shadow
+    padding: 10px 0; // Optional: Reduce padding when scrolled
+    a{
+        color: #383838;
+    }
+    
+.dropdown-menu li a{
+ color: #fff;
+ &:hover{
+  color:$mainColor
+ }
+}
+
+.header-cta:hover{
+  background-color:$mainColor;
+  color: #fff;
+}
+  }
+  
+
+// start responsive 
+@media (max-width: 768px) {
+
+nav.navbar{
+  background-color: #fff;
+}
+.nav-item a{
+  color: #000;
+}
+.header-cta{
+  color: #f86341;
+}
+
+.navbar-collapse{
+ .btns-holder{
+  width: 100%;
+  justify-content: space-between!important;
+ }
+}
+
+
+}
+
+@media (max-width: 576px) {
+
+
+    .left-logo{
+      width: 50%!important;
+    }
+
+    .navbar-collapse{
+      .justify-content-sm-between{
+        width: 100%;
+        justify-content: space-between!important;
+      }
+    }
+    .dropdown-item{
+      color: #fff!important;
+      &:hover{
+        background-color: #f86341;
+        
+      }
+    }
+
+}

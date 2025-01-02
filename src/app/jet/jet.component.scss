@@ -1,0 +1,101 @@
+.title {
+    background: linear-gradient(to left, #474a5a, #040303);
+    color: white; /* Optional: Adjust text color for better visibility */
+    padding: 20px; /* Optional: Add some padding */
+    min-height:100vh ;
+    .container{
+        .row{
+            justify-content: center;
+            height: 100%;
+            justify-content: center;
+            align-content: center;
+            width: 75%;
+            h1{
+                font-size: 77px;
+                font-weight: 700;
+                line-height: 110px;
+                span{
+                    background-color: #f86341;
+                }
+            }
+            p{
+                color: #fafafa;
+                font-size: 20px;
+            }
+        }
+    }
+  }
+
+
+  .ees-benfits{
+    .container{
+        .row{
+            h2{
+                font-size: 55px;
+                font-weight: 700;
+                span{
+                    color: #f86341;
+                }
+            }
+            .col-md-6{
+                img{
+                    width: 150px;
+                    float: right;
+                }
+            }
+          
+
+            .col-12{
+                border-bottom: solid 1px #B9B9B9;
+                max-height: 150px;
+                transition: .3s ease-in-out;
+                overflow: hidden;
+               &:hover{
+                max-height: 300px;
+               }
+                .row{
+                    .col-md-8{
+                        .num{
+                            font-size: 20px;
+                            color: #f86341;
+                            font-weight: 700;
+                        }
+                        .benfit{
+                            font-size: 40px;
+                            font-weight: 500;
+                        }
+                        .desc{
+                            opacity: 0;
+                            transition: .3s;
+                         }
+                    }
+                    .col-md-4{
+                        .icon-holder{
+                            width: 120px;
+                            float: right;
+                            opacity: 0;
+                            transition: .3s;
+                        }
+                    }
+                }
+
+              
+            }
+            .hovered{
+                transition: .3s;
+                .row{
+                    .col-md-8{
+                        .desc{
+                            opacity: 1;
+                         }
+                    }
+                    .col-md-4{
+                        .icon-holder{
+                            opacity: 1;
+                        }
+                    }
+                }                
+            }
+        }
+    }
+  }

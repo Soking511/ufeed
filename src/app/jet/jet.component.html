@@ -1,0 +1,116 @@
+<section class="title d-flex ">
+    <div class="container">
+        <div class="row">
+    <h1>
+       <span> JET </span>- Job Evaluation Tool
+    </h1>
+    
+    <p class="py-4">
+        JET is an online automated job-grading model
+         that allows evaluators to assess job significance
+          in a structured, objective, and consistent manner,
+           ensuring internal equity. Effective job evaluation
+            and grading play a pivotal role in the growth of
+         organizations, impacting a fundamental element for
+          both the company and its employees: 
+          the compensation framework. By adopting JOBMASTER
+           methodology and harnessing their vast knowledge
+         and proficiency in the field of reward management,
+          organizations can utilize the JET 
+          (JOB Evaluation Tool) 
+        to enhance their evaluation and grading processes.
+    </p>
+
+    </div>
+    </div>
+</section>
+
+<section class="ees-benfits py-5">
+    <div class="container">
+        <div class="row w-100 justify-content-center">
+            <div class="col-6">
+                <h2 class="text-center">The Unmatched Advantages of <span>JET</span> by Ufeed</h2>
+            </div>
+            
+        </div>
+
+        <div class="row py-5">
+           
+            <div class="col-12 py-5" 
+            
+            *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]; let i = index" 
+            [class.hovered]="hoveredIndex === i"
+            (mouseover)="onMouseOver(i)" 
+            (mouseout)="onMouseOut()"
+            >
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="num">{{1+i+'.'}}</div>
+                        <div class="benfit">
+                            <h3 *ngIf="i === 0">International Grading Correlation</h3>
+                            <h3 *ngIf="i === 1">First Automated JA Data Gathering Tool</h3>
+                            <h3 *ngIf="i === 2">Bilingual - “Arabic/English”</h3>
+                            <h3 *ngIf="i === 3">User-Friendly Interface</h3>
+                            <h3 *ngIf="i === 4">Customizable Features</h3>
+                            <h3 *ngIf="i === 5">Consistent</h3>
+                            <h3 *ngIf="i === 6">Remote Accessibility</h3>
+                            <h3 *ngIf="i === 7">Alerting Notifications</h3>
+                            <h3 *ngIf="i === 8">Comparative View</h3>
+                            <h3 *ngIf="i === 9">Safe Data Storage</h3>
+                            <h3 *ngIf="i === 10">Real-Time Report</h3>
+                        </div>
+                       
+                        <div class="desc">
+                            <p *ngIf="i === 0">International Grading Correlation is a systematic approach to understanding and comparing
+                                 academic grading standards across different countries and educational systems.</p>
+                            
+                            <p *ngIf="i === 1">The First Automated JA Data Gathering Tool is a pioneering solution designed to revolutionize data collection processes. This innovative tool automates the collection, analysis, and reporting of data,
+                                significantly reducing manual effort and increasing accuracy</p>
+                            
+                            <p *ngIf="i === 2">Our platform seamlessly bridges the linguistic gap, offering robust bilingual capabilities in Arabic and English. It provides accurate translations, 
+                                ensuring clear and effective communication across both languages</p>
+
+                          <p *ngIf="i === 3">Our platform is designed with the user in mind, featuring an intuitive and easy-to-navigate interface. Whether you’re 
+                            a beginner or an advanced user, our user-friendly design ensures a smooth and efficient experience</p>
+
+                            <p *ngIf="i === 4">Every organization has unique challenges and requirements, making it 
+                                essential to have tailored solutions that address specific business needs effectively.</p>
+
+                             <p *ngIf="i === 5">Our platform guarantees a consistent experience every time you use it. 
+                                From seamless performance to uniform functionality, you can count on our services to be reliable and predictable.</p>
+
+                          <p *ngIf="i === 6">Our platform excels in providing remote accessibility,
+                             ensuring that you can access our services and tools from anywhere at any time.</p>
+
+                       <p *ngIf="i === 7">Stay informed and never miss a critical update with our Alerting Notifications feature.
+                         Designed to keep you on top of important events and changes</p>
+
+                        <p *ngIf="i === 8">Our Comparative View feature is designed to provide you with a 
+                            clear and comprehensive analysis by placing data side-by-side for easy comparison</p>
+
+                            <p *ngIf="i === 9">Our platform prioritizes the security and integrity of your data with our Safe Data Storage feature, 
+                                ll data is encrypted both in transit and at rest, safeguarding it from unauthorized access and breaches.</p>
+
+                                <p *ngIf="i === 10">Our platform offers a robust Real-Time Report feature that provides immediate insights and updates,
+                                     ensuring that you have the most current information at your disposal</p>
+
+                </div>        
+        
+            </div>
+                    <div class="col-md-4">
+                      <div class="icon-holder"><img [src]="'/jet/0' + (i + 1) + '.png'" class="img-fluid" alt="" srcset=""></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    
+
+
+    </div>
+
+
+</section>

@@ -1,0 +1,124 @@
+
+
+
+.video-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  #bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -2; /* Video is behind the overlay */
+  }
+  
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), linear-gradient(253deg, rgba(55, 93, 149, 0.50) -18.58%, rgba(248, 99, 65, 0.50) 111.39%);
+    filter: blur(0px);
+    z-index: -1; /* Overlay sits behind content but on top of video */
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1; /* Content appears on top of the gradient and video */
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .content h1{
+    font-size: 77px;
+    font-weight: 700;
+    span{
+      color: #f86645;
+    }
+  }
+  .content{
+    .row{
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 25%;
+      justify-content: center;
+     
+     
+    }
+  }
+  .content p{
+    font-size: 20px;
+    color: #fff;
+  }
+  .hero-cta{
+    padding:18px 30px ;
+    border: solid 2px #375D95;
+    border-radius: 16px;
+    margin: 8px 12px;
+    text-decoration: none;
+    color: #fff;
+    font-family:'Century Gothic';
+    transition: .5s;
+  }
+  .book-a-demo{
+    background-color:#375D95 ;
+  }
+
+  .hero-cta:hover{
+    border-color:#f86645;
+    background-color: #f86645;
+  }
+
+@media (max-width:768px){
+  .content h1{
+    font-size: 40px;
+  }
+  .content 
+  {
+    .row{
+      width: 50%;
+      flex-wrap: wrap;
+      a{
+        font-size: 16px;
+      }
+    }
+  }
+}
+  
+
+@media (max-width:426px){
+  .content 
+  {
+    .row{
+      width: 50%;
+      flex-wrap: wrap;
+      a{
+        font-size: 12px;
+      }
+    }
+p{
+  padding: 10px!important;
+  font-size: 16px;
+}
+
+  h1{
+    font-size: 24px;
+  }
+}
+
+
+}

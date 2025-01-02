@@ -1,0 +1,38 @@
+// -----------------
+.news{
+    padding: 80px 0;
+  
+    .single-post{
+      .featured-img{
+        img{
+          transition: .2s ease-in-out;
+          &:hover{
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+  
+  // ------------------
+  h2{
+    color: #2A2B34;
+    font-size: 55px;
+    font-weight: 700;
+    span{
+      color:#F86341
+    }
+}  
+@media (max-width:768px){
+  h2{
+    font-size: 34px;
+  }
+}
+
+
+@media (max-width:426px) {
+    h2{
+      font-size: 24px;
+    }
+ 
+}

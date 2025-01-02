@@ -1,0 +1,25 @@
+.comming-soon{
+    padding-top: 30px;
+    height: 100vh;
+    background: linear-gradient(to left, #474a5a, #040303);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    font-weight: 800;
+   
+img{
+    animation-name: example;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+}
+
+
+
+@keyframes example {
+    0%   {transform: translateY(0);}
+    50% {transform: translateY(-30px);}
+    100% {transform: translateY(0px);}
+  }

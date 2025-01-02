@@ -1,0 +1,56 @@
+ <nav class="navbar navbar-expand-lg py-3 fixed-top" [class.scrolled]="isScrolled"> 
+    <div class="container">
+    
+      <div class="col-md-2 col-sm-6 col-xs-6 left-logo">
+        <a class="w-100 navbar-brand" routerLink="">
+          <img class="img-fluid" [src]="logoPath" alt="" srcset="">
+        </a>  
+      </div>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-center ">
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</a>
+          </li>
+          <li class="nav-item dropdown px-3">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/jet">Job Evaluation Tool - JET</a></li>
+              <li><a class="dropdown-item" routerLink="/ees">Employee Engagement Survey - EES</a></li>
+              <li><a class="dropdown-item" routerLink="/coming-soon">Ufeed Products - Coming Soon</a></li>
+            </ul>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link "routerLink="become-apartner" >Become A Partner</a>
+          </li>
+        </ul>
+
+        <div class="col-md-3 d-flex justify-content-around btns-holder">
+
+          <a class="header-cta" href="https://application.ufeed-ai.com/login" target="_blank">Ufeed App 
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          <a class="header-cta" routerLink="/contact-us">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+        </div>
+
+
+      </div>
+
+
+<!-- end container  -->
+    </div>
+
+  </nav>
+ 

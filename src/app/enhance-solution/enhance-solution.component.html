@@ -1,0 +1,100 @@
+
+<section class="enhance-solution pb-5">
+  <h2 class="w-75 m-auto text-center ">
+    Enhance Your <span>Workforce Performance</span>  with Ufeed’s products
+  </h2>
+
+
+
+<div class="container-fluid py-4 position-relative">
+  <div class="row">
+    <!-- Left Section -->
+    <div class="col-7">
+      <div class="row py-5">
+        <!-- Title -->
+        <div class="col-8">
+          <h4 class="text-left ">
+            {{ isJet ? 'Job Evaluation Tool - JET' : 'Employee Engagement Survey - EES' }}
+          </h4>
+          <p class="text-left">
+            {{ isJet
+              ? 'JET is an automated model for job grading. It affects compensation for companies and employees. JOBMASTER improves evaluation processes.'
+              : 'Surveys gauge satisfaction and motivation, enhancing productivity and retention. Our platform provides demographic flexibility and reports.' }}
+          </p>
+        </div>
+  
+        <!-- Controls -->
+        <div class="col-4">
+          <div class="controls row">
+            <div class="left">
+              <a (click)="toggleContent()">
+                <i class="fa-solid fa-angle-left"></i>
+              </a>
+            </div>
+            
+            <div class="right">
+              <a (click)="toggleContent()">
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Content Section -->
+      <div class="row jet-elements">
+        <div *ngIf="isJet; else eesContentTemplate">
+          <!-- JET Content -->
+          <div class="col-6" *ngFor="let item of jetContent">
+            <div class="h-100">
+              <div class="row">
+                <div class="col-4">
+                  <img class="img-fluid" [src]="item.image" alt="">
+                </div>
+                <div class="col-8 text-left">
+                  <h5 class="text-left">{{ item.title }}</h5>
+                  <p class="text-left">{{ item.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="" routerLink="/jet" routerLinkActive="active" class="btn-jet py-2 my-3">
+            Explore Job Evaluation Tool
+          </a>
+        </div>
+      
+        <!-- EES Content Template -->
+        <ng-template #eesContentTemplate>
+          <div class="col-6" *ngFor="let item of eesContent">
+            <div class="h-100">
+              <div class="row">
+                <div class="col-4">
+                  <img class="img-fluid" [src]="item.icon" alt="">
+                </div>
+                <div class="col-8 text-left">
+                  <h5 class="text-left">{{ item.title }}</h5>
+                  <p class="text-left">{{ item.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="" routerLink="/ees" routerLinkActive="active" class="btn-jet py-2 my-3">
+            Employee Engagement Survey - EES
+          </a>
+        </ng-template>
+      </div>
+      
+    </div>
+  
+    <!-- Right Section -->
+    <div
+      class="col-5 jet-img"
+      [ngStyle]="{ 'background-image': 'url(' + (isJet ? jetImage : eesImage) + ')' }">
+    </div>
+  </div>
+  
+</div>
+
+
+
+</section>

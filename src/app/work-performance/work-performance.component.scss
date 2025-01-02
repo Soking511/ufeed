@@ -1,0 +1,99 @@
+
+.workflow{
+    padding-bottom: 80px;
+    position: relative;
+    h2{
+      color: #2A2B34;
+      font-size: 55px;
+      font-weight: 700;
+      span{
+        color:#F86341
+      }
+    }
+    .workflow-num{
+      color:#F86341;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .bg-filled{
+      width: 557px;
+      height: 571px;
+      flex-shrink: 0;
+      background-color: rgba(248, 99, 65, 0.30);
+      opacity: 0.5;
+      filter: blur(250px);
+      position: absolute;
+      top: 0;
+      left: 0;
+      // z-index: 2000;
+    }
+
+    }
+    
+    .single-workflow {
+      position: relative;
+      padding: 20px 0; // Padding for better spacing between rows
+      border-bottom: 1px solid #B9B9B9;
+      transition: all 0.5s ease-in-out;
+    
+      .featured-workflow {
+        opacity: 0; // Initially hidden
+        max-height: 0; // Collapse height
+        overflow: hidden; // Ensure hidden overflow
+        transition: all 0.5s ease-in-out; // Smooth animation
+      }
+      &:hover {
+        // Optionally adjust the height of the row on hover (use max-height for smooth transition)
+        max-height: 600px; // Set this as needed for your design
+    
+        .featured-workflow {
+          opacity: 1; // Make the image visible
+          max-height: 500px; // Adjust this value according to the image's size
+        }
+      }
+      &.hovered {
+        .featured-workflow {
+          opacity: 1; // Show the image
+          max-height: 500px; // Expand height based on the image
+          padding-top: 20px; // Add padding to space it from the content
+        }
+      }
+    }
+    
+    
+  @media (max-width:768px) {
+    .featured-workflow{
+      display: none;
+    }
+    .workflow
+    {
+      overflow-x: hidden;
+      h2{
+      font-size: 40px!important;
+      margin-bottom: 0!important;
+    }
+  .container{
+    .row{
+      div{
+        width: 100%;
+      }
+    }
+  }
+  
+  
+  }
+
+  }
+
+  
+  @media (max-width:426px) {
+    .workflow{
+
+      h2{
+        font-size: 20px;
+      }
+    }
+  }

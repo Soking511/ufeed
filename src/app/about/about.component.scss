@@ -1,0 +1,287 @@
+.title {
+    background: linear-gradient(to left, #474a5a, #040303);
+    color: white; /* Optional: Adjust text color for better visibility */
+    padding: 20px; /* Optional: Add some padding */
+    min-height:100vh ;
+    .container{
+        .row{
+            justify-content: center;
+            height: 100%;
+            justify-content: center;
+            align-content: center;
+            width: 75%;
+            h1{
+                font-size: 77px;
+                font-weight: 700;
+                line-height: 110px;
+                span{
+                    background-color: #f86341;
+                }
+            }
+            p{
+                color: #fafafa;
+                font-size: 20px;
+            }
+        }
+    }
+  }
+  
+  .journey{
+    .container{
+        .row{
+            h2{
+                font-size: 55px;
+                font-weight: 700;
+                padding-right: 24px;
+                span{
+                    color: #f86341;
+                }
+            }
+            ul{
+                list-style:none;
+                li{
+                    margin-bottom: 20px;
+                    border-left: 5px solid #375D95;
+                    padding-left:12px ;
+                    transition: .5s;
+                &:hover{
+                    border-color: #f86341;
+                }
+                }
+            }
+        }
+    }
+  }
+
+
+  .performance{
+    .container{
+        .row{
+            h2{
+                font-size: 55px;
+                font-weight: 700;
+                text-align: center;
+                span{
+                    color: #f86341;
+                }
+            }
+        }
+        .row{
+           .col-md-4{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            .icon-holder{
+                max-width: 200px;
+            img{
+                transform: scale(.9);
+                transition: .5s;
+                &:hover{
+                    transform: scale(.85);
+                }
+            }
+            }
+            .cta{
+                a{
+                    text-decoration: none;
+                    color: #375D95;
+                }
+            }
+           }
+        }
+    }
+  }
+
+  .team{
+    .container{
+        .row{
+            h2{
+                font-size: 55px;
+                font-weight: 700;
+                span{
+                    color: #f86341;
+                }
+            }
+
+            .member{
+                background:url('/team/image 27.png');
+                height: 500px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center top;
+                border-radius: 130px;
+                padding: 0;
+                cursor: pointer;
+                transition: .5s;
+                &:hover .overflow{
+                    opacity: 1;
+                    p{
+                        color: #fff;
+                    }
+                }
+            }
+
+            .member1{
+                background:url('/team/26.png');
+                height: 500px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center top;
+                border-radius: 130px;
+                padding: 0;
+                cursor: pointer;
+                &:hover .overflow{
+                    opacity: 1;
+                    p{
+                        color: #fff;
+                    }
+                }
+               
+            }
+
+            .member2{
+                background:url('/team/image 28.png');
+                height: 500px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center top;
+                border-radius: 130px;
+                padding: 0;
+                cursor: pointer;
+                &:hover .overflow{
+                    opacity: 1;
+                    p{
+                        color: #fff;
+                    }
+                }
+               
+            }
+
+            .overflow{
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.50);
+                backdrop-filter: blur(25px);
+                border-radius: 130px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                display:flex;
+                flex-direction:column;
+                justify-content: center;
+                align-items: center;
+                transition: .3s ease-in-out;
+                opacity: 0;
+            }
+        }
+    }
+  }
+
+
+
+// start responsive 
+  @media (max-width:768px) {
+   
+   .title{
+    .container{
+        .row{
+            width: 100%;
+            h1{
+                font-size: 34px;
+                line-height: 60px;
+             }
+     
+        }
+    }
+    }
+
+    .journey{
+        .container{
+            .row{
+                .col-2{
+                    display: none;
+                }
+                .col-md-6{
+                    h2{
+                        font-size: 34px;
+                    }
+                    width: 100%;
+                    ul{
+                        padding-top: 40px;
+                        padding-left: 0;
+                        padding-right: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+.performance{
+    .container{
+        .row{
+            h2{
+                font-size: 34px;
+            }
+
+            .col-md-4{
+                width: 50%;
+            }
+        }
+    }
+}
+
+.team{
+    .container{
+        .row{
+            h2{
+                font-size: 34px;
+            }
+            .col-md-3{
+                width: 30%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+  }
+
+
+@media (max-width:426px){
+    .title{
+        .container{
+            .row{
+
+                h1{
+                    line-height: 50px;
+                }
+        
+            }
+        }
+            }
+
+
+    .performance{
+        .container{
+            .row{
+                .col-md-4{
+                    width: 100%;
+                }
+            }
+        }
+    }            
+    .team{
+        .container{
+            .row{
+                .col-md-3{
+                    width: 70%;
+                    margin: 18px 0;
+                }
+            }
+        }
+    }
+}
