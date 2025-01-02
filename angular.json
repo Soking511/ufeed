@@ -20,6 +20,7 @@
             "outputPath": "dist/u-feed",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "baseHref": "/Ufeed/",
             "polyfills": [
               "zone.js"
             ],
