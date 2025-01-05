@@ -10,7 +10,7 @@
           "style": "scss"
         }
       },
-      "root": "",
+      "root": "/ufeed-angular-website/",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
