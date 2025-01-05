@@ -27,8 +27,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public",
-                "output": "/ufeed-angular-website/"
+                "input": "public"
               }
             ],
             "styles": [
