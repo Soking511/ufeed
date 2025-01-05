@@ -1,4 +1,4 @@
-name: Deploy Angular to GitHub Pages
+name: Deploy ufeed Angular App to GitHub Pages
 
 on:
   push:
@@ -21,10 +21,12 @@ jobs:
         run: npm install
 
       - name: Build Angular project
-        run: npm run build -- --configuration production --base-href "/Ufeed/"
+        # run: npm run build -- --configuration production --base-href "/Ufeed/"
+        run: npm run build -- --configuration production --output-path docs --base-href /ufeed-angular-website
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages  # Target branch for GitHub Pages
-          folder: dist/u-feed  # Folder to deploy (where the production build is located)
+          # folder: dist/u-feed  # Folder to deploy (where the production build is located)
+          folder: docs  # Folder to deploy (where the production build is located)
