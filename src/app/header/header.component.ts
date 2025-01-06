@@ -17,6 +17,6 @@ export class HeaderComponent {
   }
 
  get logoPath(){
-    return '/logo-Ufeed.png';
+    return './logo-Ufeed.png';
   }
 }

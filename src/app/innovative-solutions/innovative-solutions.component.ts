@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 })
 export class InnovativeSolutionsComponent {
   get icons( ){
-    return '/icons/ph_arrow-up-thin.png';
+    return './icons/ph_arrow-up-thin.png';
   }
 }
