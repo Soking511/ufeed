@@ -6,4 +6,3 @@ bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
 
 
-// Pleae remove me ya mohamed i am useless comment
