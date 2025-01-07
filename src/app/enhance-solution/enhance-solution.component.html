@@ -26,14 +26,14 @@
         <!-- Controls -->
         <div class="col-4">
           <div class="controls row">
-            <div class="left">
-              <a (click)="toggleContent()">
+            <div class="left" (click)="toggleContent()">
+              <a>
                 <i class="fa-solid fa-angle-left"></i>
               </a>
             </div>
             
-            <div class="right">
-              <a (click)="toggleContent()">
+            <div class="right" (click)="toggleContent()">
+              <a>
                 <i class="fa-solid fa-angle-right"></i>
               </a>
             </div>
@@ -92,7 +92,10 @@
       [ngStyle]="{ 'background-image': 'url(' + (isJet ? jetImage : eesImage) + ')' }">
     </div>
   </div>
-  
+  <!-- <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+  </ol> -->
 </div>
 
 
