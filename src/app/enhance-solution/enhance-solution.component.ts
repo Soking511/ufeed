@@ -17,7 +17,7 @@ export class EnhanceSolutionComponent {
     this.backgroundImage = this.backgroundImage === '/Image.png' ? '/Image2.png' : '/Image.png';
   }
 
-
+// fixing img 
   isJet = true; // Flag to toggle content
 
   jetImage = 'public/Image.png'; // Background image for JET
