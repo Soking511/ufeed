@@ -37,13 +37,13 @@
       position: relative;
       padding: 20px 0; // Padding for better spacing between rows
       border-bottom: 1px solid #B9B9B9;
-      transition: all 0.5s ease-in-out;
+      transition: all 0.2s ease-in-out;
     
       .featured-workflow {
         opacity: 0; // Initially hidden
         max-height: 0; // Collapse height
         overflow: hidden; // Ensure hidden overflow
-        transition: all 0.5s ease-in-out; // Smooth animation
+        transition: all 0.2s ease-in-out; // Smooth animation
       }
       &:hover {
         // Optionally adjust the height of the row on hover (use max-height for smooth transition)
