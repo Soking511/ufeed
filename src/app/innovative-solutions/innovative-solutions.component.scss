@@ -42,6 +42,11 @@ h2{
   }
 
 }
+.solution-desc{
+  p{
+    color: #43424C;
+  }
+}
 
 .arow-down{
     width: 100px;
@@ -51,6 +56,8 @@ h2{
   
   .solution-title h3{
   font-size: 40px;
+  white-space: pre-wrap; /* Interprets \n as a line break */
+
   }
   .icon-holder{
     width: 80px;
@@ -89,7 +96,15 @@ h2{
       margin-top: 8px;
     }
   }
+
   
+.solution-title h3:nth-of-type(5) {
+  width: 40%!important;  /* Set the desired width */
+  padding-left:40px ;
+  padding-right:40px ;
+}
+
+
 @media(max-width:768px) {
   h2{
     font-size: 34px;

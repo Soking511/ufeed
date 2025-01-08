@@ -63,7 +63,7 @@ export class InnovativeSolutionsComponent {
     },
     {
       icon: 'public/icons/hugeicons_stars.png',
-      title: 'AI-Enabled with Power of Data',
+      title: 'AI-Enabled with \n Power of Data',
       description:
         'Empowers customizing interface for each client based on their needs to validate who has which access level to do what!',
     },
