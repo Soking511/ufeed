@@ -13,7 +13,15 @@
       }
     }
   }
-  
+  h4{
+    font-size: 24px;
+    transition: .3s;
+    line-height: 30px;
+    &:hover{
+      border-left: #F86341 solid 4px;
+      padding-left: 8px;
+    }
+  }
   // ------------------
   h2{
     color: #2A2B34;
