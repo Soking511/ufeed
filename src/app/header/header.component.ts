@@ -1,4 +1,4 @@
-import { Component,HostListener } from '@angular/core';
+import { Component,HostListener,Renderer2  } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 
 @Component({
@@ -18,5 +18,33 @@ export class HeaderComponent {
 
  get logoPath(){
     return 'public/logo-Ufeed.png';
+  }
+
+
+
+
+  // -------------------
+  constructor(private renderer: Renderer2) {}
+
+  openDropdown(event: Event): void {
+    const dropdownElement = (event.target as HTMLElement).closest('.dropdown');
+    if (dropdownElement) {
+      this.renderer.addClass(dropdownElement, 'show');
+      const menu = dropdownElement.querySelector('.dropdown-menu');
+      if (menu) {
+        this.renderer.addClass(menu, 'show');
+      }
+    }
+  }
+
+  closeDropdown(event: Event): void {
+    const dropdownElement = (event.target as HTMLElement).closest('.dropdown');
+    if (dropdownElement) {
+      this.renderer.removeClass(dropdownElement, 'show');
+      const menu = dropdownElement.querySelector('.dropdown-menu');
+      if (menu) {
+        this.renderer.removeClass(menu, 'show');
+      }
+    }
   }
 }
