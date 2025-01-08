@@ -28,37 +28,89 @@
       position: absolute;
       top: 0;
       left: 0;
-      // z-index: 2000;
     }
 
     }
     
+    // .single-workflow {
+    //   position: relative;
+    //   padding: 20px 0; // Padding for better spacing between rows
+    //   border-bottom: 1px solid #B9B9B9;
+    //   transition: all 0.4s ease-in-out;
+    
+    //   .featured-workflow {
+    //     opacity: 0; // Initially hidden
+    //     max-height: 0; // Collapse height
+    //     overflow: hidden; // Ensure hidden overflow
+    //     transition: all 0.4s ease-in-out; // Smooth animation
+    //   }
+    //   &:hover {
+    //     // Optionally adjust the height of the row on hover (use max-height for smooth transition)
+    //     max-height: 600px; // Set this as needed for your design
+    
+    //     .featured-workflow {
+    //       opacity: 1; // Make the image visible
+    //       max-height: 500px; // Adjust this value according to the image's size
+    //     }
+    //   }
+    //   &.hovered {
+    //     .featured-workflow {
+    //       opacity: 1; // Show the image
+    //       max-height: 500px; // Expand height based on the image
+    //       padding-top: 20px; // Add padding to space it from the content
+    //     }
+    //   }
+    // }
+    
+
     .single-workflow {
       position: relative;
-      padding: 20px 0; // Padding for better spacing between rows
+      padding: 20px 0;
       border-bottom: 1px solid #B9B9B9;
-      transition: all 0.2s ease-in-out;
+      transition: all 0.4s ease-in-out;
     
-      .featured-workflow {
-        opacity: 0; // Initially hidden
-        max-height: 0; // Collapse height
-        overflow: hidden; // Ensure hidden overflow
-        transition: all 0.2s ease-in-out; // Smooth animation
+      // Text style for normal state
+      .col-md-6 {
+        opacity: 1; // Full opacity for text
+        transition: opacity 0.4s ease-in-out;
       }
-      &:hover {
-        // Optionally adjust the height of the row on hover (use max-height for smooth transition)
-        max-height: 600px; // Set this as needed for your design
     
+      // Initially hide the image
+      .featured-workflow {
+        opacity: 0; // Hide image
+        max-height: 0; // Collapse height
+        overflow: hidden; // Prevent overflow
+        transition: all 0.4s ease-in-out; // Smooth animation
+      }
+    
+      // Hover effects for the hovered row
+      &:hover {
         .featured-workflow {
-          opacity: 1; // Make the image visible
-          max-height: 500px; // Adjust this value according to the image's size
+          opacity: 1; // Fade in the image
+          max-height: 500px; // Adjust height for the image
+        }
+    
+        .col-md-6 {
+          opacity: 1; // Keep text fully visible for hovered row
         }
       }
+    
+      // Apply dimmed opacity to non-hovered rows
+      &.not-hovered {
+        .col-md-6 {
+          opacity: 0.3; // Reduce opacity for text
+        }
+      }
+    
+      // Add specific animation for the hovered row
       &.hovered {
         .featured-workflow {
-          opacity: 1; // Show the image
-          max-height: 500px; // Expand height based on the image
-          padding-top: 20px; // Add padding to space it from the content
+          opacity: 1; // Ensure the image is fully visible
+          max-height: 500px; // Fully expand image height
+        }
+    
+        .col-md-6 {
+          opacity: 1; // Maintain full text opacity for hovered row
         }
       }
     }

@@ -20,17 +20,15 @@
     </div>
     <div class="container">
       
-      <div 
-      class="row single-workflow py-5" 
-      *ngFor="let item of [1, 2, 3, 4, 5]; let i = index" 
+      <div
+      class="row single-workflow py-5"
+      *ngFor="let item of [1, 2, 3, 4, 5]; let i = index"
       [class.hovered]="hoveredIndex === i"
-      (mouseover)="onMouseOver(i)" 
+      [class.not-hovered]="isNotHovered(i)"
+      (mouseover)="onMouseOver(i)"
       (mouseout)="onMouseOut()"
     >
-      <div class="col-md-6" 
-      [class.hovered]="hoveredIndex"
-      (mouseover)="onMouseOver(i)" 
-      (mouseout)="onMouseOut()">
+      <div class="col-md-6">
         <p class="workflow-num">{{ i + 1 }}.</p>
         <h3 *ngIf="i === 0">Complex Workforce Management</h3>
         <h3 *ngIf="i === 1">Lack of Data-Driven Insights</h3>
@@ -39,35 +37,37 @@
         <h3 *ngIf="i === 4">Need for Customized Solutions</h3>
     
         <p *ngIf="i === 0">
-          Managing various HR tasks, from recruitment to performance evaluations, 
-          <br/>can be overwhelming and time-consuming without streamlined processes.
+          Managing various HR tasks, from recruitment to performance evaluations,
+          <br />
+          can be overwhelming and time-consuming without streamlined processes.
         </p>
         <p *ngIf="i === 1">
-          Making informed decisions is challenging without access to accurate and actionable data, 
+          Making informed decisions is challenging without access to accurate and actionable data,
           leading to inefficiencies and missed opportunities.
         </p>
         <p *ngIf="i === 2">
-          Keeping employees motivated and satisfied is crucial for productivity, 
+          Keeping employees motivated and satisfied is crucial for productivity,
           yet many organizations struggle to effectively engage their workforce.
         </p>
         <p *ngIf="i === 3">
-          Fair and clear job evaluations are essential for aligning roles with business goals 
+          Fair and clear job evaluations are essential for aligning roles with business goals
           and maintaining employee satisfaction, but many organizations find this difficult to implement.
         </p>
         <p *ngIf="i === 4">
-          Every organization has unique challenges and requirements, 
+          Every organization has unique challenges and requirements,
           making it essential to have tailored solutions that address specific business needs effectively.
         </p>
       </div>
     
       <div class="col-md-6 featured-workflow">
-        <img 
-          class="img-fluid" 
-          [src]="'public/workflow/0' + (i + 1) + '.png'" 
-          alt="" 
+        <img
+          class="img-fluid"
+          [src]="'public/workflow/0' + (i + 1) + '.png'"
+          alt=""
         />
-      </div>  
+      </div>
     </div>
+    
     
 
     

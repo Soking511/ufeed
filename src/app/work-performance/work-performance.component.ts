@@ -8,16 +8,19 @@ import { CommonModule } from '@angular/common';
   styleUrl: './work-performance.component.scss'
 })
 
-
 export class WorkPerformanceComponent {
-  hoveredIndex: number | null = null;
+  hoveredIndex: number | null = null; // Track the hovered row index
 
   onMouseOver(index: number) {
-    this.hoveredIndex = index; // Highlight the hovered row
+    this.hoveredIndex = index; // Set the hovered index
   }
 
   onMouseOut() {
-    this.hoveredIndex = null; // Reset the hover effect
+    this.hoveredIndex = null; // Reset the hover index
   }
 
+  // Helper method to check if a row is not hovered
+  isNotHovered(index: number): boolean {
+    return this.hoveredIndex !== null && this.hoveredIndex !== index;
+  }
 }
