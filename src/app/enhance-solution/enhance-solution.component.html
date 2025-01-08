@@ -13,13 +13,13 @@
       <div class="row py-5 justify-content-between">
         <!-- Title -->
         <div class="col-8">
-          <h4 class="text-left ">
-            <div>{{ isJet ? 'Job Evaluation \n Tool - JET' : 'Employee Engagement Survey - EES' }}</div>
+          <h4 class="text-left">
+            <div>{{ isJet ? 'Job Evaluation \nTool - JET' : 'Employee Engagement \nSurvey - EES' }}</div>
           </h4>
           <p class="text-left">
             {{ isJet
-              ? 'JET is an automated model for job grading. It affects compensation for companies and employees. JOBMASTER improves evaluation processes.'
-              : 'Surveys gauge satisfaction and motivation, enhancing productivity and retention. Our platform provides demographic flexibility and reports.' }}
+              ? '\nJET is an automated model for job grading. \nIt affects compensation for companies and employees. JOBMASTER improves evaluation processes.'
+              : '\nSurveys gauge satisfaction and motivation, \nenhancing productivity and retention. Our platform provides demographic flexibility and reports.' }}
           </p>
         </div>
   
@@ -47,11 +47,11 @@
           <!-- JET Content -->
           <div class="col-6 " *ngFor="let item of jetContent">
             <div class="h-100">
-              <div class="row">
+              <div class="row ">
                 <div class="col-4 p-4">
                   <img class="img-fluid" [src]="item.image" alt="">
                 </div>
-                <div class="col-8 text-left p-2">
+                <div class="col-7 text-left p-2">
                   <h5 class="text-left">{{ item.title }}</h5>
                   <p class="text-left">{{ item.description }}</p>
                 </div>
@@ -71,7 +71,7 @@
                 <div class="col-4 p-4">
                   <img class="img-fluid" [src]="item.icon" alt="">
                 </div>
-                <div class="col-8 text-left p-2">
+                <div class="col-7 text-left p-2">
                   <h5 class="text-left">{{ item.title }}</h5>
                   <p class="text-left">{{ item.description }}</p>
                 </div>
