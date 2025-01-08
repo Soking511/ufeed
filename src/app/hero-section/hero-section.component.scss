@@ -36,9 +36,10 @@
     justify-content: center;
     flex-wrap: wrap;
     position: relative;
-    z-index: 1; /* Content appears on top of the gradient and video */
+    z-index: 1;
     color: white;
     text-align: center;
+    // height: 100vh;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -55,24 +56,27 @@
       flex-direction: row;
       flex-wrap: nowrap;
       width: 25%;
-      justify-content: center;
-     
-     
+      justify-content: center;          
     }
   }
   .content p{
     font-size: 20px;
-    color: #fff;
+    color: #D6D6D6;
   }
   .hero-cta{
-    padding:18px 30px ;
+    padding:24px ;
     border: solid 2px #375D95;
     border-radius: 16px;
     margin: 8px 12px;
     text-decoration: none;
     color: #fff;
-    font-family:'Century Gothic';
+    font-family:'Creato Display';
     transition: .5s;
+    max-width: 206px;
+    max-height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .book-a-demo{
     background-color:#375D95 ;
