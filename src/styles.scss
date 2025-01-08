@@ -1,21 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.cdnfonts.com/css/century-gothic-paneuropean');
+// @import url('https://fonts.cdnfonts.com/css/century-gothic-paneuropean');
   
-  body {
-    font-family: 'Century Gothic Paneuropean', sans-serif;                                             
+//   body {
+//     font-family: 'Century Gothic Paneuropean', sans-serif;                                             
+//   }
+  
+
+  // mainFont 
+  @font-face {
+    font-family: "Creato Display";
+    src: url('../public/fonts/Creato\ Display/Creato Display Regular.woff') format('woff'),
+          ('../public/fonts/Creato\ Display/Creato Display Regular.woff2') format('woff2'),
+          ('../public/fonts/Creato\ Display/Creato Display.woff2') format('woff2'),
+            ('../public/fonts/Creato\ Display/Creato Display.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
   }
+
+  // secondary font 
+  @font-face {
+    font-family: 'Lora';
+    src: url('../public/fonts/Lora/Lora-Medium.woff2') format('woff2'),
+        url('../public/fonts/Lora/Lora-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
   
-  
-  $mainFont:'Century Gothic';
+
+  // -----------------------------
+
+
+  $mainFont:'Creato Display';
+  $secondaryFont:'Lora';
   $fontSizeLinks:16px;
   $fontWeightLinks:600;
   $mainColor:#f86645;
   $secondaryColor:#375D95;
   
-  h1, h2, h3,h4,h5,h6 p {
-    font-family: 'Century Gothic Paneuropean', sans-serif;                                         
+  h1, h2, h3,h4,h5,h6{
+    font-family: 'Creato Display', sans-serif;                                         
   }
   p{
+    font-family: 'Lora';
     color: #625e5e;
   }
   
