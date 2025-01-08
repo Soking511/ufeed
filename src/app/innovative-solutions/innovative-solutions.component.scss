@@ -1,7 +1,14 @@
 .innovative-solutions{
   position: relative;
-  padding: 80px 0;
-
+  padding: 80px;
+h2{
+  padding-bottom: 0;
+  font-size: 55px;
+  font-weight: 700;
+  span{
+    color: #f86341;
+  }
+}
   .left-bg-fill{
     
       width: 557px;
@@ -45,49 +52,39 @@
     width: 80px;
     margin: auto;
   }
-  
-  .single-solution{
-    transition: .2s ease-in-out;
-    &:hover{
-      border-left:4px solid #f86341;
-    }
-    .solution-title h3{
-      transition: .3s ease-in-out;
-    }
-  }
-  .single-solution:hover .solution-title h3{
-    font-size: 44px;
-    margin-top: 8px;
-  }
-  
   .single-solution {
-    transition: opacity 0.5s ease-in-out; // Smooth opacity change
+    transition: opacity 0.5s ease-in-out; // Smooth transition for opacity
     opacity: 1; // Default opacity
   
-    // When hovering over this element
     &:hover {
-      opacity: 1; // Ensure the hovered item stays at full opacity
-  
+      opacity: 1; // Keep the hovered item at full opacity
+      border-left: #f86341 solid 4px;
       // Reduce the opacity of all siblings
       ~ .single-solution {
-        opacity: 0.3; // Reduce opacity for all siblings
+        opacity: 0.3; // Dim other elements
       }
     }
-  }
-  .single-solution:hover ~ .single-solution,
-      .single-solution:not(:hover) {
-        opacity: 0.3; /* All siblings have opacity 0.5 */
+  
+    // Add styles for active state (when a solution is clicked/selected)
+    &.active {
+      opacity: 1; // Ensure the active item remains fully visible
+      border-left: 4px solid #f86341; // Optional: Highlight the active solution
+   
     }
   
-    h2{
-        color: #2A2B34;
-        font-size: 55px;
-        font-weight: 700;
+    &.dimmed {
+      opacity: 0.3; // Apply dimmed effect to non-active items
     }
-        span{
-          color:#F86341
-        }
-
+  
+    .solution-title h3 {
+      transition: 0.3s ease-in-out;
+    }
+  
+    &:hover .solution-title h3 {
+      font-size: 44px;
+      margin-top: 8px;
+    }
+  }
   
 @media(max-width:768px) {
   h2{

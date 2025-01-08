@@ -1,80 +1,35 @@
-
-<!-- start innovative-solutions  -->
 <section class="innovative-solutions">
- 
-    <h2 class="w-75 m-auto text-center mb-5">
-      Transform Your Workforce with <span>UFeed's</span> Innovative Solutions
-    </h2>
-    <div class="container">
-      
-      <div class="row justify-content-center">
-        <div class="arow-down">
-          <img [src]="icons" alt="" class="img-fluid">
-        </div>
+  <h2 class="w-75 m-auto text-center mb-5">
+    Transform Your Workforce with <span>UFeed's</span> Innovative Solutions
+  </h2>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="img-holder text-center">
+        <img class="img-fluid m-auto" src="../../../public/icons/ph_arrow-up-thin.png" alt="" srcset="">
       </div>
-      
-      
-      <div class="row justify-content-around py-4 mt-4">
-        
-        <div class="single-solution col-md-6 p-5 text-center">
-          <div class="icon-holder mb-3"><img class="img-fluid" src="public/icons/teenyicons_tick-circle-outline.png" alt="" srcset=""></div>
-          <div class="solution-title"><h3> Holistic Solutions </h3></div>
-          <div class="solution-desc"> <p> UFeed is powering the HC industry with limitless solutions through
-             access to knowledge of well structured methodologies 
-             and Tools as well of data analytics utilization</p></div>
-        </div>
-  
-        <div class="single-solution col-md-6 p-5 text-center">
-          <div class="icon-holder mb-3"><img class="img-fluid" src="public/icons/ph_user-focus-thin.png" alt="" srcset=""></div>
-          <div class="solution-title"><h3> User Friendly Focus</h3></div>
-          <div class="solution-desc"> <p> Solutions are built to be easily accessible and user-friendly,
-             so staff members can access UFeed solutions with ease.</p></div>
-        </div>
-  
-     
-  <!-- ------------ -->
-      
-     
-        
-        <div class="single-solution col-md-6 p-5 text-center">
-          <div class="icon-holder mb-3"><img class="img-fluid" src="public/icons/hugeicons_customize.png" alt="" srcset=""></div>
-          <div class="solution-title"><h3> Custom Access Management </h3></div>
-          <div class="solution-desc"> <p> Empowers customizing interface for each client based 
-            on their needs to validate who has which access level to do what!</p></div>
-        </div>
-  
-        <div class="single-solution col-md-6 p-5 text-center">
-          <div class="icon-holder mb-3"><img class="img-fluid" src="public/icons/iconamoon_shield-thin.png" alt="" srcset=""></div>
-          <div class="solution-title"><h3> Self Service Guided with Expertise</h3></div>
-          <div class="solution-desc"> <p> Leveraging over 25 years of expertise, we empower organizations by equipping them with 
-            the skills to independently implement and maximize the benefits of our solutions.</p></div>
-        </div>
-  
-    
-  
-  <!-- ---------- -->
-      
-     
-        
-        <div class="single-solution col-md-6 p-5 text-center">
-          <div class="icon-holder mb-3"><img class="img-fluid" src="public/icons/hugeicons_stars.png" alt="" srcset=""></div>
-          <div class="solution-title"><h3> AI-Enabled with power of Data</h3></div>
-          <div class="solution-desc"> <p> Empowers customizing interface for each client based on their
-             needs to validate who has which access level to do what!</p></div>
-        </div>
-  
-        <div class="single-solution col-md-6 p-5 text-center">
-          <div class="icon-holder mb-3"><img class="img-fluid" src="public/icons/circum_dollar.png" alt="" srcset=""></div>
-          <div class="solution-title"><h3> UFeed Cost Affordability</h3></div>
-          <div class="solution-desc"> <p>Compared to other competitors/alternatives in the HR/HC domain, UFeed represents a very affordable cost vs Value, Backed up on JOBMASTER's experience for 25 years,
-             UFeed made the combination of Best Value at an Affordable cost.</p></div>
-        </div>
-  
-      </div>
-  
-  
     </div>
-    
-  </section>
-  <!-- end innovative-solutions  -->
-  
+  </div>
+  <div class="container">
+    <div class="row justify-content-around py-4 mt-4">
+      <div
+        class="single-solution col-md-6 p-5 text-center"
+        *ngFor="let solution of solutions; let i = index"
+        [class.active]="activeIndex === i"
+        [class.dimmed]="isDimmed(i)"
+        (mouseover)="onMouseOver(i)"
+        (mouseout)="onMouseOut()"
+        (click)="onSelect(i)"
+      >
+        <div class="icon-holder mb-3">
+          <img class="img-fluid" [src]="solution.icon" alt="" />
+        </div>
+        <div class="solution-title w-75 m-auto">
+          <h3 class="">{{ solution.title }}</h3>
+        </div>
+        <div class="solution-desc">
+          <p>{{ solution.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
