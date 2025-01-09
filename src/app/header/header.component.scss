@@ -36,6 +36,10 @@ $secondaryColor:#375D95;
       .btns-holder{
         a{
           color: #2A2B34;
+          transition: .3s;
+          &:hover{
+            color: #fff;
+          }
         }
       }
     }
