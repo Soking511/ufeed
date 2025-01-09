@@ -29,9 +29,11 @@
     button{
       background-color:#f96441;
       transition: .3s;
+      border-color:#f96441;
     }
     button:hover{
-        background-color:#375d95;
+      background-color:#375d95;
+      border-color:#375d95;
     }
   }
   }
