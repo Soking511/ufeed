@@ -5,10 +5,14 @@
         padding: 8px 12px;
         margin:0 12px 0 0px;
         color: #000;
+        transition: .3s;
         i{
             color: #375D95;
+            &:hover{
+                color: #f86645;
+            }
         }
-       
+      
     }
     
 }
@@ -30,18 +34,22 @@
             list-style: none;
             margin-bottom: 12px;
             margin-top: 12px;
+            display: flex;
+            align-items: center;
         a{
             text-decoration: none;
             color: #757575;
             font-size: 16px;
             transition: .3s ease-in-out;
-            &:hover{
-                border-bottom: solid 2px #f86341;
-            }
-            span{
-                color: #000;
-            }
             i{
+                margin-left: 10px;
+                padding-top: 9px;
+                font-size: 10px;
+                transition: .3s ease-in-out;
+                color: #f86645;
+            }
+           
+            span{
                 color: #000;
             }
         }
@@ -49,7 +57,21 @@
         }
     }
 }
+.cotanct-list{
+    ul{
+        li{
+            a{
+                i{
+                    font-size: 16px;
+                }
+                span{
+                    color: #757575!important;
 
+                }
+            }
+        }
+    }
+}
 .end-footer{
     ul{
         padding:0;
@@ -58,13 +80,33 @@
             a{
                 text-decoration: none;
                 cursor: pointer;
-                color: #757575;
+                color: #757575!important;
             }
         }
     }
 }
 
-
+.list-footer.list {
+    ul {
+      li {
+        a {
+          font-family: "Creato Display";
+          i {
+            opacity: 0;
+            transition: opacity 0.3s;
+          }
+  
+          &:hover i {
+            opacity: 1;
+          }
+          &:hover{
+            color: #f86645;
+          }
+        }
+      }
+    }
+  }
+  
 @media (max-width:768px) {
     footer{
         .container{
