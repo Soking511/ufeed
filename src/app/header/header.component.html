@@ -1,9 +1,15 @@
- <nav class="navbar navbar-expand-lg py-3 fixed-top" [class.scrolled]="isScrolled"> 
+<nav 
+  class="navbar navbar-expand-lg py-3 fixed-top" 
+  [ngClass]="{
+    'scrolled': isScrolled,
+    'home-header': isHomePage && !isScrolled,
+    'other-header': !isHomePage || isScrolled
+  }">
     <div class="container">
     
       <div class="col-md-2 col-sm-6 col-xs-6 left-logo">
         <a class="w-100 navbar-brand" routerLink="">
-          <img class="img-fluid" [src]="logoPath" alt="" srcset="">
+          <img class="img-fluid" src="public/logo-Ufeed.png" alt="" srcset="">
         </a>  
       </div>
       

@@ -1,7 +1,16 @@
 .comming-soon{
     padding-top: 30px;
     height: 100vh;
-    background: linear-gradient(to left, #474a5a, #040303);
+    // background: linear-gradient(
+    //     to right,
+    //     rgba(248, 99, 65, 0.70), /* Left fill */
+    //     rgba(55, 93, 149, 0.70), /* Middle fill */
+    //     #fff                      /* Right fill */
+    //   );
+    //   opacity: 0.5; /* Overall transparency */
+    //   filter: blur(250px); /* Applies the blur effect */
+      z-index: -1; 
+      position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,10 +18,16 @@
     color: #fff;
     font-weight: 800;
    
+    
 img{
     animation-name: example;
     animation-duration: 6s;
     animation-iteration-count: infinite;
+   
+}
+h1{
+    color: #2A2B34;
+    font-weight: 700;
 }
 }
 

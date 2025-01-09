@@ -13,7 +13,34 @@ $secondaryColor:#375D95;
 .dropdown-menu{
     background-color: #272d35;
 }
-
+.other-header{
+  .container{
+    .collapse.navbar-collapse{
+      ul{
+        .dropdown a.dropdown-item{
+          color: #fff;
+          &:hover{
+            color: #f86341;
+          }
+        }
+        li{
+          
+          a{
+            color: #2A2B34;
+            &:hover{
+              color: #f86341;
+            }
+          }
+        }
+      }
+      .btns-holder{
+        a{
+          color: #2A2B34;
+        }
+      }
+    }
+  }
+}
 .nav-item a{
     cursor: pointer;
     font-size: 16px;

@@ -1,31 +1,51 @@
 .title {
-    background: linear-gradient(to left, #474a5a, #040303);
-    color: white; /* Optional: Adjust text color for better visibility */
+    color: #2A2B34; /* Optional: Adjust text color for better visibility */
     padding: 20px; /* Optional: Add some padding */
-    min-height:100vh ;
-    .container{
-        .row{
-            justify-content: center;
-            height: 100%;
-            justify-content: center;
-            align-content: center;
-            width: 75%;
-            h1{
-                font-size: 77px;
-                font-weight: 700;
-                line-height: 110px;
-                span{
-                    background-color: #f86341;
-                }
-            }
-            p{
-                color: #fafafa;
-                font-size: 20px;
-            }
+    min-height: 100vh;
+    position: relative; /* Ensure proper positioning for ::before */
+  
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to right,
+        rgba(248, 99, 65, 0.70), /* Left fill */
+        rgba(55, 93, 149, 0.70), /* Middle fill */
+        #fff                      /* Right fill */
+      );
+      opacity: 0.5; /* Overall transparency */
+      filter: blur(250px); /* Applies the blur effect */
+      z-index: -1; /* Ensures the gradient is behind the content */
+    }
+  
+    .container {
+      .row {
+        justify-content: center;
+        height: 100%;
+        justify-content: center;
+        align-content: center;
+        width: 75%;
+        h1 {
+          font-size: 77px;
+          font-weight: 700;
+          line-height: 110px;
+          span {
+            background-color: #f86341;
+            color: #fff;
+          }
         }
+        p {
+          color: #2A2B34;
+          font-size: 20px;
+        }
+      }
     }
   }
-
+   
 h2{
     font-size: 55px;
     font-weight: 700;
