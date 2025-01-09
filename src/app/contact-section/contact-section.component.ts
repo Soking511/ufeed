@@ -15,8 +15,13 @@ export class ContactSectionComponent {
   // form inputs 
   
   contactForm:FormGroup = new FormGroup({
-    'fullname': new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(20), // Maximum 15 characters
-      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/) ]),
+    'fullname': new FormControl(null, [
+  Validators.required,
+  Validators.minLength(3),
+  Validators.maxLength(20),
+  Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/) // Allows spaces
+]),
+
   
     'phone': new FormControl(null, [Validators.required, 
       Validators.pattern(/^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/
