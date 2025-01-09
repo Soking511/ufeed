@@ -53,6 +53,7 @@ h2{
         color: #f86341;
     }
 }
+
   .ees-benfits{
     .container{
         .row{
@@ -125,3 +126,34 @@ h2{
         }
     }
   }
+
+  form{
+    .row{
+        .form-group{
+            label{
+                padding: 8px;
+                margin-bottom: 8px;
+                color: #43424C;
+                font-size: 16px;
+                font-weight: 500;
+                font-family: 'Century Gothic Paneuropean';
+            }
+            input.form-control.p-3{
+                border-radius: 16px;
+                background: rgba(0, 0, 0, 0.05);;
+                backdrop-filter: blur(28.242982864379883px);
+            }
+        }
+    }
+    button{
+        background-color: #3B5C92;
+        border: #3B5C92;
+        transition: .3s;
+
+        &:hover{
+            background-color: #f86341;
+            border: #f86341;
+
+        }
+    }
+}
