@@ -51,3 +51,56 @@
       font-size: 40px!important;
     }
   }
+
+
+  // animation 
+// Define the animation for sliding and fading in
+@keyframes slideFadeUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// Title animation (fade in and move up)
+.title h1 {
+  animation: slideFadeUp 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+// Span animation (slide in from right with background color)
+.title .px-3 {
+  background-color: #3498db; // Your desired color
+  color: white;
+  display: inline-block;
+  animation: slideInFromRight 1s ease-out forwards;
+  opacity: 0;
+  transform: translateX(30px);
+  animation-delay: 0.5s; // Delay the span to show after the title
+}
+
+// Paragraph animation (fade in and move up)
+.title p {
+  animation: slideFadeUp 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  animation-delay: 1.2s; // Delay the paragraph to show after the span
+}
+
+// Optional: Add delay between each element for a staggered effect
