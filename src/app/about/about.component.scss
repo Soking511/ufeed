@@ -132,13 +132,18 @@
                 background-repeat: no-repeat;
                 background-position: center top;
                 border-radius: 130px;
+                overflow: hidden;
                 padding: 0;
                 cursor: pointer;
+                border: #f86341 solid 4px;
                 transition: .5s;
                 &:hover .overflow{
                     opacity: 1;
                     p{
                         color: #fff;
+                    }
+                    a{
+                        font-size: 24px;
                     }
                 }
             }
@@ -149,13 +154,18 @@
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center top;
-                border-radius: 130px;
+                border-radius: 130px; 
+                overflow: hidden;
                 padding: 0;
+                border: #f86341 solid 4px;
                 cursor: pointer;
                 &:hover .overflow{
                     opacity: 1;
                     p{
                         color: #fff;
+                    }
+                    a{
+                        font-size: 24px;
                     }
                 }
                
@@ -168,12 +178,17 @@
                 background-repeat: no-repeat;
                 background-position: center top;
                 border-radius: 130px;
+                border: #f86341 solid 4px;
                 padding: 0;
+                overflow: hidden;
                 cursor: pointer;
                 &:hover .overflow{
                     opacity: 1;
                     p{
                         color: #fff;
+                    }
+                    a{
+                        font-size: 24px;
                     }
                 }
                
@@ -184,7 +199,6 @@
                 height: 100%;
                 background: rgba(0, 0, 0, 0.50);
                 backdrop-filter: blur(25px);
-                border-radius: 130px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
