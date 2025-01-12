@@ -47,7 +47,16 @@
           .col-md-6{
             width: 100%;
           }
+          
         }
       }
     }
+  }
+
+  @media (max-width:426px) {
+.form-holder{
+  h2{
+    font-size: 24px!important;
+  }
+}
   }
