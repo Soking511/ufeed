@@ -64,8 +64,14 @@
 
 
 @media (max-width:426px) {
-    h2{
-      font-size: 24px;
+  .news{
+    padding-bottom: 0;
+  }
+    .form-holder h2{
+      font-size: 24px!important;
+    }
+    h4{
+      font-size: 20px!important;
     }
  
 }

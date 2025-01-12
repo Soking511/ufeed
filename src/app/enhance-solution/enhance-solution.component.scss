@@ -132,3 +132,14 @@ h4{
   }
  }
 }
+
+@media (max-width:426px){
+  h2{
+    font-size: 24px!important;
+  }
+  .enhance-solution{
+    .container-fluid{
+      padding-left: 0;
+    }
+  }
+}
