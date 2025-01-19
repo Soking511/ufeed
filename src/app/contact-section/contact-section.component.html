@@ -12,7 +12,7 @@
           <form  [formGroup]="contactForm" (ngSubmit)="getFormData(contactForm)">
             
             <div class="form-group col-12 my-3">
-              <label for="">Name*</label>
+              <label for="">Your Name*</label>
               <input [class.is-valid]="contactForm.get('fullname')?.errors == null && contactForm.get('fullname')?.touched"  class="form-control p-3" formControlName="fullname" type="text" name="" placeholder="Your Name" id="">
               <p *ngIf="contactForm.get('fullname')?.errors != null && contactForm.get('fullname')?.touched" class="py-2 text-danger">Please Check Your Name</p>
             </div>
@@ -20,14 +20,14 @@
             <div class="row py-0 my-3">
   
               <div class="form-group col-6 ">
-                <label for="">Phone Number*</label>
+                <label for="">Contact Number*</label>
                 <input [class.is-valid]="contactForm.get('phone')?.errors==null && contactForm.get('phone')?.touched " class="form-control p-3" type="text" formControlName="phone" name="" placeholder="Your Phone Number" id="">
                 <p *ngIf="contactForm.get('phone')?.errors!=null && contactForm.get('phone')?.touched " class="py-2 text-danger">Please Check Your Phone Number</p>
               </div>
               
               <div class="form-group col-6 ">
                 <label for="">Email*</label>
-                <input [class.is-valid]="contactForm.get('email')?.errors==null && contactForm.get('email')?.touched " class="form-control p-3" type="email" name="" formControlName="email" placeholder="name@mail.com" id="">
+                <input [class.is-valid]="contactForm.get('email')?.errors==null && contactForm.get('email')?.touched " class="form-control p-3" type="email" name="" formControlName="email" placeholder="ex: username@xyz" id="">
                 <p *ngIf="contactForm.get('email')?.errors!=null && contactForm.get('email')?.touched " class="py-2 text-danger">Please Check Your Email</p>
               </div>
                 
