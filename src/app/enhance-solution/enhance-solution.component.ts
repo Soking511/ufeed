@@ -27,12 +27,12 @@ export class EnhanceSolutionComponent {
     {
       image: 'public/icons/tabler_report.png',
       title: 'Real-Time Report',
-      description: 'The tool\'s reports ensure you have accurate data at your fingertips.',
+      description: 'Monitor operations with our Real-Time Report feature.',
     },
     {
       image: 'public/icons/Dashboard.png',
       title: 'User-Friendly Interface',
-      description: 'Users can quickly access bilingual translation capabilities.',
+      description: 'Intuitive functionality simplifies complex tasks.',
     },
     {
       image: 'public/icons/streamline_database-subtract-2-raid-storage-code-disk-programming-database-array-hard-disc-minus.png',
@@ -47,10 +47,17 @@ export class EnhanceSolutionComponent {
   ];
 
   eesContent: any[] = [
-    { title: 'Customizable Analytics Reporting', description: 'The tool ensures accurate data at your fingertips.', icon: 'public/icons/si_dashboard-customize-line.png' },
-    { title: 'Survey Progress Monitoring Dashboard', description: 'Protecting your sensitive data with encryption.', icon: 'public/icons/hugeicons_web-design-01.png' },
-    { title: 'Designed by Top-Notch HR Experts', description: 'Users can quickly access bilingual translation capabilities.', icon: 'public/icons/iconoir_design-nib.png' },
-    { title: 'Instant Access Self Service Platform', description: 'It enables users to manage translations independently.', icon: 'public/icons/system-uicons_lightning.png' },
+    { title: 'Customizable Analytics Reporting',
+      description: 'Unlock data with our Custom Analytics Reporting.',
+      icon: 'public/icons/si_dashboard-customize-line.png' },
+    { title: 'Survey Progress Monitoring Dashboard',
+      description: 'Get real-time insights with our Survey Progress Dashboard.', 
+      icon: 'public/icons/hugeicons_web-design-01.png' },
+    { title: 'Designed by Top-Notch HR Experts', 
+    description: 'offers expertise to elevate your HR strategies', 
+    icon: 'public/icons/iconoir_design-nib.png' },
+    { title: 'Instant Access Self Service Platform', 
+      description: 'Enjoy control and convenience with our Self Service Platform.', icon: 'public/icons/system-uicons_lightning.png' },
   ];
   
 
