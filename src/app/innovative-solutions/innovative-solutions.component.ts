@@ -47,7 +47,7 @@ export class InnovativeSolutionsComponent {
       icon: 'public/icons/ph_user-focus-thin.png',
       title: 'User Friendly Focus',
       description:
-        'Solutions are built to be easily accessible and user-friendly, so staff members can access UFeed solutions with ease.',
+        'Solutions are built to be easily accessible and user-friendly, so users can access UFeed solutions with ease.',
     },
     {
       icon: 'public/icons/hugeicons_customize.png',
@@ -65,7 +65,7 @@ export class InnovativeSolutionsComponent {
       icon: 'public/icons/hugeicons_stars.png',
       title: 'AI-Enabled with \n Power of Data',
       description:
-        'Empowers customizing interface for each client based on their needs to validate who has which access level to do what!',
+        'By harnessing the power of vast datasets and advanced AI algorithms, organizations can gain unprecedented insights, optimize processes, and make informed decisions with remarkable precision',
     },
     {
       icon: 'public/icons/circum_dollar.png',
