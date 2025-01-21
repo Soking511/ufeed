@@ -25,7 +25,7 @@ export const routes: Routes = [
     {path:"hc-digitized-methodologies-tools",component:HcDigitizedMethodologiesToolsComponent},
     {path:"hc-data-analytics-benchmarking",component:HcDataAnalyticsBenchmarkingComponent},
     {path:"news",component:NewsComponent},
-    {path:"japp-jet-course",component:JetCourseComponent},
+    {path:"app-jet-course",component:JetCourseComponent},
     {path:"**",component:NotFoundComponent},
 
 ];
