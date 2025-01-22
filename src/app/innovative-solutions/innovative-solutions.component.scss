@@ -109,7 +109,11 @@ h2{
   h2{
     font-size: 34px;
   }
-  
+  .solution-desc{
+    p{
+      font-size: 16px!important;
+    }
+  }
   .innovative-solutions{
 
     .container{
@@ -141,6 +145,9 @@ h2{
   
 @media (max-width:426px) {
   .innovative-solutions{
+    .img-holder{
+      height: 50px;
+    }
     padding: 0;
     h2{
       font-size: 24px!important;
