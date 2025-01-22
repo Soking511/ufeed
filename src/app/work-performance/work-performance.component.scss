@@ -32,37 +32,6 @@
 
     }
     
-    // .single-workflow {
-    //   position: relative;
-    //   padding: 20px 0; // Padding for better spacing between rows
-    //   border-bottom: 1px solid #B9B9B9;
-    //   transition: all 0.4s ease-in-out;
-    
-    //   .featured-workflow {
-    //     opacity: 0; // Initially hidden
-    //     max-height: 0; // Collapse height
-    //     overflow: hidden; // Ensure hidden overflow
-    //     transition: all 0.4s ease-in-out; // Smooth animation
-    //   }
-    //   &:hover {
-    //     // Optionally adjust the height of the row on hover (use max-height for smooth transition)
-    //     max-height: 600px; // Set this as needed for your design
-    
-    //     .featured-workflow {
-    //       opacity: 1; // Make the image visible
-    //       max-height: 500px; // Adjust this value according to the image's size
-    //     }
-    //   }
-    //   &.hovered {
-    //     .featured-workflow {
-    //       opacity: 1; // Show the image
-    //       max-height: 500px; // Expand height based on the image
-    //       padding-top: 20px; // Add padding to space it from the content
-    //     }
-    //   }
-    // }
-    
-
     .single-workflow {
       position: relative;
       padding: 20px 0;
@@ -126,8 +95,10 @@
       h2{
       font-size: 40px!important;
       margin-bottom: 0!important;
+      width: 75%!important  ;
     }
   .container{
+    padding: 0 24px;
     .row{
       div{
         width: 100%;
@@ -146,6 +117,9 @@
 
       h2{
         font-size: 24px!important;
+      }
+      p{
+        font-size: 16px!important;
       }
     }
   }

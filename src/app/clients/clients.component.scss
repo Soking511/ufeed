@@ -72,7 +72,7 @@
     
       p{
         width: 200px;
-        font-size: 12px;
+        font-size: 12px!important;
       }
     }
   }
@@ -145,26 +145,30 @@
   right: 0;
 }
 
-/* Mobile */
-@media (max-width: 576px) {
-  .slider-item {
-    flex: 0 0 100%; /* Show 1 item on small screens (mobile) */
-    max-width: 100%;
-  }
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-  .slider-item {
-    flex: 0 0 50%; /* Show 2 items on medium screens (tablet) */
-    max-width: 50%;
-  }
-}
 
 /* Desktop */
 @media (min-width: 769px) {
   .slider-item {
-    flex: 0 0 20%; /* Default: 5 items on larger screens (desktop) */
-    max-width: 20%;
+    flex: 0 0 20%!important; /* Default: 5 items on larger screens (desktop) */
+    max-width: 20%!important;
+  }
+}
+
+
+
+
+/* Tablet */
+@media (max-width: 768px) {
+  .slider-item {
+    flex: 0 0 50%!important; /* Show 2 items on medium screens (tablet) */
+    max-width: 50%!important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .slider-item {
+    flex: 0 0 100%!important; /* Show 1 item on small screens (mobile) */
+    max-width: 100%!important;
   }
 }
