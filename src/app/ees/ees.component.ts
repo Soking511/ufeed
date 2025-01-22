@@ -40,11 +40,6 @@ export class EesComponent {
       Validators.minLength(3),
       Validators.maxLength(20),
       Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/)
-    ]),
-    NumberofEmployees: new FormControl(null, [
-      Validators.required,
-      Validators.min(1),    // Set minimum value to 1
-      Validators.max(12000)    // Set maximum value to 100
     ])
   
   })
