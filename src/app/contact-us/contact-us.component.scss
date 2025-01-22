@@ -1,7 +1,7 @@
 .title {
     color: #2A2B34; /* Optional: Adjust text color for better visibility */
-    padding: 20px; /* Optional: Add some padding */
-    min-height: 100vh;
+    padding:180px 20px 0; /* Optional: Add some padding */
+    // height: 100vh;
     position: relative; /* Ensure proper positioning for ::before */
   
     &::before {
@@ -82,6 +82,9 @@
 
 
   @media (max-width:768px) {
+    .title {
+      padding:80px 20px 0;
+    }
     .contacts{
         .container{
             .row{
