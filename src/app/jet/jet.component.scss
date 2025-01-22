@@ -186,6 +186,49 @@ h2{
 }
 
 @media (max-width:768px) {
+
+    .title .container .row{
+        width: 100%;
+        h1{
+            line-height: 50px;
+        }
+    }
+    .col-md-4{
+        .icon-holder{
+         display: none;
+        }
+    }
+}
+
+
+
+@media (max-width:426px) {
+
+    .journey{
+        padding: 40px 0;
+        .container{
+            .row{
+                h2{
+                    text-align: center;
+                    padding-right: 0;
+                }
+                .col-2{
+                    margin: auto;
+                }
+
+                .col-md-6 ul{
+                    padding-right: 2rem;
+                    li{
+                        h3{
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+       
+    }
+
     .col-md-4{
         .icon-holder{
          display: none;
