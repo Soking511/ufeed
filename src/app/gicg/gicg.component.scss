@@ -13,10 +13,42 @@
                     color: #F86341;;
                 }
             }
+            .single-item img{
+             transition: .3s ease-in-out;
+            }
+            .single-item img:hover{
+                transform: scale(.9);
+            }
         }
     }
     .sec{
         border-bottom: 0;
         border-top: 1px solid #B9B9B9;
+    }
+}
+
+@media (max-width:426px) {
+    .gicg{
+        .container{
+            .row{
+                .logo-holder{
+                    width: 50%;
+                    text-align: center;
+                    margin: auto;
+                }
+                h3{
+                    font-size: 24px;
+                    text-align: center;
+                }
+                p{
+                    text-align: center;
+                }
+            }
+
+            .single-item{
+                width: 50%;
+                padding: 24px;
+            }
+        }
     }
 }
