@@ -40,7 +40,7 @@
     margin: auto;
     height: auto;
     width: 75%;
-height: 600px;
+    height: 600px;
     // background-image: url('/public/news/image 12.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -109,4 +109,72 @@ height: 600px;
 .btn{
     background-color: #375D95;
     color: #fff;
+}
+
+
+// -------- responsive 
+
+@media (max-width:768px) {
+    
+    .feature-image-holder{
+        height: auto;
+    }
+   
+.content-course{
+    .container{
+        .row{
+            div{
+                margin: 0;
+                padding: 24px;
+                h3{
+                    font-size: 24px;
+                    
+                }   
+            }   
+        }   
+    }   
+    }   
+                   
+
+}
+
+
+@media (max-width:426px){
+    .content-course{
+        padding: 24px!important;
+        .container{
+            .row{
+                div{
+                    margin: 0;
+                    padding: 24px 0 0px;
+                    border: none!important;
+                }   
+            }   
+        }   
+        }   
+
+
+
+
+
+        
+.form-course{
+    .container{
+        .row{
+            .col-md-6{
+                margin: 0!important;
+                h3{
+                  font-size: 24px;
+                  text-align: center;
+                }
+            }
+            
+        }
+        
+    }
+}
+
+p.py-4.w-75{
+    width: 100%!important;
+}
 }
