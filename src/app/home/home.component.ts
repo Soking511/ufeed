@@ -10,12 +10,13 @@ import { BecomePartnerComponent } from '../become-partner-section/become-partner
 import { NewsComponent } from '../news/news.component';
 import { ContactSectionComponent } from '../contact-section/contact-section.component';
 import {WorkPerformanceComponent} from '../work-performance/work-performance.component'
+import { CourseSectionComponent } from '../course-section/course-section.component';
 
 @Component({
   selector: 'app-home',
   imports: [CommonModule,RouterModule,HeroSectionComponent,InnovativeSolutionsComponent,
     ClientsComponent,EnhanceSolutionComponent,
-      BecomePartnerComponent,NewsComponent,ContactSectionComponent,WorkPerformanceComponent],
+      BecomePartnerComponent,NewsComponent,ContactSectionComponent,WorkPerformanceComponent,CourseSectionComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
