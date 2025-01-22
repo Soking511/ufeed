@@ -4,82 +4,28 @@
 <section class="clients-section">
     <div class="container">
      
-     <div class="title-holder row justify-content-center align-center">
-    
+      <div class="title-holder row justify-content-center align-center">
+        
         <div class="before col-3"></div>
         <p class=" text-center col-3 ">Trusted by clients across egypt</p>
         <div class="after col-3"></div>
       
       </div>
     
-
-        <!-- ------ -->
-
-        <div id="carouselExample" class="carousel slide my-5" data-bs-ride="carousel" data-bs-interval="4000">
-          <div class="carousel-inner gallary">
-            <!-- Slide Content -->
-            <div class="carousel-item active">
-              <div class="row justify-content-center">
-                <div class="col-md-2 my-auto">
-                  <img class="img-fluid" src="public/clients/1.png" alt="Client 1">
-                </div>
-                <div class="col-md-2 my-auto">
-                  <img class="img-fluid" src="public/clients/2.png" alt="Client 2">
-                </div>
-                <div class="col-md-2 my-auto">
-                  <img class="img-fluid" src="public/clients/3.png" alt="Client 3">
-                </div>
-                <div class="col-md-2 my-auto">
-                  <img class="img-fluid" src="public/clients/4.png" alt="Client 4">
-                </div>
-                <div class="col-md-2 my-auto">
-                  <img class="img-fluid" src="public/clients/5.png" alt="Client 5">
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row justify-content-center">
-                <div class="col-md-2 my-auto">
-                  <img class="img-fluid" src="public/clients/6.png" alt="Client 6">
-                </div>
-                <div class="col-md-2 my-auto">
-                  <img class="img-fluid" src="public/clients/7.png" alt="Client 7">
-                </div>
-                <div class="col-md-2 my-auto">
-                  <img class="img-fluid" src="public/clients/8.png" alt="Client 8">
-                </div>
-                <div class="col-md-2 my-auto">
-                  <img class="img-fluid" src="public/clients/9.png" alt="Client 9">
-                </div>
-                <div class="col-md-2 my-auto">
-                  <img class="img-fluid" src="public/clients/10.png" alt="Client 10">
-                </div>
-              </div>
+      <!-- ----------- -->
+      <div class="slider-container">
+        <div class="slider-wrapper">
+          <div class="slider" [style.transform]="'translateX(' + currentOffset + '%)'">
+            <div class="slider-item" *ngFor="let image of images">
+              <img [src]="image" alt="Slider Image" />
             </div>
           </div>
-        
-          <!-- Carousel Controls -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
-        
-       
-        <!-- ------ -->
-
-
+      </div>
+      
+      <!-- ----------- -->
 
       </div>
-    <!-- --------- -->
-
-
-    
-    <!-- --------- -->
     
     </section>
     
