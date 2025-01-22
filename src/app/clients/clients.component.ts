@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 @Component({
   selector: 'app-clients',
@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './clients.component.html',
   styleUrl: './clients.component.scss'
 })
-export class ClientsComponent {
+export class ClientsComponent implements OnInit {
   images = [
     'public/clients/1.png',
     'public/clients/2.png',
@@ -20,12 +20,34 @@ export class ClientsComponent {
     'public/clients/10.png'
   ];
   currentOffset = 0;
-  visibleItems = 5;
-  itemWidth = 100 / this.visibleItems; // 100% divided by number of visible items (5)
+  visibleItems = 5; // Default visible items
+  itemWidth = 100 / this.visibleItems;
 
   ngOnInit() {
+    // Adjust visible items based on screen width
+    this.adjustVisibleItems();
+
     // Auto slide every 3 seconds
     setInterval(() => this.slideRight(), 4000);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.adjustVisibleItems();
+  }
+
+  adjustVisibleItems() {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth <= 576) {
+      this.visibleItems = 1; // 1 item on small screens (mobile)
+    } else if (screenWidth <= 768) {
+      this.visibleItems = 2; // 2 items on medium screens (tablet)
+    } else {
+      this.visibleItems = 5; // 5 items on larger screens (desktop)
+    }
+
+    this.itemWidth = 100 / this.visibleItems; // Recalculate item width
   }
 
   slideLeft() {
