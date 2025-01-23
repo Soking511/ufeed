@@ -31,17 +31,13 @@ courseForm:FormGroup= new FormGroup({
     Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/)
   ])
 
-})
+});
 
 
 // ---------
 
-  
 getFormData(courseForm:object){
   console.log(courseForm);
   }
-
-
-
 
 }
