@@ -40,6 +40,9 @@
                     <div class="form-group col-md-6 my-3">
                         <label for="">Company Name*</label>
                         <input type="text" class="form-control p-3" 
+                        formControlName="companyName" 
+                        [class.is-valid]="becomePartner.get('companyName')?.errors == null &&
+                         becomePartner.get('companyName')?.touched"
                         placeholder="Name Goes Here" formControlName="companyName">
                         <p class="text-danger" *ngIf="becomePartner.get('companyName')?.errors!=null &&
                          becomePartner.get('companyName')?.touched"> Please make sure of company name </p>
@@ -59,13 +62,17 @@
 
                     <div class="form-group col-md-6 my-3">
                         <label for="">Company Website</label>
-                        <input type="text" class="form-control p-3" placeholder="Company Website Name" 
+                        <input type="text" class="form-control p-3" 
+                        placeholder="Company Website Name" 
                         formControlName="companyWebsite">
                     </div>
 
                     <div class="form-group col-md-6 my-3">
-                        <label for="">Company Contact Number*</label>
-                        <input type="text" class="form-control p-3" placeholder="Enter Mobile Number" 
+                        <label for="">Contact Number*</label>
+                        <input type="text" class="form-control p-3"
+                        formControlName="companyNumber" [class.is-valid]="becomePartner.get('companyNumber')?.errors == 
+                        null && becomePartner.get('companyNumber')?.touched"
+                        placeholder="Enter Mobile Number" 
                         formControlName="companyNumber">
                         <p class="text-danger" *ngIf="becomePartner.get('companyNumber')?.errors!=null &&
                          becomePartner.get('companyNumber')?.touched"> Please make sure of company contact number </p>

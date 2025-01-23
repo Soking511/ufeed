@@ -103,8 +103,18 @@
   transform: translateY(30px);
   animation-delay: 1.2s; // Delay the paragraph to show after the span
 }
+// ------------
+// forms 
+input{
+  border-radius: 16px;
+}
+form button{
+  border-radius: 16px!important;
+}
+
 
 // Optional: Add delay between each element for a staggered effect
+
 
 @media (max-width:426px) {
 h2{
