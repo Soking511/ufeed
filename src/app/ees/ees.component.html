@@ -6,7 +6,11 @@
     </h1>
     
     <p class="py-4">
-        Our Engagement Survey Platform is designed to gauge employee satisfaction and motivation effectively. It provides insights to enhance productivity and retain top talent, while also allowing for customizable questions and detailed reporting.    
+        Our Engagement Survey Platform is designed to 
+        gauge employee satisfaction and motivation effectively.
+        It provides insights to enhance productivity and retain top talent,
+        while also allowing for customizable questions and detailed 
+        reporting.    
     </p>
 
     </div>
@@ -154,37 +158,55 @@
             </div>
             <div class="col-md-6 form-holder">
     
-                <form action="" method="post" class="px-3" [formGroup]="eesForm">
+                <form action="" method="post" class="px-3" [formGroup]="eesForm"
+                (ngSubmit)="getFormData(eesForm)">
                       
                 <div class="form-group col-12 my-3">
                     <label for="">Your Name*</label>
                     <input placeholder="Your Name"
-                    formControlName="username"
+                    formControlName="username" [class.is-valid]="eesForm.get('username')?.errors == null && eesForm.get('username')?.touched"
                      class="form-control p-3" id="">
+                     <p *ngIf="eesForm.get('username')?.errors != null && eesForm.get('username')?.touched" 
+              class="py-2 text-danger">Please Check Your Name</p>
                   </div>
     
                   <div class="form-group col-12 my-3">
                     <label for="">Contact Number*</label>
                     <input placeholder="Your Number" 
+                    [class.is-valid]="eesForm.get('contactNumber')?.errors==null &&
+                     eesForm.get('contactNumber')?.touched"
                     formControlName="contactNumber"
                     class="form-control p-3" id="">
+
+                    <p *ngIf="eesForm.get('contactNumber')?.errors!=null && 
+                    eesForm.get('contactNumber')?.touched"
+                    class="py-2 text-danger">Please Check Your Phone Number</p>
                   </div>
     
                   <div class="form-group col-12 my-3">
                     <label for="">Email*</label>
-                    <input placeholder="ex: username@xyz" 
+                    <input placeholder="ex: username@xyz"
+                    [class.is-valid]="eesForm.get('email')?.errors==null &&
+                     eesForm.get('email')?.touched " 
                     formControlName="email"
                     class="form-control p-3" id="">
+                    <p *ngIf="eesForm.get('email')?.errors!=null && eesForm.get('email')?.touched " 
+                    class="py-2 text-danger">Please Check Your Email</p>
                   </div>
     
                   <div class="form-group col-12 my-3">
                     <label for="">Company Name*</label>
                     <input placeholder="Your Company Name"
+                    formControlName="companyName" [class.is-valid]="eesForm.get('companyName')?.errors == null &&
+                    eesForm.get('companyName')?.touched"
                     formControlName="companyName" 
                     class="form-control p-3" id="">
+                    <p *ngIf="eesForm.get('companyName')?.errors!=null && eesForm.get('companyName')?.touched " 
+                    class="py-2 text-danger">Please Fill Your Company Name</p>
                   </div>
     
-                  <button type="submit" class=" my-3 p-3 btn col-12 btn-success" >Submit</button>
+                  <button type="submit" [disabled]="eesForm.invalid == true" 
+                  class=" my-3 p-3 btn col-12 btn-success" >Submit</button>
     
                 </form>
     

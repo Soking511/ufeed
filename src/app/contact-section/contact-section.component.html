@@ -9,49 +9,58 @@
              Journey with Us !</h2>
           
   
-          <form  [formGroup]="contactForm" (ngSubmit)="getFormData(contactForm)">
+          <form action="" method="post"  [formGroup]="contactForm" 
+          (ngSubmit)="getFormData(contactForm)">
             
             <div class="form-group col-12 my-3">
               <label for="">Your Name*</label>
-              <input [class.is-valid]="contactForm.get('fullname')?.errors == null && contactForm.get('fullname')?.touched"  class="form-control p-3" formControlName="fullname" type="text" name="" placeholder="Your Name" id="">
-              <p *ngIf="contactForm.get('fullname')?.errors != null && contactForm.get('fullname')?.touched" class="py-2 text-danger">Please Check Your Name</p>
+              <input [class.is-valid]="contactForm.get('fullname')?.errors == null && contactForm.get('fullname')?.touched" 
+               class="form-control p-3" formControlName="fullname" type="text" name="" placeholder="Your Name" id="">
+              <p *ngIf="contactForm.get('fullname')?.errors != null && contactForm.get('fullname')?.touched" 
+              class="py-2 text-danger">Please Check Your Name</p>
             </div>
              
             <div class="row py-0 my-3">
   
               <div class="form-group col-6 ">
                 <label for="">Contact Number*</label>
-                <input [class.is-valid]="contactForm.get('phone')?.errors==null && contactForm.get('phone')?.touched " class="form-control p-3" type="text" formControlName="phone" name="" placeholder="Your Phone Number" id="">
-                <p *ngIf="contactForm.get('phone')?.errors!=null && contactForm.get('phone')?.touched " class="py-2 text-danger">Please Check Your Phone Number</p>
+                <input [class.is-valid]="contactForm.get('phone')?.errors==null && contactForm.get('phone')?.touched " 
+                class="form-control p-3" type="text" formControlName="phone" name="" placeholder="Your Phone Number" id="">
+                <p *ngIf="contactForm.get('phone')?.errors!=null && contactForm.get('phone')?.touched " 
+                class="py-2 text-danger">Please Check Your Phone Number</p>
               </div>
               
               <div class="form-group col-6 ">
                 <label for="">Email*</label>
-                <input [class.is-valid]="contactForm.get('email')?.errors==null && contactForm.get('email')?.touched " class="form-control p-3" type="email" name="" formControlName="email" placeholder="ex: username@xyz" id="">
-                <p *ngIf="contactForm.get('email')?.errors!=null && contactForm.get('email')?.touched " class="py-2 text-danger">Please Check Your Email</p>
+                <input [class.is-valid]="contactForm.get('email')?.errors==null && contactForm.get('email')?.touched " 
+                class="form-control p-3" type="email" name="" formControlName="email" placeholder="ex: username@xyz" id="">
+                <p *ngIf="contactForm.get('email')?.errors!=null && contactForm.get('email')?.touched " 
+                class="py-2 text-danger">Please Check Your Email</p>
               </div>
-                
-              
               
             </div>
   
             <div class="form-group col-12 my-3">
               <label for="">Title</label>
-              <input [class.is-valid]="contactForm.get('title')?.errors==null && contactForm.get('title')?.touched" class="form-control p-3" type="text" formControlName="title" name="" placeholder="CEO" id="">
+              <input [class.is-valid]="contactForm.get('title')?.errors==null && contactForm.get('title')?.touched" 
+              class="form-control p-3" type="text" formControlName="title" name="" placeholder="CEO" id="">
             </div>
   
             <div class="form-group col-12 my-3">
               <label for="">Company Name</label>
-              <input class="form-control p-3" type="email" name="" formControlName="company" placeholder="Your Company" id="">
+              <input class="form-control p-3" type="email" name="" 
+              formControlName="company" placeholder="Your Company" id="">
             </div>
   
             
             <div class="form-group col-12 my-3">
               <label for="">Message</label>
-              <textarea name="" class="form-control p-3" placeholder="Your Message" formControlName="message" id=""></textarea>
+              <textarea name="" class="form-control p-3" placeholder="Your Message" 
+              formControlName="message" id=""></textarea>
             </div>
       
-            <button type="submit" [disabled]="contactForm.invalid == true" class=" my-3 p-3 btn col-12 btn-success">Submit</button>
+            <button type="submit" [disabled]="contactForm.invalid == true" 
+            class=" my-3 p-3 btn col-12 btn-success">Submit</button>
           </form>
   
         </div>

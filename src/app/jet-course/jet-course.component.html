@@ -106,30 +106,58 @@
                 <h3>Interested in our <span>course? </span><br> Fill out the form.</h3>
             </div>
             <div class="col-md-6 p-4">
-                <form action="">
-                    <div class="form-group my-4">
-                        <label for="">Your Name</label>
-                        <input type="text" class="form-control">
-                    </div>
+               
+            <form action="" method="post" class="px-3" [formGroup]="courseForm"
+            (ngSubmit)="getFormData(courseForm)">
+                  
+            <div class="form-group col-12 my-3">
+                <label for="">Your Name*</label>
+                <input placeholder="Your Name"
+                formControlName="username" [class.is-valid]="courseForm.get('username')?.errors == null && courseForm.get('username')?.touched"
+                 class="form-control p-3" id="">
+                 <p *ngIf="courseForm.get('username')?.errors != null && courseForm.get('username')?.touched" 
+                class="py-2 text-danger">Please Check Your Name</p>
+              </div>
 
-                    <div class="form-group my-4">
-                        <label for="">Your Name</label>
-                        <input type="tel" class="form-control">
-                    </div>
+              <div class="form-group col-12 my-3">
+                <label for="">Contact Number*</label>
+                <input placeholder="Your Number" 
+                [class.is-valid]="courseForm.get('contactNumber')?.errors==null &&
+                 courseForm.get('contactNumber')?.touched"
+                formControlName="contactNumber"
+                class="form-control p-3" id="">
 
-                    <div class="form-group my-4">
-                        <label for="">Email</label>
-                        <input type="email" class="form-control">
-                    </div>
-                    
-                    <div class="form-group my-4">
-                        <label for="">Company Name</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    
-                    <button type="submit" class="btn col-12 p-2 my-3"> Send Message</button>
+                <p *ngIf="courseForm.get('contactNumber')?.errors!=null && 
+                courseForm.get('contactNumber')?.touched"
+                class="py-2 text-danger">Please Check Your Phone Number</p>
+              </div>
 
-                </form>
+              <div class="form-group col-12 my-3">
+                <label for="">Email*</label>
+                <input placeholder="ex: username@xyz"
+                [class.is-valid]="courseForm.get('email')?.errors==null &&
+                 courseForm.get('email')?.touched " 
+                formControlName="email"
+                class="form-control p-3" id="">
+                <p *ngIf="courseForm.get('email')?.errors!=null && courseForm.get('email')?.touched " 
+                class="py-2 text-danger">Please Check Your Email</p>
+              </div>
+
+              <div class="form-group col-12 my-3">
+                <label for="">Company Name*</label>
+                <input placeholder="Your Company Name"
+                formControlName="companyName" [class.is-valid]="courseForm.get('companyName')?.errors == null &&
+                courseForm.get('companyName')?.touched"
+                formControlName="companyName" 
+                class="form-control p-3" id="">
+                <p *ngIf="courseForm.get('companyName')?.errors!=null && courseForm.get('companyName')?.touched " 
+                class="py-2 text-danger">Please Fill Your Company Name</p>
+              </div>
+
+              <button type="submit" [disabled]="courseForm.invalid == true" 
+              class=" my-3 p-3 btn col-12 btn-success" >Submit</button>
+
+            </form>
             </div>
         </div>
     </div>

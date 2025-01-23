@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import {FormControl,FormGroup,ReactiveFormsModule,Validators} from '@angular/forms';
 
 @Component({
@@ -26,10 +25,11 @@ export class EesComponent {
 
 
   eesForm:FormGroup= new FormGroup({
-    username:new FormControl(null,[ Validators.required,
+    username:new FormControl(null, [
+      Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
-      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/)
+      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/) // Allows spaces
     ]),
     contactNumber:new FormControl(null, [
       Validators.required,
@@ -42,5 +42,12 @@ export class EesComponent {
       Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/)
     ])
   
-  })
+  });
+
+  
+  getFormData(eesForm:object){
+    console.log(eesForm);
+    }
+
+
 }

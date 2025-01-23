@@ -13,10 +13,11 @@ export class JetComponent {
 
 // form data 
 jetForm:FormGroup= new FormGroup({
-  username:new FormControl(null,[ Validators.required,
+  username:new FormControl(null, [
+    Validators.required,
     Validators.minLength(3),
     Validators.maxLength(20),
-    Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/)
+    Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/) // Allows spaces
   ]),
   contactNumber:new FormControl(null, [
     Validators.required,
@@ -43,4 +44,13 @@ jetForm:FormGroup= new FormGroup({
     this.hoveredIndex = null; // Reset the hover effect
   }
   
+
+// ---------
+
+  
+getFormData(jetForm:object){
+  console.log(jetForm);
+  }
+
+
 }
