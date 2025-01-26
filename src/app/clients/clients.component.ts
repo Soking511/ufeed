@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './clients.component.html',
   styleUrl: './clients.component.scss'
 })
+
 export class ClientsComponent implements OnInit {
   images = [
     'public/clients/1.png',
@@ -17,51 +18,58 @@ export class ClientsComponent implements OnInit {
     'public/clients/7.png',
     'public/clients/8.png',
     'public/clients/9.png',
-    'public/clients/10.png'
+    'public/clients/10.png',
   ];
   currentOffset = 0;
-  visibleItems = 5; // Default visible items
+  visibleItems = 5;
   itemWidth = 100 / this.visibleItems;
+  autoSlideInterval: any;
 
   ngOnInit() {
-    // Adjust visible items based on screen width
     this.adjustVisibleItems();
+    this.startAutoSlide();
 
-    // Auto slide every 3 seconds
-    setInterval(() => this.slideRight(), 4000);
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    this.adjustVisibleItems();
+    window.addEventListener('resize', () => this.adjustVisibleItems());
   }
 
   adjustVisibleItems() {
     const screenWidth = window.innerWidth;
 
     if (screenWidth <= 576) {
-      this.visibleItems = 1; // 1 item on small screens (mobile)
+      this.visibleItems = 1;
     } else if (screenWidth <= 768) {
-      this.visibleItems = 2; // 2 items on medium screens (tablet)
+      this.visibleItems = 2;
     } else {
-      this.visibleItems = 5; // 5 items on larger screens (desktop)
+      this.visibleItems = 5;
     }
 
-    this.itemWidth = 100 / this.visibleItems; // Recalculate item width
+    this.itemWidth = 100 / this.visibleItems;
+  }
+
+  startAutoSlide() {
+    this.autoSlideInterval = setInterval(() => this.slideRight(), 4000);
+  }
+
+  resetAutoSlide() {
+    clearInterval(this.autoSlideInterval);
+    this.startAutoSlide();
   }
 
   slideLeft() {
     if (this.currentOffset < 0) {
       this.currentOffset += this.itemWidth;
     }
+    this.resetAutoSlide();
   }
 
   slideRight() {
-    const maxOffset = -(this.images.length - this.visibleItems) * this.itemWidth;
+    const maxOffset =
+      -(this.images.length - this.visibleItems) * this.itemWidth;
     if (this.currentOffset > maxOffset) {
       this.currentOffset -= this.itemWidth;
     } else {
-      this.currentOffset = 0; // Loop back to the beginning
+      this.currentOffset = 0;
     }
+    this.resetAutoSlide();
   }
 }
