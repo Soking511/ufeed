@@ -1,5 +1,4 @@
 
-
 $mainFont:'Creato Display';
 $secondaryFont:'Lora';
 $fontSizeLinks:16px;
@@ -176,6 +175,14 @@ $secondaryColor:#375D95;
   
 
 // start responsive 
+@media (max-width: 1024px) {
+.btns-holder{
+  width: 32%;
+}
+
+}
+
+
 @media (max-width: 768px) {
 
 nav.navbar{
