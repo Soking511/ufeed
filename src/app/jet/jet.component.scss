@@ -66,93 +66,24 @@ h2{
                     color: #f86341;
                 }
             }
-            ul{
-                list-style:none;
-                li{
-                    margin-bottom: 20px;
-                    border-left: 5px solid #375D95;
-                    padding-left:12px ;
-                    transition: .5s;
-                &:hover{
-                    border-color: #f86341;
+
+            .col-md-5{
+                border-radius: 16px;
+                border: solid 1px #2A2B34;
+                padding: 24px;
+                background-color: #fff;
+                h4{
+                    border-bottom: #f86341 solid 2px;
+                    font-size: 30px;
                 }
+                p{
+                    font-size: 16px!important;
                 }
             }
         }
     }
   }
-  .ees-benfits{
-    .container{
-        .row{
-            h2{
-                font-size: 55px;
-                font-weight: 700;
-                span{
-                    color: #f86341;
-                }
-            }
-            .col-md-6{
-                img{
-                    width: 150px;
-                    float: right;
-                }
-            }
-          
-
-            .col-12{
-                border-bottom: solid 1px #B9B9B9;
-                max-height: 150px;
-                transition: .3s ease-in-out;
-                overflow: hidden;
-               &:hover{
-                max-height: 300px;
-               }
-                .row{
-                    .col-md-8{
-                        .num{
-                            font-size: 20px;
-                            color: #f86341;
-                            font-weight: 700;
-                        }
-                        .benfit{
-                            font-size: 40px;
-                            font-weight: 500;
-                        }
-                        .desc{
-                            opacity: 0;
-                            transition: .3s;
-                         }
-                    }
-                    .col-md-4{
-                        .icon-holder{
-                            width: 80px;
-                            float: right;
-                            opacity: 1;
-                            transition: .3s;
-                        }
-                    }
-                }
-
-              
-            }
-            .hovered{
-                transition: .3s;
-                .row{
-                    .col-md-8{
-                        .desc{
-                            opacity: 1;
-                         }
-                    }
-                    .col-md-4{
-                        .icon-holder{
-                            opacity: 1;
-                        }
-                    }
-                }                
-            }
-        }
-    }
-  }
+ 
 
   form{
     .row{

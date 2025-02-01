@@ -25,128 +25,91 @@
 <section class="journey ">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <h2>Introducing <span>Job Evaluation Tool </span></h2>
-                <div class="col-2 p-4">
-                    <img class="img-fluid" src="/public/icons/Vector.png" alt="" srcset="">
+            <div class="col-md-12">
+                <h2 class="text-center">Introducing <br><span>Job Evaluation Tool </span></h2>       
+            </div>
+
+            <div class="row w-75 m-auto my-5 justify-content-around">
+                <div class="col-md-5 my-4">
+                    <div class="jet-feature">
+                        <img class="img-fluid" src="/public/jet/feature01.png" alt="">
+                        <h4 class="py-3">Structured and Objective Job Evaluation</h4>
+                        <p>
+                            Allows evaluators to assess job significance in a structured,
+                             objective, and consistent manner and it ensures internal equity
+                        </p>
+                    </div>
                 </div>
+                <!-- --------- -->
+
+                <div class="col-md-5 my-4">
+                    <div class="jet-feature">
+                        <img class="img-fluid" src="/public/jet/feature02.png" alt="">
+                        <h4 class="py-3">Enhanced Organizational Growth</h4>
+                        <p>
+                            Crucial for organizational growth, influencing the essential
+                             compensation framework for both the company and its employees.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ------------ -->
+
+                <div class="col-md-5 my-4">
+                    <div class="jet-feature">
+                        <img class="img-fluid" src="/public/jet/feature03.png" alt="">
+                        <h4 class="py-3">Expertise in Reward Management</h4>
+                        <p>
+                            Utilizes JOBMASTER methodology,
+                             harnessing vast knowledge and proficiency in reward management
+                        </p>
+                    </div>
+                </div>
+
+
+                 <!-- ------------ -->
+
+                 <div class="col-md-5 my-4">
+                    <div class="jet-feature">
+                        <img class="img-fluid" src="/public/jet/feature04.png" alt="">
+                        <h4 class="py-3">Improved Evaluation and Grading Processes</h4>
+                        <p>
+                            The JET transforms grading by simplifying 
+                            assessments and ensuring fairness, leading to better outcomes.
+                        </p>
+                    </div>
+                </div>
+
+
             </div>
-            <div class="col-md-6">
-                <ul>
-                    <li class="py-2 my-4">
-                        <h3>Structured and Objective Job Evaluation</h3>
-                        <p>Allows evaluators to assess job significance in a structured, objective, and consistent manner and it ensures internal equity</p>
-                    </li>
 
-                    <li class="py-2 my-4">
-                        <h3>Enhanced Organizational Growth</h3>
-                        <p>Plays a pivotal role in the growth of organizations and impacts the compensation framework,
-                             which is fundamental for both the company and its employees</p>
-                    </li >
 
-                    <li class="py-2 my-4">
-                        <h3>Expertise in Reward Management</h3>
-                        <p>Utilizes JOBMASTER methodology, harnessing vast knowledge and proficiency in reward management</p>
-                    </li>
-
-                    <li class="py-2 my-4">
-                        <h3>Improved Evaluation and Grading Processes</h3>
-                        <p>Enhances evaluation and grading processes with the JET (JOB Evaluation Tool)</p>
-                    </li>
-                
-                </ul>
-            </div>
+      
         </div>
     </div>
 </section>
 <!--end section journy of success  -->
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- ------------- -->
 
-
-<section class="ees-benfits py-5">
-    <div class="container">
-        <div class="row w-100 justify-content-center">
-            <div class="col-8">
-                <h2 class="text-center">The Unmatched Advantages of <span>JET</span> by UFeed</h2>
-            </div>
-            
-        </div>
-
-        <div class="row py-5">
-           
-            <div class="col-12 py-5" 
-            
-            *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]; let i = index" 
-            [class.hovered]="hoveredIndex === i"
-            (mouseover)="onMouseOver(i)" 
-            (mouseout)="onMouseOut()"
-            >
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="num">{{1+i+'.'}}</div>
-                        <div class="benfit">
-                            <h3 *ngIf="i === 0">International Grading Correlation</h3>
-                            <h3 *ngIf="i === 1">First Automated JA Data Gathering Tool</h3>
-                            <h3 *ngIf="i === 2">Bilingual - “Arabic/English”</h3>
-                            <h3 *ngIf="i === 3">User-Friendly Interface</h3>
-                            <h3 *ngIf="i === 4">Customizable Features</h3>
-                            <h3 *ngIf="i === 5">Consistent</h3>
-                            <h3 *ngIf="i === 6">Remote Accessibility</h3>
-                            <h3 *ngIf="i === 7">Alerting Notifications</h3>
-                            <h3 *ngIf="i === 8">Comparative View</h3>
-                            <h3 *ngIf="i === 9">Safe Data Storage</h3>
-                            <h3 *ngIf="i === 10">Real-Time Report</h3>
-                        </div>
-                       
-                        <div class="desc">
-                            <p *ngIf="i === 0">International Grading Correlation is a way to translate and relate the different grades and levels globally to each other</p>
-                            
-                            <p *ngIf="i === 1">The First Automated JA Data Gathering Tool is a pioneering solution designed to revolutionize data collection processes.
-                                 This innovative tool automates the collection and reporting of data from Job Holder to be validated by Direct Managers then finally validated by HR Professional which significantly reducing manual effort and increasing accuracy.</p>
-                            
-                            <p *ngIf="i === 2">Our platform bridges the linguistic gap with strong bilingual support in Arabic and English. It ensures clear communication,
-                                 positioning us as the first Arabic-enabled platform that goes beyond mere translation</p>
-
-                          <p *ngIf="i === 3">JET simplifies the job evaluation process for evaluators, consultants, and clients.</p>
-
-                            <p *ngIf="i === 4">JET also offers a customizable system structure with multiple sub-accounts, allowing users different access rights to view, edit,
-                                 and consolidate data within the same company or across subsidiaries for Holding or Group Companies.</p>
-
-                             <p *ngIf="i === 5">The automated tool guarantees a more consistent process among all evaluators by following 
-                                the same steps which leads to less possibility of making mistakes or forgetting any step and provides more control over the process.</p>
-
-                          <p *ngIf="i === 6">The system can be accessed by system users from different locations by multiple users at the same time.</p>
-
-                       <p *ngIf="i === 7">JET provides alerting notifications to guide the users in case of borderline evaluations across any level or discrepancies overlapping on job weights for similar level positions.</p>
-
-                        <p *ngIf="i === 8">JET allows users to choose different positions for comparison across same company or subsidiaries based on access rights to ensure alignment,
-                             consistency and logical evaluation with instant edit action if needed.</p>
-
-                            <p *ngIf="i === 9">Valuable information is safe against loss due to the central storage of data on the system,
-                                 that can be accessed by users which leads to efficient safe data saving.</p>
-
-                             <p *ngIf="i === 10">Once the user submits the jobs got evaluated, user can instantly generate 
-                                the grading matrix for review and easily extract them for any required integration or reporting.</p>
-
-                </div>        
-        
-            </div>
-                    <div class="col-md-4">
-                      <div class="icon-holder"><img [src]="'public/jet/0' + (i + 1) + '.png'" class="img-fluid" alt="" srcset=""></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    
-
-
-    </div>
-
-
-</section>
 
 
 <section class="product-form">
