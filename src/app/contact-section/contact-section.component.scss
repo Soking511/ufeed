@@ -20,11 +20,17 @@
       color: #fff;
       padding-bottom: 4px;
     }
-    input,textarea.form-control{
+    input,textarea.form-control,select{
       background-color:#ffffff00!important;
       color: #fff;
     }::placeholder{
       color: #B3B3B3;
+    }
+    select{
+      color: ffffff00;
+      option{
+        color: #000;
+      }
     }
 
     button{

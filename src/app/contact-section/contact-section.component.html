@@ -52,6 +52,27 @@
               formControlName="company" placeholder="Your Company" id="">
             </div>
   
+            <div class="form-group col-12 my-3">
+              <label for="">Select Your Inquiry*</label>
+              <select [class.is-valid]="contactForm.get('inquiry')?.errors==null && contactForm.get('inquiry')?.touched"
+               id="inputState" class="form-control  p-3" formControlName="inquiry">
+                <option value="" selected disabled>Please select</option>
+                <option>Book a Demo</option>
+                <option>Get a Quotation</option>
+                <option>Have an Inquiry</option>
+              </select>
+            </div>
+
+
+            <div class="form-group col-12 my-3">
+              <label for="">Select Product*</label>
+              <select [class.is-valid]="contactForm.get('product')?.errors==null && contactForm.get('product')?.touched" 
+              id="inputState" class="form-control  p-3" formControlName="product">
+                <option value="" selected disabled>Please select</option>
+                <option>Job Evaluation Tool - JET</option>
+                <option>Employee Engagement Survey - EES</option>
+              </select>
+            </div>
             
             <div class="form-group col-12 my-3">
               <label for="">Message</label>

@@ -29,6 +29,8 @@ export class ContactSectionComponent {
   
     'email': new FormControl(null, [Validators.required, Validators.email]),
     'company': new FormControl(''),
+    'inquiry':new FormControl('null', [Validators.required]),
+    'product':new FormControl('null', [Validators.required]),
     'message': new FormControl(''),
   
   });
