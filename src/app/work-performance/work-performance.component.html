@@ -1,79 +1,142 @@
 <!-- Human Capital Optimization section  -->
 
-<section class="workflow">
+<section class="workflow ">
     <h2 class="w-50 m-auto text-center mb-5">
       Struggling with <span>Human Capital Optimization?</span>
     </h2>
 
-    <div class="bg-filled">
-      <svg xmlns="http://www.w3.org/2000/svg" width="912" height="1571" viewBox="0 0 912 1571" fill="none">
-        <g opacity="0.5" filter="url(#filter0_f_70_3403)">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M181.834 503.224C254.371 510.308 323.049 541.043 367.649 602.925C411.471 663.728 417.278 741.443 408.54 817.775C398.094 909.029 392.579 1020.55 315.321 1060.05C238.204 1099.48 159.877 1022.63 82.1289 984.661C0.467392 944.78 -106.423 931.214 -135.331 839.963C-166.056 742.976 -119.598 633.969 -51.778 561.964C8.07674 498.415 98.039 495.04 181.834 503.224Z" fill="#F86341" fill-opacity="0.3"/>
-        </g>
-        <defs>
-          <filter id="filter0_f_70_3403" x="-645" y="0" width="1557" height="1571" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-            <feGaussianBlur stdDeviation="250" result="effect1_foregroundBlur_70_3403"/>
-          </filter>
-        </defs>
-      </svg>
-    </div>
-    <div class="container">
+   
+    <div class="container py-5">
       
-      <div
-      class="row single-workflow py-5"
-      *ngFor="let item of [1, 2, 3, 4, 5]; let i = index"
-      [class.hovered]="hoveredIndex === i"
-      [class.not-hovered]="isNotHovered(i)"
-      (mouseover)="onMouseOver(i)"
-      (mouseout)="onMouseOut()"
-    >
-      <div class="col-md-6">
-        <p class="workflow-num">{{ i + 1 }}.</p>
-        <h3 *ngIf="i === 0">The Need for Transformative HC Tools in a Complex Business Environment</h3>
-        <h3 *ngIf="i === 1">Lack of Data-Driven Insights</h3>
-        <h3 *ngIf="i === 2">Low Employee Engagement</h3>
-        <h3 *ngIf="i === 3">Ineffective Job Role Evaluations</h3>
-        <h3 *ngIf="i === 4">Need for Customized Solutions</h3>
-    
-        <p *ngIf="i === 0">
-          UFeed’s UFeed products are not just tools, they are transformative solutions that empower HC teams 
-          to handle essential processes such as job evaluations and employee
-          engagement with accuracy, speed, and effectiveness.
-        </p>
-        <p *ngIf="i === 1">
-          Making informed decisions is challenging without access to accurate and actionable data,
-          leading to inefficiencies and missed opportunities.
-        </p>
-        <p *ngIf="i === 2">
-          Keeping employees motivated and satisfied is crucial for productivity,
-          yet many organizations struggle to effectively engage their workforce.
-        </p>
-        <p *ngIf="i === 3">
-          Fair and clear job evaluations are essential for aligning roles with business
-           goals and maintaining competitive pay to attract, retain and ensure employee satisfaction
-        </p>
-        <p *ngIf="i === 4">
-          Every organization has unique challenges and requirements, making it essential to have 
-          tailored application that fits and address
-           specific business needs effectively yet relying on well-defined standardized approach
-        </p>
-      </div>
-    
-      <div class="col-md-6 featured-workflow">
-        <img
-          class="img-fluid"
-          [src]="'public/workflow/0' + (i + 1) + '.png'"
-          alt=""
-        />
-      </div>
-    </div>
-    
-    
+    <div class="row">
+     
+      <!--------------->
+      <div class="col-md-6 p-2">
+      <div class="single-workflow workflow-1">
+        <div class="overflow p-4">
 
-    
+  <p class="num workflow-num">
+    01.
+  </p>
+  <div class="title">
+    <h3> Talent Planning and Alignment </h3>
+  </div>
+  <div class="desc">
+    <p>
+      Organizations often struggle with HC management challenges like recruitment,
+      onboarding, development gaps, and performance issues.
+    </p>
+  </div>
+  
+</div>
+     </div>
     </div>
+      <!-- ------------- -->
+       
+
+         <!--------------->
+         <div class="col-md-6 p-2">
+          <div class="single-workflow workflow-2">
+            <div class="overflow p-4">
+    
+      <p class="num workflow-num">
+        02.
+      </p>
+      <div class="title">
+        <h3> Lack of Data-Driven Insights </h3>
+      </div>
+      <div class="desc">
+        <p>
+          Making informed decisions is challenging without access to accurate and actionable data,
+           leading to inefficiencies and missed opportunities.
+        </p>
+      </div>
+      
+    </div>
+         </div>
+        </div>
+          <!-- ------------- -->
+
+
+           <!--------------->
+         <div class="col-md-5 p-2">
+          <div class="single-workflow workflow-3">
+            <div class="overflow p-4">
+    
+      <p class="num workflow-num">
+        03.
+      </p>
+      <div class="title">
+        <h3> Low Employee Engagement </h3>
+      </div>
+      <div class="desc">
+        <p>
+          Keeping employees motivated and satisfied is crucial for productivity,
+           yet many organizations struggle to effectively engage their workforce.
+        </p>
+      </div>
+      
+    </div>
+         </div>
+        </div>
+          <!-- ------------- -->
+
+
+
+             <!--------------->
+         <div class="col-md-7 p-2">
+          <div class="single-workflow workflow-4">
+            <div class="overflow p-4">
+    
+      <p class="num workflow-num">
+        04.
+      </p>
+      <div class="title">
+        <h3> Ineffective Job Role Evaluations </h3>
+      </div>
+      <div class="desc">
+        <p>
+          Fair and clear job evaluations are essential for 
+          aligning roles with business goals and maintaining competitive pay to attract, retain and ensure employee satisfaction
+        </p>
+      </div>
+      
+    </div>
+         </div>
+        </div>
+          <!-- ------------- -->
+           
+
+
+                <!--------------->
+         <div class="col-md-12 p-2">
+          <div class="single-workflow workflow-5">
+            <div class="overflow p-4">
+    
+      <p class="num workflow-num">
+        05.
+      </p>
+      <div class="title">
+        <h3> Need for Customized Solutions </h3>
+      </div>
+      <div class="desc">
+        <p>
+          Every organization has unique challenges and requirements,
+           making it essential to have tailored application that fits and address specific business needs effectively yet relying on well-defined standardized approach
+        </p>
+      </div>
+      
+    </div>
+         </div>
+        </div>
+          <!-- ------------- -->
+           
+
+    </div>
+
+    </div>
+
+
   </section>
   
   <!-- end workflow performance section -->

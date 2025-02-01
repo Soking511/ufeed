@@ -10,79 +10,81 @@
         color:#F86341
       }
     }
-    .workflow-num{
-      color:#F86341;
-      padding-bottom: 0;
-      margin-bottom: 0;
-      font-weight: 700;
-      font-size: 20px;
-    }
+   
+.container{
+  .row{
+    
+    .col-md-6,.col-md-5,.col-md-7,.col-md-12{
+      border-radius: 16px;
+      margin-top: 20px;
+      .single-workflow{
+        height: 400px;
+        .overflow{
+          background-color: #2a2b348d;
+          border-radius: 16px;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: end;
+        }
+        .num{
+          color: #F86341;
+          font-size: 20px;
+            margin-bottom: 0!important; 
+           }
+        .title h3{
+          font-size: 40px;
+          border-bottom: #F86341 solid 2px;
+          padding-bottom: 8px;
+        }
+        .desc p{
+          color: #fff;
+        }
+      }
+      .workflow-1{
+        background: url('/public/workflow/05.png');
+        border-radius: 16px;
+        background-size: cover;
+        color: #fff;
+      }
+      .workflow-2{
+        background: url('/public/workflow/02.png');
+        border-radius: 16px;
+        background-size: cover;
+        color: #fff;
+      }
 
-    .bg-filled{
-      width: 557px;
-      height: 571px;
-      flex-shrink: 0;
-      background-color: rgba(248, 99, 65, 0.30);
-      opacity: 0.5;
-      filter: blur(250px);
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
+      .workflow-3{
+        background: url('/public/workflow/04.png');
+        border-radius: 16px;
+        background-size: cover;
+        color: #fff;
+      }
+
+      .workflow-4{
+        background: url('/public/workflow/01.png');
+        border-radius: 16px;
+        background-size: cover;
+        color: #fff;
+      }
+
+      
+      .workflow-5{
+        background: url('/public/workflow/03.png');
+        border-radius: 16px;
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+      }
+
 
     }
-    
-    .single-workflow {
-      position: relative;
-      padding: 20px 0;
-      border-bottom: 1px solid #B9B9B9;
-      transition: all 0.4s ease-in-out;
-    
-      // Text style for normal state
-      .col-md-6 {
-        opacity: 1; // Full opacity for text
-        transition: opacity 0.4s ease-in-out;
-      }
-    
-      // Initially hide the image
-      .featured-workflow {
-        opacity: 0; // Hide image
-        max-height: 0; // Collapse height
-        overflow: hidden; // Prevent overflow
-        transition: all 0.4s ease-in-out; // Smooth animation
-      }
-    
-      // Hover effects for the hovered row
-      &:hover {
-        .featured-workflow {
-          opacity: 1; // Fade in the image
-          max-height: 500px; // Adjust height for the image
-        }
-    
-        .col-md-6 {
-          opacity: 1; // Keep text fully visible for hovered row
-        }
-      }
-    
-      // Apply dimmed opacity to non-hovered rows
-      &.not-hovered {
-        .col-md-6 {
-          opacity: 0.3; // Reduce opacity for text
-        }
-      }
-    
-      // Add specific animation for the hovered row
-      &.hovered {
-        .featured-workflow {
-          opacity: 1; // Ensure the image is fully visible
-          max-height: 500px; // Fully expand image height
-        }
-    
-        .col-md-6 {
-          opacity: 1; // Maintain full text opacity for hovered row
-        }
-      }
-    }
+   
+  }
+}
+
+}
     
     
   @media (max-width:768px) {
