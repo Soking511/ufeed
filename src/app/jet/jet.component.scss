@@ -84,6 +84,36 @@ h2{
     }
   }
  
+.advantages{
+    .container{
+        .row{
+            .col-md-6,.col-md-4,.col-md-12{
+                padding: 12px;
+            .single-advantage{
+                border: solid 2px #E9E9E9;
+                border-radius: 16px;
+                padding: 24px;
+               height: 400px;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                transition: .3s;
+                &:hover{
+                    border-left: 8px solid #f86341;
+                }
+                .img-holder{
+                    margin-bottom: 16px;
+                }
+                h3{
+                    font-size: 30px;
+                }
+              
+            }
+            }
+        }
+    }
+}
+
 
   form{
     .row{
