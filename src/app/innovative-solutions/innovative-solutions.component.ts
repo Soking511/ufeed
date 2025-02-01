@@ -71,7 +71,7 @@ export class InnovativeSolutionsComponent {
       icon: 'public/icons/circum_dollar.png',
       title: 'UFeed Cost Affordability',
       description:
-        'Compared to other competitors/alternatives in the HR/HC domain, UFeed represents a very affordable cost vs Value.',
+        'Compared to other competitors in the HC domain, UFeed represents a very affordable cost vs Value.',
     },
   ];
   
