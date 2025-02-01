@@ -5,7 +5,7 @@
     'home-header': isHomePage && !isScrolled,
     'other-header': !isHomePage || isScrolled
   }">
-    <div class="container">
+    <div class="container justify-content-between ">
     
       <div class="col-md-2 col-sm-6 col-xs-6 left-logo">
         <a class="w-100 navbar-brand" routerLink="">
@@ -20,7 +20,7 @@
   
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
   
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-center ">
+        <ul class="navbar-nav  mb-2 mb-lg-0 w-100  justify-content-center ">
           <li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" routerLink="">Home</a>
           </li>
@@ -57,14 +57,17 @@
           </li>
         </ul>
 
-        <div class="col-md-3 d-flex justify-content-around btns-holder">
+        <div class="col-md-4 d-flex justify-content-around btns-holder">
 
-          <a class="header-cta" href="https://application.ufeed-ai.com/login" target="_blank">UFeed Platform 
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <a class="header-cta contact-button" routerLink="/contact-us">
+            Get In Touch
           </a>
-          <a class="header-cta" routerLink="/contact-us">
-            <i class="fa-solid fa-phone"></i>
+
+          <a class="header-cta" href="https://application.ufeed-ai.com/login"
+           target="_blank">Start A Free Trial 
+            <img src="/public/icons/top-right.png" alt="" srcset="">
           </a>
+        
       
         </div>
 

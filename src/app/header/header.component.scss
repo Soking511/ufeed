@@ -92,8 +92,11 @@ $secondaryColor:#375D95;
     }
   }
 }
+
+
 .header-cta{
-    border: solid 2px $mainColor;
+    border: solid 2px $secondaryColor;
+    background-color:$secondaryColor;
     border-radius: 50px;
     padding: 15px 20px;
     text-decoration: none;
@@ -102,10 +105,21 @@ $secondaryColor:#375D95;
     transition: .5s;
     color: #fff;
     font-family: $mainFont;
+    img{
+      padding-left: 8px;
+    }
 }
 .header-cta:hover{
-    background-color:$mainColor;
     color: #fff;
+    border: solid 2px $mainColor;
+    background-color:$mainColor;
+}
+.header-cta.contact-button{
+  border-color: #fff;
+  background-color: #ffffff00;
+  &:hover{
+    background-color: $mainColor;
+  }
 }
 
 .navbar {
@@ -141,6 +155,7 @@ $secondaryColor:#375D95;
             color: #f86341; 
             
           }
+         
         }
       }
     }
@@ -153,7 +168,7 @@ $secondaryColor:#375D95;
     a{
         color: #383838;
     }
-    
+  
 .dropdown-menu li{
  color: #fff;
  a{
@@ -167,9 +182,21 @@ $secondaryColor:#375D95;
  }
 }
 
+.header-cta{
+  color: #fff!important;
+}
+.header-cta.contact-button{
+border-color: #f86341;
+color: #f86341!important;
+&:hover{
+  color: #fff!important;
+}
+}
+
 .header-cta:hover{
   background-color:$mainColor;
   color: #fff;
+ 
 }
   }
   
