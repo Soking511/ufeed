@@ -34,10 +34,18 @@ $secondaryColor:#375D95;
       }
       .btns-holder{
         a{
-          color: #2A2B34;
+          color: #f86341;
           transition: .3s;
+          border: solid #f86341;
           &:hover{
             color: #fff;
+          }
+        }
+        .free-trial{
+          color: #fff!important;
+          border-color: #375D95;
+          &:hover{
+            border: solid #f86341;
           }
         }
       }
