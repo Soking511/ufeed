@@ -78,6 +78,34 @@
                          becomePartner.get('companyNumber')?.touched"> Please make sure of company contact number </p>
                     </div>
                     
+
+                    <div class="form-group col-12 my-3">
+                        <label for="">Partner type*</label>
+                        <select [class.is-valid]="becomePartner.get('PartnerType')?.errors==null && becomePartner.get('PartnerType')?.touched"
+                         id="inputState" class="form-control  p-3" formControlName="PartnerType">
+                          <option value="" selected disabled>Please select</option>
+                          <option>Consulting Firm</option>
+                          <option>Freelance Consultant</option>
+                          <option>Startup Ecosystem Enabler / Community Partner</option>
+                          <option>Reseller</option>
+                          <option>HR Tech Provider</option>
+                          <option>Other</option>
+                        </select>
+                        <p *ngIf="becomePartner.get('PartnerType')?.errors != null && becomePartner.get('PartnerType')?.touched" 
+                        class="py-2 text-danger">Please Choose Partner type</p>
+                      </div>
+
+
+                      <div class="form-group col-md-12 my-3">
+                        <label for="">Country interested to cover*</label>
+                        <input type="text" class="form-control p-3" 
+                        formControlName="country" 
+                        [class.is-valid]="becomePartner.get('country')?.errors == null &&
+                         becomePartner.get('country')?.touched"
+                        placeholder="Enter Country" formControlName="country">
+                        <p class="text-danger" *ngIf="becomePartner.get('country')?.errors!=null &&
+                         becomePartner.get('country')?.touched"> Please Enter Valid Country </p>
+                    </div>
                 </div>
 
 
@@ -97,8 +125,6 @@
                           </div>    
                     </div>
                     
-
-                  
                       
                 </div>
 
@@ -150,6 +176,13 @@
                         <p class="text-danger" *ngIf="becomePartner.get('mobile')?.errors!=null &&
                          becomePartner.get('mobile')?.touched"> Please fill this field with your contact Number </p>
                 
+                    </div>
+
+
+                    <div class="form-group col-md-12 my-3">
+                        <label for="">Your Message</label>
+                       <textarea formControlName="message" name="" id="" placeholder="Your message here" class="form-control p-3"></textarea>
+                        
                     </div>
                     
                 </div>

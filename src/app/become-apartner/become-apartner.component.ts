@@ -24,6 +24,8 @@ export class BecomeAPartnerComponent {
       Validators.required,
       Validators.pattern(/^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/)
     ]),
+    PartnerType: new FormControl(null,Validators.required),
+    country: new FormControl(null,Validators.required),
     personalProfile: new FormControl(),
     personalName: new FormControl(null, [
       Validators.required,
@@ -35,8 +37,9 @@ export class BecomeAPartnerComponent {
     email: new FormControl(null, [Validators.required, Validators.email]),
     mobile: new FormControl(null, [
       Validators.required,
-      Validators.pattern(/^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/)
-    ])
+      Validators.pattern(/^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/),
+    ]),
+    message: new FormControl()
   });
 
 
