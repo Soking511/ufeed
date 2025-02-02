@@ -109,78 +109,130 @@
 <!-- ------------- -->
 
 
-
-
-<section class="ees-benfits py-5">
+<section class="advantages mb-5">
     <div class="container">
-        <div class="row w-100">
-            <div class="col-6 m-auto text-center">
-                <h2>Discover the Benefits of <span>EES</span> by UFeed</h2>
+        <div class="row w-100 m-auto">
+            <div class="col-md-12">
+                <h2 class="text-center">The Unmatched Advantages<br> of<span> JET </span> by UFeed</h2>       
             </div>
-            <!-- <div class="col-md-6">
-                <img src="./ees.png" class="img " alt="" srcset="">
-            </div> -->
-        </div>
 
-        <div class="row py-5">
-           
-            <div class="col-12 py-5" 
-            
-            *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8]; let i = index" 
-            [class.hovered]="hoveredIndex === i"
-            (mouseover)="onMouseOver(i)" 
-            (mouseout)="onMouseOut()"
-            >
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="num">{{1+i+'.'}}</div>
-                        <div class="benfit">
-                            <h3 *ngIf="i === 0">Instant Access Self Service Platform</h3>
-                            <h3 *ngIf="i === 1">Designed by Top-Notch HR Experts</h3>
-                            <h3 *ngIf="i === 2">Survey Progress Monitoring Dashboard</h3>
-                            <h3 *ngIf="i === 3">Customizable Survey Design with Expert Guidance</h3>
-                            <h3 *ngIf="i === 4">Arabic & English Bilingual Interface</h3>
-                            <h3 *ngIf="i === 5">Flexible Demographic Customization</h3>
-                            <h3 *ngIf="i === 6">Customizable Analytics Reporting</h3>
-                            <h3 *ngIf="i === 7">Benchmark Capabilities</h3>
+            <div class="row justify-content-around">
+                <div class="col-md-6">
+                    <div class="single-advantage">
+                        <div class="img-holder col-3">
+                            <img class="img-fluid" src="public/jet/03.png" alt="">
                         </div>
-                       
-                        <div class="desc">
-                            <p *ngIf="i === 0">This feature empowers employees by providing them with immediate, direct access to the survey platform. They can independently participate in surveys, update their information, and access reports without needing to go through HR or other intermediaries.</p>
-                            
-                            <p *ngIf="i === 1">Crafted by leading HR professionals, this tool embodies the expertise and insights necessary to streamline data collection, ensuring efficiency and precision in every step.</p>
-                            
-                            <p *ngIf="i === 2">Our Survey Progress Monitoring Dashboard provides a comprehensive overview of your survey's status, allowing you to track responses and engagement in real-time. With intuitive visuals and detailed analytics, you can ensure your surveys are on the right track for success.</p>
-
-                          <p *ngIf="i === 3">Our platform is designed with the user in mind, featuring an intuitive and easy-to-navigate interface. Whether you’re a beginner or an advanced user, our user-friendly design ensures a smooth and efficient experience</p>
-
-                            <p *ngIf="i === 4">Our Arabic & English Bilingual Interface is designed to meet the diverse needs of users, ensuring seamless navigation and accessibility in both languages. This tailored solution enhances user experience by providing intuitive access to content in their preferred language.</p>
-
-                             <p *ngIf="i === 5">Our platform offers flexible demographic customization, ensuring that your experience is tailored to your unique needs. With adaptable features and personalized settings, you can enjoy a service that evolves with you.</p>
-
-                          <p *ngIf="i === 6">Our customizable analytics reporting feature empowers you to tailor reports to your unique requirements, giving you insights that matter most to your business.</p>
-
-                       <p *ngIf="i === 7">Our Benchmark Capabilities ensure you stay updated with essential alerts, helping you track significant events and changes effortlessly.</p>
-                </div>        
-        
-            </div>
-                    <div class="col-md-4">
-                      <div class="icon-holder"><img [src]="'public/icons/0' + (i + 1) + '.png'" class="img-fluid" alt="" srcset=""></div>
+                        <h3>Bilingual Interface</h3>
+                        <p>UFeed JET platform features a bilingual interface in Arabic and English, 
+                            ensuring effective communication and user engagement</p>
                     </div>
                 </div>
+                <!-- ------------ -->
+                <div class="col-md-6">
+                    <div class="single-advantage">
+                        <div class="img-holder col-3">
+                            <img class="img-fluid" src="public/jet/12.png" alt="">
+                        </div>
+                        <h3>Automated JA Data Gathering</h3>
+                        <p>Crafted by top HR professionals, this tool streamlines data 
+                        collection with expert insights, ensuring efficiency and accuracy</p>
+                    </div>
+                </div>
+
+                 <!-- ------------ -->
+                 <div class="col-md-4">
+                    <div class="single-advantage">
+                        <div class="img-holder col-3">
+                            <img class="img-fluid" src="public/jet/08.png" alt="">
+                        </div>
+                        <h3>Alert Notifications</h3>
+                        <p>JET provides alert notifications for borderline evaluations, helping to identify potential conflicts in grading related to position hierarchy,
+                             which ensures clarity and consistency in the evaluation process.</p>
+                    </div>
+                </div>
+
+
+                  <!-- ------------ -->
+                  <div class="col-md-4">
+                    <div class="single-advantage">
+                        <div class="img-holder col-3">
+                            <img class="img-fluid" src="public/jet/13.png" alt="">
+                        </div>
+                        <h3>Customizable Access Features</h3>
+                        <p>HR professionals can quickly create engagement surveys with
+                             just a few clicks, ensuring timely feedback collection.</p>
+                    </div>
+                </div>
+
+                   <!-- ------------ -->
+                   <div class="col-md-4">
+                    <div class="single-advantage">
+                        <div class="img-holder col-3">
+                            <img class="img-fluid" src="public/jet/14.png" alt="">
+                        </div>
+                        <h3>Consistent Evaluation Process</h3>
+                        <p>The automated tool ensures a consistent evaluation process, reducing errors and enhancing control over the process for all users,
+                             guiding them through each step easily.</p>
+                    </div>
+                </div>
+
+
+                     <!-- ------------ -->
+                     <div class="col-md-4">
+                        <div class="single-advantage">
+                            <div class="img-holder col-3">
+                                <img class="img-fluid" src="public/jet/09.png" alt="">
+                            </div>
+                            <h3>Comparative Position Analysis</h3>
+                            <p>JET allows users to compare different positions across departments, companies, or subsidiaries, to ensure logical evaluations and consistency in data,
+                                 facilitating informed decision-making.</p>
+                        </div>
+                    </div>
+
+                       <!-- ------------ -->
+                       <div class="col-md-4">
+                        <div class="single-advantage">
+                            <div class="img-holder col-3">
+                                <img class="img-fluid" src="public/jet/15.png" alt="">
+                            </div>
+                            <h3>Real-Time Reporting with Salaries Bands</h3>
+                            <p>Generate comprehensive grading reports instantly after evaluations,
+                                 including guided salary bands (Applicable for Egypt Market).</p>
+                        </div>
+                    </div>
+
+
+                      <!-- ------------ -->
+                      <div class="col-md-4">
+                        <div class="single-advantage">
+                            <div class="img-holder col-3">
+                                <img class="img-fluid" src="public/jet/16.png" alt="">
+                            </div>
+                            <h3>International Grading Correlation</h3>
+                            <p>Create correlations between
+                             JET grades and global grading systems for ease of reference and use.</p>
+                        </div>
+                    </div>
+
+
+                     <!-- ------------ -->
+                     <div class="col-md-12">
+                        <div class="single-advantage">
+                            <div class="img-holder col-3">
+                                <img class="img-fluid" src="public/jet/17.png" alt="">
+                            </div>
+                            <h3>Intelligent Job Evaluation</h3>
+                            <p>Harness the power of AI and machine learning to conduct advanced analyses of job data points based on company size and type. This innovative capability generates trends for position levels and grades, empowering users to make data-driven decisions
+                             that align with market standards and enhance job evaluation processes.</p>
+                        </div>
+                    </div>
+
             </div>
 
-
-
-
         </div>
-    
-
-
     </div>
-
-
 </section>
+
 
 
 

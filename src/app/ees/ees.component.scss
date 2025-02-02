@@ -77,78 +77,36 @@
     }
   }
   
-  .ees-benfits{
+.advantages{
     .container{
         .row{
-            h2{
-                font-size: 55px;
-                font-weight: 700;
-                span{
-                    color: #f86341;
+            .col-md-6,.col-md-4,.col-md-12{
+                padding: 12px;
+            .single-advantage{
+                border: solid 2px #E9E9E9;
+                border-radius: 16px;
+                padding: 24px;
+               height: 400px;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                transition: .3s;
+                &:hover{
+                    border-left: 8px solid #f86341;
                 }
-            }
-            .col-md-6{
-                img{
-                    width: 150px;
-                    float: right;
+                .img-holder{
+                    margin-bottom: 16px;
                 }
-            }
-          
-
-            .col-12{
-                border-bottom: solid 1px #B9B9B9;
-                max-height: 150px;
-                transition: .3s ease-in-out;
-                overflow: hidden;
-               &:hover{
-                max-height: 300px;
-               }
-                .row{
-                    .col-md-8{
-                        .num{
-                            font-size: 20px;
-                            color: #f86341;
-                            font-weight: 700;
-                        }
-                        .benfit{
-                            font-size: 40px;
-                            font-weight: 500;
-                        }
-                        .desc{
-                            opacity: 0;
-                            transition: .3s;
-                         }
-                    }
-                    .col-md-4{
-                        .icon-holder{
-                            width: 80px;
-                            float: right;
-                            opacity: 1;
-                            transition: .3s;
-                        }
-                    }
+                h3{
+                    font-size: 30px;
                 }
-
               
             }
-            .hovered{
-                transition: .3s;
-                .row{
-                    .col-md-8{
-                        .desc{
-                            opacity: 1;
-                         }
-                    }
-                    .col-md-4{
-                        .icon-holder{
-                            opacity: 1;
-                        }
-                    }
-                }                
             }
         }
     }
-  }
+}
+
 
   .product-form{
     .container{
