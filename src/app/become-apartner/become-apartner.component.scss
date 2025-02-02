@@ -1,7 +1,7 @@
 .title {
   color: #2A2B34; /* Optional: Adjust text color for better visibility */
   padding: 20px; /* Optional: Add some padding */
-  min-height: 100vh;
+  min-height: 70vh;
   position: relative; /* Ensure proper positioning for ::before */
 
   &::before {
@@ -27,7 +27,7 @@
       justify-content: center;
       height: 100%;
       justify-content: center;
-      align-content: center;
+      align-content: flex-end;
       width: 75%;
       h1 {
         font-size: 77px;
@@ -85,6 +85,34 @@
         .row{
             form{
                 .row{
+
+                  /* Custom dropdown arrow */
+.custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.custom-select-wrapper::after {
+  content: "\f078"; /* Font Awesome down arrow */
+  font-family: "Font Awesome 6 Free"; /* Ensure FontAwesome 6 is loaded */
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #43424C; /* Arrow color */
+  pointer-events: none; /* Prevent clicking on arrow */
+}
+
+/* Remove default browser arrow */
+select {
+  -webkit-appearance: none;  /* Remove default arrow in Safari */
+  -moz-appearance: none;     /* Remove default arrow in Firefox */
+  appearance: none;          /* Remove default arrow in modern browsers */
+  padding-right: 30px;       /* Space for custom arrow */
+}
+
                     .form-group{
                         label{
                             padding: 8px;
@@ -93,9 +121,9 @@
                             font-weight: 500;
                             font-family: 'Century Gothic Paneuropean';
                         }
-                        input.form-control.p-3{
+                        input.form-control.p-3,textarea{
                             border-radius: 16px;
-                            // background: rgba(0, 0, 0, 0.05);;
+                            background-color: #f9f9f9;
                             backdrop-filter: blur(28.242982864379883px);
                         }
                     }
