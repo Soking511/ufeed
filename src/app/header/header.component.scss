@@ -42,8 +42,8 @@ $secondaryColor:#375D95;
           }
         }
         .contact-button{
-          border-color: #000;
-          background-color: #fff;
+          border-color: #000000;
+          background-color: #ffffff00;
           color: #000;
           &:hover{
             color: #fff;
@@ -134,7 +134,7 @@ $secondaryColor:#375D95;
 }
 .header-cta.contact-button{
   border-color: #fff;
-  background-color: #000000;
+  background-color: #00000000;
   &:hover{
     background-color: #fff;
     color: #000;
