@@ -47,7 +47,7 @@
   }
    
   
-.journey{
+  .journey{
     padding: 80px 0;
     .container{
         .row{
@@ -59,21 +59,24 @@
                     color: #f86341;
                 }
             }
-            ul{
-                list-style:none;
-                li{
-                    margin-bottom: 20px;
-                    border-left: 5px solid #375D95;
-                    padding-left:12px ;
-                    transition: .5s;
-                &:hover{
-                    border-color: #f86341;
+
+            .col-md-5{
+                border-radius: 16px;
+                border: solid 1px #2A2B34;
+                padding: 24px;
+                background-color: #fff;
+                h4{
+                    border-bottom: #f86341 solid 2px;
+                    font-size: 30px;
                 }
+                p{
+                    font-size: 16px!important;
                 }
             }
         }
     }
   }
+  
   .ees-benfits{
     .container{
         .row{
