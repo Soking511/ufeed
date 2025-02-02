@@ -27,6 +27,13 @@
           display: flex;
           flex-direction: column;
           justify-content: end;
+          transition: .3s ease-in-out;
+          &:hover{
+            border-radius: 16px;
+            background: linear-gradient(217deg, rgba(248, 99, 65, 0.50) 0.85%, rgba(55, 93, 149, 0.50) 72.3%);
+            box-shadow: 4px 10px 15px 0px rgba(104, 104, 104, 0.52);
+            
+          }
         }
         .num{
           color: #F86341;

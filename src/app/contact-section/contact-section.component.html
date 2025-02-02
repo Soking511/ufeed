@@ -56,7 +56,7 @@
               <label for="">Select Your Inquiry*</label>
               <select [class.is-valid]="contactForm.get('inquiry')?.errors==null && contactForm.get('inquiry')?.touched"
                id="inputState" class="form-control  p-3" formControlName="inquiry">
-                <option value="" selected disabled>Please select</option>
+                <option value="Please select" selected disabled>Please select</option>
                 <option>Book a Demo</option>
                 <option>Get a Quotation</option>
                 <option>Have an Inquiry</option>

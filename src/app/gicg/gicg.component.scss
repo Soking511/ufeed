@@ -13,6 +13,9 @@
                     color: #F86341;;
                 }
             }
+            .single-item.col-md-1 {
+                width: 12%!important;
+            }
             .single-item img{
              transition: .3s ease-in-out;
             }
@@ -46,9 +49,27 @@
             }
 
             .single-item{
-                width: 50%;
+                width: 50%!important;
                 padding: 24px;
             }
         }
+    }
+
+    .gicg{
+        background-color: #E5E9F2;
+        .container{
+            .row{
+                .single-item.col-md-1 {
+                    width: 50%!important;
+                }
+                .single-item img{
+                 transition: .3s ease-in-out;
+                }
+                .single-item img:hover{
+                    transform: scale(.9);
+                }
+            }
+        }
+       
     }
 }
