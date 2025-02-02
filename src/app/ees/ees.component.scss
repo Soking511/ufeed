@@ -62,7 +62,7 @@
 
             .col-md-5{
                 border-radius: 16px;
-                border: solid 1px #2A2B34;
+                border: solid 1px #E9E9E9;
                 padding: 24px;
                 background-color: #fff;
                 h4{
@@ -101,6 +101,7 @@
                 transition: .3s;
                 &:hover{
                     border-left: 8px solid #f86341;
+                    box-shadow: 4px 2px 15px 0px #FFDAD2;
                 }
                 .img-holder{
                     margin-bottom: 16px;
