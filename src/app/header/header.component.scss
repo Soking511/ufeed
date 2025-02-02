@@ -41,6 +41,15 @@ $secondaryColor:#375D95;
             color: #fff;
           }
         }
+        .contact-button{
+          border-color: #000;
+          background-color: #fff;
+          color: #000;
+          &:hover{
+            color: #fff;
+            background-color: #000;
+          }
+        }
         .free-trial{
           color: #fff!important;
           border-color: #375D95;
@@ -52,6 +61,7 @@ $secondaryColor:#375D95;
     }
   }
 }
+
 .nav-item a{
     cursor: pointer;
     font-size: 16px;
@@ -124,9 +134,10 @@ $secondaryColor:#375D95;
 }
 .header-cta.contact-button{
   border-color: #fff;
-  background-color: #ffffff00;
+  background-color: #000000;
   &:hover{
-    background-color: $mainColor;
+    background-color: #fff;
+    color: #000;
   }
 }
 
@@ -195,7 +206,7 @@ $secondaryColor:#375D95;
 }
 .header-cta.contact-button{
 border-color: #f86341;
-color: #f86341!important;
+color: #000!important;
 &:hover{
   color: #fff!important;
 }
