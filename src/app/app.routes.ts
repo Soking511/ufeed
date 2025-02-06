@@ -12,7 +12,7 @@ import { HcDigitizedMethodologiesToolsComponent } from './hc-digitized-methodolo
 import { HcDataAnalyticsBenchmarkingComponent } from './hc-data-analytics-benchmarking/hc-data-analytics-benchmarking.component';
 import { NewsComponent } from './news/news.component';
 import { JetCourseComponent } from './jet-course/jet-course.component';
-
+import {DigitalizingJOBMASTerComponent} from './digitalizing-jobmaster/digitalizing-jobmaster.component'
 export const routes: Routes = [
     {path:"",component:HomeComponent},    
     {path:"home",component:HomeComponent},    
@@ -26,6 +26,7 @@ export const routes: Routes = [
     {path:"hc-data-analytics-benchmarking",component:HcDataAnalyticsBenchmarkingComponent},
     {path:"news",component:NewsComponent},
     {path:"app-jet-course",component:JetCourseComponent},
+    {path:"digitalizing-jobmaster.component",component:DigitalizingJOBMASTerComponent},
     {path:"**",component:NotFoundComponent},
 
 ];
