@@ -41,52 +41,79 @@
             </div>
            
             <div class="col-md-6 form">
-                <form action="" [formGroup]="contactNgo">
+                <form action="" [formGroup]="contactNgo"
+                (ngSubmit)="getFormData(contactNgo)">
                     <div class="row p-0">
 
                         <div class="form-group col-md-6 my-2">
-                            <label for="" class="text-light py-2">Full Name</label>
-                            <input type="text" formControlName="fullname" class="form-control">
+                            <label for="" class="text-light py-2">Your Name</label>
+                            <input [class.is-valid]="contactNgo.get('fullname')?.errors == null && contactNgo.get('fullname')?.touched"
+                             type="text" formControlName="fullname" class="form-control">
+                             <p *ngIf="contactNgo.get('fullname')?.errors != null && contactNgo.get('fullname')?.touched" 
+                                  class="py-2 text-danger">Please Check Your Name</p>
                         </div>
 
                         <div class="form-group col-md-6 my-2">
                             <label for="" class="text-light py-2">NGO Name</label>
-                            <input type="text" formControlName="ngoName" class="form-control">
+                            <input [class.is-valid]="contactNgo.get('ngoName')?.errors == null && contactNgo.get('ngoName')?.touched"
+                             type="text" formControlName="ngoName" class="form-control">
+                             <p *ngIf="contactNgo.get('ngoName')?.errors != null && contactNgo.get('ngoName')?.touched" 
+                             class="py-2 text-danger">Please Check Your NGO Name</p>
                         </div>
 
 
                         <div class="form-group col-md-6 my-2">
                             <label for="" class="text-light py-2">NGO Website </label>
-                            <input type="url" formControlName="ngoWebsite" class="form-control">
+                            <input [class.is-valid]="contactNgo.get('ngoWebsite')?.errors == null && contactNgo.get('ngoWebsite')?.touched"
+                             type="url" formControlName="ngoWebsite" class="form-control">
+                             <p *ngIf="contactNgo.get('ngoWebsite')?.errors != null && contactNgo.get('ngoWebsite')?.touched" 
+                             class="py-2 text-danger">Please Check Your Website URL</p>
                         </div>
 
                         <div class="form-group col-md-6 my-2">
                             <label for="" class="text-light py-2">Your Title </label>
-                            <input type="text" formControlName="title" class="form-control">
+                            <input [class.is-valid]="contactNgo.get('title')?.errors == null && contactNgo.get('title')?.touched"
+                             type="text" formControlName="title" class="form-control">
+                             <p *ngIf="contactNgo.get('title')?.errors != null && contactNgo.get('title')?.touched" 
+                             class="py-2 text-danger">Please Check Your Website URL</p>
                         </div>
 
                         <div class="form-group col-md-6 my-2">
-                            <label for="" class="text-light py-2">Your Email                            </label>
-                            <input type="email" formControlName="email" class="form-control">
+                            <label for="" class="text-light py-2">Your Email  </label>
+                            <input [class.is-valid]="contactNgo.get('email')?.errors == null && contactNgo.get('email')?.touched"
+                             type="email" formControlName="email" class="form-control">
+                             <p *ngIf="contactNgo.get('email')?.errors != null && contactNgo.get('email')?.touched" 
+                             class="py-2 text-danger">Please Check Your Email</p>
                         </div>
 
                         <div class="form-group col-md-6 my-2">
                             <label for="" class="text-light py-2">Mobile Number</label>
-                            <input type="tel" formControlName="mobile" class="form-control">
+                            <input [class.is-valid]="contactNgo.get('mobile')?.errors == null && contactNgo.get('mobile')?.touched"
+                             type="tel" formControlName="mobile" class="form-control">
+                             <p *ngIf="contactNgo.get('mobile')?.errors != null && contactNgo.get('mobile')?.touched" 
+                             class="py-2 text-danger">Please Check Your Mobile Number</p>
                         </div>
 
 
                         <div class="form-group col-md-6 my-2">
                             <label for="" class="text-light py-2">NGO headcount                           </label>
-                            <input type="number" formControlName="headcount" class="form-control">
+                            <input [class.is-valid]="contactNgo.get('headcount')?.errors == null && contactNgo.get('headcount')?.touched"
+                             type="number" formControlName="headcount" class="form-control">
+                             <p *ngIf="contactNgo.get('headcount')?.errors != null && contactNgo.get('headcount')?.touched" 
+                             class="py-2 text-danger">Please Check the number of NGO headcount</p>
                         </div>
 
                         <div class="form-group col-md-6 my-2">
                             <label for="" class="text-light py-2">Total Number of Positions</label>
-                            <input type="number" formControlName="Positions" class="form-control">
+                            <input  [class.is-valid]="contactNgo.get('positions')?.errors == null && contactNgo.get('positions')?.touched"
+                            type="number" formControlName="positions" class="form-control">
+                            <p *ngIf="contactNgo.get('positions')?.errors != null && contactNgo.get('positions')?.touched" 
+                             class="py-2 text-danger">Please Check the number of NGO headcount</p>
                         </div>
                         <div class="form-group col-md-12 my-2">
-                        <button class="btn my-4 p-2 form-btn">Send</button>
+
+                            <button type="submit" [disabled]="contactNgo.invalid" class="btn my-4 p-2 form-btn">Send</button>
+
                     </div>
 
                     </div>
