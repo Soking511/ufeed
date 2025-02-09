@@ -12,13 +12,14 @@ import { ContactSectionComponent } from '../contact-section/contact-section.comp
 import {WorkPerformanceComponent} from '../work-performance/work-performance.component'
 import { CourseSectionComponent } from '../course-section/course-section.component';
 import { GicgComponent } from '../gicg/gicg.component';
+import {NewsSectionComponent} from '../news-section/news-section.component'
 
 @Component({
   selector: 'app-home',
   imports: [CommonModule,RouterModule,HeroSectionComponent,InnovativeSolutionsComponent,
     ClientsComponent,EnhanceSolutionComponent,
       BecomePartnerComponent,ContactSectionComponent,WorkPerformanceComponent,
-      CourseSectionComponent,GicgComponent],
+      CourseSectionComponent,GicgComponent,NewsSectionComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
