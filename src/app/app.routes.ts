@@ -13,6 +13,8 @@ import { HcDataAnalyticsBenchmarkingComponent } from './hc-data-analytics-benchm
 import { NewsComponent } from './news/news.component';
 import { JetCourseComponent } from './jet-course/jet-course.component';
 import {DigitalizingJOBMASTerComponent} from './digitalizing-jobmaster/digitalizing-jobmaster.component'
+import {NgoComponent} from './ngo/ngo.component'
+
 export const routes: Routes = [
     {path:"",component:HomeComponent},    
     {path:"home",component:HomeComponent},    
@@ -27,6 +29,7 @@ export const routes: Routes = [
     {path:"news",component:NewsComponent},
     {path:"app-jet-course",component:JetCourseComponent},
     {path:"digitalizing-jobmaster.component",component:DigitalizingJOBMASTerComponent},
+    {path:"ngo",component:NgoComponent},
     {path:"**",component:NotFoundComponent},
 
 ];
