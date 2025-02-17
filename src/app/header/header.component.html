@@ -1,10 +1,11 @@
-<nav 
+<nav [ngClass]="{'rtl': currentLanguage === 'ar'}"
   class="navbar navbar-expand-lg py-3 fixed-top" 
   [ngClass]="{
     'scrolled': isScrolled,
     'home-header': isHomePage && !isScrolled,
     'other-header': !isHomePage || isScrolled
   }">
+
     <div class="container justify-content-between ">
     
       <div class="col-md-2 col-sm-6 col-xs-6 left-logo">
@@ -22,10 +23,10 @@
   
         <ul class="navbar-nav  mb-2 mb-lg-0 w-100  justify-content-center ">
           <li class="nav-item px-3">
-            <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+            <a class="nav-link active" aria-current="page" routerLink="">{{ 'home' | translate }}</a>
           </li>
           <li class="nav-item px-3">
-            <a class="nav-link" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</a>
+            <a class="nav-link" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">{{ 'about' | translate }}</a>
           </li>
 
 
@@ -41,30 +42,30 @@
     data-bs-toggle="dropdown"
     aria-expanded="false"
   >
-  Products <i class="fa-solid fa-arrow-down"></i>
+  {{'products'| translate}} <i class="fa-solid fa-arrow-down"></i>
   </a>
   <ul class="dropdown-menu px-4"  aria-labelledby="dropdownMenuButton">
-    <li class="d-flex justify-content-between align-items-center"><a class="dropdown-item" routerLink="/jet">Job Evaluation Tool - JET</a><i class="fa-solid fa-arrow-right"></i></li>
-    <li class="d-flex justify-content-between align-items-center"><a class="dropdown-item" routerLink="/ees">Employee Engagement Survey - EES</a><i class="fa-solid fa-arrow-right"></i></li>
-    <li class="d-flex justify-content-between align-items-center"><a class="dropdown-item" routerLink="/coming-soon">UFeed Products - Coming Soon</a><i class="fa-solid fa-arrow-right"></i></li>
+    <li class="d-flex justify-content-between align-items-center"><a class="dropdown-item" routerLink="/jet"> {{"Job Evaluation Tool - JET" | translate}}</a><i class="fa-solid fa-arrow-right"></i></li>
+    <li class="d-flex justify-content-between align-items-center"><a class="dropdown-item" routerLink="/ees">{{"Employee Engagement Survey - EES" | translate}}</a><i class="fa-solid fa-arrow-right"></i></li>
+    <li class="d-flex justify-content-between align-items-center"><a class="dropdown-item" routerLink="/coming-soon">{{"UFeed Products - Coming Soon" | translate}}</a><i class="fa-solid fa-arrow-right"></i></li>
   </ul>
 </li>
 
 <!-- ------------------ -->
 
           <li class="nav-item px-3">
-            <a class="nav-link "routerLink="become-apartner" >Become A Partner</a>
+            <a class="nav-link "routerLink="become-apartner" >{{ 'Become A Partner'| translate}}</a>
           </li>
         </ul>
 
         <div class="col-md-4 d-flex justify-content-around btns-holder">
 
           <a class="header-cta contact-button" routerLink="/contact-us">
-            Get In Touch
+            {{"Get in touch" | translate}}
           </a>
 
           <a class="header-cta free-trial" href="https://application.ufeed-ai.com/login"
-           target="_blank">Start A Free Trial 
+           target="_blank">{{"Start A Free trial" | translate}}
             <img src="public/icons/top-right.png" alt="" srcset="">
           </a>
         
@@ -72,11 +73,17 @@
         </div>
 
 
+        <div>
+          <a class="lang_switcher ar-btn" *ngIf="currentLanguage === 'ar'" (click)="switchLanguage('en')"><span><i class="fa-solid fa-globe"></i></span><img src="/public/en.png" alt=""> </a>
+          <a class="lang_switcher en-btn" *ngIf="currentLanguage === 'en'" (click)="switchLanguage('ar')"><img src="/public/arabic.png" alt="" srcset=""> <span><i class="fa-solid fa-globe"></i></span></a>          
+        </div>
       </div>
 
+      
 
-<!-- end container  -->
+    <!-- end container  -->
     </div>
+
 
   </nav>
  

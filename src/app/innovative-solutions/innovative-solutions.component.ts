@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../services/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-innovative-solutions',
-  imports: [CommonModule],
+  imports: [CommonModule,TranslateModule],
   templateUrl: './innovative-solutions.component.html',
   styleUrl: './innovative-solutions.component.scss'
 })
@@ -13,23 +15,22 @@ export class InnovativeSolutionsComponent {
   }
 
   // ---
-  activeIndex: number | null = null; // Track the selected solution
-  hoveredIndex: number | null = null; // Track the hovered solution
-
+  activeIndex: number | null = null; 
+  hoveredIndex: number | null = null; 
   onMouseOver(index: number) {
-    this.hoveredIndex = index; // Set the hovered index
+    this.hoveredIndex = index; 
   }
 
   onMouseOut() {
-    this.hoveredIndex = null; // Reset hover effect
+    this.hoveredIndex = null; 
   }
 
   onSelect(index: number) {
-    this.activeIndex = index; // Set the clicked solution as active
+    this.activeIndex = index; 
   }
 
   isDimmed(index: number): boolean {
-    // Check if the current solution should be dimmed
+   
     return (
       (this.hoveredIndex !== null && this.hoveredIndex !== index) ||
       (this.activeIndex !== null && this.activeIndex !== index)

@@ -1,10 +1,10 @@
-
 $mainFont:'Creato Display';
 $secondaryFont:'Lora';
 $fontSizeLinks:16px;
 $fontWeightLinks:600;
 $mainColor:#f86645;
 $secondaryColor:#375D95;
+
 .navbar{
     z-index: 20000;
 }
@@ -58,6 +58,9 @@ $secondaryColor:#375D95;
           }
         }
       }
+      a.lang_switcher{
+        color: #375D95;
+      }
     }
   }
 }
@@ -78,7 +81,7 @@ $secondaryColor:#375D95;
 }
 .dropdown{
   ul {
-    min-width: 450px;
+    min-width: 350px;
     padding: 24px;
     li{
       background-color: #1e1e1e00;
@@ -218,7 +221,26 @@ color: #000!important;
  
 }
   }
-  
+
+.lang_switcher{
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span{
+    margin-left: 2px;
+    font-size: 22px;
+  }
+  img{
+    margin-left: 2px;
+  }
+}
+
+
+//arabic style 
+
 
 // start responsive 
 @media (max-width: 1024px) {
@@ -273,3 +295,6 @@ nav.navbar{
     }
 
 }
+
+
+

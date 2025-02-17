@@ -1,10 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
-// @import url('https://fonts.cdnfonts.com/css/century-gothic-paneuropean');
-  
-//   body {
-//     font-family: 'Century Gothic Paneuropean', sans-serif;                                             
-//   }
-  
+// SCSS mixin for RTL styles
+
+
+
+@import url(https://db.onlinewebfonts.com/c/125063e353c1f65c55ba1e3811969217?family=GE+SS+Two+Medium);
 
   // mainFont 
   @font-face {
@@ -27,6 +25,7 @@
     font-display: swap;
 }
   
+
 
   // -----------------------------
 
@@ -112,7 +111,9 @@ form button{
   border-radius: 16px!important;
 }
 
-
+.rtl{
+  font-family: "GE SS Two Medium"!important;
+}
 // Optional: Add delay between each element for a staggered effect
 
 
@@ -134,3 +135,99 @@ p{
   width: 100%!important;
 }
 }
+
+// ---------------------
+body.rtl{
+  font-family: "GE SS Two Medium"!important;
+  a.header-cta.free-trial {
+    direction: ltr;
+  }
+  a.nav-link,a.header-cta,h1,h2,h3,h4,h5,h6,.list-footer ul li a,label,.counters p,.left-footer p,.btn-jet,.hero-cta,.clients-section .container .row p{
+  font-family: "GE SS Two Medium"!important;
+  }
+  li.d-flex.justify-content-between.align-items-center{
+    flex-direction: row-reverse;
+  }
+  ul.dropdown-menu.px-4{
+    left: 0;
+  }
+  .before.col-3{
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 49.75%, #F86341 100%)!important;
+  }
+  .after{
+    background: linear-gradient(270deg, #F86341 0%, rgba(255, 255, 255, 0) 49.75%, rgba(255, 255, 255, 0) 100%)!important;
+  }
+  .slider-container{
+    direction: ltr!important;
+  }
+  .enhance-solution{
+    .controls{
+      direction: ltr;
+    }
+    .controls .left a,.controls .right a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container-fluid.py-4.position-relative{
+      padding-left: 0px;
+      padding-right: 100px;
+      overflow-x: hidden;
+    }
+    .jet-img{
+      background-position: left;
+    }
+    .jet-elements{
+      padding-left: 40px;
+      padding-right: 0px;
+      justify-content: space-evenly;
+    }
+    .col-6{
+      .row{
+        .col-4{
+          padding-right: 0!important;
+        }
+      }
+    }
+  }
+  .counters{
+    .col-md-3.px-4{
+      border-left: 0;
+      border-right: 4px solid #375d95;
+    }
+  }
+
+  i.fa-solid.fa-arrow-right-long{
+    transform: rotate(180deg);
+    margin-right:10px !important;
+    margin-left:0px !important;
+    padding-top: 0 !important;
+  }
+  .single-post{
+    .news-desc h4 {
+      transition: padding 0.3s, border 0.3s;
+      border-right: 4px solid #fff;
+      padding-right: 8px;
+    }
+    &:hover {
+     
+      .news-desc h4 {
+        border-left: 0px!important;
+        border-right: 4px solid #F86341;
+        padding-left: 0px!important;
+        // padding-right: 8px;
+      }
+    }
+  }
+  .col-md-6.one,.col-md-6.three{
+    border-right: 0px solid #C1C1C1 !important;
+    border-left: 1px solid #C1C1C1 !important;
+  }
+  .col-md-6.two,.col-md-6.four{
+    border-left: 0px solid #C1C1C1 !important;
+    border-right: 1px solid #C1C1C1 !important;
+  }
+
+}
+
+

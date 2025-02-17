@@ -8,12 +8,11 @@ import { EesComponent } from './ees/ees.component';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { HcDigitizedMethodologiesToolsComponent } from './hc-digitized-methodologies-tools/hc-digitized-methodologies-tools.component';
-import { HcDataAnalyticsBenchmarkingComponent } from './hc-data-analytics-benchmarking/hc-data-analytics-benchmarking.component';
 import { NewsComponent } from './news/news.component';
 import { JetCourseComponent } from './jet-course/jet-course.component';
 import {DigitalizingJOBMASTerComponent} from './digitalizing-jobmaster/digitalizing-jobmaster.component'
 import {NgoComponent} from './ngo/ngo.component'
+
 
 export const routes: Routes = [
     {path:"",component:HomeComponent},    
@@ -24,12 +23,10 @@ export const routes: Routes = [
     {path:"ees",component:EesComponent},
     {path:"coming-soon",component:ComingSoonComponent},
     {path:"contact-us",component:ContactUsComponent},
-    {path:"hc-digitized-methodologies-tools",component:HcDigitizedMethodologiesToolsComponent},
-    {path:"hc-data-analytics-benchmarking",component:HcDataAnalyticsBenchmarkingComponent},
     {path:"news",component:NewsComponent},
     {path:"app-jet-course",component:JetCourseComponent},
-    {path:"digitalizing-jobmaster.component",component:DigitalizingJOBMASTerComponent},
+    {path:"digitalizing-jobmaster",component:DigitalizingJOBMASTerComponent},
     {path:"ngo",component:NgoComponent},
     {path:"**",component:NotFoundComponent},
-
+    { path: 'ar', component: HomeComponent, data: { language: 'ar' } }, // Arabic version
 ];

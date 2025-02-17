@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormControl,FormGroup,ReactiveFormsModule,Validators} from '@angular/forms';
+import { TranslationService } from '../services/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-jet-course',
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule,ReactiveFormsModule,TranslateModule],
   templateUrl: './jet-course.component.html',
   styleUrl: './jet-course.component.scss'
 })

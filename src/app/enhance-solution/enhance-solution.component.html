@@ -1,7 +1,7 @@
 
 <section class="enhance-solution pb-5">
   <h2 class="w-75 m-auto text-center ">
-    Boost Your Team's<span> Efficiency</span> with <br>UFeed’s<span> products </span>
+    {{"Boost Your Team's"|translate}}<span> {{"Efficiency"|translate}}</span> {{"with UFeed’s"| translate}}<span> {{"products "|translate}}</span>
   </h2>
 
 
@@ -13,13 +13,15 @@
       <div class="row py-5 justify-content-between">
         <!-- Title -->
         <div class="col-8">
+          
           <h4 class="text-left">
-            <div>{{ isJet ? 'Job Evaluation \nTool - JET' : 'Employee Engagement \nSurvey - EES' }}</div>
-          </h4>
+            <div *ngIf="isJet">{{ 'Job Evaluation \nTool - JET' | translate }}</div>
+            <div *ngIf="!isJet">{{ 'Employee Engagement \nSurvey - EES' | translate }}</div>
+          </h4>          
+          
           <p class="text-left">
-            {{ isJet
-              ? '\nJET is an automated job-grading model that helps assess job significance consistently, ensuring equity.'
-              : '\nSurveys gauge satisfaction and motivation, enhancing productivity and retention. Our platform provides demographic flexibility and reports.' }}
+            <span *ngIf="isJet">{{ 'JET_DESCRIPTION' | translate }}</span>
+            <span *ngIf="!isJet">{{ 'EES_DESCRIPTION' | translate }}</span>
           </p>
         </div>
   
@@ -52,14 +54,14 @@
                   <img class="img-fluid" [src]="item.image" alt="">
                 </div>
                 <div class="col-7 text-left p-2">
-                  <h5 class="text-left">{{ item.title }}</h5>
-                  <p class="text-left">{{ item.description }}</p>
+                  <h5 class="text-left">{{ item.title | translate }}</h5>
+                  <p class="text-left">{{ item.description | translate}}</p>
                 </div>
               </div>
             </div>
           </div>
           <a href="" routerLink="/jet" routerLinkActive="active" class="btn-jet py-2 my-3">
-            Explore Job Evaluation Tool
+            {{"Explore Job Evaluation Tool" |translate}}
           </a>
         </div>
       
@@ -72,14 +74,14 @@
                   <img class="img-fluid" [src]="item.icon" alt="">
                 </div>
                 <div class="col-7 text-left p-2">
-                  <h5 class="text-left">{{ item.title }}</h5>
-                  <p class="text-left">{{ item.description }}</p>
+                  <h5 class="text-left">{{ item.title | translate}}</h5>
+                  <p class="text-left">{{ item.description | translate}}</p>
                 </div>
               </div>
             </div>
           </div>
           <a href="" routerLink="/ees" routerLinkActive="active" class="btn-jet py-2 my-3">
-            Employee Engagement Survey - EES
+            {{"Employee Engagement Survey - EES" | translate}}
           </a>
         </ng-template>
       </div>

@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {FormControl,FormGroup,ReactiveFormsModule,Validators} from '@angular/forms';
+import { TranslationService } from '../services/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-section',
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule,CommonModule,TranslateModule],
   templateUrl: './contact-section.component.html',
   styleUrl: './contact-section.component.scss'
 })

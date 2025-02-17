@@ -5,55 +5,60 @@
       <div class="row">
         <div class="col-md-6 col-sm-12">
           <div class="form-holder p-5">
-          <h2 class="pb-5">Begin Your Human Capital Organizational
-             Journey with Us !</h2>
+          <h2 class="pb-5">{{"Begin Your Human Capital Organizational Journey with Us !" | translate}}</h2>
           
   
           <form action="" method="post"  [formGroup]="contactForm" 
           (ngSubmit)="getFormData(contactForm)">
             
-            <div class="form-group col-12 my-3">
-              <label for="">Your Name*</label>
-              <input [class.is-valid]="contactForm.get('fullname')?.errors == null && contactForm.get('fullname')?.touched" 
-               class="form-control p-3" formControlName="fullname" type="text" name="" placeholder="Your Name" id="">
-              <p *ngIf="contactForm.get('fullname')?.errors != null && contactForm.get('fullname')?.touched" 
-              class="py-2 text-danger">Please Check Your Name</p>
-            </div>
+          <div class="form-group col-12 my-3">
+            <label for="">{{ "YOUR_NAME" | translate }}</label>
+            <input 
+              [class.is-valid]="contactForm.get('fullname')?.errors == null && contactForm.get('fullname')?.touched" 
+              class="form-control p-3" formControlName="fullname" type="text" placeholder="{{ 'YOUR_NAME' | translate }}" id="">
+            
+            <p *ngIf="contactForm.get('fullname')?.errors != null && contactForm.get('fullname')?.touched" 
+               class="py-2 text-danger">
+              {{ "CHECK_YOUR_NAME" | translate }}
+            </p>
+          </div>
+          
+
              
             <div class="row py-0 my-3">
   
               <div class="form-group col-6 ">
-                <label for="">Contact Number*</label>
+                <label for="">{{"Contact Number*"|translate}}</label>
                 <input [class.is-valid]="contactForm.get('phone')?.errors==null && contactForm.get('phone')?.touched " 
-                class="form-control p-3" type="text" formControlName="phone" name="" placeholder="Your Phone Number" id="">
+                class="form-control p-3" type="text" formControlName="phone" name="" placeholder="{{'Your Phone Number'|translate}}" id="">
                 <p *ngIf="contactForm.get('phone')?.errors!=null && contactForm.get('phone')?.touched " 
-                class="py-2 text-danger">Please Check Your Phone Number</p>
+                class="py-2 text-danger">{{"Please Check Your Phone Number"|translate}}</p>
               </div>
               
               <div class="form-group col-6 ">
-                <label for="">Email*</label>
+                <label for="">{{"Email*" | translate}}</label>
                 <input [class.is-valid]="contactForm.get('email')?.errors==null && contactForm.get('email')?.touched " 
                 class="form-control p-3" type="email" name="" formControlName="email" placeholder="ex: username@xyz" id="">
                 <p *ngIf="contactForm.get('email')?.errors!=null && contactForm.get('email')?.touched " 
-                class="py-2 text-danger">Please Check Your Email</p>
+                class="py-2 text-danger">{{"Please Check Your Email" | translate}}</p>
               </div>
               
             </div>
   
             <div class="form-group col-12 my-3">
-              <label for="">Title</label>
+              <label for="">{{"Title"|translate}}</label>
               <input [class.is-valid]="contactForm.get('title')?.errors==null && contactForm.get('title')?.touched" 
-              class="form-control p-3" type="text" formControlName="title" name="" placeholder="CEO" id="">
+              class="form-control p-3" type="text" formControlName="title" name="" placeholder="{{'CEO'|translate}}" id="">
             </div>
   
             <div class="form-group col-12 my-3">
-              <label for="">Company Name</label>
+              <label for="">{{"Company Name"|translate}}</label>
               <input class="form-control p-3" type="email" name="" 
-              formControlName="company" placeholder="Your Company" id="">
+              formControlName="company" placeholder="{{'Your Company'| translate}}" id="">
             </div>
   
             <div class="form-group col-12 my-3">
-              <label for="inputState">Select Your Inquiry*</label>
+              <label for="inputState">{{"Select Your Inquiry*"|translate}}</label>
               <div class="custom-select-wrapper">
                 <select 
                   id="inputState" 
@@ -61,20 +66,20 @@
                   formControlName="inquiry"
                   [ngClass]="{ 'placeholder-visible': contactForm.get('inquiry')?.value === '' }"
                   required>
-                  <option>Book a Demo</option>
-                  <option>Get a Quotation</option>
-                  <option>Have an Inquiry</option>
+                  <option>{{"Book a Demo"|translate}}</option>
+                  <option>{{"Get a Quotation"| translate}}</option>
+                  <option>{{"Have an Inquiry" | translate}}</option>
                 </select>
               </div>
               <p 
                 *ngIf="contactForm.get('inquiry')?.errors != null && contactForm.get('inquiry')?.touched" 
                 class="py-2 text-danger">
-                Please Choose Your Inquiry
+                {{"Please Choose Your Inquiry"|translate}}
               </p>
             </div>
             
             <div class="form-group col-12 my-3">
-              <label for="inputProduct">Select Product*</label>
+              <label for="inputProduct">{{"Select Product*"|translate}}</label>
               <div class="custom-select-wrapper">
                 <select 
                   id="inputProduct" 
@@ -82,25 +87,25 @@
                   formControlName="product"
                   [ngClass]="{ 'placeholder-visible': contactForm.get('product')?.value === '' }"
                   required>
-                  <option>Job Evaluation Tool - JET</option>
-                  <option>Employee Engagement Survey - EES</option>
+                  <option>{{"Job Evaluation Tool - JET"|translate}}</option>
+                  <option>{{"Employee Engagement Survey - EES" |translate}}</option>
                 </select>
               </div>
               <p 
                 *ngIf="contactForm.get('product')?.errors != null && contactForm.get('product')?.touched" 
                 class="py-2 text-danger">
-                Please Choose Your Product
+                {{"Please Choose Your Product"|translate}}
               </p>
             </div>
                 
             <div class="form-group col-12 my-3">
-              <label for="">Message</label>
-              <textarea name="" class="form-control p-3" placeholder="Your Message" 
+              <label for="">{{"Message"|translate}}</label>
+              <textarea name="" class="form-control p-3" placeholder="{{'Your Message'|translate}}" 
               formControlName="message" id=""></textarea>
             </div>
       
             <button type="submit" [disabled]="contactForm.invalid == true" 
-            class=" my-3 p-3 btn col-12 ">Submit</button>
+            class=" my-3 p-3 btn col-12 ">{{"Submit"|translate}}</button>
           </form>
   
         </div>

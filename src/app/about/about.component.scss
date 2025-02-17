@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/brittany-signature');
 .title {
     color: #2A2B34; /* Optional: Adjust text color for better visibility */
     padding:20px; /* Optional: Add some padding */
@@ -213,6 +214,50 @@
         }
     }
   }
+
+
+//   message 
+
+.message{
+    padding:  0;
+    // background-color: #D1DAE7;
+    .container{
+        .row{
+            .ceo-signiture{
+                color: #43424C;
+                font-feature-settings: 'liga' off, 'clig' off;
+                font-family: 'Brittany Signature', sans-serif;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 1px;
+                text-transform: capitalize;
+               
+            }
+            .col-md-6{
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-direction: column;
+                h2{
+                    color: var(--Orange-Identity, #F86341);
+                    font-feature-settings: 'liga' off, 'clig' off;
+                    font-family: "Creato Display";
+                    font-size: 40px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    letter-spacing: -2px;
+                    text-transform: capitalize;
+                    letter-spacing: 1px;
+                }
+            }
+           
+            
+        }
+    }
+}
 
 // start responsive 
   @media (max-width:768px) {

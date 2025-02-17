@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import {FormControl,FormGroup,ReactiveFormsModule,Validators} from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../services/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-ngo',
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule,CommonModule,TranslateModule],
   templateUrl: './ngo.component.html',
   styleUrl: './ngo.component.scss'
 })

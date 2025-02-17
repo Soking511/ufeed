@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TranslationService } from '../services/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 import {FormControl,FormGroup,ReactiveFormsModule,Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-jet',
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule,ReactiveFormsModule,TranslateModule],
   templateUrl: './jet.component.html',
   styleUrl: './jet.component.scss'
 })

@@ -2,9 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormControl,FormGroup,ReactiveFormsModule,Validators} from '@angular/forms';
 
+import { TranslationService } from '../services/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-ees',
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule,ReactiveFormsModule,TranslateModule],
   templateUrl: './ees.component.html',
   styleUrl: './ees.component.scss'
 })

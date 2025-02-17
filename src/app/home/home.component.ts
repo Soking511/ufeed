@@ -7,19 +7,19 @@ import { ClientsComponent } from '../clients/clients.component';
 import { InnovativeSolutionsComponent } from '../innovative-solutions/innovative-solutions.component';
 import { EnhanceSolutionComponent } from '../enhance-solution/enhance-solution.component';
 import { BecomePartnerComponent } from '../become-partner-section/become-partner.component';
-// import { NewsComponent } from '../news/news.component';
 import { ContactSectionComponent } from '../contact-section/contact-section.component';
 import {WorkPerformanceComponent} from '../work-performance/work-performance.component'
 import { CourseSectionComponent } from '../course-section/course-section.component';
 import { GicgComponent } from '../gicg/gicg.component';
-import {NewsSectionComponent} from '../news-section/news-section.component'
+import {NgoSectionComponent} from '../ngo-section/ngo-section.component'
+import { ScrollService } from '../services/scroll.service'; // Import ScrollService
 
 @Component({
   selector: 'app-home',
   imports: [CommonModule,RouterModule,HeroSectionComponent,InnovativeSolutionsComponent,
     ClientsComponent,EnhanceSolutionComponent,
       BecomePartnerComponent,ContactSectionComponent,WorkPerformanceComponent,
-      CourseSectionComponent,GicgComponent,NewsSectionComponent],
+      CourseSectionComponent,GicgComponent,NgoSectionComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

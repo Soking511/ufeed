@@ -1,8 +1,11 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
+import { TranslationService } from '../services/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-clients',
-  imports: [CommonModule],
+  imports: [CommonModule,TranslateModule],
   templateUrl: './clients.component.html',
   styleUrl: './clients.component.scss'
 })
