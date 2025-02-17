@@ -59,7 +59,8 @@ export class AppComponent {
     localStorage.setItem('language', language);  // Store in localStorage
     this.translationService.loadLanguage(language);  // Change language dynamically
     this.updateDocumentDirection();
-  }
+}
+
 
   private updateDocumentDirection(): void {
     const htmlTag = document.documentElement;
