@@ -26,22 +26,26 @@ export class HeaderComponent {
   ) {}
 
   ngOnInit(): void {
+    // ✅ Scroll to top on navigation
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scrolling to top
+      });
+  
+    // ✅ Detect if the current route is the home page
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        this.isHomePage = event.url === '/';
+        this.isHomePage = event.url === '/'; // Update if home route is different
       });
-
-    // Ensure correct language is loaded
+  
+    // ✅ Set initial language
     this.currentLanguage = localStorage.getItem('language') || 'en';
-
-    if (this.router.url.startsWith('/ar')) {
-        this.currentLanguage = 'ar';
-    }
-
     this.translationService.loadLanguage(this.currentLanguage);
     this.updateDocumentDirection();
-}
+  }
+  
 
 
   @HostListener('window:scroll', [])
