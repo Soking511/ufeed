@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { TranslationService } from '../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
-
+import { ChangeDetectorRef } from '@angular/core'; 
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -21,22 +21,28 @@ export class HeaderComponent {
   constructor(
     private router: Router, 
     private renderer: Renderer2, 
-    private translationService: TranslationService
+    private translationService: TranslationService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
-    // Detect if the current route is the home page
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        this.isHomePage = event.url === '/'; // Update '/' if your home route is different
+        this.isHomePage = event.url === '/';
       });
 
-    // Set initial language
+    // Ensure correct language is loaded
     this.currentLanguage = localStorage.getItem('language') || 'en';
+
+    if (this.router.url.startsWith('/ar')) {
+        this.currentLanguage = 'ar';
+    }
+
     this.translationService.loadLanguage(this.currentLanguage);
     this.updateDocumentDirection();
-  }
+}
+
 
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
@@ -74,11 +80,20 @@ export class HeaderComponent {
 
   // Change language and update document direction
   switchLanguage(lang: string): void {
+    if (this.currentLanguage === lang) return; // Prevent unnecessary reloads
+
     this.currentLanguage = lang;
-    this.translationService.loadLanguage(lang);
     localStorage.setItem('language', lang);
+    this.translationService.loadLanguage(lang);
     this.updateDocumentDirection();
-  }
+
+    this.router.navigateByUrl(this.router.url, { skipLocationChange: false }); // Ensure correct navigation
+
+    console.log(`Switching to: ${lang}`);
+console.log(`Before switch: ${this.currentLanguage}`);
+
+}
+
 
   private updateDocumentDirection(): void {
     const htmlTag = document.documentElement;

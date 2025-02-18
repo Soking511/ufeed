@@ -33,33 +33,40 @@ export class AppComponent {
   
 
   ngOnInit(): void {
-    // Load language from localStorage or set default to English
-    this.currentLanguage = localStorage.getItem('language') || 'en';
-    this.translationService.loadLanguage(this.currentLanguage);
-    this.updateDocumentDirection();
+    // Detect language from localStorage or default to English
+    const savedLanguage = localStorage.getItem('language') || 'en';
 
-    const currentUrl = this.router.url;
-    if (currentUrl.startsWith('/ar')) {
-      this.translationService.loadLanguage('ar');
+    // Check if the URL contains "/ar" and override the detected language
+    if (this.router.url.startsWith('/ar')) {
+        this.currentLanguage = 'ar';
     } else {
-      this.translationService.loadLanguage('en');
+        this.currentLanguage = savedLanguage;
     }
 
-    // Initialize the router with scroll restoration settings
-    RouterModule.forRoot(routes, {
-      scrollPositionRestoration: 'top',  // Automatically scroll to the top after each navigation
-      anchorScrolling: 'enabled'         // Enables anchor link scrolling
-    });
-  }
+    // Load the detected language
+    this.translationService.loadLanguage(this.currentLanguage);
+    this.updateDocumentDirection();
+}
+
+
 
   
 
-  changeLanguage(language: string): void {
-    this.currentLanguage = language;
-    localStorage.setItem('language', language);  // Store in localStorage
-    this.translationService.loadLanguage(language);  // Change language dynamically
-    this.updateDocumentDirection();
+changeLanguage(language: string): void {
+  if (this.currentLanguage === language) return; // Prevent unnecessary reloads
+
+  this.currentLanguage = language;
+  localStorage.setItem('language', language);
+  this.translationService.loadLanguage(language);
+  this.updateDocumentDirection();
+
+  // Force Angular to refresh the content dynamically
+  this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([this.router.url]);
+  });
 }
+
+  
 
 
   private updateDocumentDirection(): void {

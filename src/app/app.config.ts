@@ -6,9 +6,9 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-// Function to load translation files dynamically
+// ✅ Corrected function to load translation files dynamically
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, '/i18n/', '.json'); // Adjust path if needed
+  return new TranslateHttpLoader(http, 'assets/i18n/', '.json'); // ✅ Fixed path
 }
 
 export const appConfig: ApplicationConfig = {
