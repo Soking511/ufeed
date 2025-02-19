@@ -6,6 +6,7 @@ import { filter } from 'rxjs/operators';
 import { TranslationService } from '../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { ChangeDetectorRef } from '@angular/core'; 
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -45,8 +46,6 @@ export class HeaderComponent {
     this.translationService.loadLanguage(this.currentLanguage);
     this.updateDocumentDirection();
   }
-  
-
 
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
@@ -82,7 +81,7 @@ export class HeaderComponent {
     }
   }
 
-  // Change language and update document direction
+  // ✅ Change language, scroll to top, and update document direction
   switchLanguage(lang: string): void {
     if (this.currentLanguage === lang) return; // Prevent unnecessary reloads
 
@@ -91,13 +90,14 @@ export class HeaderComponent {
     this.translationService.loadLanguage(lang);
     this.updateDocumentDirection();
 
-    this.router.navigateByUrl(this.router.url, { skipLocationChange: false }); // Ensure correct navigation
+    // ✅ Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // ✅ Reload the same page to apply the changes correctly
+    this.router.navigateByUrl(this.router.url, { skipLocationChange: false });
 
     console.log(`Switching to: ${lang}`);
-console.log(`Before switch: ${this.currentLanguage}`);
-
-}
-
+  }
 
   private updateDocumentDirection(): void {
     const htmlTag = document.documentElement;
