@@ -93,11 +93,11 @@
             .single-advantage{
                 border: solid 2px #E9E9E9;
                 border-radius: 16px;
-                padding: 24px;
-               height: 400px;
+                padding: 40px 30px 24px;
+               height: auto;
                 display: flex;
                 flex-direction: column;
-                justify-content: end;
+                justify-content: space-between;
                 transition: .3s;
                 &:hover{
                     border-left: 8px solid #f86341;
