@@ -22,39 +22,41 @@ export class EnhanceSolutionComponent implements OnInit {
 
   jetContent: any[] = [
     {
-      image: 'public/icons/tabler_report.png',
-      title: 'Real-Time Report',
-      description: 'Monitor operations with our Real-Time Report feature.',
-    },
-    {
-      image: 'public/icons/Dashboard.png',
-      title: 'User-Friendly Interface',
-      description: 'Intuitive functionality simplifies complex tasks.',
-    },
-    {
-      image: 'public/icons/streamline_database-subtract-2-raid-storage-code-disk-programming-database-array-hard-disc-minus.png',
-      title: 'Safe Data Storage',
-      description: 'Protecting your sensitive data with encryption.',
-    },
-    {
-      image: 'public/icons/material-symbols-light_language.png',
+      image: 'public/jet/langs.png',
       title: 'Bilingual - “Arabic/English”',
-      description: 'It ensures accurate understanding in both languages.',
+      description: 'UFeed JET provides an Arabic-English interface.',
     },
+    {
+      image: 'public/jet/stars.png',
+      title: 'Intelligent Job Evaluation',
+      description: 'AI analyzes job data, identifies trends.',
+    },
+    {
+      image: 'public/jet/part.png',
+      title: 'Automated JA Data',
+      description: 'JET automates data collection.',
+    },
+    {
+      image: 'public/jet/globals.png',
+      title: 'International Grading',
+      description: 'Correlate JET grades with systems for reference.',
+    }
+   
   ];
 
   eesContent: any[] = [
-    { title: 'Customizable Analytics Reporting',
-      description: 'Unlock data with our Custom Analytics Reporting.',
-      icon: 'public/icons/si_dashboard-customize-line.png' },
-    { title: 'Survey Progress Monitoring Dashboard',
-      description: 'Get real-time insights with our Survey Progress Dashboard.', 
-      icon: 'public/icons/hugeicons_web-design-01.png' },
-    { title: 'Designed by Top-Notch HR Experts', 
-      description: 'offers expertise to elevate your HR strategies', 
-      icon: 'public/icons/iconoir_design-nib.png' },
-    { title: 'Instant Access Self Service Platform', 
-      description: 'Enjoy control and convenience with our Self Service Platform.', icon: 'public/icons/system-uicons_lightning.png' },
+    { title: 'Bilingual Interface',
+      description: 'UFeed EES provides an Arabic-English interface.',
+      icon: 'public/ees/a.png' },
+    { title: 'Instant Self-Service Access',
+      description: 'HR can quickly create surveys for feedback.', 
+      icon: 'public/ees/b.png' },
+    { title: 'Customizable Demographics', 
+      description: 'Tailor demographics for better analysis.', 
+      icon: 'public/ees/c.png' },
+    { title: 'Benchmark Capabilities', 
+      description: 'Analyze data, build benchmarks.',
+       icon: 'public/ees/d.png' },
   ];
 
   ngOnInit() {

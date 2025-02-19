@@ -47,13 +47,13 @@
       <div class="row jet-elements">
         <div *ngIf="isJet; else eesContentTemplate">
           <!-- JET Content -->
-          <div class="col-6 " *ngFor="let item of jetContent">
-            <div class="h-100">
+          <div class="col-5 mx-3 my-2 " *ngFor="let item of jetContent">
+            <div class="">
               <div class="row ">
-                <div class="col-4 p-4">
+                <div class="col-12">
                   <img class="img-fluid" [src]="item.image" alt="">
                 </div>
-                <div class="col-7 text-left p-2">
+                <div class="col-12 text-left p-2">
                   <h5 class="text-left">{{ item.title | translate }}</h5>
                   <p class="text-left">{{ item.description | translate}}</p>
                 </div>
@@ -67,13 +67,13 @@
       
         <!-- EES Content Template -->
         <ng-template #eesContentTemplate>
-          <div class="col-6" *ngFor="let item of eesContent">
-            <div class="h-100">
+          <div class="col-5 mx-3 my-2" *ngFor="let item of eesContent">
+            <div class="">
               <div class="row">
-                <div class="col-4 p-4">
+                <div class="col-12">
                   <img class="img-fluid" [src]="item.icon" alt="">
                 </div>
-                <div class="col-7 text-left p-2">
+                <div class="col-12 text-left p-2">
                   <h5 class="text-left">{{ item.title | translate}}</h5>
                   <p class="text-left">{{ item.description | translate}}</p>
                 </div>
