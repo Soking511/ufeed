@@ -228,7 +228,17 @@ body.rtl{
     border-right: 1px solid #C1C1C1 !important;
   }
 
-
+.journey{
+  .container{
+    .row{
+      .col-md-6{
+        div{
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
 }
 
 

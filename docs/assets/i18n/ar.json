@@ -75,14 +75,14 @@
     "Countries adopting JET":"الدول التي تتبنى JET",
     "Positions Evaluated Using JET":"وظيفه تم تقييمها باستخدام JET",
     "Client Trusted JET Tool":"عميل لدى UFeed",
-    "Job Certification Course":"دورة الشهادة الوظيفية",
+    "Jet Certification Course":"دورة Jet",
     "Get Certified With":"احصل علي الشهادة مع",
     "JOBMASTER":"JOBMASTER",
     "course_section_desc":"يتم تسليم هذه الدورة من قبل JOBMASTER. في المشهد المتطور باستمرار لممارسات الموارد البشرية، يعد فهم مفاهيم تصميم الوظائف وتقييمها أمرًا بالغ الأهمية",
     "Delivered by JOBMASTER.":"تم التسليم بواسطة JOBMASTER.",
     " Become JET Certified.":"احصل على شهادة JET.",
     "Access UFeed Platform with Confidence":"الوصول إلى منصة UFeed بثقة",
-    "Next round starts on 10-12 Feb":"وتبدأ الجولة القادمة من 10-12 فبراير",
+    "Join for the Next round":"اشترك في الدورة القادمة",
     "Join Course":"اشترك في الدورة",
     "Proud members of":"أعضاء فخورون في",
     "gicg-desc":"مجموعة Global Impact Consulting هي مجموعة استشارية مقرها المملكة المتحدة تدعم الشراكة بين الوكالات الاستشارية الرائدة حول العالم.",
@@ -238,6 +238,7 @@
     "JET Certification Course – Get Certified":"دورة شهادة JET - احصل على الشهادة",
     "This Course is Delivered by JOBMASTER. In the ever-evolving landscape of HR practices, understanding job design and evaluation concepts are paramount.":"يتم تسليم هذه الدورة من قبل JOBMASTER. في المشهد المتطور باستمرار لممارسات الموارد البشرية، يعد فهم مفاهيم تصميم الوظائف وتقييمها أمرًا بالغ الأهمية.",
     "with":"بواسطة",
+    "Discover the Benefits":"اكتشف فوائد",
     "Digitalizing":"تحويل",
     "know-how into":"المعرفة",
     "Cutting-Edge Technology by":" في التكنولوجيا المتطورة بواسطة",
@@ -331,5 +332,6 @@
   "UFeed EES provides an Arabic-English interface.":"يوفر UFeed EES واجهة باللغة العربية والإنجليزية.",
   "HR can quickly create surveys for feedback.":"يمكن للموارد البشرية إنشاء استبيانات بسرعة للحصول على التعليقات.",
   "Tailor demographics for better analysis.":"تخصيص التركيبة السكانية لتحليل أفضل.",
-  "Analyze data, build benchmarks.":"تحليل البيانات، وبناء المعايير."
+  "Analyze data, build benchmarks.":"تحليل البيانات، وبناء المعايير.",
+  "JET Certification Course":"دورة شهادة JET"
 }   
