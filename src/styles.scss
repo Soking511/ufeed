@@ -58,11 +58,37 @@
         font-size: 40px!important;
       }
     }
-   
+   .contact-links{
+    width: 100%!important;
+    .list-footer {
+      ul{
+        display: flex;
+        justify-content: space-between;
+      }
+      .social-icons{
+        justify-content: center!important;
+        margin: auto!important;
+      }
+    }
+   }
   }
   @media (max-width:768px) {
     h2{
       font-size: 40px!important;
+    }
+    .contact-links{
+      width: 50%!important;
+    }
+    .contact-links{
+
+      .list-footer {
+        ul{
+          display: block!important;
+        }
+        .social-icons{
+          justify-content: flex-start!important;
+        }
+      }
     }
   }
 
