@@ -13,7 +13,6 @@
       }
     }
     .right-partner{
-      // background:url('/public/clients/partimage 8.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -77,6 +76,15 @@
       }
     }
 
+  }
+
+  @media (max-width:1024px) {
+    .right-partner{
+      background-size: contain!important;
+    }
+    h2{
+      font-size: 40px!important;
+    }
   }
 
   @media (max-width:426px){
