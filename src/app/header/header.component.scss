@@ -256,7 +256,12 @@ color: #000!important;
 
 
 @media (max-width: 768px) {
-
+.switcher-holder{
+  margin-top: 20px;
+  .lang_switcher{
+    justify-content: center;
+  }
+}
 nav.navbar{
   background-color: #fff;
 }
