@@ -93,11 +93,11 @@
             .single-advantage{
                 border: solid 2px #E9E9E9;
                 border-radius: 16px;
-                padding: 40px 30px 24px;
-               height: auto;
+                padding: 30px 24px;
+                height: auto;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: center;
                 transition: .3s;
                 &:hover{
                     border-left: 8px solid #f86341;
@@ -110,6 +110,9 @@
                     font-size: 30px;
                 }
               
+            }
+            .single-advantage.mid-advantage{
+                height: 380px;
             }
             }
         }
@@ -216,3 +219,27 @@
         }
     }
 }
+
+
+@media (max-width:1024px) {
+      .advantages{
+        .container{
+          .row{
+            .row{
+                h3{
+                    font-size: 24px;
+                }
+                p{
+                    font-size: 12px;
+                }
+                .col-md-4{
+                width: 50%!important;
+              }
+              .col-md-6{
+                height: 300px;
+              }
+            }
+          }
+        }
+      }
+    }

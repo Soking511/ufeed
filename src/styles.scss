@@ -57,6 +57,20 @@
       h1{
         font-size: 40px!important;
       }
+      .single-advantage p{
+        font-size: 12px;
+      }
+      .advantages{
+        .container{
+          .row{
+            .row{
+              .col-md-4{
+                width: 50%!important;
+              }
+            }
+          }
+        }
+      }
     }
    .contact-links{
     width: 100%!important;
@@ -92,6 +106,8 @@
     }
   }
 
+
+  
 
   // animation 
 // Define the animation for sliding and fading in
