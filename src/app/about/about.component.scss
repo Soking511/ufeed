@@ -50,20 +50,33 @@
   .journey{
     .container{
         .row{
+            .col-md-7{
+                padding-right: 50px;
+            }
+            .col-md-5{
+                display: flex;
+                align-items: center;
+            }
             h2{
-                font-size: 55px;
-                font-weight: 700;
-                padding-right: 24px;
+                color: #2A2B34;
+font-feature-settings: 'liga' off, 'clig' off;
+font-family: "Creato Display";
+font-size: 44px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -2px;
                 span{
                     color: #f86341;
                 }
             }
             ul{
+                padding-left: 0;
                 list-style:none;
                 li{
-                    margin-bottom: 20px;
-                    border-left: 5px solid #375D95;
-                    padding-left:12px ;
+                    i{
+                        color:#f86341
+                    }
                     transition: .5s;
                 &:hover{
                     border-color: #f86341;
