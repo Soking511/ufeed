@@ -124,6 +124,19 @@ select option {
   
   }
   
+  @media (max-width:1024px) {
+.contact-form{
+  .container{
+    .row{
+      .col-md-6{
+        width: 75%!important;
+      }
+    }
+  }
+}
+  
+  }
+  
   @media (max-width:786px) {
     .contact-form{
       .container{
