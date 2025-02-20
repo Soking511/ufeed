@@ -166,6 +166,24 @@ h2{
 }
 
 
+@media (max-width:1024px) {
+    h4{
+        font-size: 22px!important;
+    }
+    }
+
+    @media (max-width:768px) {
+        .journey{
+            .container{
+                .row{
+                    .row{
+                        width: 100%!important;
+                    }
+                }
+            }
+        }
+    
+    }
 
 @media (max-width:426px) {
 
