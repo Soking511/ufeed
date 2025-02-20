@@ -5,7 +5,6 @@
   </h2>
 
 
-
 <div class="container-fluid py-4 position-relative">
   <div class="row">
     <!-- Left Section -->
@@ -49,17 +48,21 @@
           <!-- JET Content -->
           <div class="col-5 mx-3 my-2 " *ngFor="let item of jetContent">
             <div class="">
-              <div class="row ">
-                <div class="col-12">
+              <div class="row holder">
+             
+                <div class="">
                   <img class="img-fluid" [src]="item.image" alt="">
                 </div>
-                <div class="col-12 text-left p-2">
+
+                <div class=" text-left p-2">
                   <h5 class="text-left">{{ item.title | translate }}</h5>
-                  <p class="text-left">{{ item.description | translate}}</p>
+                  <!-- <p class="text-left">{{ item.description | translate}}</p> -->
                 </div>
+
               </div>
             </div>
           </div>
+
           <a href="" routerLink="/jet" routerLinkActive="active" class="btn-jet py-2 my-3">
             {{"Explore Job Evaluation Tool" |translate}}
           </a>
@@ -70,12 +73,12 @@
           <div class="col-5 mx-3 my-2" *ngFor="let item of eesContent">
             <div class="">
               <div class="row">
-                <div class="col-12">
+                <div class="">
                   <img class="img-fluid" [src]="item.icon" alt="">
                 </div>
-                <div class="col-12 text-left p-2">
+                <div class=" text-left p-2">
                   <h5 class="text-left">{{ item.title | translate}}</h5>
-                  <p class="text-left">{{ item.description | translate}}</p>
+                  <!-- <p class="text-left">{{ item.description | translate}}</p> -->
                 </div>
               </div>
             </div>
@@ -86,6 +89,8 @@
         </ng-template>
       </div>
       
+
+
     </div>
   
     <!-- Right Section -->

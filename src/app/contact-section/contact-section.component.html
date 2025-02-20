@@ -58,45 +58,50 @@
             </div>
   
             <div class="form-group col-12 my-3">
-              <label for="inputState">{{"Select Your Inquiry*"|translate}}</label>
-              <div class="custom-select-wrapper">
-                <select 
-                  id="inputState" 
-                  class="form-control p-3"
-                  formControlName="inquiry"
-                  [ngClass]="{ 'placeholder-visible': contactForm.get('inquiry')?.value === '' }"
-                  required>
-                  <option>{{"Book a Demo"|translate}}</option>
-                  <option>{{"Get a Quotation"| translate}}</option>
-                  <option>{{"Have an Inquiry" | translate}}</option>
-                </select>
+              <label for="inputState">{{ "Select Your Inquiry*" | translate }}</label>
+            
+              <div class="custom-checkbox-wrapper">
+                <div *ngFor="let inquiry of inquiries">
+                  <input 
+                    type="checkbox" 
+                    [id]="inquiry.value" 
+                    [value]="inquiry.value"
+                    (change)="onInquiryCheckboxChange($event)"
+                    [checked]="contactForm.get('inquiry')?.value.includes(inquiry.value)">
+                  <label [for]="inquiry.value">{{ inquiry.label | translate }}</label>
+                </div>
               </div>
+            
               <p 
                 *ngIf="contactForm.get('inquiry')?.errors != null && contactForm.get('inquiry')?.touched" 
                 class="py-2 text-danger">
-                {{"Please Choose Your Inquiry"|translate}}
+                {{ "Please Choose Your Inquiry" | translate }}
               </p>
             </div>
             
+            
             <div class="form-group col-12 my-3">
-              <label for="inputProduct">{{"Select Product*"|translate}}</label>
-              <div class="custom-select-wrapper">
-                <select 
-                  id="inputProduct" 
-                  class="form-control p-3"
-                  formControlName="product"
-                  [ngClass]="{ 'placeholder-visible': contactForm.get('product')?.value === '' }"
-                  required>
-                  <option>{{"Job Evaluation Tool - JET"|translate}}</option>
-                  <option>{{"Employee Engagement Survey - EES" |translate}}</option>
-                </select>
+              <label for="inputProduct">{{ "Select Product*" | translate }}</label>
+              
+              <div class="custom-checkbox-wrapper">
+                <div *ngFor="let product of products">
+                  <input 
+                    type="checkbox" 
+                    [id]="product.value" 
+                    [value]="product.value"
+                    (change)="onCheckboxChange($event)"
+                    [checked]="contactForm.get('product')?.value.includes(product.value)">
+                  <label [for]="product.value">{{ product.label | translate }}</label>
+                </div>
               </div>
+            
               <p 
                 *ngIf="contactForm.get('product')?.errors != null && contactForm.get('product')?.touched" 
                 class="py-2 text-danger">
-                {{"Please Choose Your Product"|translate}}
+                {{ "Please Choose Your Product" | translate }}
               </p>
             </div>
+            
                 
             <div class="form-group col-12 my-3">
               <label for="">{{"Message"|translate}}</label>

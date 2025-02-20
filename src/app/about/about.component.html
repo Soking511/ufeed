@@ -34,7 +34,7 @@
 
                     <li>{{"second_desc" | translate}}</li>
                     
-                        <li>{{"third_desc" |translate}}</li>
+                    <!-- <li>{{"third_desc" |translate}}</li> -->
                 </ul>
             </div>
         </div>
@@ -49,7 +49,8 @@
             <h2 class="w-75 m-auto">{{"Enhance Your" | translate}} <span>{{"Workforce Performance" |translate}}</span> {{"with Ufeed’s products" | translate}}</h2>
         </div>
         <div class="row justify-content-center align-center">
-            <div class="col-md-4" routerLink="/jet">
+         
+            <div class="col-md-4" >
                 <div class="icon-holder p-3">
                     <img class="img-fluid" src="public/icons/a.png" alt="" srcset="">
                 </div>
@@ -57,14 +58,14 @@
                     <h4 class=" text-center">{{"Job Evaluation \nTool - JET" | translate}}</h4>
                 </div>
                 <div class="cta">
-                    <a href="">
+                    <a routerLink="/jet">
                         {{"Read_More" | translate}}
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="col-md-4" routerLink="/ees">
+            <div class="col-md-4" >
                 <div class="icon-holder p-3">
                     <img class="img-fluid" src="public/icons/b.png" alt="" srcset="">
                 </div>
@@ -72,7 +73,7 @@
                     <h4 class=" text-center">{{"Employee Engagement \nSurvey - EES" | translate}}</h4>
                 </div>
                 <div class="cta">
-                    <a href="">
+                    <a routerLink="/ees">
                         {{"Read_More" | translate}}
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>

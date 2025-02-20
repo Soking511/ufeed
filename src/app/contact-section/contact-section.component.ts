@@ -42,6 +42,42 @@ export class ContactSectionComponent {
   console.log(contactForm);
   }
 
-
+  products = [
+    { value: 'jet', label: 'Job Evaluation Tool - JET' },
+    { value: 'ees', label: 'Employee Engagement Survey - EES' }
+  ];
+  
+  onCheckboxChange(event: Event) {
+    const target = event.target as HTMLInputElement;
+    let selectedProducts = this.contactForm.get('product')?.value || [];
+  
+    if (target.checked) {
+      selectedProducts.push(target.value);
+    } else {
+      selectedProducts = selectedProducts.filter((p: string) => p !== target.value);
+    }
+  
+    this.contactForm.get('product')?.setValue(selectedProducts);
+  }
+  
+  inquiries = [
+    { value: 'book-demo', label: 'Book a Demo' },
+    { value: 'get-quotation', label: 'Get a Quotation' },
+    { value: 'have-inquiry', label: 'Have an Inquiry' }
+  ];
+  
+  onInquiryCheckboxChange(event: Event) {
+    const target = event.target as HTMLInputElement;
+    let selectedInquiries = this.contactForm.get('inquiry')?.value || [];
+  
+    if (target.checked) {
+      selectedInquiries.push(target.value);
+    } else {
+      selectedInquiries = selectedInquiries.filter((i: string) => i !== target.value);
+    }
+  
+    this.contactForm.get('inquiry')?.setValue(selectedInquiries);
+  }
+  
 
 }
