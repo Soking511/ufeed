@@ -39,19 +39,19 @@
         <!-- JET Content with fade-in animation -->
         <div *ngIf="isJet; else eesContentTemplate" class="row justify-content-between jet_elements fade-in">
           <div class="col-5 d-flex">
-            <img src="/public/jet/langs.png" alt="" />
+            <img src="public/jet/langs.png" alt="" />
             <h5>{{"Bilingual Interface" |translate}}</h5>
           </div>
           <div class="col-5 d-flex">
-            <img src="/public/jet/stars.png" alt="" />
+            <img src="public/jet/stars.png" alt="" />
             <h5>{{"Intelligent Job Evaluation" |translate}}</h5>
           </div>
           <div class="col-5 d-flex">
-            <img src="/public/jet/part.png" alt="" />
+            <img src="public/jet/part.png" alt="" />
             <h5>{{"Automated JA Data" |translate}}</h5>
           </div>
           <div class="col-5 d-flex">
-            <img src="/public/jet/globals.png" alt="" />
+            <img src="public/jet/globals.png" alt="" />
             <h5>{{"International Grading" |translate}}</h5>
           </div>
           <a href="" routerLink="/jet" routerLinkActive="active" class="btn-jet py-2 my-3 fade-in">
@@ -67,15 +67,15 @@
               <h5>{{"Bilingual Interface" |translate}}</h5>
             </div>
             <div class="col-5 d-flex">
-              <img src="/public/ees/b.png" alt="" />
+              <img src="public/ees/b.png" alt="" />
               <h5>{{"Instant Self-Service Access" |translate}}</h5>
             </div>
             <div class="col-5 d-flex">
-              <img src="/public/ees/c.png" alt="" />
+              <img src="public/ees/c.png" alt="" />
               <h5>{{"Customizable Demographics" |translate}}</h5>
             </div>
             <div class="col-5 d-flex">
-              <img src="/public/ees/d.png" alt="" />
+              <img src="public/ees/d.png" alt="" />
               <h5>{{"Benchmark Capabilities" |translate}}</h5>
             </div>
             <a href="" routerLink="/ees" routerLinkActive="active" class="btn-jet py-2 my-3 fade-in">
@@ -87,7 +87,7 @@
       <!-- right (Image Section with fade-in animation) -->
       <div class="col-md-6">
         <div class="img-holder animated-image fade-in">
-          <img class="img-fluid fade-in" [src]="isJet ? '/public/Imagejet.png' : '/public/Imageees.png'" alt="" />
+          <img class="img-fluid fade-in" [src]="isJet ? 'public/Imagejet.png' : 'public/Imageees.png'" alt="" />
         </div>
       </div>
     </div>
