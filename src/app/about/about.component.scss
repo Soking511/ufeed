@@ -341,7 +341,21 @@ letter-spacing: -2px;
   }
 
 
-@media (max-width:426px){
+@media (max-width:768px){
+.journey{
+    .container{
+        .row{
+            padding-top:20px ;
+            .col-md-7,.col-md-5{
+                width: 100%;
+                margin-top: 24px;
+            }
+        }
+    }
+}
+}
+
+    @media (max-width:426px){
     .title{
         .container{
             .row{

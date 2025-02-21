@@ -262,23 +262,40 @@ color: #000!important;
     justify-content: center;
   }
 }
+.navbar-collapse{
+  padding-top: 20px;
+}
+a.header-cta.contact-button{
+  border-color: #000;
+}
+i.fa-solid.fa-arrow-right,i.fa-solid.fa-globe{
+  color: #375d95!important;
+}
+ul.dropdown-menu.px-4.show {
+  background: #eaeaea;
+}
+
 nav.navbar{
   background-color: #fff;
 }
-.nav-item a{
+.nav-item a,a.header-cta.contact-button{
   color: #000;
 }
 .header-cta{
-  color: #f86341;
+  color: #fff;
 }
-
+a.dropdown-item{
+  color: #000!important;
+}
 .navbar-collapse{
  .btns-holder{
   width: 100%;
   justify-content: space-between!important;
  }
 }
-
+ul.navbar-nav.mb-2.mb-lg-0.w-100.justify-content-center:lang(ar){
+  padding-right: 0;
+}
 
 }
 
