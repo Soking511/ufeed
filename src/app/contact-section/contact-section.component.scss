@@ -150,10 +150,35 @@ select option {
     }
   }
 
+  @media (max-width:1024px){
+    .contact-form{
+      .container{
+        .row{
+          .col-md-6.col-sm-12 {
+            width: 75% !important;
+          }
+        }
+    }
+  }
+   
+  }
+
   @media (max-width:426px) {
 .form-holder{
   h2{
     font-size: 24px!important;
   }
+  
 }
+
+.contact-form{
+  .container{
+    .row{
+      .col-md-6.col-sm-12 {
+        width: 100% !important;
+      }
+    }
+}
+}
+
   }
