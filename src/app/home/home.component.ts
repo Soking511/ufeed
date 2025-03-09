@@ -11,15 +11,17 @@ import { ContactSectionComponent } from '../contact-section/contact-section.comp
 import {WorkPerformanceComponent} from '../work-performance/work-performance.component'
 import { CourseSectionComponent } from '../course-section/course-section.component';
 import { GicgComponent } from '../gicg/gicg.component';
-import {NgoSectionComponent} from '../ngo-section/ngo-section.component'
+import {NgoSectionComponent} from '../ngo-section/ngo-section.component';
 import { ScrollService } from '../services/scroll.service'; // Import ScrollService
+import { NewsSectionComponent } from '../news-section/news-section.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   imports: [CommonModule,RouterModule,HeroSectionComponent,InnovativeSolutionsComponent,
     ClientsComponent,EnhanceSolutionComponent,
       BecomePartnerComponent,ContactSectionComponent,WorkPerformanceComponent,
-      CourseSectionComponent,GicgComponent,NgoSectionComponent],
+      CourseSectionComponent,GicgComponent,NgoSectionComponent,NewsSectionComponent, TranslateModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
