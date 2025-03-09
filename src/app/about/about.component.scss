@@ -1,145 +1,262 @@
 @import url('https://fonts.cdnfonts.com/css/brittany-signature');
+
 .title {
-    color: #2A2B34; /* Optional: Adjust text color for better visibility */
-    padding:20px; /* Optional: Add some padding */
+    color: #2A2B34;
+    /* Optional: Adjust text color for better visibility */
+    padding: 20px;
+    /* Optional: Add some padding */
     min-height: 75vh;
-    position: relative; /* Ensure proper positioning for ::before */
-  
+    position: relative;
+    /* Ensure proper positioning for ::before */
+
     &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        to right,
-        rgba(248, 99, 65, 0.70), /* Left fill */
-        rgba(55, 93, 149, 0.70), /* Middle fill */
-        #fff                      /* Right fill */
-      );
-      opacity: 0.5; /* Overall transparency */
-      filter: blur(250px); /* Applies the blur effect */
-      z-index: -1; /* Ensures the gradient is behind the content */
-    }
-  
-    .container {
-      .row {
-        justify-content: center;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 100%;
-        justify-content: center;
-        align-content: flex-end;
-        width: 75%;
-        h1 {
-          font-size: 77px;
-          font-weight: 700;
-          line-height: 110px;
-          span {
-            background-color: #f86341;
-            color: #fff;
-          }
-        }
-        p {
-          color: #2A2B34;
-          font-size: 20px;
-        }
-      }
+        background: linear-gradient(to right,
+                rgba(248, 99, 65, 0.70),
+                /* Left fill */
+                rgba(55, 93, 149, 0.70),
+                /* Middle fill */
+                #fff
+                /* Right fill */
+            );
+        opacity: 0.5;
+        /* Overall transparency */
+        filter: blur(250px);
+        /* Applies the blur effect */
+        z-index: -1;
+        /* Ensures the gradient is behind the content */
     }
-  }
-    
-  .journey{
-    .container{
-        .row{
-            .col-md-7{
+
+    .container {
+        .row {
+            justify-content: center;
+            height: 100%;
+            justify-content: center;
+            align-content: flex-end;
+            width: 75%;
+
+            h1 {
+                font-size: 77px;
+                font-weight: 700;
+                line-height: 110px;
+
+                span {
+                    background-color: #f86341;
+                    color: #fff;
+                }
+            }
+
+            p {
+                color: #2A2B34;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.journey {
+    .container {
+        .row {
+            .col-md-7 {
                 padding-right: 50px;
             }
-            .col-md-5{
+
+            .col-md-5 {
                 display: flex;
                 align-items: center;
             }
-            h2{
+
+            h2 {
                 color: #2A2B34;
-font-feature-settings: 'liga' off, 'clig' off;
-font-family: "Creato Display";
-font-size: 44px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-letter-spacing: -2px;
-                span{
+                font-feature-settings: 'liga' off, 'clig' off;
+                font-family: "Creato Display";
+                font-size: 44px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: 0px;
+
+                span {
                     color: #f86341;
                 }
             }
-            ul{
+
+            p {
+                font-size: 20px;
+            }
+
+            ul {
                 padding-left: 0;
-                list-style:none;
-                li{
-                    i{
-                        color:#f86341
+                padding-right: 0;
+                list-style: none;
+
+                li {
+                    i {
+                        color: #f86341;
+                        margin: 0 5px;
                     }
+
                     transition: .5s;
-                &:hover{
-                    border-color: #f86341;
-                }
+
+                    &:hover {
+                        border-color: #f86341;
+                    }
                 }
             }
         }
     }
-  }
+}
 
 
-  .performance{
-    .container{
-        .row{
-            h2{
+.performance {
+    .container {
+        .row {
+            h2 {
                 font-size: 55px;
                 font-weight: 700;
                 text-align: center;
-                span{
+
+                span {
                     color: #f86341;
                 }
             }
         }
-        .row{
-           .col-md-4{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            .icon-holder{
-                max-width: 200px;
-            img{
-                transform: scale(.9);
-                transition: .5s;
-                &:hover{
-                    transform: scale(.85);
+
+        .row {
+            .col-md-4 {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: all .5s;
+
+                // &::before {
+                //     content: '';
+                //     position: absolute;
+                //     left: 50px;
+                //     top: 0;
+                //     width: 8px;
+                //     height: 100%;
+                //     background-color: #F86341;
+                //     opacity: 0;
+                //     transition: all .5s;
+                // }
+
+                .icon-holder {
+                    max-width: 300px;
+
+                    img {
+                        // transform: scale(.9);
+                        transition: .5s;
+                        margin-bottom: 20px;
+
+                    }
+                }
+
+                .cta {
+                    a {
+                        display: inline-block;
+                        transform: translateY(50px);
+                        text-decoration: none;
+                        opacity: 0;
+                        color: #375D95;
+                        transition: all .5s;
+                    }
+                }
+
+                .title-per {
+                    h4 {
+                        font-size: 25px;
+                        font-weight: 700;
+                        color: #2A2B34;
+                    }
+
+                    p {
+                        text-align: center;
+                        transform: translateY(50px);
+                        opacity: 0;
+                        transition: all .5s;
+                    }
+                }
+
+                &:hover {
+                    transform: translateY(-20px);
+
+                    .cta {
+                        a {
+                            transform: translateY(0px);
+                            opacity: 1;
+                        }
+                    }
+
+                    .title-per {
+                        p {
+                            opacity: 1;
+                            transform: translateY(0px);
+                        }
+                    }
+
+                    // &::before {
+                    //     opacity: 1;
+                    //     left: 0;
+                    // }
                 }
             }
-            }
-            .cta{
-                a{
-                    text-decoration: none;
-                    color: #375D95;
-                }
-            }
-           }
         }
     }
-  }
+}
 
-  .team{
-    .container{
-        .row{
-            h2{
+.ufeed-text {
+    background-color: #E5E9F2;
+    padding: 20px;
+    margin: 50px 0;
+
+    .container {
+        .text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
                 font-size: 55px;
                 font-weight: 700;
-                span{
+                text-align: center;
+                color: #2A2B34;
+                font-family: 'Creato Display', sans-serif;
+                padding: 20px;
+            }
+
+            img:first-child {
+                align-self: flex-start;
+            }
+
+            img:last-child {
+                align-self: flex-end;
+            }
+        }
+    }
+}
+
+.team {
+    .container {
+        .row {
+            h2 {
+                font-size: 55px;
+                font-weight: 700;
+
+                span {
                     color: #f86341;
                 }
             }
 
-            .member{
+            .member {
                 // background:url('/public/team/image27.png');
                 height: 500px;
                 background-size: cover;
@@ -151,41 +268,47 @@ letter-spacing: -2px;
                 cursor: pointer;
                 border: #f86341 solid 4px;
                 transition: .5s;
-                &:hover .overflow{
+
+                &:hover .overflow {
                     opacity: 1;
-                    p{
+
+                    p {
                         color: #fff;
                     }
-                    a{
+
+                    a {
                         font-size: 24px;
                     }
                 }
             }
 
-            .member1{
+            .member1 {
                 // background:url('/public/team/image26.png');
                 height: 500px;
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center top;
-                border-radius: 130px; 
+                border-radius: 130px;
                 overflow: hidden;
                 padding: 0;
                 border: #f86341 solid 4px;
                 cursor: pointer;
-                &:hover .overflow{
+
+                &:hover .overflow {
                     opacity: 1;
-                    p{
+
+                    p {
                         color: #fff;
                     }
-                    a{
+
+                    a {
                         font-size: 24px;
                     }
                 }
-               
+
             }
 
-            .member2{
+            .member2 {
                 // background:url('/public/team/image28.png');
                 height: 500px;
                 background-size: cover;
@@ -196,19 +319,22 @@ letter-spacing: -2px;
                 padding: 0;
                 overflow: hidden;
                 cursor: pointer;
-                &:hover .overflow{
+
+                &:hover .overflow {
                     opacity: 1;
-                    p{
+
+                    p {
                         color: #fff;
                     }
-                    a{
+
+                    a {
                         font-size: 24px;
                     }
                 }
-               
+
             }
 
-            .overflow{
+            .overflow {
                 width: 100%;
                 height: 100%;
                 background: rgba(0, 0, 0, 0.50);
@@ -217,8 +343,8 @@ letter-spacing: -2px;
                 justify-content: center;
                 align-items: center;
                 color: #fff;
-                display:flex;
-                flex-direction:column;
+                display: flex;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 transition: .3s ease-in-out;
@@ -226,17 +352,18 @@ letter-spacing: -2px;
             }
         }
     }
-  }
+}
 
 
 //   message 
 
-.message{
-    padding:  0;
+.message {
+    padding: 0;
+
     // background-color: #D1DAE7;
-    .container{
-        .row{
-            .ceo-signiture{
+    .container {
+        .row {
+            .ceo-signiture {
                 color: #43424C;
                 font-feature-settings: 'liga' off, 'clig' off;
                 font-family: 'Brittany Signature', sans-serif;
@@ -246,14 +373,16 @@ letter-spacing: -2px;
                 line-height: normal;
                 letter-spacing: 1px;
                 text-transform: capitalize;
-               
+
             }
-            .col-md-6{
+
+            .col-md-6 {
                 display: flex;
                 align-items: flex-start;
                 justify-content: center;
                 flex-direction: column;
-                h2{
+
+                h2 {
                     color: var(--Orange-Identity, #F86341);
                     font-feature-settings: 'liga' off, 'clig' off;
                     font-family: "Creato Display";
@@ -266,40 +395,44 @@ letter-spacing: -2px;
                     letter-spacing: 1px;
                 }
             }
-           
-            
+
+
         }
     }
 }
 
 // start responsive 
-  @media (max-width:768px) {
-   
-   .title{
-    .container{
-        .row{
-            width: 100%;
-            h1{
-                font-size: 34px;
-                line-height: 60px;
-             }
-     
+@media (max-width:768px) {
+
+    .title {
+        .container {
+            .row {
+                width: 100%;
+
+                h1 {
+                    font-size: 34px;
+                    line-height: 60px;
+                }
+
+            }
         }
     }
-    }
 
-    .journey{
-        .container{
-            .row{
-                .col-2{
+    .journey {
+        .container {
+            .row {
+                .col-2 {
                     display: none;
                 }
-                .col-md-6{
-                    h2{
+
+                .col-md-6 {
+                    h2 {
                         font-size: 34px;
                     }
+
                     width: 100%;
-                    ul{
+
+                    ul {
                         padding-top: 40px;
                         padding-left: 0;
                         padding-right: 30px;
@@ -309,79 +442,98 @@ letter-spacing: -2px;
         }
     }
 
-.performance{
-    .container{
-        .row{
-            h2{
-                font-size: 34px;
-            }
+    .performance {
+        .container {
+            .row {
+                h2 {
+                    font-size: 34px;
+                }
 
-            .col-md-4{
-                width: 50%;
+                .col-md-4 {
+                    width: 50%;
+                }
+            }
+        }
+    }
+
+    .ufeed-text {
+        background-color: #E5E9F2;
+        padding: 20px;
+        margin: 50px 0;
+
+        .container {
+            .text {
+                p {
+                    font-size: 22px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .team {
+        .container {
+            .row {
+                h2 {
+                    font-size: 34px;
+                }
+
+                .col-md-3 {
+                    width: 30%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+
+}
+
+
+@media (max-width:768px) {
+    .journey {
+        .container {
+            .row {
+                padding-top: 20px;
+
+                .col-md-7,
+                .col-md-5 {
+                    width: 100%;
+                    margin-top: 24px;
+                }
             }
         }
     }
 }
 
-.team{
-    .container{
-        .row{
-            h2{
-                font-size: 34px;
-            }
-            .col-md-3{
-                width: 30%;
-                text-align: center;
-            }
-        }
-    }
-}
+@media (max-width:426px) {
+    .title {
+        .container {
+            .row {
 
-
-  }
-
-
-@media (max-width:768px){
-.journey{
-    .container{
-        .row{
-            padding-top:20px ;
-            .col-md-7,.col-md-5{
-                width: 100%;
-                margin-top: 24px;
-            }
-        }
-    }
-}
-}
-
-    @media (max-width:426px){
-    .title{
-        .container{
-            .row{
-
-                h1{
+                h1 {
                     line-height: 50px;
                 }
-        
+
             }
         }
-            }
+    }
 
 
-    .performance{
-        .container{
-            .row{
-                .col-md-4{
+    .performance {
+        .container {
+            .row {
+                .col-md-4 {
                     width: 100%;
                 }
             }
         }
-    }            
-    .team{
-        .container{
-            .row{
-                .col-md-3{
+    }
+
+    .team {
+        .container {
+            .row {
+                .col-md-3 {
                     width: 70%;
                     margin: 18px 0;
                 }

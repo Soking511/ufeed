@@ -1,8 +1,11 @@
 .title {
-  color: #2A2B34; /* Optional: Adjust text color for better visibility */
-  padding: 20px; /* Optional: Add some padding */
+  color: #2A2B34;
+  /* Optional: Adjust text color for better visibility */
+  padding: 20px;
+  /* Optional: Add some padding */
   min-height: 70vh;
-  position: relative; /* Ensure proper positioning for ::before */
+  position: relative;
+  /* Ensure proper positioning for ::before */
 
   &::before {
     content: '';
@@ -11,15 +14,20 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      to right,
-      rgba(248, 99, 65, 0.70), /* Left fill */
-      rgba(55, 93, 149, 0.70), /* Middle fill */
-      #fff                      /* Right fill */
-    );
-    opacity: 0.5; /* Overall transparency */
-    filter: blur(250px); /* Applies the blur effect */
-    z-index: -1; /* Ensures the gradient is behind the content */
+    background: linear-gradient(to right,
+        rgba(248, 99, 65, 0.70),
+        /* Left fill */
+        rgba(55, 93, 149, 0.70),
+        /* Middle fill */
+        #fff
+        /* Right fill */
+      );
+    opacity: 0.5;
+    /* Overall transparency */
+    filter: blur(250px);
+    /* Applies the blur effect */
+    z-index: -1;
+    /* Ensures the gradient is behind the content */
   }
 
   .container {
@@ -29,15 +37,18 @@
       justify-content: center;
       align-content: flex-end;
       width: 75%;
+
       h1 {
         font-size: 77px;
         font-weight: 700;
         line-height: 110px;
+
         span {
           background-color: #f86341;
           color: #fff;
         }
       }
+
       p {
         color: #2A2B34;
         font-size: 20px;
@@ -46,128 +57,152 @@
   }
 }
 
-  
-  .title-holder{
-    width: 100%;
-    align-items: center;
- .after{
-  height: 1px;
-  background: linear-gradient(270deg,
-   rgba(255, 255, 255, 0.00) 0%,
-    rgba(255, 255, 255, 0.00) 49.75%,
-    #F86341 100%);
-  }
 
-  .before{
+.title-holder {
+  width: 100%;
+  align-items: center;
+
+  .after {
     height: 1px;
     background: linear-gradient(270deg,
-    #F86341 0%,
-    rgba(255, 255, 255, 0.00) 49.75%,
-    rgba(255, 255, 255, 0.00) 100%);
+        rgba(255, 255, 255, 0.00) 0%,
+        rgba(255, 255, 255, 0.00) 49.75%,
+        #F86341 100%);
+  }
+
+  .before {
+    height: 1px;
+    background: linear-gradient(270deg,
+        #F86341 0%,
+        rgba(255, 255, 255, 0.00) 49.75%,
+        rgba(255, 255, 255, 0.00) 100%);
 
   }
-  
+
 }
 
-  .partner{
-    .container{
-        .row{
-            h2{
-                font-size: 55px;
-                font-weight: 700;
-                span{
-                    color: #f86341;
-                }
-            }
-            
+.partner {
+  .container {
+    .row {
+      h2 {
+        font-size: 55px;
+        font-weight: 700;
+
+        span {
+          color: #f86341;
+        }
+      }
+
+    }
+
+    .row {
+      form {
+        input::placeholder {
+          color: rgb(152, 152, 152);
+          font-weight: 400;
+          font-size: 14px;
         }
 
-        .row{
-            form{
-                .row{
-
-                  /* Custom dropdown arrow */
-.custom-select-wrapper {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-}
-
-.custom-select-wrapper::after {
-  content: "\f078"; /* Font Awesome down arrow */
-  font-family: "Font Awesome 6 Free"; /* Ensure FontAwesome 6 is loaded */
-  font-weight: 900;
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  color: #43424C; /* Arrow color */
-  pointer-events: none; /* Prevent clicking on arrow */
-}
-
-/* Remove default browser arrow */
-select {
-  -webkit-appearance: none;  /* Remove default arrow in Safari */
-  -moz-appearance: none;     /* Remove default arrow in Firefox */
-  appearance: none;          /* Remove default arrow in modern browsers */
-  padding-right: 30px;       /* Space for custom arrow */
-}
-
-                    .form-group{
-                        label{
-                            padding: 8px;
-                            color: #43424C;
-                            font-size: 16px;
-                            font-weight: 500;
-                            font-family: 'Century Gothic Paneuropean';
-                        }
-                        input.form-control.p-3,textarea{
-                            border-radius: 16px;
-                            background-color: #f9f9f9;
-                            backdrop-filter: blur(28.242982864379883px);
-                        }
-                    }
-                }
-                button{
-                    background-color: #3B5C92;
-                }
-            }
+        label {
+          margin: 4px 0;
         }
+
+        .row {
+
+          /* Custom dropdown arrow */
+          .custom-select-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+          }
+
+          .custom-select-wrapper::after {
+            content: "\f078";
+            /* Font Awesome down arrow */
+            font-family: "Font Awesome 6 Free";
+            /* Ensure FontAwesome 6 is loaded */
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            color: #43424C;
+            /* Arrow color */
+            pointer-events: none;
+            /* Prevent clicking on arrow */
+          }
+
+          /* Remove default browser arrow */
+          select {
+            -webkit-appearance: none;
+            /* Remove default arrow in Safari */
+            -moz-appearance: none;
+            /* Remove default arrow in Firefox */
+            appearance: none;
+            /* Remove default arrow in modern browsers */
+            padding-right: 30px;
+            /* Space for custom arrow */
+          }
+
+          .form-group {
+            label {
+              padding: 8px;
+              color: #43424C;
+              font-size: 16px;
+              font-weight: 500;
+              font-family: 'Century Gothic Paneuropean';
+            }
+
+            input.form-control.p-3,
+            textarea {
+              border-radius: 16px;
+              background-color: #f9f9f9;
+              backdrop-filter: blur(28.242982864379883px);
+            }
+          }
+        }
+
+        button {
+          background-color: #3B5C92;
+        }
+      }
     }
   }
+}
 
-  .file-upload-wrapper {
-    position: relative;
-    width: 100%;
-    border-radius: 8px;
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-    cursor: pointer;
-  }
-  
-  .file-input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-  }
-  
-  .file-placeholder {
-    pointer-events: none; /* Makes the placeholder unclickable */
-    color: #666666;
-    font-size: 16px;
-  }
-  
-  .file-placeholder i {
-    color: #BCBCBC; /* Adjust icon color */
-  }
-  
-  .file-upload-wrapper:hover {
-    background-color: #f0f0f0;
-    border-color: #BCBCBC;
-  }
-  
+.file-upload-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-placeholder {
+  pointer-events: none;
+  /* Makes the placeholder unclickable */
+  color: #666666;
+  font-size: 16px;
+}
+
+.file-placeholder i {
+  color: #BCBCBC;
+  /* Adjust icon color */
+}
+
+.file-upload-wrapper:hover {
+  background-color: #f0f0f0;
+  border-color: #BCBCBC;
+}

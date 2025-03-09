@@ -1,184 +1,212 @@
-  
-// -------------------------------------------------------------------------
-.contact-form{
+  // -------------------------------------------------------------------------
+  .contact-form {
     // background-image: url('/public/bg-contact.png');
     background-size: cover;
-    background-position:center center;
+    background-position: center center;
     padding: 60px 0;
   }
 
-  
-  .form-holder{
+
+  .form-holder {
     background: rgba(55, 93, 149, 0.20);
-  backdrop-filter: blur(25px);
-  h2{
-    color: #fff;
-    font-size: 55px;
+    backdrop-filter: blur(25px);
+
+    h2 {
+      color: #fff;
+      font-size: 55px;
+    }
+
+    form {
+      label {
+        color: #fff;
+        padding-bottom: 4px;
+        font-size: 20px;
+      }
+      .check-lable{
+        font-size: 14px !important;
+        margin: 0 10px;
+        padding: 0;
+      }
+      /* Common styles for input, textarea, and select */
+      input,
+      textarea,
+      select {
+        background-color: transparent !important;
+        color: #fff;
+        border: 1px solid #fff;
+        padding-right: 35px !important;
+        /* Space for dropdown arrow */
+      }
+
+      /* Placeholder color for input and textarea */
+      input::placeholder,
+      textarea::placeholder {
+        color: rgb(152, 152, 152) !important;
+        opacity: 1;
+        font-weight: 400;
+        font-size: 14px;
+      }
+
+      /* Placeholder color for select */
+      select:invalid {
+        color: #fff !important;
+        /* White placeholder for dark backgrounds */
+      }
+
+      select {
+        appearance: none;
+        /* Hide default dropdown */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        position: relative;
+        color: #fff;
+        padding-right: 40px;
+        /* Space for dropdown arrow */
+        background-image: none;
+      }
+
+      /* Custom dropdown arrow using FontAwesome */
+      .custom-select-wrapper {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .custom-select-wrapper::after {
+        content: "\f078";
+        /* Font Awesome down arrow */
+        font-family: "Font Awesome 6 Free";
+        /* Ensure FontAwesome 6 is loaded */
+        font-weight: 900;
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        color: #fff;
+        /* Arrow color */
+        pointer-events: none;
+        /* Prevent clicking on arrow */
+      }
+
+      /* Style for dropdown options */
+      select option {
+        color: #000;
+        /* Black text */
+        background: #fff;
+        /* White background */
+      }
+
+      button {
+        background-color: #f86341;
+        color: #fff;
+      }
+
+      /* General Styles */
+      .form-control {
+        background-color: transparent !important;
+        color: #fff;
+        border: 1px solid #fff;
+        padding-right: 40px;
+        /* Space for dropdown arrow */
+      }
+
+      /* Ensure placeholder color appears */
+      .placeholder-visible {
+        color: #fff !important;
+      }
+
+      /* Style for dropdown options */
+      select option {
+        color: #000;
+        /* Black text */
+        background: #fff;
+        /* White background */
+      }
+
+      /* Custom dropdown arrow */
+      .custom-select-wrapper {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .custom-select-wrapper::after {
+        content: "\f078";
+        /* Font Awesome down arrow */
+        font-family: "Font Awesome 6 Free";
+        /* Ensure FontAwesome 6 is loaded */
+        font-weight: 900;
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        color: #fff;
+        /* Arrow color */
+        pointer-events: none;
+        /* Prevent clicking on arrow */
+      }
+
+    }
+
+
+
   }
 
-  form {
-  label {
-    color: #fff;
-    padding-bottom: 4px;
-  }
-
-  /* Common styles for input, textarea, and select */
-  input, textarea, select {
-    background-color: transparent !important;
-    color: #fff;
-    border: 1px solid #fff;
-    padding-right: 35px; /* Space for dropdown arrow */
-  }
-
-  /* Placeholder color for input and textarea */
-  input::placeholder,
-  textarea::placeholder {
-    color: #fff !important; /* White placeholder */
-    opacity: 1; /* Ensures visibility */
-  }
-
-  /* Placeholder color for select */
-  select:invalid {
-    color: #fff !important; /* White placeholder for dark backgrounds */
-  }
-
-  select {
-    appearance: none; /* Hide default dropdown */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    position: relative;
-    color: #fff;
-    padding-right: 40px; /* Space for dropdown arrow */
-    background-image: none;
-  }
-
-  /* Custom dropdown arrow using FontAwesome */
-  .custom-select-wrapper {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-  }
-
-  .custom-select-wrapper::after {
-    content: "\f078"; /* Font Awesome down arrow */
-    font-family: "Font Awesome 6 Free"; /* Ensure FontAwesome 6 is loaded */
-    font-weight: 900;
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-    color: #fff; /* Arrow color */
-    pointer-events: none; /* Prevent clicking on arrow */
-  }
-
-  /* Style for dropdown options */
-  select option {
-    color: #000; /* Black text */
-    background: #fff; /* White background */
-  }
-button{
-  background-color: #f86341;
-  color: #fff;
-}
-  /* General Styles */
-.form-control {
-  background-color: transparent !important;
-  color: #fff;
-  border: 1px solid #fff;
-  padding-right: 40px; /* Space for dropdown arrow */
-}
-
-/* Ensure placeholder color appears */
-.placeholder-visible {
-  color: #fff !important;
-}
-
-/* Style for dropdown options */
-select option {
-  color: #000; /* Black text */
-  background: #fff; /* White background */
-}
-
-/* Custom dropdown arrow */
-.custom-select-wrapper {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-}
-
-.custom-select-wrapper::after {
-  content: "\f078"; /* Font Awesome down arrow */
-  font-family: "Font Awesome 6 Free"; /* Ensure FontAwesome 6 is loaded */
-  font-weight: 900;
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  color: #fff; /* Arrow color */
-  pointer-events: none; /* Prevent clicking on arrow */
-}
-
-}
-
-  
-  
-  }
-  
   @media (max-width:1024px) {
-.contact-form{
-  .container{
-    .row{
-      .col-md-6{
-        width: 75%!important;
+    .contact-form {
+      .container {
+        .row {
+          .col-md-6 {
+            width: 100% !important;
+          }
+        }
       }
     }
+
   }
-}
-  
-  }
-  
+
   @media (max-width:786px) {
-    .contact-form{
-      .container{
-        .row{
-          .col-md-6{
+    .contact-form {
+      .container {
+        .row {
+          .col-md-6 {
             width: 100%;
           }
-          
+
         }
       }
     }
   }
 
-  @media (max-width:1024px){
-    .contact-form{
-      .container{
-        .row{
+  @media (max-width:1024px) {
+    .contact-form {
+      .container {
+        .row {
           .col-md-6.col-sm-12 {
-            width: 75% !important;
+            width: 100% !important;
           }
         }
+      }
     }
-  }
-   
+
   }
 
   @media (max-width:426px) {
-.form-holder{
-  h2{
-    font-size: 24px!important;
-  }
-  
-}
+    .form-holder {
+      h2 {
+        font-size: 24px !important;
+      }
 
-.contact-form{
-  .container{
-    .row{
-      .col-md-6.col-sm-12 {
-        width: 100% !important;
+    }
+
+    .contact-form {
+      .container {
+        .row {
+          .col-md-6.col-sm-12 {
+            width: 100% !important;
+          }
+        }
       }
     }
-}
-}
 
   }

@@ -77,11 +77,11 @@ h5{
 .animated-image {
   transition: opacity 0.4s ease-in-out;
 }
-.pr{
-  span{
-    padding-right: 150px;
-  }
-}
+// .pr{
+//   span{
+//      padding-right: 150px;
+//   }
+// }
 .fade-in {
   opacity: 0;
   animation: fadeInAnimation 0.8s ease-in-out forwards;

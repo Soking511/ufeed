@@ -1,145 +1,205 @@
 .title {
-    color: #2A2B34; /* Optional: Adjust text color for better visibility */
-    padding: 20px; /* Optional: Add some padding */
+    color: #2A2B34;
+    /* Optional: Adjust text color for better visibility */
+    padding: 20px;
+    /* Optional: Add some padding */
     min-height: 75vh;
-    position: relative; /* Ensure proper positioning for ::before */
-  
+    position: relative;
+    /* Ensure proper positioning for ::before */
+
     &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        to right,
-        rgba(248, 99, 65, 0.70), /* Left fill */
-        rgba(55, 93, 149, 0.70), /* Middle fill */
-        #fff                      /* Right fill */
-      );
-      opacity: 0.5; /* Overall transparency */
-      filter: blur(250px); /* Applies the blur effect */
-      z-index: -1; /* Ensures the gradient is behind the content */
-    }
-  
-    .container {
-      .row {
-        justify-content: center;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 100%;
-        justify-content: center;
-        align-content: flex-end;
-        width: 75%;
-        h1 {
-          font-size: 77px;
-          font-weight: 700;
-          line-height: 110px;
-          span {
-            background-color: #f86341;
-            color: #fff;
-          }
-        }
-        p {
-          color: #2A2B34;
-          font-size: 20px;
-        }
-      }
+        background: linear-gradient(to right,
+                rgba(248, 99, 65, 0.70),
+                /* Left fill */
+                rgba(55, 93, 149, 0.70),
+                /* Middle fill */
+                #fff
+                /* Right fill */
+            );
+        opacity: 0.5;
+        /* Overall transparency */
+        filter: blur(250px);
+        /* Applies the blur effect */
+        z-index: -1;
+        /* Ensures the gradient is behind the content */
     }
-  }
-   
-  
-  .journey{
-    padding: 80px 0;
-    .container{
-        .row{
-            h2{
-                font-size: 55px;
+
+    .container {
+        .row {
+            justify-content: center;
+            height: 100%;
+            justify-content: center;
+            align-content: flex-end;
+            width: 75%;
+
+            h1 {
+                font-size: 77px;
                 font-weight: 700;
-                padding-right: 24px;
-                span{
-                    color: #f86341;
+                line-height: 110px;
+
+                span {
+                    background-color: #f86341;
+                    color: #fff;
                 }
             }
 
-            .col-md-5, .col-md-11{
-                border-radius: 16px;
-                border: solid 1px #E9E9E9;
-                padding: 24px;
-                background-color: #fff;
-                h4{
-                    border-bottom: #f86341 solid 2px;
-                    font-size: 30px;
-                }
-                p{
-                    font-size: 16px!important;
-                }
-            }
-        }
-    }
-  }
-  
-.advantages{
-    .container{
-        .row{
-            h2{
-                font-size: 55px;
-                font-weight: 700;
-                padding-right: 24px;
-                span{
-                    color: #f86341;
-                }
-            }
-            .col-md-6,.col-md-4,.col-md-12{
-                padding: 12px;
-            .single-advantage{
-                border: solid 2px #E9E9E9;
-                border-radius: 16px;
-                padding: 30px 24px;
-                height: 250px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                transition: .3s;
-                &:hover{
-                    border-left: 8px solid #f86341;
-                    box-shadow: 4px 2px 15px 0px #FFDAD2;
-                }
-                .img-holder{
-                    margin-bottom: 16px;
-                }
-                h3{
-                    font-size: 30px;
-                }
-              
-            }
-            .single-advantage.mid-advantage{
-                height: 380px;
-            }
+            p {
+                color: #2A2B34;
+                font-size: 20px;
             }
         }
     }
 }
 
 
-  .product-form{
-    .container{
-        .row{
-            .title-holder{
-                h2{
+.journey {
+    padding: 80px 0;
+
+    .container {
+        .row {
+            h2 {
+                font-size: 55px;
+                font-weight: 700;
+                padding-right: 24px;
+
+                span {
+                    color: #f86341;
+                }
+            }
+
+            .col-md-5,
+            .col-md-11 {
+                border-radius: 16px;
+                border: solid 1px #E9E9E9;
+                padding: 24px;
+                background-color: #fff;
+
+                h4 {
+                    border-bottom: #f86341 solid 2px;
+                    font-size: 30px;
+                }
+
+                p {
+                    font-size: 16px !important;
+                }
+            }
+        }
+    }
+}
+
+.advantages {
+    .container {
+        .row {
+            h2 {
+                font-size: 55px;
+                font-weight: 700;
+                padding-right: 24px;
+
+                span {
+                    color: #f86341;
+                }
+            }
+
+            .col-sm-12,
+            .col-md-6,
+            .col-md-5,
+            .col-md-3,
+            .col-md-4,
+            .col-md-12 {
+                padding: 12px;
+
+                .single-advantage {
+                    position: relative;
+                    border: solid 2px #E9E9E9;
+                    border-radius: 16px;
+                    padding: 30px 24px;
+                    height: 250px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    overflow: hidden;
+                    transition: .3s;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        z-index: -1;
+                        top: 0;
+                        left: 0px;
+                        width: 0px;
+                        height: 100%;
+                        background-color: #f86341;
+                        border-radius: 16px 0 0 16px;
+                        transition: .3s;
+                    }
+
+                    &:hover {
+                        // border-left: 8px solid #f86341;
+                        box-shadow: 4px 2px 15px 0px #FFDAD2;
+                    }
+
+                    &:hover::before {
+                        width: 8px;
+                    }
+
+                    .img-holder {
+                        margin-bottom: 16px;
+                    }
+
+                    h3 {
+                        font-size: 30px;
+                    }
+
+                }
+
+                .single-advantage.mid-advantage {
+                    height: 380px;
+                }
+            }
+        }
+    }
+}
+
+
+.product-form {
+    .container {
+        .row {
+            .title-holder {
+                h2 {
                     font-size: 55px;
                     font-weight: 700;
-                    span{
+
+                    span {
                         color: #f86341;
                     }
                 }
             }
         }
     }
-  }
+}
 
-  form{
-    .row{
-        .form-group{
-            label{
+form {
+
+    input::placeholder,
+    .disabled-option {
+        color: rgb(152, 152, 152);
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    label {
+        margin: 4px 0;
+    }
+
+    .row {
+        .form-group {
+            label {
                 padding: 8px;
                 margin-bottom: 8px;
                 color: #43424C;
@@ -147,19 +207,22 @@
                 font-weight: 500;
                 font-family: 'Century Gothic Paneuropean';
             }
-            input.form-control.p-3{
+
+            input.form-control.p-3 {
                 border-radius: 16px;
-                background: rgba(0, 0, 0, 0.05);;
+                background: rgba(0, 0, 0, 0.05);
+                ;
                 backdrop-filter: blur(28.242982864379883px);
             }
         }
     }
-    button{
+
+    button {
         background-color: #3B5C92;
         border: #3B5C92;
         transition: .3s;
 
-        &:hover{
+        &:hover {
             background-color: #f86341;
             border: #f86341;
 
@@ -169,32 +232,38 @@
 
 
 @media (max-width:1024px) {
-h4{
-    font-size: 22px!important;
-}
+    h4 {
+        font-size: 22px !important;
+    }
 }
 
 @media (max-width:768px) {
 
-    .title .container .row{
+    .title .container .row {
         width: 100%;
-        h1{
+
+        h1 {
             line-height: 50px;
         }
     }
-    .col-md-4{
-        .icon-holder{
-         display: none;
+
+    .col-md-4 {
+        .icon-holder {
+            display: none;
         }
+    }
+
+    .last-advantage {
+        height: fit-content !important;
     }
 }
 
 @media (max-width:768px) {
-    .journey{
-        .container{
-            .row{
-                .row{
-                    width: 100%!important;
+    .journey {
+        .container {
+            .row {
+                .row {
+                    width: 100% !important;
                 }
             }
         }
@@ -204,58 +273,64 @@ h4{
 
 @media (max-width:426px) {
 
-    .journey{
+    .journey {
         padding: 40px 0;
-        .container{
-            .row{
-                h2{
+
+        .container {
+            .row {
+                h2 {
                     text-align: center;
                     padding-right: 0;
                 }
-                .col-2{
+
+                .col-2 {
                     margin: auto;
                 }
 
-                .col-md-6 ul{
+                .col-md-6 ul {
                     padding-right: 2rem;
-                    li{
-                        h3{
+
+                    li {
+                        h3 {
                             font-size: 20px;
                         }
                     }
                 }
             }
         }
-       
+
     }
 
-    .col-md-4{
-        .icon-holder{
-         display: none;
+    .col-md-4 {
+        .icon-holder {
+            display: none;
         }
     }
 }
 
 
 @media (max-width:1024px) {
-      .advantages{
-        .container{
-          .row{
-            .row{
-                h3{
-                    font-size: 24px;
+    .advantages {
+        .container {
+            .row {
+                .row {
+                    h3 {
+                        font-size: 24px;
+                    }
+
+                    p {
+                        font-size: 12px;
+                    }
+
+                    .col-md-4 {
+                        width: 50% !important;
+                    }
+
+                    .col-md-6 {
+                        height: 300px;
+                    }
                 }
-                p{
-                    font-size: 12px;
-                }
-                .col-md-4{
-                width: 50%!important;
-              }
-              .col-md-6{
-                height: 300px;
-              }
             }
-          }
         }
-      }
     }
+}

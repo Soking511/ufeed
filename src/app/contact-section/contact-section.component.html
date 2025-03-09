@@ -1,124 +1,117 @@
-
 <!-- start contact form  -->
 <section class="contact-form" id="bookNow" style=" background-image: url('./public/bg-contact.png');">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-sm-12">
-          <div class="form-holder p-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="form-holder p-5">
           <h2 class="pb-5">{{"Begin Your Human Capital Organizational Journey with Us !" | translate}}</h2>
-          
-  
-          <form action="" method="post"  [formGroup]="contactForm" 
-          (ngSubmit)="getFormData(contactForm)">
-            
-          <div class="form-group col-12 my-3">
-            <label for="">{{ "YOUR_NAME" | translate }}</label>
-            <input 
-              [class.is-valid]="contactForm.get('fullname')?.errors == null && contactForm.get('fullname')?.touched" 
-              class="form-control p-3" formControlName="fullname" type="text" placeholder="{{ 'YOUR_NAME' | translate }}" id="">
-            
-            <p *ngIf="contactForm.get('fullname')?.errors != null && contactForm.get('fullname')?.touched" 
-               class="py-2 text-danger">
-              {{ "CHECK_YOUR_NAME" | translate }}
-            </p>
-          </div>
-          
 
-             
+
+          <form action="" method="post" [formGroup]="contactForm" (ngSubmit)="getFormData(contactForm)">
+
+            <div class="form-group col-12 my-3">
+              <label for="">{{ "YOUR_NAME" | translate }}</label>
+              <input
+                [class.is-valid]="contactForm.get('fullname')?.errors == null && contactForm.get('fullname')?.touched"
+                class="form-control p-3" formControlName="fullname" type="text"
+                placeholder="{{ 'YOUR_NAME' | translate }}" id="">
+
+              <p *ngIf="contactForm.get('fullname')?.errors != null && contactForm.get('fullname')?.touched"
+                class="py-2 text-danger">
+                {{ "CHECK_YOUR_NAME" | translate }}
+              </p>
+            </div>
+
+
+
             <div class="row py-0 my-3">
-  
+
               <div class="form-group col-6 ">
                 <label for="">{{"Contact Number*"|translate}}</label>
-                <input [class.is-valid]="contactForm.get('phone')?.errors==null && contactForm.get('phone')?.touched " 
-                class="form-control p-3" type="text" formControlName="phone" name="" placeholder="{{'Your Phone Number'|translate}}" id="">
-                <p *ngIf="contactForm.get('phone')?.errors!=null && contactForm.get('phone')?.touched " 
-                class="py-2 text-danger">{{"Please Check Your Phone Number"|translate}}</p>
+                <input [class.is-valid]="contactForm.get('phone')?.errors==null && contactForm.get('phone')?.touched "
+                  class="form-control p-3" type="text" formControlName="phone" name=""
+                  placeholder="{{'Your Phone Number'|translate}}" id="">
+                <p *ngIf="contactForm.get('phone')?.errors!=null && contactForm.get('phone')?.touched "
+                  class="py-2 text-danger">{{"Please Check Your Phone Number"|translate}}</p>
               </div>
-              
+
               <div class="form-group col-6 ">
                 <label for="">{{"Email*" | translate}}</label>
-                <input [class.is-valid]="contactForm.get('email')?.errors==null && contactForm.get('email')?.touched " 
-                class="form-control p-3" type="email" name="" formControlName="email" placeholder="ex: username@xyz" id="">
-                <p *ngIf="contactForm.get('email')?.errors!=null && contactForm.get('email')?.touched " 
-                class="py-2 text-danger">{{"Please Check Your Email" | translate}}</p>
+                <input [class.is-valid]="contactForm.get('email')?.errors==null && contactForm.get('email')?.touched "
+                  class="form-control p-3" type="email" name="" formControlName="email"
+                  placeholder='{{"Email_placeholder" | translate}}' id="">
+                <p *ngIf="contactForm.get('email')?.errors!=null && contactForm.get('email')?.touched "
+                  class="py-2 text-danger">{{"Please Check Your Email" | translate}}</p>
               </div>
-              
+
             </div>
-  
+
             <div class="form-group col-12 my-3">
               <label for="">{{"Title"|translate}}</label>
-              <input [class.is-valid]="contactForm.get('title')?.errors==null && contactForm.get('title')?.touched" 
-              class="form-control p-3" type="text" formControlName="title" name="" placeholder="{{'CEO'|translate}}" id="">
+              <input [class.is-valid]="contactForm.get('title')?.errors==null && contactForm.get('title')?.touched"
+                class="form-control p-3" type="text" formControlName="title" name="" placeholder="{{'Title'|translate}}"
+                id="">
             </div>
-  
+
             <div class="form-group col-12 my-3">
               <label for="">{{"Company Name"|translate}}</label>
-              <input class="form-control p-3" type="email" name="" 
-              formControlName="company" placeholder="{{'Your Company'| translate}}" id="">
+              <input class="form-control p-3" type="email" name="" formControlName="company"
+                placeholder="{{'Your Company'| translate}}" id="">
             </div>
-  
+
             <div class="form-group col-12 my-3">
               <label for="inputState">{{ "Select Your Inquiry*" | translate }}</label>
-            
+
               <div class="custom-checkbox-wrapper">
                 <div *ngFor="let inquiry of inquiries">
-                  <input 
-                    type="checkbox" 
-                    [id]="inquiry.value" 
-                    [value]="inquiry.value"
+                  <input type="checkbox" [id]="inquiry.value" [value]="inquiry.value"
                     (change)="onInquiryCheckboxChange($event)"
                     [checked]="contactForm.get('inquiry')?.value.includes(inquiry.value)">
-                  <label [for]="inquiry.value">{{ inquiry.label | translate }}</label>
+                  <label class="check-lable" [for]="inquiry.value">{{ inquiry.label | translate }}</label>
                 </div>
               </div>
-            
-              <p 
-                *ngIf="contactForm.get('inquiry')?.errors != null && contactForm.get('inquiry')?.touched" 
+
+              <p *ngIf="contactForm.get('inquiry')?.errors != null && contactForm.get('inquiry')?.touched"
                 class="py-2 text-danger">
                 {{ "Please Choose Your Inquiry" | translate }}
               </p>
             </div>
-            
-            
+
+
             <div class="form-group col-12 my-3">
               <label for="inputProduct">{{ "Select Product*" | translate }}</label>
-              
+
               <div class="custom-checkbox-wrapper">
                 <div *ngFor="let product of products">
-                  <input 
-                    type="checkbox" 
-                    [id]="product.value" 
-                    [value]="product.value"
+                  <input type="checkbox" [id]="product.value" [value]="product.value"
                     (change)="onCheckboxChange($event)"
                     [checked]="contactForm.get('product')?.value.includes(product.value)">
-                  <label [for]="product.value">{{ product.label | translate }}</label>
+                  <label class="check-lable" [for]="product.value">{{ product.label | translate }}</label>
                 </div>
               </div>
-            
-              <p 
-                *ngIf="contactForm.get('product')?.errors != null && contactForm.get('product')?.touched" 
+
+              <p *ngIf="contactForm.get('product')?.errors != null && contactForm.get('product')?.touched"
                 class="py-2 text-danger">
                 {{ "Please Choose Your Product" | translate }}
               </p>
             </div>
-            
-                
+
+
             <div class="form-group col-12 my-3">
               <label for="">{{"Message"|translate}}</label>
-              <textarea name="" class="form-control p-3" placeholder="{{'Your Message'|translate}}" 
-              formControlName="message" id=""></textarea>
+              <textarea name="" class="form-control p-3" placeholder="{{'Your Message'|translate}}"
+                formControlName="message" id=""></textarea>
             </div>
-      
-            <button type="submit" [disabled]="contactForm.invalid == true" 
-            class=" my-3 p-3 btn col-12 ">{{"Submit"|translate}}</button>
+
+            <button type="submit" [disabled]="contactForm.invalid == true"
+              class=" my-3 p-3 btn col-12 ">{{"Submit"|translate}}</button>
           </form>
-  
-        </div>
+
         </div>
       </div>
     </div>
-  </section>
-  
-  
-  <!-- end contact form  -->
-  
+  </div>
+</section>
+
+
+<!-- end contact form  -->

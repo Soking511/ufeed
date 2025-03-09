@@ -3,7 +3,7 @@
 <section class="clients-section">
   <div class="container">
 
-    <div class="title-holder row justify-content-center align-center">
+    <div class="title-holder row justify-content-center align-center" style="flex-wrap: nowrap;">
       <div class="before col-3"></div>
       <p class="text-center col-3">{{"trusted by our clients"|translate}}</p>
       <div class="after col-3"></div>
@@ -11,29 +11,18 @@
 
     <!-- ----------- -->
     <div class="slider-container position-relative px-5">
-      <button
-        class="arrow-left"
-        (click)="slideLeft()"
-        aria-label="Slide Left"
-      >
+      <button class="arrow-left" (click)="slideLeft()" aria-label="Slide Left">
         <i class="fa-solid fa-chevron-left"></i>
       </button>
       <div class="slider-wrapper">
-        <div
-          class="slider"
-          [style.transform]="'translateX(' + currentOffset + '%)'"
-        >
+        <div class="slider" [style.transform]="'translateX(' + currentOffset + '%)'">
           <div class="slider-item" *ngFor="let image of images">
             <img [src]="image" alt="Slider Image" />
           </div>
         </div>
       </div>
-     
-      <button
-        class="arrow-right"
-        (click)="slideRight()"
-        aria-label="Slide Right"
-      >
+
+      <button class="arrow-right" (click)="slideRight()" aria-label="Slide Right">
         <i class="fa-solid fa-chevron-right"></i>
       </button>
     </div>

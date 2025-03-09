@@ -1,177 +1,217 @@
-.innovative-solutions{
+.innovative-solutions {
   position: relative;
   padding: 80px;
-h2{
-  padding-bottom: 0;
-  font-size: 55px;
-  font-weight: 700;
-  span{
-    color: #f86341;
-  }
-}
-.img-holder {
-  width: 100px;
-  height: 100px;
-}
-  .left-bg-fill{
-    
-      width: 557px;
-      height: 571px;
-      flex-shrink: 0;
-      background-color: rgba(248, 99, 65, 0.30);
-      opacity: 0.5;
-      filter: blur(250px);
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    
+
+  h2 {
+    padding-bottom: 0;
+    font-size: 55px;
+    font-weight: 700;
+
+    span {
+      color: #f86341;
+    }
   }
 
-  .right-bg-fill{
+  .img-holder {
+    width: 100px;
+    height: 100px;
+  }
+
+  .left-bg-fill {
+
+    width: 557px;
+    height: 571px;
+    flex-shrink: 0;
+    background-color: rgba(248, 99, 65, 0.30);
+    opacity: 0.5;
+    filter: blur(250px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+  }
+
+  .right-bg-fill {
     background-color: rgba(55, 93, 149, 0.30);
-      opacity: 0.7;
-      filter: blur(250px);
-      width: 607px;
-  height: 578px;
+    opacity: 0.7;
+    filter: blur(250px);
+    width: 607px;
+    height: 578px;
     flex-shrink: 0;
     position: absolute;
-      top: 0;
-      right: 0;
-      z-index: 2000;
+    top: 0;
+    right: 0;
+    z-index: 2000;
   }
 
 }
-.solution-desc{
-  p{
+
+.solution-desc {
+  p {
     color: #43424C;
   }
 }
 
-.arow-down{
-    width: 100px;
-    height: 100px;
-   
-  }
-  
-  .solution-title h3{
+.arow-down {
+  width: 100px;
+  height: 100px;
+
+}
+
+.solution-title h3 {
   font-size: 40px;
-  white-space: pre-wrap; /* Interprets \n as a line break */
+  white-space: pre-wrap;
+  /* Interprets \n as a line break */
 
+}
+
+.icon-holder {
+  width: 80px;
+  margin: auto;
+}
+
+.single-solution {
+  position: relative;
+  transition: opacity 0.5s ease-in-out; // Smooth transition for opacity
+  opacity: 1; // Default opacity
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    background-color: #f86341;
+    transition: .3s;
   }
-  .icon-holder{
-    width: 80px;
-    margin: auto;
-  }
-  .single-solution {
-    transition: opacity 0.5s ease-in-out; // Smooth transition for opacity
-    opacity: 1; // Default opacity
-  
-    &:hover {
-      opacity: 1; // Keep the hovered item at full opacity
-      border-left: #f86341 solid 4px;
-      // Reduce the opacity of all siblings
-      ~ .single-solution {
-        opacity: 0.3; // Dim other elements
-      }
-    }
-  
-    // Add styles for active state (when a solution is clicked/selected)
-    &.active {
-      opacity: 1; // Ensure the active item remains fully visible
-      border-left: 4px solid #f86341; // Optional: Highlight the active solution
-   
-    }
-  
-    &.dimmed {
-      opacity: 0.3; // Apply dimmed effect to non-active items
-    }
-  
-    .solution-title h3 {
-      transition: 0.3s ease-in-out;
-    }
-  
-    &:hover .solution-title h3 {
-      font-size: 44px;
-      margin-top: 8px;
+
+  &:hover {
+    opacity: 1; // Keep the hovered item at full opacity
+    // border-left: #f86341 solid 4px;
+
+    // Reduce the opacity of all siblings
+    ~.single-solution {
+      opacity: 0.3; // Dim other elements
     }
   }
 
-  
+  &:hover::before {
+    width: 4px;
+  }
+
+  // Add styles for active state (when a solution is clicked/selected)
+  &.active {
+    opacity: 1; // Ensure the active item remains fully visible
+    border-left: 4px solid #f86341; // Optional: Highlight the active solution
+
+  }
+
+  &.dimmed {
+    opacity: 0.3; // Apply dimmed effect to non-active items
+  }
+
+  .solution-title h3 {
+    transition: 0.3s ease-in-out;
+  }
+
+  &:hover .solution-title h3 {
+    // font-size: 44px;
+    margin-top: 8px;
+  }
+}
+
+
 .solution-title h3:nth-of-type(5) {
-  width: 40%!important;  /* Set the desired width */
-  padding-left:40px ;
-  padding-right:40px ;
+  width: 40% !important;
+  /* Set the desired width */
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 
 @media(max-width:768px) {
-  h2{
+  .innovative-solutions{
+    padding: 0;
+  }
+  img{
+    transition: all 0.3s ease-in-out;
+    width: 70px;
+  }
+  h2 {
     font-size: 34px;
   }
-  .solution-desc{
-    p{
-      font-size: 16px!important;
+
+  .solution-desc {
+    p {
+      font-size: 16px !important;
     }
   }
-  .innovative-solutions{
 
-    .container{
-      .row{
-        div{
+  .innovative-solutions {
+
+    .container {
+      .row {
+        div {
           width: 100%;
           opacity: 1;
         }
       }
     }
   }
-.arow-down{
-  display: flex;
-  justify-content: center;
-}
 
-.single-solution{
-  .solution-title h3{
-    font-size: 30px;
+  .arow-down {
+    display: flex;
+    justify-content: center;
+  }
+
+  .single-solution {
+    .solution-title h3 {
+      font-size: 30px;
+    }
+  }
+
+  .icon-holder {
+    max-width: 18%;
   }
 }
 
-.icon-holder{
-  max-width: 18%;
-}
-}
 
 
-  
 @media (max-width:426px) {
-  .innovative-solutions{
-    .img-holder{
+  .innovative-solutions {
+    .img-holder {
       height: 50px;
     }
+
     padding: 0;
-    h2{
-      font-size: 24px!important;
+
+    h2 {
+      font-size: 24px !important;
     }
   }
-  .container{
-    .row{
-      .single-solution{
-        .icon-holder{
-         
-            width: 25%!important;
-         
+
+  .container {
+    .row {
+      .single-solution {
+        .icon-holder {
+
+          width: 25% !important;
+
         }
       }
     }
   }
 
-  .single-solution{
-    .solution-title h3{
+  .single-solution {
+    .solution-title h3 {
       font-size: 24px;
     }
   }
 
-  .single-solution:hover .solution-title h3{
+  .single-solution:hover .solution-title h3 {
     font-size: 28px;
     margin-top: 8px;
   }
