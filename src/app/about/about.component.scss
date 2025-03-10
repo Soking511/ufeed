@@ -456,7 +456,24 @@
 
                 .col-md-4 {
                     width: 50%;
+                    transform: translateY(-20px);
+
+                    .cta {
+                        a {
+                            transform: translateY(0px);
+                            opacity: 1;
+                        }
+                    }
+
+                    .title-per {
+                        p {
+                            opacity: 1;
+                            transform: translateY(0px);
+                        }
+                    }
                 }
+
+
             }
         }
     }
@@ -509,13 +526,15 @@
             }
         }
     }
+
     .ufeed-text {
-        .container{
-            .text{
-                p{
+        .container {
+            .text {
+                p {
                     padding: 0;
                 }
-                img{
+
+                img {
                     width: 40px;
                 }
             }

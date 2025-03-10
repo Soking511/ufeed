@@ -1,11 +1,16 @@
 .ngo_section {
     background-color: #D1DAE7;
     margin: 0;
+    padding: 30px 0;
 
     .container {
         .row {
+            .img-fluid{
+                width: 388px;
+                height: 480px;
+            }
             .col-md-8 {
-                padding: 90px 0px;
+                padding: 90px 20px;
 
                 h2 {
                     color: #2A2B34;

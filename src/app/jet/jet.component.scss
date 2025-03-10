@@ -122,7 +122,7 @@ h2 {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
-                    overflow: auto;
+                    overflow: hidden;
                     transition: .3s;
 
                     &::before {
@@ -267,6 +267,13 @@ form {
                 h2 {
                     text-align: center;
                     padding-right: 0;
+                    font-size: 28px !important;
+                }
+
+                .jet-feature {
+                    h4 {
+                        font-size: 22px !important;
+                    }
                 }
 
                 .col-2 {
@@ -300,13 +307,17 @@ form {
     .advantages {
         .container {
             .row {
+                h2 {
+                    font-size: 30px !important;
+                }
+
                 .row {
                     h3 {
-                        font-size: 24px;
+                        font-size: 24px !important;
                     }
 
                     p {
-                        font-size: 12px;
+                        font-size: 12px !important;
                     }
 
                     .col-md-4 {

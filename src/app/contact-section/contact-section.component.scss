@@ -16,6 +16,8 @@
       font-size: 55px;
     }
 
+
+
     form {
       label {
         color: #fff;
@@ -150,6 +152,9 @@
 
     }
 
+    .custom-checkbox-wrapper {
+      white-space: nowrap;
+    }
 
 
   }
@@ -172,7 +177,13 @@
       label {
         font-size: 16px !important;
       }
+
+      .group {
+        gap: 1rem;
+      }
     }
+
+
 
     .check-lable {
       font-size: 11px !important;

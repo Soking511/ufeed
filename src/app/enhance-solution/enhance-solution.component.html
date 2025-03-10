@@ -9,13 +9,13 @@
       <!-- left -->
       <div class="col-md-6 d-flex fade-in">
         <div class="row">
-          <div class="col-10">
+          <div class="col-9">
             <h3 class="text-left fade-in">
               <div *ngIf="isJet">{{ 'Job Evaluation \nTool - JET' | translate }}</div>
               <div *ngIf="!isJet">{{ 'Employee Engagement \nSurvey - EES' | translate }}</div>
             </h3>
           </div>
-          <div class="col-2 d-flex justify-content-between controls">
+          <div class="col-3 d-flex justify-content-between controls">
             <div class="left" (click)="toggleContent()">
               <a>
                 <i class="fa-solid fa-angle-left"></i>
