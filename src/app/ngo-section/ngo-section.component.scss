@@ -1,10 +1,13 @@
-.ngo_section{
+.ngo_section {
     background-color: #D1DAE7;
-    margin: 0;    .container{
-        .row{
-            .col-md-8{
+    margin: 0;
+
+    .container {
+        .row {
+            .col-md-8 {
                 padding: 90px 0px;
-                h2{
+
+                h2 {
                     color: #2A2B34;
                     font-feature-settings: 'liga' off, 'clig' off;
                     font-family: "Creato Display";
@@ -12,11 +15,13 @@
                     font-style: normal;
                     font-weight: 700;
                     line-height: normal;
-                    span{
+
+                    span {
                         color: #F86341;
                     }
                 }
-                a{
+
+                a {
                     border-radius: 16px;
                     background: #F86341;
                     display: flex;
@@ -26,18 +31,19 @@
                     justify-content: center;
                     align-items: center;
                     gap: 10px;
-                    color:#fff;
+                    color: #fff;
                     text-decoration: none;
                     transition: .3s ease-in-out;
                     border: solid #F86341 2px;
-                    &:hover{
+
+                    &:hover {
                         background-color: transparent;
                         color: #F86341;
                         border: solid #F86341 2px;
                     }
                 }
             }
-           
+
         }
     }
 }

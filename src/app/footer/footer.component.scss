@@ -39,9 +39,11 @@
 a.tel {
     text-wrap: nowrap;
 }
-.our-products ul li a{
+
+.our-products ul li a {
     white-space: nowrap;
 }
+
 .list-footer {
     ul {
         padding: 0;
@@ -154,7 +156,7 @@ a.tel {
     }
 
     .quick-links {
-        padding-left: 0;
+        padding-left: 12px;
     }
 }
 
@@ -167,7 +169,7 @@ a.tel {
 
                 .col-md-4,
                 .col-md-2 {
-                    width: 90%;
+                    width: 100%;
                     margin-bottom: 20px;
                 }
             }
@@ -175,6 +177,6 @@ a.tel {
     }
 
     .quick-links {
-        padding-left: 0;
+        padding-left: 12px;
     }
 }
