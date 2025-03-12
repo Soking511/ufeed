@@ -103,7 +103,9 @@ h2 {
 .advantages {
     .container {
         .row {
-
+            .row{
+                margin: 0;
+            }
             .col-sm-12,
             .col-md-6,
             .col-md-5,

@@ -16,9 +16,11 @@
       </button>
       <div class="slider-wrapper">
         <div class="slider" [style.transform]="'translateX(' + currentOffset + '%)'">
-          <div class="slider-item" *ngFor="let image of images">
-            <img [src]="image" alt="Slider Image" />
-          </div>
+          @for (client of clients; track client.id) {
+            <a [href]="client.link" target="_blank" class="slider-item">
+              <img [src]="client.logo" alt="Slider Image" />
+            </a>
+          }
         </div>
       </div>
 

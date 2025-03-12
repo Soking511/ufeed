@@ -1,98 +1,95 @@
-<nav [ngClass]="{'rtl': currentLanguage === 'ar'}"
-  class="navbar navbar-expand-lg py-3 fixed-top" 
-  [ngClass]="{
+<nav [ngClass]="{'rtl': currentLanguage === 'ar'}" class="navbar navbar-expand-lg py-3 fixed-top" [ngClass]="{
     'scrolled': isScrolled,
     'home-header': isHomePage && !isScrolled,
     'other-header': !isHomePage || isScrolled
   }">
 
-    <div class="container justify-content-between ">
-    
-      <div class="col-md-2 col-sm-6 col-xs-6 left-logo">
-        <a class="w-100 navbar-brand" routerLink="">
-          <img class="img-fluid" src="public/logo-Ufeed.png" alt="" srcset="">
-        </a>  
-      </div>
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+  <div class="container justify-content-between ">
+
+    <div class="col-md-2 col-sm-6 col-xs-6 left-logo">
+      <a class="w-100 navbar-brand" routerLink="">
+        <img class="img-fluid" src="public/logo-Ufeed.png" alt="" srcset="">
+      </a>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  
-        <ul class="navbar-nav  mb-2 mb-lg-0 w-100  justify-content-center ">
-          <li class="nav-item px-3">
-            <a class="nav-link active" aria-current="page" routerLink="">{{ 'home' | translate }}</a>
-          </li>
-          <li class="nav-item px-3">
-            <a class="nav-link" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">{{ 'about' | translate }}</a>
-          </li>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav  mb-2 mb-lg-0 w-100  justify-content-center ">
+        <li class="nav-item px-3">
+          <a class="nav-link active" aria-current="page" routerLink="">{{ 'home' | translate }}</a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">{{ 'about' |
+            translate }}</a>
+        </li>
 
 
 
-<!-- ------------------ -->
+        <!-- ------------------ -->
 
-<li class="nav-item dropdown px-3" (mouseenter)="openDropdown($event)" (mouseleave)="closeDropdown($event)">
-  <a
-    class="dropdown-toggle nav-link"
-    id="dropdownMenuLink"
-    href="#"
-    role="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-  >
-  {{'products'| translate}} <i class="fa-solid fa-arrow-down"></i>
-  </a>
-  <ul class="dropdown-menu px-4"  aria-labelledby="dropdownMenuButton">
-    <li class="d-flex justify-content-between align-items-center"><a class="dropdown-item" routerLink="/jet"> {{"Job Evaluation Tool - JET" | translate}}</a><i class="fa-solid fa-arrow-right"></i></li>
-    <li class="d-flex justify-content-between align-items-center"><a class="dropdown-item" routerLink="/ees">{{"Employee Engagement Survey - EES" | translate}}</a><i class="fa-solid fa-arrow-right"></i></li>
-    <li class="d-flex justify-content-between align-items-center"><a class="dropdown-item" routerLink="/coming-soon">{{"UFeed Products - Coming Soon" | translate}}</a><i class="fa-solid fa-arrow-right"></i></li>
-  </ul>
-</li>
-
-<!-- ------------------ -->
-
-          <li class="nav-item px-3">
-            <a class="nav-link "routerLink="become-apartner" >{{ 'Become A Partner'| translate}}</a>
-          </li>
-        </ul>
-
-        <div class="col-md-4 d-flex justify-content-around btns-holder">
-
-          <a class="header-cta contact-button" routerLink="/contact-us">
-            {{"Get in touch" | translate}}
+        <li class="nav-item dropdown px-3" (mouseenter)="openDropdown($event)" (mouseleave)="closeDropdown($event)">
+          <a class="dropdown-toggle nav-link" id="dropdownMenuLink" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            {{'products'| translate}} <i class="fa-solid fa-arrow-down"></i>
           </a>
+          <ul class="dropdown-menu px-4" aria-labelledby="dropdownMenuButton">
+            <li class="d-flex justify-content-between align-items-center"><a class="dropdown-item" routerLink="/jet">
+                {{"Job Evaluation Tool - JET" | translate}}</a><i class="fa-solid fa-arrow-right"></i></li>
+            <li class="d-flex justify-content-between align-items-center"><a class="dropdown-item"
+                routerLink="/ees">{{"Employee Engagement Survey - EES" | translate}}</a><i
+                class="fa-solid fa-arrow-right"></i></li>
+            <li class="d-flex justify-content-between align-items-center"><a class="dropdown-item"
+                routerLink="/coming-soon">{{"UFeed Products - Coming Soon" | translate}}</a><i
+                class="fa-solid fa-arrow-right"></i></li>
+          </ul>
+        </li>
 
-          <a class="header-cta free-trial" href="https://application.ufeed-ai.com/login"
-           target="_blank">{{"Start A Free trial" | translate}}
-            <img src="public/icons/top-right.png" alt="" srcset="">
-          </a>
-        
-      
-        </div>
+        <!-- ------------------ -->
+
+        <li class="nav-item px-3">
+          <a class="nav-link " routerLink="become-apartner">{{ 'Become A Partner'| translate}}</a>
+        </li>
+      </ul>
+
+      <div class="col-md-4 d-flex justify-content-around btns-holder">
+
+        <a class="header-cta contact-button" routerLink="/contact-us">
+          {{"Get in touch" | translate}}
+        </a>
+
+        <a class="header-cta free-trial" href="https://application.ufeed-ai.com/companySignUp" target="_blank">{{"Start
+          A Free trial" | translate}}
+          <img src="public/icons/top-right.png" alt="" srcset="">
+        </a>
 
 
-        <div class="switcher-holder">
-          <a class="lang_switcher ar-btn" *ngIf="currentLanguage !== 'ar'" (click)="switchLanguage('ar')">
-              <span><i class="fa-solid fa-globe"></i></span>
-              <img src="./public/arabic.png" alt="">
-          </a>
-          
-          <a class="lang_switcher en-btn" *ngIf="currentLanguage !== 'en'" (click)="switchLanguage('en')">
-              <img src="./public/en.png" alt="">
-              <span><i class="fa-solid fa-globe"></i></span>
-          </a>          
-      </div>
-      
-        
       </div>
 
-      
 
-    <!-- end container  -->
+      <div class="switcher-holder">
+        <a class="lang_switcher ar-btn" *ngIf="currentLanguage !== 'ar'" (click)="switchLanguage('ar')">
+          <span><i class="fa-solid fa-globe"></i></span>
+          <img src="./public/arabic.png" alt="">
+        </a>
+
+        <a class="lang_switcher en-btn" *ngIf="currentLanguage !== 'en'" (click)="switchLanguage('en')">
+          <img src="./public/en.png" alt="">
+          <span><i class="fa-solid fa-globe"></i></span>
+        </a>
+      </div>
+
+
     </div>
 
 
-  </nav>
- 
+
+    <!-- end container  -->
+  </div>
+
+
+</nav>

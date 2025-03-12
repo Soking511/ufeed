@@ -1,7 +1,7 @@
-.enhance-solution{
-  .container{
-    .row{
-      .col-md-6{
+.enhance-solution {
+  .container {
+    .row {
+      .col-md-6 {
         flex-direction: column;
         justify-content: center;
       }
@@ -9,30 +9,31 @@
   }
 }
 
-h2{
+h2 {
   color: #2A2B34;
   font-size: 55px;
   font-weight: 700;
   padding-bottom: 40px;
-  span{
-    color:#F86341
+
+  span {
+    color: #F86341
   }
 }
 
-.jet_elements{
-  div{
+.jet_elements {
+  div {
     margin: 16px 12px;
     align-items: center;
   }
 }
 
-h5{
+h5 {
   font-size: 16px;
   text-align: left;
   padding-left: 8px;
 }
 
-.btn-jet{
+.btn-jet {
   text-decoration: none;
   color: #fff;
   background-color: #F86341;
@@ -43,18 +44,21 @@ h5{
   border-radius: 18px;
   border: solid #F86341 2px;
   transition: .3s ease-in-out;
-  &:hover{
+
+  &:hover {
     color: #000;
     background-color: #fff;
     border: solid #375d95 2px;
   }
 }
 
-.controls{
+.controls {
   min-width: 100px;
   justify-content: space-evenly;
   align-items: center;
-  .right, .left{
+
+  .right,
+  .left {
     cursor: pointer;
     width: 25%;
     text-align: center;
@@ -65,10 +69,12 @@ h5{
     transition: .2s ease-in-out;
     justify-content: center;
     align-items: center;
-    &:hover{
+
+    &:hover {
       border: solid 3px #375d95;
     }
-    a{
+
+    a {
       font-size: 28px;
       color: #375d95;
     }
@@ -78,11 +84,15 @@ h5{
 .animated-image {
   transition: opacity 0.4s ease-in-out;
 }
-// .pr{
-//   span{
-//      padding-right: 150px;
-//   }
-// }
+
+.pr {
+  padding-left: 0px !important;
+
+  span {
+    padding-right: 0px !important;
+  }
+}
+
 .fade-in {
   opacity: 0;
   animation: fadeInAnimation 0.8s ease-in-out forwards;
@@ -93,19 +103,23 @@ h5{
     opacity: 1;
   }
 }
+
 .img-holder {
   position: relative;
 }
 
 img {
-  transition: opacity 0.5s ease-in-out;  /* Smooth transition for opacity */
+  transition: opacity 0.5s ease-in-out;
+  /* Smooth transition for opacity */
   opacity: 1;
 }
 
 img.fade-out {
-  opacity: 0; /* Make the image fade out */
+  opacity: 0;
+  /* Make the image fade out */
 }
 
 img.fade-in {
-  opacity: 1; /* Make the image fade in */
+  opacity: 1;
+  /* Make the image fade in */
 }

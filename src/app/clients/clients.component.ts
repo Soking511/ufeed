@@ -1,11 +1,11 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; 
+import { CommonModule } from '@angular/common';
 import { TranslationService } from '../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-clients',
-  imports: [CommonModule,TranslateModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './clients.component.html',
   styleUrl: './clients.component.scss'
 })
@@ -23,6 +23,18 @@ export class ClientsComponent implements OnInit {
     'public/clients/9.png',
     'public/clients/10.png',
   ];
+  clients = [
+    { id: '1', link: 'https://www.egytrans.com/home', logo: 'public/clients/1.png' },
+    { id: '2', link: 'https://www.ykk.com/english/', logo: 'public/clients/2.png' },
+    { id: '3', link: 'https://www.lamaregypt.com/en', logo: 'public/clients/3.png' },
+    { id: '4', link: 'https://eg.linkedin.com/company/digital-egypt-for-investment-co?original_referer=https%3A%2F%2Fwww.google.com%2F', logo: 'public/clients/4.png' },
+    { id: '5', link: 'https://mediterraneo-egypt.com/', logo: 'public/clients/5.png' },
+    { id: '6', link: 'https://eventumsolutions.com/', logo: 'public/clients/6.png' },
+    { id: '7', link: 'https://www.heidelbergmaterials.com/en', logo: 'public/clients/7.png' },
+    { id: '8', link: 'https://alnafitha.com/ar/', logo: 'public/clients/8.png' },
+    { id: '9', link: 'https://eg.linkedin.com/company/alsharkeya-sugar', logo: 'public/clients/9.png' },
+    { id: '10', link: 'https://www.epp-eg.com/', logo: 'public/clients/10.png' },
+  ]
   currentOffset = 0;
   visibleItems = 5;
   itemWidth = 100 / this.visibleItems;

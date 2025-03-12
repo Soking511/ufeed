@@ -46,10 +46,10 @@ body::-webkit-scrollbar-track {
   border-radius: 8px;
   background-color: rgb(120, 120, 120);
 } 
-*::selection {
-  background-color: rgba(0, 0, 0, 0.775);
-  color: #f86645f0;
-}
+// *::selection {
+//   background-color: rgba(0, 0, 0, 0.775);
+//   color: #f86645f0;
+// }
 
   $mainFont:'Creato Display';
   $secondaryFont:'Lora';
