@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormControl,FormGroup,ReactiveFormsModule,Validators} from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { TranslationService } from '../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-ees',
-  imports: [CommonModule,ReactiveFormsModule,TranslateModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './ees.component.html',
   styleUrl: './ees.component.scss'
 })
@@ -27,30 +27,36 @@ export class EesComponent {
   // form data 
 
 
-  eesForm:FormGroup= new FormGroup({
-    username:new FormControl(null, [
+  eesForm: FormGroup = new FormGroup({
+    username: new FormControl(null, [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
       Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/) // Allows spaces
     ]),
-    contactNumber:new FormControl(null, [
+    title: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(20),
+      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/) // Allows spaces
+    ]),
+    contactNumber: new FormControl(null, [
       Validators.required,
       Validators.pattern(/^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/)
     ]),
     email: new FormControl(null, [Validators.required, Validators.email]),
-    companyName: new FormControl(null, [ Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(20),
-      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/)
+    companyName: new FormControl(null, [Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(20),
+    Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/)
     ])
-  
+
   });
 
-  
-  getFormData(eesForm:object){
+
+  getFormData(eesForm: object) {
     console.log(eesForm);
-    }
+  }
 
 
 }

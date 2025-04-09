@@ -173,7 +173,7 @@
 
                 .title-per {
                     h4 {
-                        font-size: 25px;
+                        font-size: 24px;
                         font-weight: 700;
                         color: #2A2B34;
                     }
@@ -223,14 +223,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            direction: ltr;
+            unicode-bidi: isolate;
 
             p {
-                font-size: 55px;
+                font-size: 51px;
                 font-weight: 700;
                 text-align: center;
                 color: #2A2B34;
                 font-family: 'Creato Display', sans-serif;
                 padding: 20px;
+                unicode-bidi: plaintext;
             }
 
             img:first-child {
@@ -240,6 +243,7 @@
             img:last-child {
                 align-self: flex-end;
             }
+
         }
     }
 }

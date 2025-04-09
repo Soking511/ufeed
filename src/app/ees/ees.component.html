@@ -23,11 +23,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                
 
-                    <h2 class="text-center w-75 m-auto">{{"Introducing" |translate}} <span>{{"Employee" |translate}}
-                            <br> {{"Engagement Survey" |translate}} </span></h2>
-                
+
+                <h2 class="text-center w-75 m-auto">{{"Introducing" |translate}} <span>{{"Employee" |translate}}
+                        <br> {{"Engagement Survey" |translate}} </span></h2>
+
             </div>
 
             <!-- ---------- -->
@@ -224,7 +224,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7 title-holder px-3">
-                <h2 class="text-left">{{"Elevate your efficiency with the" |translate}} <span>{{"EES tool"|translate}} !
+                <h2 class="text-left">{{"Elevate your efficiency with the" |translate}} <span>{{"EES tool"|translate}}
                     </span></h2>
             </div>
             <div class="col-md-5 form-holder">
@@ -267,12 +267,22 @@
                         <p *ngIf="eesForm.get('companyName')?.errors!=null && eesForm.get('companyName')?.touched "
                             class="py-2 text-danger">{{"Please Fill Your Company Name" |translate}}</p>
                     </div>
+                    <div class="form-group col-12 my-3">
+                        <label for="">{{'TITLE'|translate}}</label>
+                        <input placeholder='{{"TITLE"|translate}}' formControlName="title" [class.is-valid]="eesForm.get('title')?.errors == null &&
+                                    eesForm.get('title')?.touched" formControlName="title" class="form-control p-3"
+                            id="">
+                        <p *ngIf="eesForm.get('title')?.errors!=null && eesForm.get('title')?.touched "
+                            class="py-2 text-danger">{{"Please
+                            Check Your Title" |translate}}</p>
+                    </div>
                     <label for="">{{"Products" | translate}}</label>
                     <select class="form-select py-3" aria-label="Default select example">
-                        <option class="disabled-option" value="" disabled selected>{{"choose product" | translate}}</option>
-                        <option value="1">Job Evaluation Tool – JET</option>
-                        <option value="2">Employee Engagement Survey - EES</option>
-                        <option value="both">both</option>
+                        <option class="disabled-option" value="" disabled selected>{{"choose product" | translate}}
+                        </option>
+                        <option value="1">{{'Job Evaluation Tool – JET' | translate}}</option>
+                        <option value="2">{{'Employee Engagement Survey - EES' | translate}}</option>
+                        <option value="both">{{'both' | translate}}</option>
                     </select>
                     <button type="submit" [disabled]="eesForm.invalid == true"
                         class=" my-3 p-3 btn col-12 btn-success">{{"Submit"|translate}}</button>

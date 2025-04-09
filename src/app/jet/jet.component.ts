@@ -21,6 +21,12 @@ jetForm:FormGroup= new FormGroup({
     Validators.maxLength(20),
     Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/) // Allows spaces
   ]),
+  title:new FormControl(null, [
+    Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(20),
+    Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/) // Allows spaces
+  ]),
   contactNumber:new FormControl(null, [
     Validators.required,
     Validators.pattern(/^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/)

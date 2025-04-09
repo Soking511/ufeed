@@ -27,13 +27,13 @@ export class ContactSectionComponent {
       Validators.pattern(/^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/
   )]),
     
-    'title': new FormControl(''),
+    'title': new FormControl(null, [Validators.required]),
   
     'email': new FormControl(null, [Validators.required, Validators.email]),
-    'company': new FormControl(''),
+    'company': new FormControl(null, [Validators.required]),
     'inquiry':new FormControl('null', [Validators.required]),
     'product':new FormControl('null', [Validators.required]),
-    'message': new FormControl(''),
+    'message': new FormControl(null, [Validators.required]),
   
   });
   

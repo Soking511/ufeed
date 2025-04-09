@@ -22,8 +22,8 @@ export class BecomeAPartnerComponent {
       Validators.maxLength(20),
       Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/)
     ]),
-    companyAddress: new FormControl(),
-    companyWebsite: new FormControl(),
+    companyAddress: new FormControl(null, Validators.required),
+    companyWebsite: new FormControl(null, Validators.required),
     companyNumber: new FormControl(null, [
       Validators.required,
       Validators.pattern(/^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/)
@@ -31,20 +31,20 @@ export class BecomeAPartnerComponent {
     PartnerType: new FormControl(null, Validators.required),
     OtherPartnerType: new FormControl(''), // Additional input field for 'Other'
     country: new FormControl(null, Validators.required),
-    personalProfile: new FormControl(),
+    personalProfile: new FormControl(Validators.required),
     personalName: new FormControl(null, [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
       Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/)
     ]),
-    title: new FormControl(),
+    title: new FormControl(null, Validators.required),
     email: new FormControl(null, [Validators.required, Validators.email]),
     mobile: new FormControl(null, [
       Validators.required,
       Validators.pattern(/^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/),
     ]),
-    message: new FormControl()
+    message: new FormControl(null, Validators.required)
   });
 
   // Inject HttpClient
