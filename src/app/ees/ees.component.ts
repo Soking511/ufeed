@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 
 import { TranslationService } from '../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-ees',
@@ -12,6 +13,10 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './ees.component.scss'
 })
 export class EesComponent {
+
+
+    constructor(private api:ApiService) { }
+
   hoveredIndex: number | null = null;
 
   onMouseOver(index: number) {
@@ -24,7 +29,7 @@ export class EesComponent {
 
 
   // ----------
-  // form data 
+  // form data
 
 
   eesForm: FormGroup = new FormGroup({
@@ -54,9 +59,9 @@ export class EesComponent {
   });
 
 
-  getFormData(eesForm: object) {
-    console.log(eesForm);
-  }
+  getFormData(eesForm:object){
+    this.api.postFormData(eesForm,'ees-tool');
+    }
 
 
 }

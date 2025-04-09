@@ -4,6 +4,7 @@ import { TranslationService } from '../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
 
 import {FormControl,FormGroup,ReactiveFormsModule,Validators} from '@angular/forms';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-jet',
@@ -13,7 +14,8 @@ import {FormControl,FormGroup,ReactiveFormsModule,Validators} from '@angular/for
 })
 export class JetComponent {
 
-// form data 
+  constructor(private api:ApiService) { }
+// form data
 jetForm:FormGroup= new FormGroup({
   username:new FormControl(null, [
     Validators.required,
@@ -41,7 +43,7 @@ jetForm:FormGroup= new FormGroup({
 })
 
 
-// hover elements 
+// hover elements
   hoveredIndex: number | null = null;
 
   onMouseOver(index: number) {
@@ -51,13 +53,13 @@ jetForm:FormGroup= new FormGroup({
   onMouseOut() {
     this.hoveredIndex = null; // Reset the hover effect
   }
-  
+
 
 // ---------
 
-  
+
 getFormData(jetForm:object){
-  console.log(jetForm);
+  this.api.postFormData(jetForm,'jet-tool');
   }
 
 

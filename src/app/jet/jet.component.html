@@ -231,7 +231,7 @@
                         <input placeholder='{{"Your Phone Number"|translate}}' [class.is-valid]="jetForm.get('contactNumber')?.errors==null &&
                  jetForm.get('contactNumber')?.touched" formControlName="contactNumber" class="form-control p-3" id="">
 
-                        <p *ngIf="jetForm.get('contactNumber')?.errors!=null && 
+                        <p *ngIf="jetForm.get('contactNumber')?.errors!=null &&
                 jetForm.get('contactNumber')?.touched" class="py-2 text-danger">{{"Please Check Your Phone
                             Number"|translate}}</p>
                     </div>
@@ -261,11 +261,10 @@
                     </div>
                     <label for="">{{"Products" | translate}}</label>
                     <select class="form-select py-3" aria-label="Default select example">
-                        <option class="disabled-option" value="" disabled selected>{{"choose product" | translate}}
-                        </option>
-                        <option value="1">{{'Job Evaluation Tool – JET' | translate}}</option>
-                        <option value="2">{{'Employee Engagement Survey - EES' | translate}}</option>
-                        <option value="both">{{'both' | translate}}</option>
+                        <option class="disabled-option" value="" disabled selected>{{"choose product" | translate}}</option>
+                        <option value="1">Job Evaluation Tool – JET</option>
+                        <option value="2">Employee Engagement Survey - EES</option>
+                        <!-- <option value="both">both</option> -->
                     </select>
                     <button type="submit" [disabled]="jetForm.invalid == true"
                         class=" my-3 p-3 btn col-12 btn-success">{{"Submit"|translate}}</button>

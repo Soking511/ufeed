@@ -1,16 +1,22 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { TranslationService } from '../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-become-apartner',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule,TranslateModule],
+  imports: [ReactiveFormsModule, CommonModule, TranslateModule],
   templateUrl: './become-apartner.component.html',
-  styleUrls: ['./become-apartner.component.scss']
+  styleUrls: ['./become-apartner.component.scss'],
 })
 export class BecomeAPartnerComponent {
   isOtherSelected: boolean = false;
@@ -20,13 +26,15 @@ export class BecomeAPartnerComponent {
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
-      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/)
+      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/),
     ]),
     companyAddress: new FormControl(null, Validators.required),
     companyWebsite: new FormControl(null, Validators.required),
     companyNumber: new FormControl(null, [
       Validators.required,
-      Validators.pattern(/^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/)
+      Validators.pattern(
+        /^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/
+      ),
     ]),
     PartnerType: new FormControl(null, Validators.required),
     OtherPartnerType: new FormControl(''), // Additional input field for 'Other'
@@ -36,19 +44,21 @@ export class BecomeAPartnerComponent {
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
-      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/)
+      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/),
     ]),
     title: new FormControl(null, Validators.required),
     email: new FormControl(null, [Validators.required, Validators.email]),
     mobile: new FormControl(null, [
       Validators.required,
-      Validators.pattern(/^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/),
+      Validators.pattern(
+        /^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/
+      ),
     ]),
-    message: new FormControl(null, Validators.required)
+    message: new FormControl(),
   });
 
   // Inject HttpClient
-  constructor(private http: HttpClient) {}
+  constructor(private api: ApiService) {}
 
   // Function to handle selection change
   onPartnerTypeChange(event: Event) {
@@ -56,7 +66,9 @@ export class BecomeAPartnerComponent {
     this.isOtherSelected = selectedValue === 'Other';
 
     if (this.isOtherSelected) {
-      this.becomePartner.get('OtherPartnerType')?.setValidators([Validators.required]);
+      this.becomePartner
+        .get('OtherPartnerType')
+        ?.setValidators([Validators.required]);
     } else {
       this.becomePartner.get('OtherPartnerType')?.clearValidators();
       this.becomePartner.get('OtherPartnerType')?.setValue('');
@@ -74,15 +86,7 @@ export class BecomeAPartnerComponent {
       });
 
       // Replace with your API endpoint
-      const apiUrl = 'https://ufeed-node-server-production.up.railway.app/partner-request/add-partner-request';
-
-      // Send the form-data
-      this.http.post(apiUrl, formData).subscribe({
-        next: (response) => console.log('Success:', response),
-        error: (err) => console.error('Error:', err)
-      });
-    } else {
-      console.error('Form is invalid');
+      this.api.postFormData(formData, 'become-partner');
     }
   }
 }

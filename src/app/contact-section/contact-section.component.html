@@ -72,8 +72,7 @@
 
               <div class="custom-checkbox-wrapper">
                 <div *ngFor="let inquiry of inquiries">
-                  <input type="checkbox" [id]="inquiry.value" [value]="inquiry.value"
-                    (change)="onInquiryCheckboxChange($event)"
+                  <input type="radio" [id]="inquiry.value" [value]="inquiry.value" formControlName="inquiry"
                     [checked]="contactForm.get('inquiry')?.value.includes(inquiry.value)">
                   <label class="check-lable" [for]="inquiry.value">{{ inquiry.label | translate }}</label>
                 </div>
@@ -91,8 +90,7 @@
 
               <div class="custom-checkbox-wrapper">
                 <div *ngFor="let product of products">
-                  <input type="checkbox" [id]="product.value" [value]="product.value"
-                    (change)="onCheckboxChange($event)"
+                  <input type="radio" [id]="product.value" [value]="product.value" formControlName="product"
                     [checked]="contactForm.get('product')?.value.includes(product.value)">
                   <label class="check-lable" [for]="product.value">{{ product.label | translate }}</label>
                 </div>
