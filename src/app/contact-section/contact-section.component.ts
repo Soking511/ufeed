@@ -8,47 +8,51 @@ import {
 } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { ApiService } from '../services/api.service';
+import { InputComponent } from "../shared/components/input/input.component";
 
 @Component({
   selector: 'app-contact-section',
-  imports: [ReactiveFormsModule, CommonModule, TranslateModule],
+  imports: [ReactiveFormsModule, CommonModule, TranslateModule, InputComponent],
   templateUrl: './contact-section.component.html',
   styleUrl: './contact-section.component.scss',
 })
 export class ContactSectionComponent {
-  // ---------------------------
-  // form inputs
-
   contactForm: FormGroup = new FormGroup({
-    fullname: new FormControl(null, [
+    name: new FormControl(null, [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
-      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/), // Allows spaces
+      // Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/), // Allows spaces
     ]),
 
-    phone: new FormControl(null, [
+    phone_number: new FormControl(null, [
       Validators.required,
       Validators.pattern(
         /^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/
       ),
     ]),
 
-    title: new FormControl(''),
-
+    title: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
     email: new FormControl(null, [Validators.required, Validators.email]),
-    company: new FormControl(''),
+    company_name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
     inquiry: new FormControl('null', [Validators.required]),
     product: new FormControl('null', [Validators.required]),
-    message: new FormControl(''),
+    message: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
   });
 
-  constructor(private apiService:ApiService){
-
-  }
-  getFormData(contactForm: object) {
-    console.log(contactForm)
-    this.apiService.postFormData(contactForm, 'contact');
+  constructor(private apiService: ApiService) {}
+  getFormData(contactForm: any) {
+    this.apiService.post('contact', contactForm.value ).subscribe({
+      next: (res) => {
+        // console.log(res);
+      },
+      error: (err) => {
+        // console.error('Error submitting form:', err);
+      },
+      complete: () => {
+        // console.log('Request completed');
+      },
+    });
   }
 
   products = [
@@ -56,39 +60,10 @@ export class ContactSectionComponent {
     { value: 'EES', label: 'Employee Engagement Survey - EES' },
   ];
 
-  onCheckboxChange(event: Event) {
-    const target = event.target as HTMLInputElement;
-    let selectedProducts = this.contactForm.get('product')?.value || [];
-
-    if (target.checked) {
-      selectedProducts.push(target.value);
-      this.contactForm.get('product')?.setValue(target.value);
-    } else {
-      selectedProducts = selectedProducts.filter(
-        (p: string) => p !== target.value
-      );
-    }
-
-  }
-
   inquiries = [
     { value: 'book a demo', label: 'Book a Demo' },
     { value: 'get a quotation', label: 'Get a Quotation' },
     { value: 'have an inquiry', label: 'Have an Inquiry' },
   ];
 
-  onInquiryCheckboxChange(event: Event) {
-    const target = event.target as HTMLInputElement;
-    let selectedInquiries = this.contactForm.get('inquiry')?.value || [];
-
-    if (target.checked) {
-      selectedInquiries.push(target.value);
-    } else {
-      selectedInquiries = selectedInquiries.filter(
-        (i: string) => i !== target.value
-      );
-    }
-
-    this.contactForm.get('inquiry')?.setValue(selectedInquiries);
-  }
 }

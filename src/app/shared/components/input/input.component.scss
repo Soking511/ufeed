@@ -1,0 +1,44 @@
+form {
+
+  input::placeholder,
+  .disabled-option {
+      color: rgb(152, 152, 152);
+      font-weight: 400;
+      font-size: 14px;
+  }
+
+  label {
+      margin: 4px 0;
+  }
+
+  .row {
+      .form-group {
+          label {
+              padding: 8px;
+              margin-bottom: 8px;
+              color: #43424C;
+              font-size: 16px;
+              font-weight: 500;
+              font-family: 'Century Gothic Paneuropean';
+          }
+
+      }
+  }
+  form-control.p-3 {
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(28.242982864379883px);
+  }
+
+  button {
+      background-color: #3B5C92;
+      border: #3B5C92;
+      transition: .3s;
+
+      &:hover {
+          background-color: #f86341;
+          border: #f86341;
+
+      }
+  }
+}

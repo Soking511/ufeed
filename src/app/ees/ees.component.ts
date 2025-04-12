@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 import { TranslationService } from '../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
@@ -10,12 +15,10 @@ import { ApiService } from '../services/api.service';
   selector: 'app-ees',
   imports: [CommonModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './ees.component.html',
-  styleUrl: './ees.component.scss'
+  styleUrl: './ees.component.scss',
 })
 export class EesComponent {
-
-
-    constructor(private api:ApiService) { }
+  constructor(private api: ApiService) {}
 
   hoveredIndex: number | null = null;
 
@@ -27,41 +30,64 @@ export class EesComponent {
     this.hoveredIndex = null; // Reset the hover effect
   }
 
-
   // ----------
   // form data
 
-
   eesForm: FormGroup = new FormGroup({
-    username: new FormControl(null, [
+    number_of_departments: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(1),
+      Validators.maxLength(3),
+    ]),
+
+    name: new FormControl(null, [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
-      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/) // Allows spaces
     ]),
     title: new FormControl(null, [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
-      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/) // Allows spaces
+      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/), // Allows spaces
     ]),
-    contactNumber: new FormControl(null, [
+    number: new FormControl(null, [
       Validators.required,
-      Validators.pattern(/^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/)
+      Validators.pattern(
+        /^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/
+      ),
     ]),
     email: new FormControl(null, [Validators.required, Validators.email]),
-    companyName: new FormControl(null, [Validators.required,
-    Validators.minLength(3),
-    Validators.maxLength(20),
-    Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/)
-    ])
-
+    company_name: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(20),
+      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/),
+    ]),
+    product: new FormControl('null', [Validators.required]),
   });
 
-
-  getFormData(eesForm:object){
-    this.api.postFormData(eesForm,'ees-tool');
+  onlyNumberKey(event: KeyboardEvent): boolean {
+    // Only allow numbers (0-9)
+    const charCode = event.which ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
     }
+    return true;
+  }
 
-
+  getFormData(eesForm: any) {
+    console.log(eesForm.value);
+    this.api.post('ees-tool', eesForm.value).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: (err) => {
+        console.error(err);
+      },
+      complete: () => {
+        console.log('Request completed');
+      },
+    });
+  }
 }

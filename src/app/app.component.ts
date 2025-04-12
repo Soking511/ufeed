@@ -5,7 +5,8 @@ import { FooterComponent } from "./footer/footer.component";
 import { TranslationService } from './services/translation.service';
 import { TranslateService } from '@ngx-translate/core';
 import { routes } from './app.routes';
-import { ScrollService } from './services/scroll.service'; // Import ScrollService
+import { ScrollService } from './services/scroll.service';
+import { ToastComponent } from "./components/toast/toast.component"; // Import ScrollService
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,9 @@ import { ScrollService } from './services/scroll.service'; // Import ScrollServi
     RouterOutlet,
     RouterModule,
     HeaderComponent,
-    FooterComponent
-  ],
+    FooterComponent,
+    ToastComponent
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -30,7 +32,7 @@ export class AppComponent {
     private router: Router,
   ) {}
 
-  
+
 
   ngOnInit(): void {
     // Detect language from localStorage or default to English
@@ -50,7 +52,7 @@ export class AppComponent {
 
 
 
-  
+
 
 changeLanguage(language: string): void {
   if (this.currentLanguage === language) return; // Prevent unnecessary reloads
@@ -66,7 +68,7 @@ changeLanguage(language: string): void {
   });
 }
 
-  
+
 
 
   private updateDocumentDirection(): void {

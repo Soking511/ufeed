@@ -9,29 +9,28 @@
 
           <form action="" method="post" [formGroup]="contactForm" (ngSubmit)="getFormData(contactForm)">
 
-            <div class="form-group col-12 my-3">
+            <!-- <div class="form-group col-12 my-3">
               <label for="">{{ "YOUR_NAME" | translate }}</label>
               <input
-                [class.is-valid]="contactForm.get('fullname')?.errors == null && contactForm.get('fullname')?.touched"
-                class="form-control p-3" formControlName="fullname" type="text"
+                [class.is-valid]="contactForm.get('name')?.errors == null && contactForm.get('name')?.touched"
+                class="form-control p-3" formControlName="name" type="text"
                 placeholder="{{ 'YOUR_NAME' | translate }}" id="">
 
-              <p *ngIf="contactForm.get('fullname')?.errors != null && contactForm.get('fullname')?.touched"
+              <p *ngIf="contactForm.get('name')?.errors != null && contactForm.get('name')?.touched"
                 class="py-2 text-danger">
                 {{ "CHECK_YOUR_NAME" | translate }}
               </p>
-            </div>
-
-
+            </div> -->
 
             <div class="row py-0 my-3 group">
 
               <div class="form-group col-lg-6 col-md-6 col-sm-12">
                 <label for="">{{"Contact Number*"|translate}}</label>
-                <input [class.is-valid]="contactForm.get('phone')?.errors==null && contactForm.get('phone')?.touched "
-                  class="form-control p-3" type="text" formControlName="phone" name=""
+                <input
+                  [class.is-valid]="contactForm.get('phone_number')?.errors==null && contactForm.get('phone_number')?.touched "
+                  class="form-control p-3" type="text" formControlName="phone_number" name=""
                   placeholder="{{'Your Phone Number'|translate}}" id="">
-                <p *ngIf="contactForm.get('phone')?.errors!=null && contactForm.get('phone')?.touched "
+                <p *ngIf="contactForm.get('phone_number')?.errors!=null && contactForm.get('phone_number')?.touched "
                   class="py-2 text-danger">{{"Please Check Your Phone Number"|translate}}</p>
               </div>
 
@@ -59,9 +58,9 @@
 
             <div class="form-group col-12 my-3">
               <label for="">{{"Company Name"|translate}}</label>
-              <input class="form-control p-3" type="email" name="" formControlName="company"
+              <input class="form-control p-3" type="email" name="" formControlName="company_name"
                 placeholder="{{'Your Company'| translate}}" id="">
-              <p *ngIf="contactForm.get('company')?.errors != null && contactForm.get('company')?.touched"
+              <p *ngIf="contactForm.get('company_name')?.errors != null && contactForm.get('company_name')?.touched"
                 class="py-2 text-danger">
                 {{ "Please make sure of company name" | translate }}
               </p>

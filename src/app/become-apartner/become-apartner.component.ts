@@ -10,11 +10,12 @@ import { HttpClient } from '@angular/common/http';
 import { TranslationService } from '../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { ApiService } from '../services/api.service';
+import { InputComponent } from "../shared/components/input/input.component";
 
 @Component({
   selector: 'app-become-apartner',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, TranslateModule],
+  imports: [ReactiveFormsModule, CommonModule, TranslateModule, InputComponent],
   templateUrl: './become-apartner.component.html',
   styleUrls: ['./become-apartner.component.scss'],
 })
@@ -22,25 +23,29 @@ export class BecomeAPartnerComponent {
   isOtherSelected: boolean = false;
 
   becomePartner: FormGroup = new FormGroup({
-    companyName: new FormControl(null, [
+    company_name: new FormControl(null, [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
       Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/),
     ]),
-    companyAddress: new FormControl(null, Validators.required),
-    companyWebsite: new FormControl(null, Validators.required),
-    companyNumber: new FormControl(null, [
+    company_address: new FormControl(null, Validators.required),
+    company_website: new FormControl(null, [
+      Validators.required,
+      Validators.pattern(/^(https?:\/\/)?([a-z0-9-]+\.)+[a-z]{2,}.*$/),
+    ]),
+    company_number: new FormControl(null, [
       Validators.required,
       Validators.pattern(
         /^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/
       ),
     ]),
-    PartnerType: new FormControl(null, Validators.required),
+    address: new FormControl(null, Validators.required),
+    partner_type: new FormControl(null, Validators.required),
     OtherPartnerType: new FormControl(''), // Additional input field for 'Other'
-    country: new FormControl(null, Validators.required),
-    personalProfile: new FormControl(Validators.required),
-    personalName: new FormControl(null, [
+    country_interested: new FormControl(null, Validators.required),
+    company_profile: new FormControl(Validators.required),
+    contact_person: new FormControl(null, [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
@@ -48,7 +53,7 @@ export class BecomeAPartnerComponent {
     ]),
     title: new FormControl(null, Validators.required),
     email: new FormControl(null, [Validators.required, Validators.email]),
-    mobile: new FormControl(null, [
+    mobile_number: new FormControl(null, [
       Validators.required,
       Validators.pattern(
         /^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/
@@ -56,6 +61,8 @@ export class BecomeAPartnerComponent {
     ]),
     message: new FormControl(),
   });
+
+  selectedFile: File | null = null;
 
   // Inject HttpClient
   constructor(private api: ApiService) {}
@@ -76,17 +83,101 @@ export class BecomeAPartnerComponent {
     this.becomePartner.get('OtherPartnerType')?.updateValueAndValidity();
   }
 
-  // Function to handle form submission
+  onFileChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length) {
+      this.selectedFile = input.files[0];
+
+      this.becomePartner.patchValue({
+        company_profile: this.selectedFile,
+      });
+    }
+  }
+
+  removeFile(event: Event) {
+    event.stopPropagation();
+    event.preventDefault();
+
+    const fileInfo = (event.target as HTMLElement).closest('.file-info');
+    if (fileInfo) {
+      fileInfo.classList.add('fade-out');
+
+      setTimeout(() => {
+        this.selectedFile = null;
+
+        this.becomePartner.patchValue({
+          company_profile: null,
+        });
+
+        const fileInput = document.getElementById(
+          'fileInput'
+        ) as HTMLInputElement;
+        if (fileInput) {
+          fileInput.value = '';
+        }
+      }, 300);
+    } else {
+      this.selectedFile = null;
+      this.becomePartner.patchValue({
+        company_profile: null,
+      });
+      const fileInput = document.getElementById(
+        'fileInput'
+      ) as HTMLInputElement;
+      if (fileInput) {
+        fileInput.value = '';
+      }
+    }
+  }
+
+  getFileIconClass(filename: string): string {
+    const extension = filename.split('.').pop()?.toLowerCase();
+
+    if (extension === 'pdf') {
+      return 'fa-file-pdf';
+    } else if (['doc', 'docx'].includes(extension || '')) {
+      return 'fa-file-word';
+    } else {
+      return 'fa-file';
+    }
+  }
+
+  formatFileSize(bytes: number): string {
+    if (bytes === 0) return '0 Bytes';
+
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+  }
+
   onSubmit() {
     if (this.becomePartner.valid) {
-      // Prepare form-data
       const formData = new FormData();
+
       Object.keys(this.becomePartner.value).forEach((key) => {
-        formData.append(key, this.becomePartner.get(key)?.value);
+        if (
+          key !== 'company_profile' &&
+          this.becomePartner.value[key] !== null
+        ) {
+          formData.append(key, this.becomePartner.value[key]);
+        }
       });
 
-      // Replace with your API endpoint
-      this.api.postFormData(formData, 'become-partner');
+      if (this.selectedFile) {
+        formData.append('company_profile', this.selectedFile);
+      }
+
+      // Send data to API
+      this.api.postFormData('become-partner', formData).subscribe({
+        next: () => {
+          this.becomePartner.reset();
+          this.selectedFile = null;
+        },
+        error: () => {
+        },
+      });
     }
   }
 }

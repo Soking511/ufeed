@@ -1,0 +1,17 @@
+@if( Form ){
+<div class="form-group col-md-12 my-3" [formGroup]="Form">
+    <label for="" [ngClass]="titleColor ? 'text-' + titleColor : ''">{{ label | translate }}</label>
+    <input [type]="inputType" class="form-control p-3" [formControlName]="controlName"
+        [class.is-valid]="Form.get(controlName)?.errors == null && Form.get(controlName)?.touched"
+        placeholder="{{ placeholder | translate }}" [ngStyle]="{
+            'color': inputColor || '',
+            'border-color': borderColor || '',
+            'background-color': backgroundColor || ''
+        }" />
+    @if( Form.get(controlName)?.errors != null && Form.get(controlName)?.touched ){
+    <p class="text-danger">
+        {{ errorMessage | translate }}
+    </p>
+    }
+</div>
+}

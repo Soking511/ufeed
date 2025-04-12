@@ -233,21 +233,32 @@
 
                     <div class="form-group col-12 my-3">
                         <label for="">{{"YOUR_NAME"|translate}}</label>
-                        <input placeholder='{{"YOUR_NAME"|translate}}' formControlName="username"
-                            [class.is-valid]="eesForm.get('username')?.errors == null && eesForm.get('username')?.touched"
+                        <input placeholder='{{"YOUR_NAME"|translate}}' formControlName="name"
+                            [class.is-valid]="eesForm.get('name')?.errors == null && eesForm.get('name')?.touched"
                             class="form-control p-3" id="">
-                        <p *ngIf="eesForm.get('username')?.errors != null && eesForm.get('username')?.touched"
+                        <p *ngIf="eesForm.get('name')?.errors != null && eesForm.get('name')?.touched"
                             class="py-2 text-danger">{{"CHECK_YOUR_NAME"|translate}}</p>
+                    </div>
+
+
+                    <div class="form-group col-12 my-3">
+                        <label for="">{{"YOUR_number_of_departments"|translate}}</label>
+                        <input placeholder='{{"YOUR_number_of_departments"|translate}}'
+                            formControlName="number_of_departments"
+                            [class.is-valid]="eesForm.get('number_of_departments')?.errors == null && eesForm.get('number_of_departments')?.touched"
+                            class="form-control p-3" id="" type="number" max="300"
+                            onpaste="return false;">
+                        <p *ngIf="eesForm.get('number_of_departments')?.errors != null && eesForm.get('number_of_departments')?.touched"
+                            class="py-2 text-danger">{{"CHECK_number_of_departments"|translate}}</p>
                     </div>
 
                     <div class="form-group col-12 my-3">
                         <label for="">{{"Contact Number*" |translate}}</label>
-                        <input placeholder='{{"Your Phone Number"|translate}}' [class.is-valid]="eesForm.get('contactNumber')?.errors==null &&
-                     eesForm.get('contactNumber')?.touched" formControlName="contactNumber" class="form-control p-3"
-                            id="">
+                        <input placeholder='{{"Your Phone Number"|translate}}' [class.is-valid]="eesForm.get('number')?.errors==null &&
+                     eesForm.get('number')?.touched" formControlName="number" class="form-control p-3" id="">
 
-                        <p *ngIf="eesForm.get('contactNumber')?.errors!=null && 
-                    eesForm.get('contactNumber')?.touched" class="py-2 text-danger">{{"Please Check Your Phone
+                        <p *ngIf="eesForm.get('number')?.errors!=null &&
+                    eesForm.get('number')?.touched" class="py-2 text-danger">{{"Please Check Your Phone
                             Number"|translate}}</p>
                     </div>
 
@@ -261,10 +272,11 @@
 
                     <div class="form-group col-12 my-3">
                         <label for="">{{'Company Name'|translate}}</label>
-                        <input placeholder='{{"Your Company"|translate}}' formControlName="companyName"
-                            [class.is-valid]="eesForm.get('companyName')?.errors == null &&
-                    eesForm.get('companyName')?.touched" formControlName="companyName" class="form-control p-3" id="">
-                        <p *ngIf="eesForm.get('companyName')?.errors!=null && eesForm.get('companyName')?.touched "
+                        <input placeholder='{{"Your Company"|translate}}' formControlName="company_name"
+                            [class.is-valid]="eesForm.get('company_name')?.errors == null &&
+                    eesForm.get('company_name')?.touched" formControlName="company_name" class="form-control p-3"
+                            id="">
+                        <p *ngIf="eesForm.get('company_name')?.errors!=null && eesForm.get('company_name')?.touched "
                             class="py-2 text-danger">{{"Please Fill Your Company Name" |translate}}</p>
                     </div>
                     <div class="form-group col-12 my-3">
@@ -277,15 +289,15 @@
                             Check Your Title" |translate}}</p>
                     </div>
                     <label for="">{{"Products" | translate}}</label>
-                    <select class="form-select py-3" aria-label="Default select example">
+                    <select class="form-select py-3" aria-label="Default select example" formControlName="product">
                         <option class="disabled-option" value="" disabled selected>{{"choose product" | translate}}
                         </option>
-                        <option value="1">{{'Job Evaluation Tool – JET' | translate}}</option>
-                        <option value="2">{{'Employee Engagement Survey - EES' | translate}}</option>
-                        <option value="both">{{'both' | translate}}</option>
+                        <option value="JET">{{'Job Evaluation Tool – JET' | translate}}</option>
+                        <option value="EES">{{'Employee Engagement Survey - EES' | translate}}</option>
                     </select>
                     <button type="submit" [disabled]="eesForm.invalid == true"
                         class=" my-3 p-3 btn col-12 btn-success">{{"Submit"|translate}}</button>
+
 
                 </form>
 
