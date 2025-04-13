@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  AfterViewChecked,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
@@ -6,18 +11,28 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-
 import { TranslationService } from '../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { ApiService } from '../services/api.service';
+import { ConfirmationPageComponent } from '../confirmation-page/confirmation-page.component';
 
 @Component({
   selector: 'app-ees',
-  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    TranslateModule,
+    ConfirmationPageComponent,
+  ],
   templateUrl: './ees.component.html',
   styleUrl: './ees.component.scss',
 })
-export class EesComponent {
+export class EesComponent implements AfterViewChecked {
+  submitted = false;
+  disabled = false;
+  @ViewChild('confirmationPage') confirmationPage: ElementRef | undefined;
+  private scrollToConfirmation = false;
+
   constructor(private api: ApiService) {}
 
   hoveredIndex: number | null = null;
@@ -35,6 +50,12 @@ export class EesComponent {
 
   eesForm: FormGroup = new FormGroup({
     number_of_departments: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(1),
+      Validators.maxLength(3),
+    ]),
+
+    number_of_employees: new FormControl(null, [
       Validators.required,
       Validators.minLength(1),
       Validators.maxLength(3),
@@ -77,17 +98,31 @@ export class EesComponent {
   }
 
   getFormData(eesForm: any) {
-    console.log(eesForm.value);
+    this.disabled = true;
     this.api.post('ees-tool', eesForm.value).subscribe({
       next: (res) => {
         console.log(res);
+        this.submitted = true;
+        this.scrollToConfirmation = true;
       },
       error: (err) => {
         console.error(err);
+        this.disabled = false;
       },
       complete: () => {
         console.log('Request completed');
+        this.disabled = false;
       },
     });
+  }
+
+  ngAfterViewChecked() {
+    if (this.submitted && this.scrollToConfirmation && this.confirmationPage) {
+      const element = document.getElementById('confirmationSection');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        this.scrollToConfirmation = false;
+      }
+    }
   }
 }

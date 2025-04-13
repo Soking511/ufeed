@@ -1,0 +1,33 @@
+<!-- start confirmation message -->
+<section class="confirmation-form" id="confirmationMessage">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-holder p-5">
+                    <h2 class="pb-3">{{"Thank You for Reaching Out!" | translate}}</h2>
+
+                    <div class="confirmation-content">
+                        <p class="mb-4">{{"Your submission has been received successfully. We will contact you shortly."
+                            | translate}}</p>
+
+                        <div class="confirmation-icon mb-4">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+
+                        <!-- <div class="details mt-4">
+                            <p>{{"Submission Details:" | translate}}</p>
+                            <ul>
+                                <li><strong>{{"Inquiry:" | translate}}</strong> {{inquiry}}</li>
+                                <li><strong>{{"Product:" | translate}}</strong> {{product}}</li>
+                            </ul>
+                        </div> -->
+
+                        <button (click)="goBackHome()" class="my-3 p-3 btn col-12">{{"Back" |
+                            translate}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end confirmation message -->
