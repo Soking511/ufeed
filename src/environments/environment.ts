@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://soking.tech/api',
+  apiUrl: 'https://api.ufeed.pulslytics.agency/api',
 };
