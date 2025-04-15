@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { routes } from './app.routes';
 import { ScrollService } from './services/scroll.service';
 import { ToastComponent } from "./components/toast/toast.component"; // Import ScrollService
+import { ScrollRestorationService } from './services/scroll-restoration.service';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +31,7 @@ export class AppComponent {
     private translate: TranslateService,  // Inject TranslateService
     private renderer: Renderer2,
     private router: Router,
+    private scrollService: ScrollRestorationService
   ) {}
 
 
