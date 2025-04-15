@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ApiService } from '../services/api.service';
 
@@ -17,7 +17,7 @@ interface NewsItem {
 @Component({
   selector: 'app-news-detail',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, RouterModule],
   templateUrl: './news-detail.component.html',
   styleUrl: './news-detail.component.scss'
 })
@@ -38,7 +38,7 @@ export class NewsDetailComponent implements OnInit {
       if (id) {
         this.fetchNewsDetail(id);
       } else {
-        this.router.navigate(['/']);
+        this.router.navigate(['/news']);
       }
     });
   }
@@ -65,5 +65,9 @@ export class NewsDetailComponent implements OnInit {
       month: 'long',
       day: 'numeric'
     });
+  }
+
+  goBack(): void {
+    this.router.navigate(['/news']);
   }
 }

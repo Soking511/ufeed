@@ -23,7 +23,7 @@
     <!-- News content -->
     <div class="row" *ngIf="!isLoading && !hasError">
       <div class="col-md-6" *ngFor="let item of newsItems">
-        <div class="single-post" [routerLink]="['/news', item.id]">
+        <div class="single-post" [routerLink]="['/news-detail', item.id]">
           <div class="featured-img">
             <img class="img-fluid imger-style" [src]="item.image" [alt]="item.name">
           </div>

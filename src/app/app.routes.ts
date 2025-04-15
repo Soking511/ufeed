@@ -61,6 +61,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'news-detail/:id',
+    loadComponent: () =>
+      import('./news-detail/news-detail.component').then(
+        (m) => m.NewsDetailComponent
+      ),
+  },
+  {
     path: 'ngo',
     loadComponent: () =>
       import('./ngo/ngo.component').then((m) => m.NgoComponent),
