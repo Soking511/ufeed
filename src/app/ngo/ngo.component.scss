@@ -1,153 +1,207 @@
-.ngo-banner{
-    height: 90vh;
-    margin-top: 90px;
-    background-size:contain ;
-    background-position: center top;
-    background-repeat: no-repeat;
+.ngo-banner {
+  height: 90vh;
+  margin-top: 90px;
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
-.ngo-content{
-    .container{
-        .row{
-            justify-content: space-between;
-            .col-md-6{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                h3{
-                    color: #2A2B34;
-                    font-size: 55px;
-                    font-weight: 700;
-                    span{
-                        color: #F96441;
-                    }
-                }
-                p{
-                    color: rgb(93, 102, 111);
-                    font-size: 20px;
-                }
-            }
-            .col-md-5{
-                justify-content: center;
-                align-items: center;
-            }
-            .bg-main{
-                text-decoration: none;
-                color: #fff;
-                background-color: #F86341;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 18px!important;
-                border: solid #F86341 2px;
-                transition: 0.3s ease-in-out;
-                &:hover{
-                    color: #000;
-                    background-color: #fff;
-                    border: solid #375d95 2px;
-                }
-               
-            }
+.ngo-content {
+  .container {
+    .row {
+      justify-content: space-between;
+      .col-md-6 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h3 {
+          color: #2a2b34;
+          font-size: 55px;
+          font-weight: 700;
+          span {
+            color: #f96441;
+          }
         }
+        p {
+          color: rgb(93, 102, 111);
+          font-size: 20px;
+        }
+      }
+      .col-md-5 {
+        justify-content: center;
+        align-items: center;
+      }
+      .bg-main {
+        text-decoration: none;
+        color: #fff;
+        background-color: #f86341;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 18px !important;
+        border: solid #f86341 2px;
+        transition: 0.3s ease-in-out;
+        &:hover {
+          color: #000;
+          background-color: #fff;
+          border: solid #375d95 2px;
+        }
+      }
     }
-}
-.form-btn{
-    text-decoration: none;
-    color: #fff;
-    background-color: #F86341;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px!important;
-    border: solid #F86341 2px;
-    transition: 0.3s ease-in-out;
-    &:hover{
-        color: #000;
-        background-color: #fff;
-        border: solid #375d95 2px;
-    }
-}
-
-.imger-style{
-    border-radius: 12px;
-    max-height: 350px;
-    box-shadow: 8px 9px 30px 0px rgba(55, 93, 149, 0.35);
   }
-
-  .ngo-form{
-    background-color: #375D95;
-    .container{
-        .row{
-
-            .col-md-6{
-
-                h3.text-light{
-                    color: #FFFFFF;
-                    font-size: 77px;
-                    line-height: 100px;
-                    span{
-                        color: #F86341;
-                    }
-                }
-                }
-            
-
-        }
-    }
+}
+.form-btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: #f86341;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px !important;
+  border: solid #f86341 2px;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: #000;
+    background-color: #fff;
+    border: solid #375d95 2px;
+  }
 }
 
+.imger-style {
+  border-radius: 12px;
+  max-height: 350px;
+  box-shadow: 8px 9px 30px 0px rgba(55, 93, 149, 0.35);
+}
+
+.ngo-form {
+  background-color: #375d95;
+  .container {
+    .row {
+      .col-md-6 {
+        h3.text-light {
+          color: #ffffff;
+          font-size: 77px;
+          line-height: 100px;
+          span {
+            color: #f86341;
+          }
+        }
+      }
+
+      .form-group {
+        position: relative;
+        margin-bottom: 15px;
+
+        .error-container {
+          min-height: 20px;
+
+          .error-message {
+            font-size: 12px;
+            margin-top: 4px;
+            margin-bottom: 0;
+          }
+        }
+
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
 
 // responsive
-@media (max-width:1440px) {
-    .ngo-banner{
-        height: 60vh;
-    }
+@media (max-width: 1440px) {
+  .ngo-banner {
+    height: 60vh;
+  }
 }
 
-@media (max-width:1024px) {
-    .ngo-banner{
-        height: 50vh;
-    }
+@media (max-width: 1024px) {
+  .ngo-banner {
+    height: 50vh;
+  }
 }
 
-
-@media (max-width:768px) {
-    .ngo-content{
-        .container{
-            .row{
-                .col-md-6,.col-md-5{
-                    width: 100%;
-                    margin-top: 20px;
-                }
-            }
+@media (max-width: 768px) {
+  .ngo-content {
+    .container {
+      .row {
+        .col-md-6,
+        .col-md-5 {
+          width: 100%;
+          margin-top: 20px;
         }
+      }
     }
+  }
 }
 
-@media (max-width:426px) {
-.ngo-banner{
+@media (max-width: 426px) {
+  .ngo-banner {
     height: 28vh;
-}
-   .ngo-content{
-    .container{
-        .row{
-            .col-md-6{
-    padding: 20px;                
-    h3{
-        font-size: 28px;
-    }
-            }
+  }
+  .ngo-content {
+    .container {
+      .row {
+        .col-md-6 {
+          padding: 20px;
+          h3 {
+            font-size: 28px;
+          }
         }
-    }    
-   }
+      }
+    }
+  }
 
-
-   h3{
-    font-size: 28px!important;
-}
-.col-md-6.form{
+  h3 {
+    font-size: 28px !important;
+  }
+  .col-md-6.form {
     margin: 0;
+  }
+
+  .ngo-form {
+    .form-group {
+      .error-container {
+        .error-message {
+          font-size: 10px;
+        }
+      }
+
+      .col-md-6.form {
+        padding: 0 10px;
+
+        .form-group {
+          margin-bottom: 10px;
+
+          input {
+            font-size: 14px;
+            height: 38px;
+          }
+
+          label {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
 }
+
+@media (max-width: 576px) {
+  .ngo-form {
+    .row .form-group {
+      &.col-md-6 {
+        width: 100%;
+      }
+    }
+  }
 }

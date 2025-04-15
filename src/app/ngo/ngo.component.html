@@ -9,137 +9,149 @@
             <div class="col-md-6">
                 <h3>{{ 'as_you_give' | translate }}<span> {{ 'you_deserve_return' | translate }}</span></h3>
                 <p>{{ 'ngos_impact' | translate }}</p>
-                
-            
+
+
                 <a href="https://application.ufeed-ai.com/login" target="_blank" class="btn col-md-12 bg-main">
                     {{ 'register_now' | translate }}
                 </a>
             </div>
-            
+
             <div class="col-md-5 d-flex ">
                 <img class="img-fluid imger-style" src="./public/50.png" alt="" srcset="">
             </div>
 
-    </div>
-</div>
-
-<!-- ------------------- -->
-
-
-<div class="ngo-form py-5 my-5">
-
-    <div class="container">
-        <div class="row">
-           
-            <div class="col-md-6 title">
-               <h3 class="text-light text-center"> UFeed <span>{{"Supports" |translate}}</span><br> NGO </h3>
-            </div>
-           
-            <div class="col-md-6 form">
-                <form action="" [formGroup]="contactNgo"
-                (ngSubmit)="getFormData(contactNgo)">
-                    <div class="row p-0">
-
-                        <div class="form-group col-md-6 my-2">
-                            <label for="" class="text-light py-2">{{"YOUR_NAME"|translate}}</label>
-                            <input [class.is-valid]="contactNgo.get('fullname')?.errors == null && contactNgo.get('fullname')?.touched"
-                             type="text" formControlName="fullname" class="form-control">
-                             <p *ngIf="contactNgo.get('fullname')?.errors != null && contactNgo.get('fullname')?.touched" 
-                                  class="py-2 text-danger">{{"CHECK_YOUR_NAME" |translate}}</p>
-                        </div>
-
-                        <div class="form-group col-md-6 my-2">
-                            <label for="" class="text-light py-2">{{ 'ngo_name' | translate }}</label>
-                            <input 
-                                [class.is-valid]="contactNgo.get('ngoName')?.errors == null && contactNgo.get('ngoName')?.touched"
-                                type="text" 
-                                formControlName="ngoName" 
-                                class="form-control">
-                            <p *ngIf="contactNgo.get('ngoName')?.errors != null && contactNgo.get('ngoName')?.touched" 
-                               class="py-2 text-danger">
-                                {{ 'check_ngo_name' | translate }}
-                            </p>
-                        </div>
-                        
-
-
-                        <div class="form-group col-md-6 my-2">
-                            <label for="" class="text-light py-2">{{ 'ngo_website' | translate }}</label>
-                            <input [class.is-valid]="contactNgo.get('ngoWebsite')?.errors == null && contactNgo.get('ngoWebsite')?.touched"
-                                type="url" formControlName="ngoWebsite" class="form-control">
-                            <p *ngIf="contactNgo.get('ngoWebsite')?.errors != null && contactNgo.get('ngoWebsite')?.touched" 
-                                class="py-2 text-danger">
-                                {{ 'check_website_url' | translate }}
-                            </p>
-                        </div>
-                        
-                        <div class="form-group col-md-6 my-2">
-                            <label for="" class="text-light py-2">{{ 'your_title' | translate }}</label>
-                            <input [class.is-valid]="contactNgo.get('title')?.errors == null && contactNgo.get('title')?.touched"
-                                type="text" formControlName="title" class="form-control">
-                            <p *ngIf="contactNgo.get('title')?.errors != null && contactNgo.get('title')?.touched" 
-                                class="py-2 text-danger">
-                                {{ 'check_title' | translate }}
-                            </p>
-                        </div>
-                        
-                        <div class="form-group col-md-6 my-2">
-                            <label for="" class="text-light py-2">{{ 'your_email' | translate }}</label>
-                            <input [class.is-valid]="contactNgo.get('email')?.errors == null && contactNgo.get('email')?.touched"
-                                type="email" formControlName="email" class="form-control">
-                            <p *ngIf="contactNgo.get('email')?.errors != null && contactNgo.get('email')?.touched" 
-                                class="py-2 text-danger">
-                                {{ 'check_email' | translate }}
-                            </p>
-                        </div>
-                        
-                        <div class="form-group col-md-6 my-2">
-                            <label for="" class="text-light py-2">{{ 'mobile_number' | translate }}</label>
-                            <input [class.is-valid]="contactNgo.get('mobile')?.errors == null && contactNgo.get('mobile')?.touched"
-                                type="tel" formControlName="mobile" class="form-control">
-                            <p *ngIf="contactNgo.get('mobile')?.errors != null && contactNgo.get('mobile')?.touched" 
-                                class="py-2 text-danger">
-                                {{ 'check_mobile_number' | translate }}
-                            </p>
-                        </div>
-                        
-                        <div class="form-group col-md-6 my-2">
-                            <label for="" class="text-light py-2">{{ 'ngo_headcount' | translate }}</label>
-                            <input [class.is-valid]="contactNgo.get('headcount')?.errors == null && contactNgo.get('headcount')?.touched"
-                                type="number" formControlName="headcount" class="form-control">
-                            <p *ngIf="contactNgo.get('headcount')?.errors != null && contactNgo.get('headcount')?.touched" 
-                                class="py-2 text-danger">
-                                {{ 'check_headcount' | translate }}
-                            </p>
-                        </div>
-                        
-                        <div class="form-group col-md-6 my-2">
-                            <label for="" class="text-light py-2">{{ 'total_positions' | translate }}</label>
-                            <input [class.is-valid]="contactNgo.get('positions')?.errors == null && contactNgo.get('positions')?.touched"
-                                type="number" formControlName="positions" class="form-control">
-                            <p *ngIf="contactNgo.get('positions')?.errors != null && contactNgo.get('positions')?.touched" 
-                                class="py-2 text-danger">
-                                {{ 'check_positions' | translate }}
-                            </p>
-                        </div>
-                        
-                        <div class="form-group col-md-12 my-2">
-
-                            <button type="submit" [disabled]="contactNgo.invalid" class="btn my-4 p-2 form-btn">{{"Submit" |translate}}</button>
-
-                    </div>
-
-                    </div>
-                </form>
-            </div>
-
-
         </div>
     </div>
 
-</div>
+    <!-- ------------------- -->
 
 
+    <div class="ngo-form py-5 my-5">
 
+        <div class="container">
+            <div class="row">
 
+                <div class="col-md-6 title">
+                    <h3 class="text-light text-center"> UFeed <span>{{"Supports" |translate}}</span><br> NGO </h3>
+                </div>
 
+                <div class="col-md-6 form">
+                    <form action="" [formGroup]="contactNgo" (ngSubmit)="getFormData(contactNgo)">
+                        <div class="row p-0">
+
+                            <div class="form-group col-md-6 my-2">
+                                <label for="name" class="text-light pb-2">{{"YOUR_NAME"|translate}}</label>
+                                <input id="name"
+                                    [class.is-valid]="contactNgo.get('name')?.errors == null && contactNgo.get('name')?.touched"
+                                    type="text" formControlName="name" class="form-control">
+                                <div class="error-container">
+                                    <p *ngIf="contactNgo.get('name')?.errors != null && contactNgo.get('name')?.touched"
+                                        class="text-danger error-message">{{"CHECK_YOUR_NAME" |translate}}</p>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6 my-2">
+                                <label for="ngoName" class="text-light pb-2">{{ 'ngo_name' | translate }}</label>
+                                <input id="ngoName"
+                                    [class.is-valid]="contactNgo.get('ngoName')?.errors == null && contactNgo.get('ngoName')?.touched"
+                                    type="text" formControlName="ngoName" class="form-control">
+                                <div class="error-container">
+                                    <p *ngIf="contactNgo.get('ngoName')?.errors != null && contactNgo.get('ngoName')?.touched"
+                                        class="text-danger error-message">
+                                        {{ 'check_ngo_name' | translate }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6 my-2">
+                                <label for="company_website" class="text-light pb-2">{{ 'ngo_website' | translate
+                                    }}</label>
+                                <input id="company_website"
+                                    [class.is-valid]="contactNgo.get('company_website')?.errors == null && contactNgo.get('company_website')?.touched"
+                                    type="url" formControlName="company_website" class="form-control">
+                                <div class="error-container">
+                                    <p *ngIf="contactNgo.get('company_website')?.errors != null && contactNgo.get('company_website')?.touched"
+                                        class="text-danger error-message">
+                                        {{ 'check_website_url' | translate }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6 my-2">
+                                <label for="title" class="text-light pb-2">{{ 'your_title' | translate }}</label>
+                                <input id="title"
+                                    [class.is-valid]="contactNgo.get('title')?.errors == null && contactNgo.get('title')?.touched"
+                                    type="text" formControlName="title" class="form-control">
+                                <div class="error-container">
+                                    <p *ngIf="contactNgo.get('title')?.errors != null && contactNgo.get('title')?.touched"
+                                        class="text-danger error-message">
+                                        {{ 'check_title' | translate }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6 my-2">
+                                <label for="email" class="text-light pb-2">{{ 'your_email' | translate }}</label>
+                                <input id="email"
+                                    [class.is-valid]="contactNgo.get('email')?.errors == null && contactNgo.get('email')?.touched"
+                                    type="email" formControlName="email" class="form-control">
+                                <div class="error-container">
+                                    <p *ngIf="contactNgo.get('email')?.errors != null && contactNgo.get('email')?.touched"
+                                        class="text-danger error-message">
+                                        {{ 'check_email' | translate }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6 my-2">
+                                <label for="number" class="text-light pb-2">{{ 'mobile_number' | translate }}</label>
+                                <input id="number"
+                                    [class.is-valid]="contactNgo.get('number')?.errors == null && contactNgo.get('number')?.touched"
+                                    type="tel" formControlName="number" class="form-control">
+                                <div class="error-container">
+                                    <p *ngIf="contactNgo.get('number')?.errors != null && contactNgo.get('number')?.touched"
+                                        class="text-danger error-message">
+                                        {{ 'check_mobile_number' | translate }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6 my-2">
+                                <label for="number_of_Headcount" class="text-light pb-2">{{ 'ngo_headcount' | translate
+                                    }}</label>
+                                <input id="number_of_Headcount"
+                                    [class.is-valid]="contactNgo.get('number_of_Headcount')?.errors == null && contactNgo.get('number_of_Headcount')?.touched"
+                                    type="number" formControlName="number_of_Headcount" class="form-control">
+                                <div class="error-container">
+                                    <p *ngIf="contactNgo.get('number_of_Headcount')?.errors != null && contactNgo.get('number_of_Headcount')?.touched"
+                                        class="text-danger error-message">
+                                        {{ 'check_headcount' | translate }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6 my-2">
+                                <label for="number_of_total_Positions" class="text-light pb-2">{{ 'total_positions' |
+                                    translate }}</label>
+                                <input id="number_of_total_Positions"
+                                    [class.is-valid]="contactNgo.get('number_of_total_Positions')?.errors == null && contactNgo.get('number_of_total_Positions')?.touched"
+                                    type="number" formControlName="number_of_total_Positions" class="form-control">
+                                <div class="error-container">
+                                    <p *ngIf="contactNgo.get('number_of_total_Positions')?.errors != null && contactNgo.get('number_of_total_Positions')?.touched"
+                                        class="text-danger error-message">
+                                        {{ 'check_positions' | translate }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 my-2">
+                                <button type="submit" [disabled]="contactNgo.invalid || submitted"
+                                    class="btn my-4 p-2 form-btn">{{"Submit" |translate}}</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
