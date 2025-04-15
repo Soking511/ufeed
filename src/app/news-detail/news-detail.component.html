@@ -1,0 +1,55 @@
+<div class="news-detail-container">
+  <div class="container my-5">
+    <!-- Loading state -->
+    <div class="row" *ngIf="isLoading">
+      <div class="col-12 text-center">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error state -->
+    <div class="row" *ngIf="hasError && !isLoading">
+      <div class="col-12 text-center">
+        <div class="alert alert-danger" role="alert">
+          {{ "Failed to load news detail. Please try again later." | translate }}
+        </div>
+      </div>
+    </div>
+
+    <!-- News detail content -->
+    <div class="news-content" *ngIf="!isLoading && !hasError && newsItem">
+      <div class="row">
+        <div class="col-12 mb-4">
+          <h2 class="news-title">{{ newsItem.name }}</h2>
+          <div class="news-meta">
+            <span class="date">{{ formatDate(newsItem.created_at) }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="news-image mb-4">
+            <img [src]="newsItem.image" [alt]="newsItem.name" class="img-fluid rounded">
+          </div>
+          <div class="news-description">
+            <h4 class="mb-3">{{ newsItem.sub_description }}</h4>
+            <div class="mt-4" [innerHTML]="newsItem.description"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="news-sidebar">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{ "About this article" | translate }}</h5>
+                <p class="card-text">{{ "Last updated" | translate }}: {{ formatDate(newsItem.updated_at) }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
