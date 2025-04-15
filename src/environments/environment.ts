@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://ufeed-ai.pulslytics.agency/backend',
+  apiUrl: 'https://api.ufeed.pulslytics.agency/api',
 };

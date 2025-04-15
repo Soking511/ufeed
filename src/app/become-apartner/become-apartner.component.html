@@ -1,4 +1,4 @@
-<section class="title d-flex">
+w<section class="title d-flex">
   <div class="container">
     <div class="row">
       <h1>
@@ -31,387 +31,276 @@
     </div>
 
     <div class="row py-5">
-      <form
-        class="w-75 m-auto"
-        action=""
-        [formGroup]="becomePartner"
-        (ngSubmit)="onSubmit()"
-      >
-        <div class="row">
-          <div class="form-group col-md-6 my-3">
-            <label for="">{{ "Company Name*" | translate }}</label>
-            <input
-              type="text"
-              class="form-control p-3"
-              formControlName="company_name"
-              [class.is-valid]="
-                becomePartner.get('company_name')?.errors == null &&
-                becomePartner.get('company_name')?.touched
-              "
-              placeholder="{{ 'your company Name' | translate }}"
-              formControlName="company_name"
-            />
-            <p
-              class="text-danger"
-              *ngIf="
-                becomePartner.get('company_name')?.errors != null &&
-                becomePartner.get('company_name')?.touched
-              "
-            >
-              {{ "Please make sure of company name" | translate }}
-            </p>
-          </div>
+      <div class="container">
+        @if (!submitted) {
+        <form class="w-75 m-auto" action="" [formGroup]="becomePartner" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="form-group col-md-6 my-3">
+              <label for="">{{ "Company Name*" | translate }}</label>
+              <input type="text" class="form-control p-3" formControlName="company_name" [class.is-valid]="
+                    becomePartner.get('company_name')?.errors == null &&
+                    becomePartner.get('company_name')?.touched
+                  " placeholder="{{ 'your company Name' | translate }}" formControlName="company_name" />
+              <p class="text-danger" *ngIf="
+                    becomePartner.get('company_name')?.errors != null &&
+                    becomePartner.get('company_name')?.touched
+                  ">
+                {{ "Please make sure of company name" | translate }}
+              </p>
+            </div>
 
-          <div class="form-group col-md-6 my-3">
-            <label for="">{{ "Company Address" | translate }}</label>
-            <input
-              type="text"
-              class="form-control p-3"
-              placeholder="{{ 'Enter the Address' | translate }}"
-              formControlName="company_address"
-            />
-            <p
-              class="text-danger"
-              *ngIf="
-                becomePartner.get('company_address')?.errors != null &&
-                becomePartner.get('company_address')?.touched
-              "
-            >
-              {{
+            <div class="form-group col-md-6 my-3">
+              <label for="">{{ "Company Address" | translate }}</label>
+              <input type="text" class="form-control p-3" placeholder="{{ 'Enter the Address' | translate }}"
+                formControlName="company_address" />
+              <p class="text-danger" *ngIf="
+                    becomePartner.get('company_address')?.errors != null &&
+                    becomePartner.get('company_address')?.touched
+                  ">
+                {{
                 "Please make
-                            sure of company address" | translate
-              }}
-            </p>
+                sure of company address" | translate
+                }}
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div class="row">
-          <div class="form-group col-md-6 my-3">
-            <label for="">{{ "Company Website" | translate }}</label>
-            <input
-              type="text"
-              class="form-control p-3"
-              placeholder="{{ 'Company Website link' | translate }}"
-              formControlName="company_website"
-            />
-            <p
-              class="text-danger"
-              *ngIf="
-                becomePartner.get('company_website')?.errors != null &&
-                becomePartner.get('company_website')?.touched
-              "
-            >
-              {{
+          <div class="row">
+            <div class="form-group col-md-6 my-3">
+              <label for="">{{ "Company Website" | translate }}</label>
+              <input type="text" class="form-control p-3" placeholder="{{ 'Company Website link' | translate }}"
+                formControlName="company_website" />
+              <p class="text-danger" *ngIf="
+                    becomePartner.get('company_website')?.errors != null &&
+                    becomePartner.get('company_website')?.touched
+                  ">
+                {{
                 "Please
-                            make sure of company website" | translate
-              }}
-            </p>
-          </div>
+                make sure of company website" | translate
+                }}
+              </p>
+            </div>
 
-          <div class="form-group col-md-6 my-3">
-            <label for="">{{ "Contact Number*" | translate }}</label>
-            <input
-              type="text"
-              class="form-control p-3"
-              formControlName="company_number"
-              [class.is-valid]="
-                becomePartner.get('company_number')?.errors == null &&
-                becomePartner.get('company_number')?.touched
-              "
-              placeholder="{{ 'Enter Mobile Number' | translate }}"
-              formControlName="company_number"
-            />
-            <p
-              class="text-danger"
-              *ngIf="
-                becomePartner.get('company_number')?.errors != null &&
-                becomePartner.get('company_number')?.touched
-              "
-            >
-              {{
+            <div class="form-group col-md-6 my-3">
+              <label for="">{{ "Contact Number*" | translate }}</label>
+              <input type="text" class="form-control p-3" formControlName="company_number" [class.is-valid]="
+                    becomePartner.get('company_number')?.errors == null &&
+                    becomePartner.get('company_number')?.touched
+                  " placeholder="{{ 'Enter Mobile Number' | translate }}" formControlName="company_number" />
+              <p class="text-danger" *ngIf="
+                    becomePartner.get('company_number')?.errors != null &&
+                    becomePartner.get('company_number')?.touched
+                  ">
+                {{
                 "Please make sure of company contact
-                            number" | translate
-              }}
-            </p>
-          </div>
-
-          <div class="form-group col-12 my-3">
-            <label for="inputState">{{ "Partner type*" | translate }}</label>
-            <div class="custom-select-wrapper">
-              <select
-                [class.is-valid]="
-                  becomePartner.get('partner_type')?.errors == null &&
-                  becomePartner.get('partner_type')?.touched
-                "
-                id="inputState"
-                class="form-control p-3"
-                formControlName="partner_type"
-                (change)="onPartnerTypeChange($event)"
-              >
-                <option value="" selected disabled>
-                  {{ "SELECT_OPTION" | translate }}
-                </option>
-                <option value="Consulting Firm">
-                  {{ "CONSULTING_FIRM" | translate }}
-                </option>
-                <option value="Freelance Consultant">
-                  {{ "FREELANCE_CONSULTANT" | translate }}
-                </option>
-                <option value="Startup Ecosystem Enabler / Community Partner">
-                  {{ "STARTUP_ECOSYSTEM" | translate }}
-                </option>
-                <option value="Reseller">{{ "RESELLER" | translate }}</option>
-                <option value="HR Tech Provider">
-                  {{ "HR_TECH_PROVIDER" | translate }}
-                </option>
-                <option value="Other">{{ "OTHER" | translate }}</option>
-              </select>
+                number" | translate
+                }}
+              </p>
             </div>
 
-            <!-- Error message -->
-            <p
-              *ngIf="
-                becomePartner.get('partner_type')?.errors != null &&
-                becomePartner.get('partner_type')?.touched
-              "
-              class="py-2 text-danger"
-            >
-              {{ "CHOOSE_PARTNER_TYPE" | translate }}
-            </p>
+            <div class="form-group col-12 my-3">
+              <label for="inputState">{{ "Partner type*" | translate }}</label>
+              <div class="custom-select-wrapper">
+                <select [class.is-valid]="
+                      becomePartner.get('partner_type')?.errors == null &&
+                      becomePartner.get('partner_type')?.touched
+                    " id="inputState" class="form-control p-3" formControlName="partner_type"
+                  (change)="onPartnerTypeChange($event)">
+                  <option value="" selected disabled>
+                    {{ "SELECT_OPTION" | translate }}
+                  </option>
+                  <option value="Consulting Firm">
+                    {{ "CONSULTING_FIRM" | translate }}
+                  </option>
+                  <option value="Freelance Consultant">
+                    {{ "FREELANCE_CONSULTANT" | translate }}
+                  </option>
+                  <option value="Startup Ecosystem Enabler / Community Partner">
+                    {{ "STARTUP_ECOSYSTEM" | translate }}
+                  </option>
+                  <option value="Reseller">{{ "RESELLER" | translate }}</option>
+                  <option value="HR Tech Provider">
+                    {{ "HR_TECH_PROVIDER" | translate }}
+                  </option>
+                  <option value="Other">{{ "OTHER" | translate }}</option>
+                </select>
+              </div>
 
-            <!-- Show input field only when 'Other' is selected -->
-            <div *ngIf="isOtherSelected" class="mt-3">
-              <label for="otherInput">{{
-                "SPECIFY_PARTNER_TYPE" | translate
-              }}</label>
-              <input
-                type="text"
-                id="otherInput"
-                class="form-control p-3"
-                formControlName="OtherPartnerType"
-                placeholder="{{ 'ENTER_PARTNER_TYPE' | translate }}"
-              />
+              <!-- Error message -->
+              <p *ngIf="
+                    becomePartner.get('partner_type')?.errors != null &&
+                    becomePartner.get('partner_type')?.touched
+                  " class="py-2 text-danger">
+                {{ "CHOOSE_PARTNER_TYPE" | translate }}
+              </p>
+
+              <!-- Show input field only when 'Other' is selected -->
+              <div *ngIf="isOtherSelected" class="mt-3">
+                <label for="otherInput">{{
+                  "SPECIFY_PARTNER_TYPE" | translate
+                  }}</label>
+                <input type="text" id="otherInput" class="form-control p-3" formControlName="OtherPartnerType"
+                  placeholder="{{ 'ENTER_PARTNER_TYPE' | translate }}" />
+              </div>
             </div>
+
+            <div class="form-group col-md-12 my-3">
+              <label for="">{{ "COUNTRY_LABEL" | translate }}</label>
+              <input type="text" class="form-control p-3" formControlName="country_interested" [class.is-valid]="
+                    becomePartner.get('country_interested')?.errors == null &&
+                    becomePartner.get('country_interested')?.touched
+                  " placeholder="{{ 'ENTER_COUNTRY' | translate }}" />
+
+              <p class="text-danger" *ngIf="
+                    becomePartner.get('country_interested')?.errors != null &&
+                    becomePartner.get('country_interested')?.touched
+                  ">
+                {{ "INVALID_COUNTRY" | translate }}
+              </p>
+            </div>
+
+            <!-- contact_person -->
+            <!--
+                        <div class="form-group col-md-12 my-3">
+                            <label for="">{{ 'COUNTRY_LABEL' | translate }}*</label>
+                            <input type="text" class="form-control p-3" formControlName="contact_person"
+                                [class.is-valid]="becomePartner.get('contact_person')?.errors == null && becomePartner.get('contact_person')?.touched"
+                                placeholder="{{ 'ENTER_contact_person' | translate }}">
+
+                            <p class="text-danger"
+                                *ngIf="becomePartner.get('contact_person')?.errors != null && becomePartner.get('contact_person')?.touched">
+                                {{ 'INVALID_contact_person' | translate }}
+                            </p>
+                        </div> -->
           </div>
 
-          <div class="form-group col-md-12 my-3">
-            <label for="">{{ "COUNTRY_LABEL" | translate }}</label>
-            <input
-              type="text"
-              class="form-control p-3"
-              formControlName="country_interested"
-              [class.is-valid]="
-                becomePartner.get('country_interested')?.errors == null &&
-                becomePartner.get('country_interested')?.touched
-              "
-              placeholder="{{ 'ENTER_COUNTRY' | translate }}"
-            />
-
-            <p
-              class="text-danger"
-              *ngIf="
-                becomePartner.get('country_interested')?.errors != null &&
-                becomePartner.get('country_interested')?.touched
-              "
-            >
-              {{ "INVALID_COUNTRY" | translate }}
-            </p>
-          </div>
-
-          <!-- contact_person -->
-          <!--
-                    <div class="form-group col-md-12 my-3">
-                        <label for="">{{ 'COUNTRY_LABEL' | translate }}*</label>
-                        <input type="text" class="form-control p-3" formControlName="contact_person"
-                            [class.is-valid]="becomePartner.get('contact_person')?.errors == null && becomePartner.get('contact_person')?.touched"
-                            placeholder="{{ 'ENTER_contact_person' | translate }}">
-
-                        <p class="text-danger"
-                            *ngIf="becomePartner.get('contact_person')?.errors != null && becomePartner.get('contact_person')?.touched">
-                            {{ 'INVALID_contact_person' | translate }}
-                        </p>
-                    </div> -->
-        </div>
-
-        <div class="row">
-          <div class="form-group col-md-12 my-3">
-            <label for="">{{ "ATTACH_PROFILE" | translate }}</label>
-            <div class="container mt-4">
-              <div class="file-upload-wrapper" [class.has-file]="selectedFile">
-                <input
-                  type="file"
-                  id="fileInput"
-                  class="file-input"
-                  (change)="onFileChange($event)"
-                  accept=".pdf,.doc,.docx"
-                />
-                <div class="file-placeholder" *ngIf="!selectedFile">
-                  <i class="fa fa-upload fa-2x"></i>
-                  <span class="d-block mt-2">{{
-                    "DRAG_DROP" | translate
-                  }}</span>
-                </div>
-                <div class="file-info" *ngIf="selectedFile">
-                  <div class="file-preview">
-                    <i
-                      class="fa"
-                      [ngClass]="getFileIconClass(selectedFile.name)"
-                    ></i>
+          <div class="row">
+            <div class="form-group col-md-12 my-3">
+              <label for="">{{ "ATTACH_PROFILE" | translate }}</label>
+              <div class="container mt-4">
+                <div class="file-upload-wrapper" [class.has-file]="selectedFile">
+                  <input type="file" id="fileInput" class="file-input" (change)="onFileChange($event)"
+                    accept=".pdf,.doc,.docx" />
+                  <div class="file-placeholder" *ngIf="!selectedFile">
+                    <i class="fa fa-upload fa-2x"></i>
+                    <span class="d-block mt-2">{{
+                      "DRAG_DROP" | translate
+                      }}</span>
                   </div>
-                  <div class="file-details">
-                    <span class="file-name">{{ selectedFile.name }}</span>
-                    <span class="file-size">{{
-                      formatFileSize(selectedFile.size)
-                    }}</span>
+                  <div class="file-info" *ngIf="selectedFile">
+                    <div class="file-preview">
+                      <i class="fa" [ngClass]="getFileIconClass(selectedFile.name)"></i>
+                    </div>
+                    <div class="file-details">
+                      <span class="file-name">{{ selectedFile.name }}</span>
+                      <span class="file-size">{{
+                        formatFileSize(selectedFile.size)
+                        }}</span>
+                    </div>
+                    <!-- <button type="button" class="btn-remove-file" (click)="removeFile($event)">
+                                                <i class="fa fa-times"></i>
+                                            </button> -->
                   </div>
-                  <!-- <button type="button" class="btn-remove-file" (click)="removeFile($event)">
-                                        <i class="fa fa-times"></i>
-                                    </button> -->
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="row">
-          <div
-            class="pt-5 title-holder row justify-content-center align-center"
-          >
-            <div class="before col-3"></div>
-            <p class="text-center col-3 pt-2">
-              {{ "PERSONAL_INFO" | translate }}
-            </p>
-            <div class="after col-3"></div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="form-group col-md-6 my-3">
-            <label for="">{{ "YOUR_NAME" | translate }}</label>
-            <input
-              type="text"
-              class="form-control p-3"
-              placeholder="{{ 'ENTER_NAME' | translate }}"
-              formControlName="contact_person"
-            />
-            <p
-              class="text-danger"
-              *ngIf="
-                becomePartner.get('contact_person')?.errors != null &&
-                becomePartner.get('contact_person')?.touched
-              "
-            >
-              {{ "NAME_REQUIRED" | translate }}
-            </p>
+          <div class="row">
+            <div class="pt-5 title-holder row justify-content-center align-center">
+              <div class="before col-3"></div>
+              <p class="text-center col-3 pt-2">
+                {{ "PERSONAL_INFO" | translate }}
+              </p>
+              <div class="after col-3"></div>
+            </div>
           </div>
 
-          <div class="form-group col-md-6 my-3">
-            <label for="">{{ "TITLE" | translate }}</label>
-            <input
-              type="text"
-              class="form-control p-3"
-              placeholder="{{ 'ENTER_TITLE' | translate }}"
-              formControlName="title"
-            />
-            <p
-              class="text-danger"
-              *ngIf="
-                becomePartner.get('title')?.errors != null &&
-                becomePartner.get('title')?.touched
-              "
-            >
-              {{ "Please make sure of title" | translate }}
-            </p>
-          </div>
-        </div>
+          <div class="row">
+            <div class="form-group col-md-6 my-3">
+              <label for="">{{ "YOUR_NAME" | translate }}</label>
+              <input type="text" class="form-control p-3" placeholder="{{ 'ENTER_NAME' | translate }}"
+                formControlName="contact_person" />
+              <p class="text-danger" *ngIf="
+                    becomePartner.get('contact_person')?.errors != null &&
+                    becomePartner.get('contact_person')?.touched
+                  ">
+                {{ "NAME_REQUIRED" | translate }}
+              </p>
+            </div>
 
-        <div class="row">
-          <div class="form-group col-md-6 my-3">
-            <label for="">{{ "EMAIL" | translate }}</label>
-            <input
-              type="text"
-              class="form-control p-3"
-              placeholder="{{ 'ENTER_EMAIL' | translate }}"
-              formControlName="email"
-            />
-            <p
-              class="text-danger"
-              *ngIf="
-                becomePartner.get('email')?.errors != null &&
-                becomePartner.get('email')?.touched
-              "
-            >
-              {{ "EMAIL_REQUIRED" | translate }}
-            </p>
+            <div class="form-group col-md-6 my-3">
+              <label for="">{{ "TITLE" | translate }}</label>
+              <input type="text" class="form-control p-3" placeholder="{{ 'ENTER_TITLE' | translate }}"
+                formControlName="title" />
+              <p class="text-danger" *ngIf="
+                    becomePartner.get('title')?.errors != null &&
+                    becomePartner.get('title')?.touched
+                  ">
+                {{ "Please make sure of title" | translate }}
+              </p>
+            </div>
           </div>
 
-          <div class="form-group col-md-6 my-3">
-            <label for="">{{ "MOBILE_NUMBER" | translate }}</label>
-            <input
-              type="text"
-              class="form-control p-3"
-              placeholder="{{ 'ENTER_MOBILE' | translate }}"
-              formControlName="mobile_number"
-            />
-            <p
-              class="text-danger"
-              *ngIf="
-                becomePartner.get('mobile_number')?.errors != null &&
-                becomePartner.get('mobile_number')?.touched
-              "
-            >
-              {{ "MOBILE_REQUIRED" | translate }}
-            </p>
+          <div class="row">
+            <div class="form-group col-md-6 my-3">
+              <label for="">{{ "EMAIL" | translate }}</label>
+              <input type="text" class="form-control p-3" placeholder="{{ 'ENTER_EMAIL' | translate }}"
+                formControlName="email" />
+              <p class="text-danger" *ngIf="
+                    becomePartner.get('email')?.errors != null &&
+                    becomePartner.get('email')?.touched
+                  ">
+                {{ "EMAIL_REQUIRED" | translate }}
+              </p>
+            </div>
+
+            <div class="form-group col-md-6 my-3">
+              <label for="">{{ "MOBILE_NUMBER" | translate }}</label>
+              <input type="text" class="form-control p-3" placeholder="{{ 'ENTER_MOBILE' | translate }}"
+                formControlName="mobile_number" />
+              <p class="text-danger" *ngIf="
+                    becomePartner.get('mobile_number')?.errors != null &&
+                    becomePartner.get('mobile_number')?.touched
+                  ">
+                {{ "MOBILE_REQUIRED" | translate }}
+              </p>
+            </div>
+
+            <div class="form-group col-md-6 my-3">
+              <label for="">{{ "YOUR_Address" | translate }}</label>
+              <input type="text" class="form-control p-3" placeholder="{{ 'ENTER_address' | translate }}"
+                formControlName="address" />
+              <p class="text-danger" *ngIf="
+                    becomePartner.get('address')?.errors != null &&
+                    becomePartner.get('address')?.touched
+                  ">
+                {{ "EMAIL_REQUIRED" | translate }}
+              </p>
+            </div>
+
+            <div class="form-group col-md-6 my-3">
+              <label for="">{{ "YOUR_MESSAGE" | translate }}</label>
+
+              <input type="text" class="form-control p-3" placeholder="{{ 'ENTER_MESSAGE' | translate }}"
+                formControlName="message" />
+              <p class="text-danger" *ngIf="
+                    becomePartner.get('message')?.errors != null &&
+                    becomePartner.get('message')?.touched
+                  ">
+                {{ "Please make sure of message" | translate }}
+              </p>
+            </div>
           </div>
 
-          <div class="form-group col-md-6 my-3">
-            <label for="">{{ "YOUR_Address" | translate }}</label>
-            <input
-              type="text"
-              class="form-control p-3"
-              placeholder="{{ 'ENTER_address' | translate }}"
-              formControlName="address"
-            />
-            <p
-              class="text-danger"
-              *ngIf="
-                becomePartner.get('address')?.errors != null &&
-                becomePartner.get('address')?.touched
-              "
-            >
-              {{ "EMAIL_REQUIRED" | translate }}
-            </p>
-          </div>
-
-          <div class="form-group col-md-6 my-3">
-            <label for="">{{ "YOUR_MESSAGE" | translate }}</label>
-
-            <input
-              type="text"
-              class="form-control p-3"
-              placeholder="{{ 'ENTER_MESSAGE' | translate }}"
-              formControlName="message"
-            />
-            <p
-              class="text-danger"
-              *ngIf="
-                becomePartner.get('message')?.errors != null &&
-                becomePartner.get('message')?.touched
-              "
-            >
-              {{ "Please make sure of message" | translate }}
-            </p>
-          </div>
-        </div>
-
-        <button
-          type="submit"
-          class="my-3 p-3 btn col-12 btn-success"
-          [disabled]="!becomePartner.valid"
-        >
-          {{ "SUBMIT" | translate }}
-        </button>
-      </form>
+          <button type="submit" [disabled]="disabled" class="my-3 p-3 btn col-12 btn-success" [disabled]="!becomePartner.valid">
+            {{ "SUBMIT" | translate }}
+          </button>
+        </form>
+        } @else {
+        <app-confirmation-page #confirmationPage id="confirmationSection" />
+        }
+      </div>
     </div>
   </div>
 </section>

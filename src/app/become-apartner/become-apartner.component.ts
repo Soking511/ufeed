@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  AfterViewChecked,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
@@ -6,21 +11,30 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { TranslationService } from '../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { ApiService } from '../services/api.service';
-import { InputComponent } from "../shared/components/input/input.component";
+import { InputComponent } from '../shared/components/input/input.component';
+import { ConfirmationPageComponent } from '../confirmation-page/confirmation-page.component';
 
 @Component({
   selector: 'app-become-apartner',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, TranslateModule, InputComponent],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    TranslateModule,
+    InputComponent,
+    ConfirmationPageComponent,
+  ],
   templateUrl: './become-apartner.component.html',
   styleUrls: ['./become-apartner.component.scss'],
 })
-export class BecomeAPartnerComponent {
+export class BecomeAPartnerComponent implements AfterViewChecked {
+  submitted = false;
+  disabled = false;
   isOtherSelected: boolean = false;
+  @ViewChild('confirmationPage') confirmationPage: ElementRef | undefined;
+  private scrollToConfirmation = false;
 
   becomePartner: FormGroup = new FormGroup({
     company_name: new FormControl(null, [
@@ -169,15 +183,30 @@ export class BecomeAPartnerComponent {
         formData.append('company_profile', this.selectedFile);
       }
 
+      this.disabled = true;
       // Send data to API
       this.api.postFormData('become-partner', formData).subscribe({
         next: () => {
           this.becomePartner.reset();
           this.selectedFile = null;
+          this.submitted = true;
+          this.scrollToConfirmation = true;
         },
-        error: () => {
-        },
+        error: () => {},
+        complete: () => {
+          this.disabled = false;
+        }
       });
+    }
+  }
+
+  ngAfterViewChecked() {
+    if (this.submitted && this.scrollToConfirmation && this.confirmationPage) {
+      const element = document.getElementById('confirmationSection');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        this.scrollToConfirmation = false;
+      }
     }
   }
 }

@@ -209,12 +209,12 @@
 <section class="product-form">
     <div class="container">
         <div class="row">
+            @if (!submitted) {
             <div class="col-md-6 title-holder px-3">
                 <h2 class="text-left">{{"Unlock the power of the" |translate}} <span>{{"tool"|translate}}</span>
                     {{"and boost your productivity!" |translate}}</h2>
             </div>
             <div class="col-md-6 form-holder">
-
                 <form action="" method="post" class="px-3" [formGroup]="jetForm" (ngSubmit)="getFormData(jetForm)">
 
                     <div class="form-group col-12 my-3">
@@ -230,13 +230,23 @@
                     placeholder="YOUR_number_of_departments" errorMessage="CHECK_number_of_departments" controlName="number_of_departments" />
  -->
 
+                     <div class="form-group col-12 my-3">
+                        <label for="">{{"YOUR_number_of_employees"|translate}}</label>
+                        <input placeholder='{{"YOUR_number_of_employees"|translate}}'
+                            formControlName="number_of_employees"
+                            [class.is-valid]="jetForm.get('number_of_employees')?.errors == null && jetForm.get('number_of_employees')?.touched"
+                            class="form-control p-3" id="" type="number" max="300" onpaste="return false;">
+                        <p *ngIf="jetForm.get('number_of_employees')?.errors != null && jetForm.get('number_of_employees')?.touched"
+                            class="py-2 text-danger">{{"CHECK_number_of_employees"|translate}}</p>
+                    </div>
+
+
                     <div class="form-group col-12 my-3">
                         <label for="">{{"YOUR_number_of_departments"|translate}}</label>
                         <input placeholder='{{"YOUR_number_of_departments"|translate}}'
                             formControlName="number_of_departments"
                             [class.is-valid]="jetForm.get('number_of_departments')?.errors == null && jetForm.get('number_of_departments')?.touched"
-                            class="form-control p-3" id="" type="number" min="0" max="300"
-                            onpaste="return false;">
+                            class="form-control p-3" id="" type="number" min="0" max="300" onpaste="return false;">
                         <p *ngIf="jetForm.get('number_of_departments')?.errors != null && jetForm.get('number_of_departments')?.touched"
                             class="py-2 text-danger">{{"CHECK_number_of_departments"|translate}}</p>
                     </div>
@@ -280,14 +290,18 @@
                         </option>
                         <option value="JET">{{'Job Evaluation Tool – JET' | translate}}</option>
                         <option value="EES">{{'Employee Engagement Survey - EES' | translate}}</option>
+                        <option value="Both">{{'Both' | translate}}</option>
+
                     </select>
-                    <button type="submit" [disabled]="jetForm.invalid == true"
+                    <button type="submit" [disabled]="jetForm.invalid == true || disabled"
                         class=" my-3 p-3 btn col-12 btn-success">{{"Submit"|translate}}</button>
 
 
                 </form>
-
             </div>
+            } @else {
+            <app-confirmation-page #confirmationPage id="confirmationSection" />
+            }
         </div>
     </div>
 </section>
