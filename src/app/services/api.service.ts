@@ -29,7 +29,7 @@ export class ApiService {
 
     const queryString =
       queryParams.length > 0 ? `?${queryParams.join('&')}` : '';
-    const url = `${this.baseURL}${route}${queryString}/`;
+    const url = `${this.baseURL}${route}/`;
 
     return this.http.get<any>(url, {
       headers,
