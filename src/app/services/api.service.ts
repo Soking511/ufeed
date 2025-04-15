@@ -10,7 +10,7 @@ export class ApiService {
   private baseURL: string;
 
   constructor(private http: HttpClient, private toastService: ToastService) {
-    this.baseURL = 'https://soking.tech/api/';
+    this.baseURL = 'https://ufeed-ai.pulslytics.agency/backend';
   }
 
   private getHeaders(): HttpHeaders {
