@@ -64,7 +64,7 @@ export class NgoComponent {
   });
 
   getFormData(contactNgo: any) {
-    this.api.post('jet-tool', contactNgo.value).subscribe({
+    this.api.post('NGO', contactNgo.value).subscribe({
       next: (response) => {
         this.submitted = true;
         // Reset form after successful submission
