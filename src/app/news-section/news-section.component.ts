@@ -19,7 +19,7 @@ interface NewsItem {
   selector: 'app-news-section',
   imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './news-section.component.html',
-  styleUrl: './news-section.component.scss'
+  styleUrl: './news-section.component.scss',
 })
 export class NewsSectionComponent implements OnInit {
   newsItems: NewsItem[] = [];
@@ -43,7 +43,7 @@ export class NewsSectionComponent implements OnInit {
         console.error('Error fetching news:', error);
         this.isLoading = false;
         this.hasError = true;
-      }
+      },
     });
   }
 
@@ -52,7 +52,7 @@ export class NewsSectionComponent implements OnInit {
     return date.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
+      day: 'numeric',
     });
   }
 }

@@ -45,7 +45,7 @@ export class NewsDetailComponent implements OnInit {
 
   fetchNewsDetail(id: string): void {
     this.isLoading = true;
-    this.api.get(`blogs/${id}`).subscribe({
+    this.api.get(`posts/${id}`).subscribe({
       next: (response: NewsItem) => {
         this.newsItem = response;
         this.isLoading = false;
