@@ -9,16 +9,18 @@ import { CommonModule } from '@angular/common';
 import { TranslationService } from '../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { ApiService } from '../services/api.service';
+import { ConfirmationPageComponent } from "../confirmation-page/confirmation-page.component";
 
 @Component({
   selector: 'app-ngo',
-  imports: [ReactiveFormsModule, CommonModule, TranslateModule],
+  imports: [ReactiveFormsModule, CommonModule, TranslateModule, ConfirmationPageComponent],
   templateUrl: './ngo.component.html',
   styleUrl: './ngo.component.scss',
 })
 export class NgoComponent {
   constructor(private api: ApiService) {}
   submitted = false;
+  disabled = false;
   contactNgo: FormGroup = new FormGroup({
     name: new FormControl(null, [
       Validators.required,
@@ -64,16 +66,16 @@ export class NgoComponent {
   });
 
   getFormData(contactNgo: any) {
+    this.disabled = true;
     this.api.post('NGO', contactNgo.value).subscribe({
       next: (response) => {
-        this.submitted = true;
-        // Reset form after successful submission
-        setTimeout(() => {
-          this.contactNgo.reset();
-          this.submitted = false;
-        }, 3000);
+        this.contactNgo.reset();
+        this.submitted = false;
+        this.disabled = false;
       },
       error: (error) => {
+        this.disabled = false;
+        this.submitted = false;
         console.error('Error submitting form', error);
       },
     });
