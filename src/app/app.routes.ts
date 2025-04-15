@@ -1,32 +1,76 @@
 import { Routes } from '@angular/router';
-
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { BecomeAPartnerComponent } from './become-apartner/become-apartner.component';
-import { JetComponent } from './jet/jet.component';
-import { EesComponent } from './ees/ees.component';
-import { ComingSoonComponent } from './coming-soon/coming-soon.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { NewsComponent } from './news/news.component';
-import { JetCourseComponent } from './jet-course/jet-course.component';
-import {DigitalizingJOBMASTerComponent} from './digitalizing-jobmaster/digitalizing-jobmaster.component'
-import {NgoComponent} from './ngo/ngo.component'
-
 
 export const routes: Routes = [
-    {path:"",component:HomeComponent},    
-    {path:"home",component:HomeComponent},    
-    {path:"about",component:AboutComponent},
-    {path:"become-apartner",component:BecomeAPartnerComponent},
-    {path:"jet",component:JetComponent},
-    {path:"ees",component:EesComponent},
-    {path:"coming-soon",component:ComingSoonComponent},
-    {path:"contact-us",component:ContactUsComponent},
-    {path:"news",component:NewsComponent},
-    {path:"app-jet-course",component:JetCourseComponent},
-    {path:"digitalizing-jobmaster",component:DigitalizingJOBMASTerComponent},
-    {path:"ngo",component:NgoComponent},
-    {path:"**",component:NotFoundComponent},
-    { path: 'ar', component: HomeComponent, data: { language: 'ar' } }, // Arabic version
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  {
+    path: 'about',
+    loadComponent: () =>
+      import('./about/about.component').then((m) => m.AboutComponent),
+  },
+  {
+    path: 'become-apartner',
+    loadComponent: () =>
+      import('./become-apartner/become-apartner.component').then(
+        (m) => m.BecomeAPartnerComponent
+      ),
+  },
+  {
+    path: 'jet',
+    loadComponent: () =>
+      import('./jet/jet.component').then((m) => m.JetComponent),
+  },
+  {
+    path: 'ees',
+    loadComponent: () =>
+      import('./ees/ees.component').then((m) => m.EesComponent),
+  },
+  {
+    path: 'coming-soon',
+    loadComponent: () =>
+      import('./coming-soon/coming-soon.component').then(
+        (m) => m.ComingSoonComponent
+      ),
+  },
+  {
+    path: 'contact-us',
+    loadComponent: () =>
+      import('./contact-us/contact-us.component').then(
+        (m) => m.ContactUsComponent
+      ),
+  },
+  {
+    path: 'news',
+    loadComponent: () =>
+      import('./news/news.component').then((m) => m.NewsComponent),
+  },
+  {
+    path: 'app-jet-course',
+    loadComponent: () =>
+      import('./jet-course/jet-course.component').then(
+        (m) => m.JetCourseComponent
+      ),
+  },
+  {
+    path: 'digitalizing-jobmaster',
+    loadComponent: () =>
+      import('./digitalizing-jobmaster/digitalizing-jobmaster.component').then(
+        (m) => m.DigitalizingJOBMASTerComponent
+      ),
+  },
+  {
+    path: 'ngo',
+    loadComponent: () =>
+      import('./ngo/ngo.component').then((m) => m.NgoComponent),
+  },
+  {
+    path: '**',
+    loadComponent: () =>
+      import('./not-found/not-found.component').then(
+        (m) => m.NotFoundComponent
+      ),
+  },
+  { path: 'ar', component: HomeComponent, data: { language: 'ar' } }, // Arabic version
 ];
