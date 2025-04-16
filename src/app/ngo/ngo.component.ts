@@ -28,7 +28,7 @@ export class NgoComponent {
       Validators.maxLength(20),
       Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/), // Allows spaces
     ]),
-    ngoName: new FormControl(null, [
+    ngo_name: new FormControl(null, [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),

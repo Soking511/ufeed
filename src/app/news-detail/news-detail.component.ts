@@ -19,7 +19,7 @@ interface NewsItem {
   standalone: true,
   imports: [CommonModule, TranslateModule, RouterModule],
   templateUrl: './news-detail.component.html',
-  styleUrl: './news-detail.component.scss'
+  styleUrl: './news-detail.component.scss',
 })
 export class NewsDetailComponent implements OnInit {
   newsItem: NewsItem | null = null;
@@ -33,7 +33,7 @@ export class NewsDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
       if (id) {
         this.fetchNewsDetail(id);
@@ -54,7 +54,7 @@ export class NewsDetailComponent implements OnInit {
         console.error('Error fetching news detail:', error);
         this.isLoading = false;
         this.hasError = true;
-      }
+      },
     });
   }
 
@@ -63,7 +63,7 @@ export class NewsDetailComponent implements OnInit {
     return date.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
+      day: 'numeric',
     });
   }
 

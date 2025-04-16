@@ -53,12 +53,12 @@
                             </div>
 
                             <div class="form-group col-md-6 my-2">
-                                <label for="ngoName" class="text-light pb-2">{{ 'ngo_name' | translate }}</label>
-                                <input id="ngoName"
-                                    [class.is-valid]="contactNgo.get('ngoName')?.errors == null && contactNgo.get('ngoName')?.touched"
-                                    type="text" formControlName="ngoName" class="form-control">
+                                <label for="ngo_name" class="text-light pb-2">{{ 'ngo_name' | translate }}</label>
+                                <input id="ngo_name"
+                                    [class.is-valid]="contactNgo.get('ngo_name')?.errors == null && contactNgo.get('ngo_name')?.touched"
+                                    type="text" formControlName="ngo_name" class="form-control">
                                 <div class="error-container">
-                                    <p *ngIf="contactNgo.get('ngoName')?.errors != null && contactNgo.get('ngoName')?.touched"
+                                    <p *ngIf="contactNgo.get('ngo_name')?.errors != null && contactNgo.get('ngo_name')?.touched"
                                         class="text-danger error-message">
                                         {{ 'check_ngo_name' | translate }}
                                     </p>
