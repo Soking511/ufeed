@@ -1,9 +1,9 @@
-$mainFont: 'Creato Display';
-$secondaryFont: 'Lora';
+$mainFont: "Creato Display";
+$secondaryFont: "Lora";
 $fontSizeLinks: 16px;
 $fontWeightLinks: 600;
 $mainColor: #f86645;
-$secondaryColor: #375D95;
+$secondaryColor: #375d95;
 
 .navbar {
   z-index: 20000;
@@ -26,9 +26,8 @@ $secondaryColor: #375D95;
         }
 
         li {
-
           a {
-            color: #2A2B34;
+            color: #2a2b34;
 
             &:hover {
               color: #f86341;
@@ -40,7 +39,7 @@ $secondaryColor: #375D95;
       .btns-holder {
         a {
           color: #f86341;
-          transition: .3s;
+          transition: 0.3s;
           border: solid #f86341;
 
           &:hover {
@@ -61,7 +60,7 @@ $secondaryColor: #375D95;
 
         .free-trial {
           color: #fff !important;
-          border-color: #375D95;
+          border-color: #375d95;
 
           &:hover {
             border: solid #f86341;
@@ -70,7 +69,7 @@ $secondaryColor: #375D95;
       }
 
       a.lang_switcher {
-        color: #375D95;
+        color: #375d95;
       }
     }
   }
@@ -103,7 +102,7 @@ $secondaryColor: #375D95;
 
       i {
         color: #fff;
-        transition: .3s ease-in-out;
+        transition: 0.3s ease-in-out;
       }
 
       &:hover i {
@@ -127,14 +126,13 @@ $secondaryColor: #375D95;
   a {
     color: #fff;
     padding-left: 0;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
 
     &:hover {
       color: #f86341;
     }
   }
 }
-
 
 .header-cta {
   border: solid 2px $secondaryColor;
@@ -144,7 +142,7 @@ $secondaryColor: #375D95;
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  transition: .5s;
+  transition: 0.5s;
   color: #fff;
   font-family: $mainFont;
 
@@ -170,14 +168,15 @@ $secondaryColor: #375D95;
 }
 
 .navbar {
-  position: fixed;
+  // position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
   background-color: transparent;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, height 0.4s ease;
   padding: 20px 0;
+  height: 85px; // Set a consistent height
 
   .container {
     display: flex;
@@ -200,9 +199,7 @@ $secondaryColor: #375D95;
 
         &:hover {
           color: #f86341;
-
         }
-
       }
     }
   }
@@ -212,6 +209,7 @@ $secondaryColor: #375D95;
   background-color: #ffffff; // White background
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Add bottom shadow
   padding: 10px 0; // Optional: Reduce padding when scrolled
+  height: 80px; // Smaller height when scrolled
 
   a {
     color: #383838;
@@ -249,7 +247,6 @@ $secondaryColor: #375D95;
   .header-cta:hover {
     background-color: $mainColor;
     color: #fff;
-
   }
 }
 
@@ -275,11 +272,9 @@ $secondaryColor: #375D95;
   }
 }
 
+//arabic style
 
-//arabic style 
-
-
-// start responsive 
+// start responsive
 @media (max-width: 1400px) {
   .btns-holder {
     width: 32%;
@@ -294,11 +289,11 @@ $secondaryColor: #375D95;
   }
 }
 
-@media (max-width: 1300px){
-    .header-cta {
-      padding: 8px 10px;
-      font-size: 13px;
-    }
+@media (max-width: 1300px) {
+  .header-cta {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
 }
 @media (max-width: 992px) {
   .switcher-holder {
@@ -307,6 +302,19 @@ $secondaryColor: #375D95;
     .lang_switcher {
       justify-content: center;
     }
+  }
+
+  .navbar {
+    height: 70px; // Smaller height on mobile
+  }
+
+  // Handle expanded navbar on mobile
+  .navbar-collapse.show {
+    background: white;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   .navbar-collapse {
@@ -353,12 +361,9 @@ $secondaryColor: #375D95;
   ul.navbar-nav.mb-2.mb-lg-0.w-100.justify-content-center:lang(ar) {
     padding-right: 0;
   }
-
 }
 
 @media (max-width: 576px) {
-
-
   .left-logo {
     width: 50% !important;
   }
@@ -375,8 +380,6 @@ $secondaryColor: #375D95;
 
     &:hover {
       background-color: #f86341;
-
     }
   }
-
 }

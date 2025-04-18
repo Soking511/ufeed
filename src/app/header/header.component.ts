@@ -1,56 +1,88 @@
-import { Component, HostListener, Renderer2 } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  Renderer2,
+  Output,
+  EventEmitter,
+  ElementRef,
+} from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { TranslationService } from '../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
-import { ChangeDetectorRef } from '@angular/core'; 
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  @Output() headerHeightChanged = new EventEmitter<number>();
   isScrolled: boolean = false;
   isHomePage: boolean = false;
   currentLanguage: string = 'en';
 
   constructor(
-    private router: Router, 
-    private renderer: Renderer2, 
+    private router: Router,
+    private renderer: Renderer2,
     private translationService: TranslationService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private elementRef: ElementRef
   ) {}
 
   ngOnInit(): void {
     // ✅ Scroll to top on navigation
     this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
+      .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scrolling to top
       });
-  
+
     // ✅ Detect if the current route is the home page
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         this.isHomePage = event.url === '/'; // Update if home route is different
       });
-  
+
     // ✅ Set initial language
     this.currentLanguage = localStorage.getItem('language') || 'en';
     this.translationService.loadLanguage(this.currentLanguage);
     this.updateDocumentDirection();
+
+    // Initial header height calculation
+    setTimeout(() => {
+      this.emitHeaderHeight();
+    }, 100);
+  }
+
+  ngAfterViewInit() {
+    // Emit the header height after view initialization
+    this.emitHeaderHeight();
   }
 
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    const wasScrolled = this.isScrolled;
     this.isScrolled = scrollPosition > 50; // Adjust threshold as needed
+
+    // If scroll state changed, emit new header height
+    if (wasScrolled !== this.isScrolled) {
+      setTimeout(() => {
+        this.emitHeaderHeight();
+      }, 400); // Wait for transition to complete
+    }
+  }
+
+  @HostListener('window:resize', [])
+  onWindowResize() {
+    this.emitHeaderHeight();
   }
 
   get logoPath(): string {
@@ -112,5 +144,10 @@ export class HeaderComponent {
       this.renderer.setAttribute(htmlTag, 'dir', 'ltr');
       this.renderer.removeClass(bodyTag, 'rtl'); // Remove RTL class from body
     }
+  }
+
+  private emitHeaderHeight() {
+    const headerHeight = this.elementRef.nativeElement.offsetHeight;
+    this.headerHeightChanged.emit(headerHeight);
   }
 }

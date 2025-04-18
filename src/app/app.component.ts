@@ -79,4 +79,9 @@ export class AppComponent {
       this.renderer.setAttribute(htmlTag, 'dir', 'ltr');
     }
   }
+
+  onHeaderHeightChanged(height: number) {
+    // Update body padding to match header height
+    this.renderer.setStyle(document.body, 'padding-top', `${height}px`);
+  }
 }
