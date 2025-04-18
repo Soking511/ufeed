@@ -6,7 +6,7 @@
     min-height: 75vh;
     position: relative;
     /* Ensure proper positioning for ::before */
-
+    padding-top:90px;
     &::before {
         content: '';
         position: absolute;

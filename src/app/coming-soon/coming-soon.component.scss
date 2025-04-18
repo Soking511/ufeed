@@ -1,5 +1,6 @@
 .comming-soon{
-    padding-top: 30px;
+
+    padding-top: 90px; 
     height: 100vh;
     // background: linear-gradient(
     //     to right,
@@ -9,7 +10,7 @@
     //   );
     //   opacity: 0.5; /* Overall transparency */
     //   filter: blur(250px); /* Applies the blur effect */
-      z-index: -1; 
+      z-index: -1;
       position: relative;
     display: flex;
     justify-content: center;
@@ -17,14 +18,14 @@
     flex-direction: column;
     color: #fff;
     font-weight: 800;
-   
-    
+
+
 img{
     max-width: 100%;
     animation-name: example;
     animation-duration: 6s;
     animation-iteration-count: infinite;
-   
+
 }
 h1{
     color: #2A2B34;
