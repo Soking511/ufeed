@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgIf, NgClass, NgStyle } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [TranslatePipe, ReactiveFormsModule, NgIf, NgClass, NgStyle],
+  imports: [TranslatePipe, ReactiveFormsModule, NgClass, NgStyle],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })

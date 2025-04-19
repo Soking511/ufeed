@@ -3,7 +3,6 @@
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  padding-top:80px;
 }
 
 #bg-video {
@@ -31,6 +30,7 @@
 }
 
 .content {
+  padding-top:90px;
   display: flex;
   align-items: center;
   justify-content: center;

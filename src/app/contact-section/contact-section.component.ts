@@ -13,7 +13,6 @@ import {
 } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { ApiService } from '../services/api.service';
-import { InputComponent } from '../shared/components/input/input.component';
 import { ConfirmationPageComponent } from '../confirmation-page/confirmation-page.component';
 
 @Component({
@@ -22,7 +21,6 @@ import { ConfirmationPageComponent } from '../confirmation-page/confirmation-pag
     ReactiveFormsModule,
     CommonModule,
     TranslateModule,
-    InputComponent,
     ConfirmationPageComponent,
   ],
   templateUrl: './contact-section.component.html',

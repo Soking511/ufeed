@@ -5,7 +5,6 @@ import {
   ElementRef,
   AfterViewChecked,
 } from '@angular/core';
-import { TranslationService } from '../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
 import {
   FormControl,
@@ -14,7 +13,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { ApiService } from '../services/api.service';
-import { InputComponent } from '../shared/components/input/input.component';
 import { ConfirmationPageComponent } from '../confirmation-page/confirmation-page.component';
 
 @Component({
@@ -23,7 +21,6 @@ import { ConfirmationPageComponent } from '../confirmation-page/confirmation-pag
     CommonModule,
     ReactiveFormsModule,
     TranslateModule,
-    InputComponent,
     ConfirmationPageComponent,
   ],
   templateUrl: './jet.component.html',
