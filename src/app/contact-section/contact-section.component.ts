@@ -98,7 +98,7 @@ export class ContactSectionComponent implements AfterViewChecked {
   products = [
     { value: 'JET', label: 'Job Evaluation Tool - JET' },
     { value: 'EES', label: 'Employee Engagement Survey - EES' },
-    { value: 'Both', label: 'Both' },
+    // { value: 'Both', label: 'Both' },
   ];
 
   inquiries = [

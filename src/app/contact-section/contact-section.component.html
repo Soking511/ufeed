@@ -13,11 +13,11 @@
 
             <div class="form-group col-12 my-3">
               <label for="">{{ "YOUR_NAME" | translate }}</label>
-              <input [class.is-valid]="contactForm.get('name')?.errors == null && contactForm.get('name')?.touched"
+              <input [class.is-valid]="contactForm.get('name')?.errors == null"
                 class="form-control p-3" formControlName="name" type="text" placeholder="{{ 'YOUR_NAME' | translate }}"
                 id="">
 
-              <p *ngIf="contactForm.get('name')?.errors != null && contactForm.get('name')?.touched"
+              <p *ngIf="contactForm.get('name')?.errors != null"
                 class="py-2 text-danger">
                 {{ "CHECK_YOUR_NAME" | translate }}
               </p>
@@ -28,19 +28,19 @@
               <div class="form-group col-lg-6 col-md-6 col-sm-12">
                 <label for="">{{"Contact Number*"|translate}}</label>
                 <input
-                  [class.is-valid]="contactForm.get('phone_number')?.errors==null && contactForm.get('phone_number')?.touched "
+                  [class.is-valid]="contactForm.get('phone_number')?.errors==null "
                   class="form-control p-3" type="text" formControlName="phone_number" name=""
                   placeholder="{{'Your Phone Number'|translate}}" id="">
-                <p *ngIf="contactForm.get('phone_number')?.errors!=null && contactForm.get('phone_number')?.touched "
+                <p *ngIf="contactForm.get('phone_number')?.errors!=null "
                   class="py-2 text-danger">{{"Please Check Your Phone Number"|translate}}</p>
               </div>
 
               <div class="form-group col-lg-6 col-md-6 col-sm-12">
                 <label for="">{{"Email*" | translate}}</label>
-                <input [class.is-valid]="contactForm.get('email')?.errors==null && contactForm.get('email')?.touched "
+                <input [class.is-valid]="contactForm.get('email')?.errors==null "
                   class="form-control p-3" type="email" name="" formControlName="email"
                   placeholder='{{"Email_placeholder" | translate}}' id="">
-                <p *ngIf="contactForm.get('email')?.errors!=null && contactForm.get('email')?.touched "
+                <p *ngIf="contactForm.get('email')?.errors!=null "
                   class="py-2 text-danger">{{"Please Check Your Email" | translate}}</p>
               </div>
 
@@ -48,10 +48,10 @@
 
             <div class="form-group col-12 my-3">
               <label for="">{{"Title"|translate}}</label>
-              <input [class.is-valid]="contactForm.get('title')?.errors==null && contactForm.get('title')?.touched"
+              <input [class.is-valid]="contactForm.get('title')?.errors==null"
                 class="form-control p-3" type="text" formControlName="title" name="" placeholder="{{'Title'|translate}}"
                 id="">
-              <p *ngIf="contactForm.get('title')?.errors != null && contactForm.get('title')?.touched"
+              <p *ngIf="contactForm.get('title')?.errors != null"
                 class="py-2 text-danger">
                 {{ "Please make sure of title" | translate }}
               </p>
@@ -61,7 +61,7 @@
               <label for="">{{"Company Name"|translate}}</label>
               <input class="form-control p-3" type="email" name="" formControlName="company_name"
                 placeholder="{{'Your Company'| translate}}" id="">
-              <p *ngIf="contactForm.get('company_name')?.errors != null && contactForm.get('company_name')?.touched"
+              <p *ngIf="contactForm.get('company_name')?.errors != null"
                 class="py-2 text-danger">
                 {{ "Please make sure of company name" | translate }}
               </p>
@@ -79,7 +79,7 @@
                 </div>
               </div>
 
-              <p *ngIf="contactForm.get('inquiry_type')?.errors != null && contactForm.get('inquiry_type')?.touched"
+              <p *ngIf="contactForm.get('inquiry_type')?.errors != null "
                 class="py-2 text-danger">
                 {{ "Please Choose Your Inquiry" | translate }}
               </p>
@@ -98,7 +98,7 @@
                 </div>
               </div>
 
-              <p *ngIf="contactForm.get('product')?.errors != null && contactForm.get('product')?.touched"
+              <p *ngIf="contactForm.get('product')?.errors != null "
                 class="py-2 text-danger">
                 {{ "Please Choose Your Product" | translate }}
               </p>
@@ -109,7 +109,7 @@
               <label for="">{{"Message"|translate}}</label>
               <textarea name="" class="form-control p-3" placeholder="{{'Your Message'|translate}}"
                 formControlName="message" id=""></textarea>
-              <p *ngIf="contactForm.get('message')?.errors != null && contactForm.get('message')?.touched"
+              <p *ngIf="contactForm.get('message')?.errors != null"
                 class="py-2 text-danger">
                 {{ "Please make sure of message" | translate }}
               </p>

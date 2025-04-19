@@ -73,7 +73,7 @@ export class JetComponent implements AfterViewChecked {
       Validators.maxLength(20),
       Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/),
     ]),
-    product: new FormControl('null', [Validators.required]),
+    product: new FormControl(null, [Validators.required]),
   });
 
   // hover elements

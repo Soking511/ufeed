@@ -11,7 +11,6 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { TranslationService } from '../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { ApiService } from '../services/api.service';
 import { ConfirmationPageComponent } from '../confirmation-page/confirmation-page.component';
@@ -85,7 +84,7 @@ export class EesComponent implements AfterViewChecked {
       Validators.maxLength(20),
       Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/),
     ]),
-    product: new FormControl('null', [Validators.required]),
+    product: new FormControl(null, [Validators.required]),
   });
 
   onlyNumberKey(event: KeyboardEvent): boolean {
