@@ -25,7 +25,7 @@
       <div class="col-md-6" *ngFor="let item of newsItems">
         <div class="single-post" [routerLink]="['/news-detail', item.id]">
           <div class="featured-img">
-            <img class="img-fluid imger-style" [src]="item.image" [alt]="item.name">
+            <img loading="lazy" class="img-fluid imger-style" [src]="item.image" [alt]="item.name">
           </div>
           <div class="news-desc w-75 py-3">
             <h4>{{ item.name }}</h4>

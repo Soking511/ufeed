@@ -18,7 +18,7 @@
         <div class="slider" [style.transform]="'translateX(' + currentOffset + '%)'">
           @for (client of clients; track client.id) {
             <a [href]="client.link" target="_blank" class="slider-item">
-              <img [src]="client.logo" alt="Slider Image" />
+              <img loading="lazy" [src]="client.logo" alt="Slider Image" />
             </a>
           }
         </div>

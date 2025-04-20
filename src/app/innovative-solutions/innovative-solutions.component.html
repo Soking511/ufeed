@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="img-holder text-center">
-        <img class="img-fluid m-auto" src="./public/icons/ph_arrow-up-thin.png" alt="" srcset="">
+        <img loading="lazy" class="img-fluid m-auto" src="./public/icons/ph_arrow-up-thin.png" alt="" srcset="">
       </div>
     </div>
   </div>
@@ -20,7 +20,7 @@
         (mouseout)="onMouseOut()"
       >
         <div class="icon-holder mb-3">
-          <img class="img-fluid" [src]="solution.icon" alt="" />
+          <img loading="lazy" class="img-fluid" [src]="solution.icon" alt="" />
         </div>
         <div class="solution-title w-75 m-auto">
           <h3 class="">{{ solution.title | translate}}</h3>
