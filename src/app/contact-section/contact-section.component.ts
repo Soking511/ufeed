@@ -55,8 +55,8 @@ export class ContactSectionComponent implements AfterViewChecked {
       Validators.minLength(3),
       Validators.maxLength(20),
     ]),
-    inquiry_type: new FormControl([], [Validators.required]),
-    product: new FormControl([], [Validators.required]),
+    inquiry_type: new FormControl(null, [Validators.required]),
+    product: new FormControl(null, [Validators.required]),
     message: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
@@ -144,5 +144,20 @@ export class ContactSectionComponent implements AfterViewChecked {
   isInquirySelected(value: string): boolean {
     const selectedInquiries = this.contactForm.get('inquiry_type')?.value || [];
     return selectedInquiries.includes(value);
+  }
+  isValidInput(controlName: string): boolean {
+    const control = this.contactForm.get(controlName);
+    if (control) {
+      return control.invalid && (control.dirty || control.touched);
+    }
+    return false;
+  }
+
+  isInputValid(controlName: string): boolean {
+    const control = this.contactForm.get(controlName);
+    if (control) {
+      return control.valid;
+    }
+    return false;
   }
 }

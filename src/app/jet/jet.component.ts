@@ -118,4 +118,20 @@ export class JetComponent implements AfterViewChecked {
       }
     }
   }
+
+  isValidInput(controlName: string): boolean {
+    const control = this.jetForm.get(controlName);
+    if (control) {
+      return control.invalid && (control.dirty || control.touched);
+    }
+    return false;
+  }
+
+  isInputValid(controlName: string): boolean {
+    const control = this.jetForm.get(controlName);
+    if (control) {
+      return control.valid ;
+    }
+    return false;
+  }
 }

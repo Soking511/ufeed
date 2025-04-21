@@ -211,37 +211,36 @@
 
 
 
-<section class="product-form">
+<section class="product-form my-5">
     <div class="container">
         <div class="row">
             @if (!submitted) {
-            <div class="col-md-6 title-holder px-3">
-                <h2 class="text-left">{{"Unlock the power of the" |translate}} <span>{{"tool"|translate}}</span>
-                    {{"and boost your productivity!" |translate}}</h2>
+            <div class="col-md-7 title-holder px-3">
+                <h2 class="text-left">{{"Elevate your efficiency with the" |translate}} <span>{{"EES tool"|translate}}
+                    </span></h2>
             </div>
-            <div class="col-md-6 form-holder">
+            <div class="col-md-5 form-holder">
+
                 <form action="" method="post" class="px-3" [formGroup]="jetForm" (ngSubmit)="getFormData(jetForm)">
 
                     <div class="form-group col-12 my-3">
                         <label for="">{{"YOUR_NAME"|translate}}</label>
                         <input placeholder='{{"YOUR_NAME"|translate}}' formControlName="name"
-                            [class.is-valid]="jetForm.get('name')?.errors == null" class="form-control p-3" id="">
-                        <p *ngIf="jetForm.get('name')?.errors != null" class="py-2 text-danger">
-                            {{"CHECK_YOUR_NAME"|translate}}</p>
+                            [class.is-valid]="isInputValid('name')"
+                            class="form-control p-3" id="">
+                        <p *ngIf="isValidInput('name')"
+                            class="py-2 text-danger">{{"CHECK_YOUR_NAME"|translate}}</p>
                     </div>
 
-                    <!-- <app-input [Form]="jetForm" label="YOUR_NAME" inputType="text"
-                    placeholder="YOUR_number_of_departments" errorMessage="CHECK_number_of_departments" controlName="number_of_departments" />
- -->
 
                     <div class="form-group col-12 my-3">
                         <label for="">{{"YOUR_number_of_employees"|translate}}</label>
                         <input placeholder='{{"YOUR_number_of_employees"|translate}}'
                             formControlName="number_of_employees"
-                            [class.is-valid]="jetForm.get('number_of_employees')?.errors == null "
+                            [class.is-valid]="isInputValid('number_of_employees')"
                             class="form-control p-3" id="" type="number" max="300" onpaste="return false;">
-                        <p *ngIf="jetForm.get('number_of_employees')?.errors != null " class="py-2 text-danger">
-                            {{"CHECK_number_of_employees"|translate}}</p>
+                        <p *ngIf="isValidInput('number_of_employees')"
+                            class="py-2 text-danger">{{"CHECK_number_of_employees"|translate}}</p>
                     </div>
 
 
@@ -249,66 +248,51 @@
                         <label for="">{{"YOUR_number_of_departments"|translate}}</label>
                         <input placeholder='{{"YOUR_number_of_departments"|translate}}'
                             formControlName="number_of_departments"
-                            [class.is-valid]="jetForm.get('number_of_departments')?.errors == null"
-                            class="form-control p-3" id="" type="number" min="0" max="300" onpaste="return false;">
-                        <p *ngIf="jetForm.get('number_of_departments')?.errors != null" class="py-2 text-danger">
-                            {{"CHECK_number_of_departments"|translate}}</p>
+                            [class.is-valid]="isInputValid('number_of_departments')"
+                            class="form-control p-3" id="" type="number" max="300" onpaste="return false;">
+                        <p *ngIf="isValidInput('number_of_departments')"
+                            class="py-2 text-danger">{{"CHECK_number_of_departments"|translate}}</p>
                     </div>
 
                     <div class="form-group col-12 my-3">
                         <label for="">{{"Contact Number*" |translate}}</label>
-                        <input placeholder='{{"Your Phone Number"|translate}}'
-                            [class.is-valid]="jetForm.get('number')?.errors==null" formControlName="number"
-                            class="form-control p-3" id="">
+                        <input placeholder='{{"Your Phone Number"|translate}}' [class.is-valid]="isInputValid('number') " formControlName="number" class="form-control p-3" id="">
 
-                        <p *ngIf="jetForm.get('number')?.errors!=null" class="py-2 text-danger">{{"Please Check Your
-                            Phone
+                        <p *ngIf="isValidInput('number')" class="py-2 text-danger">{{"Please Check Your Phone
                             Number"|translate}}</p>
                     </div>
 
                     <div class="form-group col-12 my-3">
                         <label for="">{{"Email*"|translate}}</label>
-                        <input placeholder='{{"Email_placeholder" | translate}}'
-                            [class.is-valid]="jetForm.get('email')?.errors==null " formControlName="email"
-                            class="form-control p-3" id="">
-                        <p *ngIf="jetForm.get('email')?.errors!=null " class="py-2 text-danger">{{"Please Check Your
-                            Email"|translate}}</p>
+                        <input placeholder='{{"Email_placeholder" | translate}}' [class.is-valid]="isInputValid('email')" formControlName="email" class="form-control p-3" id="">
+                        <p *ngIf="isValidInput('email')"
+                            class="py-2 text-danger">{{"Please Check Your Email"|translate}}</p>
                     </div>
 
                     <div class="form-group col-12 my-3">
                         <label for="">{{'Company Name'|translate}}</label>
                         <input placeholder='{{"Your Company"|translate}}' formControlName="company_name"
-                            [class.is-valid]="jetForm.get('company_name')?.errors == null "
-                            formControlName="company_name" class="form-control p-3" id="">
-                        <p *ngIf="jetForm.get('company_name')?.errors!=null" class="py-2 text-danger">{{"Please Fill
-                            Your Company Name" |translate}}</p>
+                            [class.is-valid]="jetForm.get('company_name')?.errors == null " formControlName="company_name" class="form-control p-3"
+                            id="">
+                        <p *ngIf="isValidInput('company_name') "
+                            class="py-2 text-danger">{{"Please Fill Your Company Name" |translate}}</p>
                     </div>
                     <div class="form-group col-12 my-3">
                         <label for="">{{'TITLE'|translate}}</label>
-                        <input placeholder='{{"TITLE"|translate}}' formControlName="title"
-                            [class.is-valid]="jetForm.get('title')?.errors == null " formControlName="title"
-                            class="form-control p-3" id="">
-                        <p *ngIf="jetForm.get('title')?.errors!=null" class="py-2 text-danger">{{"Please Check Your
-                            Title" |translate}}</p>
+                        <input placeholder='{{"TITLE"|translate}}' formControlName="title" [class.is-valid]="isInputValid('title')" formControlName="title" class="form-control p-3"
+                            id="">
+                        <p *ngIf="isValidInput('title')  "
+                            class="py-2 text-danger">{{"Please
+                            Check Your Title" |translate}}</p>
                     </div>
-                    <!-- <label for="">{{"Products" | translate}}</label>
-                    <select class="form-select py-3" aria-label="Default select example" formControlName="product">
-                        <option class="disabled-option" value="" disabled selected>{{"choose product" | translate}}
-                        </option>
-                        <option value="JET">{{'Job Evaluation Tool – JET' | translate}}</option>
-                        <option value="EES">{{'Employee Engagement Survey - EES' | translate}}</option>
-                        <option value="Both">{{'Both' | translate}}</option>
 
-                    </select> -->
 
-                    <p *ngIf="jetForm.get('product')?.errors != null " class="py-2 text-danger">
-                        {{ "Please Choose Your Product" | translate }}
-                    </p>
                     <button type="submit" [disabled]="jetForm.invalid == true || disabled"
                         class=" my-3 p-3 btn col-12 btn-success">{{"Submit"|translate}}</button>
 
 
                 </form>
+
             </div>
             } @else {
             <app-confirmation-page #confirmationPage id="confirmationSection" />

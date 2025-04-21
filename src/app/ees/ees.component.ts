@@ -124,4 +124,20 @@ export class EesComponent implements AfterViewChecked {
       }
     }
   }
+
+  isValidInput(controlName: string): boolean {
+    const control = this.eesForm.get(controlName);
+    if (control) {
+      return control.invalid && (control.dirty || control.touched);
+    }
+    return false;
+  }
+
+  isInputValid(controlName: string): boolean {
+    const control = this.eesForm.get(controlName);
+    if (control) {
+      return control.valid && (control.dirty || control.touched);
+    }
+    return false;
+  }
 }
