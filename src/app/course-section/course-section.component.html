@@ -1,38 +1,50 @@
 <section class="course-jet py-5">
-<div class="container">
-    <div class="row">
-
-        <div class="col-md-6">
-            <img class="img-fluid imger-style" loading="lazy" src="public/news/image12.png" alt="">
-        </div>
-        <!-- ------- -->
-        <div class="col-md-6 py-2">
-            <h3>{{"JET Certification Course" | translate}}</h3>
-            <h5>{{"Get Certified With" | translate}} JOBMASTER</h5>
-            <p class="py-2">{{"course_section_desc" |translate}} </p>
-
+    <div class="container">
         <div class="row">
+
             <div class="col-md-6">
-               <p> <span> <img src="public/ic1.svg" loading="lazy" alt="" srcset=""> </span>{{"Delivered by JOBMASTER." | translate}}</p>
+                <img class="img-fluid imger-style" loading="lazy" src="public/news/image12.png" alt="">
             </div>
+            <!-- ------- -->
+            <div class="col-md-6 py-2">
+                <h3>{{"JET Certification Course" | translate}}</h3>
+                <h5>{{"Get Certified With" | translate}} <app-partner-reference /></h5>
+                <p class="py-2">{{"This course is delivered by " |translate}} <app-partner-reference
+                        text="JOBMASTER." />
+                    {{" In the ever-evolving landscape of HR practices, understanding job design and evaluation concepts
+                    is paramount." |translate}}
+                </p>
 
-            <div class="col-md-6">
-                <p> <span> <img src="public/ic2.svg" loading="lazy" alt="" srcset=""> </span>{{" Become JET Certified."| translate}}</p>
-             </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p> <span> <img src="public/ic1.svg" loading="lazy" alt="" srcset=""> </span>{{"Delivered by " |
+                            translate}}
+                            <app-partner-reference />
+                            .
+                        </p>
+                    </div>
 
-             <div class="col-md-6">
-                <p> <span><img src="public/ic3.svg" loading="lazy" alt="" srcset=""></span>{{"Access UFeed Platform with Confidence" | translate}}</p>
-             </div>
+                    <div class="col-md-6">
+                        <p> <span> <img src="public/ic2.svg" loading="lazy" alt="" srcset=""> </span>{{" Become JET
+                            Certified."| translate}}</p>
+                    </div>
 
-             <div class="col-md-6">
-                <p> <span><img src="public/ic4.svg" loading="lazy" alt="" srcset=""></span>{{"Join for the Next round" | translate}}</p>
-             </div>
+                    <div class="col-md-6">
+                        <p> <span><img src="public/ic3.svg" loading="lazy" alt="" srcset=""></span>{{"Access UFeed
+                            Platform with Confidence" | translate}}</p>
+                    </div>
 
-             <button routerLink="/app-jet-course" class="btn my-2 col-md-12">{{"Join Course" | translate}}</button>
+                    <div class="col-md-6">
+                        <p> <span><img src="public/ic4.svg" loading="lazy" alt="" srcset=""></span>{{"Join for the Next
+                            round" | translate}}</p>
+                    </div>
+
+                    <button routerLink="/app-jet-course" class="btn my-2 col-md-12">{{"Join Course" |
+                        translate}}</button>
+                </div>
+            </div>
+            <!-- ---------- -->
         </div>
     </div>
-    <!-- ---------- -->
-    </div>
-</div>
 
 </section>

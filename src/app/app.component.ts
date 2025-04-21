@@ -28,7 +28,7 @@ import { ScrollRestorationService } from './services/scroll-restoration.service'
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'uFeed';
+  title = 'UFeed';
   currentLanguage: string = 'en';
 
   constructor(

@@ -14,6 +14,7 @@ import {
 } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { ConfirmationPageComponent } from '../confirmation-page/confirmation-page.component';
+import { PartnerReferenceComponent } from "../../shared/components/partner-reference/partner-reference.component";
 
 @Component({
   selector: 'app-jet',
@@ -22,7 +23,8 @@ import { ConfirmationPageComponent } from '../confirmation-page/confirmation-pag
     ReactiveFormsModule,
     TranslateModule,
     ConfirmationPageComponent,
-  ],
+    PartnerReferenceComponent
+],
   templateUrl: './jet.component.html',
   styleUrl: './jet.component.scss',
 })
