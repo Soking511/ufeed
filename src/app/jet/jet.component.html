@@ -291,7 +291,7 @@
                         <p *ngIf="jetForm.get('title')?.errors!=null" class="py-2 text-danger">{{"Please Check Your
                             Title" |translate}}</p>
                     </div>
-                    <label for="">{{"Products" | translate}}</label>
+                    <!-- <label for="">{{"Products" | translate}}</label>
                     <select class="form-select py-3" aria-label="Default select example" formControlName="product">
                         <option class="disabled-option" value="" disabled selected>{{"choose product" | translate}}
                         </option>
@@ -299,7 +299,7 @@
                         <option value="EES">{{'Employee Engagement Survey - EES' | translate}}</option>
                         <option value="Both">{{'Both' | translate}}</option>
 
-                    </select>
+                    </select> -->
 
                     <p *ngIf="jetForm.get('product')?.errors != null " class="py-2 text-danger">
                         {{ "Please Choose Your Product" | translate }}
