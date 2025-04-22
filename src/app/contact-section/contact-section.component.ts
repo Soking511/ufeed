@@ -58,8 +58,6 @@ export class ContactSectionComponent implements AfterViewChecked {
     inquiry_type: new FormControl(null, [Validators.required]),
     product: new FormControl(null, [Validators.required]),
     message: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
       Validators.maxLength(20),
     ]),
   });
@@ -69,20 +67,23 @@ export class ContactSectionComponent implements AfterViewChecked {
 
   constructor(private apiService: ApiService) {}
   getFormData(contactForm: any) {
-    this.disabled = true;
-    console.log(contactForm.value);
-    this.apiService.post('contact', contactForm.value).subscribe({
-      next: (res) => {
-        this.submitted = true;
-        this.scrollToConfirmation = true;
-      },
-      error: (err) => {
-        this.disabled = false;
-      },
-      complete: () => {
-        this.disabled = false;
-      },
-    });
+    if ( this.contactForm.valid) {
+      this.disabled = true;
+      this.apiService.post('contact', contactForm.value).subscribe({
+        next: (res) => {
+          this.submitted = true;
+          this.scrollToConfirmation = true;
+        },
+        error: (err) => {
+          this.disabled = false;
+        },
+        complete: () => {
+          this.disabled = false;
+        },
+      });
+    } else {
+      this.contactForm.markAllAsTouched();
+    }
   }
 
   ngAfterViewChecked() {

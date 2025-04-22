@@ -202,6 +202,9 @@
                                             </button> -->
                   </div>
                 </div>
+                <p class="text-danger" *ngIf="!selectedFile && clicked">
+                  {{ "Please select a file to upload." | translate }}
+                </p>
               </div>
             </div>
           </div>
@@ -293,7 +296,7 @@
             </div>
           </div>
 
-          <button type="submit" [disabled]="disabled" class="my-3 p-3 btn col-12 btn-success" [disabled]="!becomePartner.valid">
+          <button type="submit" [disabled]="disabled" class="my-3 p-3 btn col-12 btn-success">
             {{ "SUBMIT" | translate }}
           </button>
         </form>

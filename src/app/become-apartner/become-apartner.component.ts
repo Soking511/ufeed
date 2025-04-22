@@ -71,9 +71,10 @@ export class BecomeAPartnerComponent implements AfterViewChecked {
         /^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/
       ),
     ]),
-    message: new FormControl(),
+    message: new FormControl(null, Validators.maxLength(100)),
   });
 
+  clicked = false;
   selectedFile: File | null = null;
 
   // Inject HttpClient
@@ -165,6 +166,7 @@ export class BecomeAPartnerComponent implements AfterViewChecked {
   }
 
   onSubmit() {
+    this.clicked = true;
     if (this.becomePartner.valid) {
       const formData = new FormData();
 
@@ -195,6 +197,8 @@ export class BecomeAPartnerComponent implements AfterViewChecked {
           this.disabled = false;
         }
       });
+    } else {
+      this.becomePartner.markAllAsTouched();
     }
   }
 

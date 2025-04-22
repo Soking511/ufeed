@@ -92,21 +92,25 @@ export class JetComponent implements AfterViewChecked {
   // ---------
 
   getFormData(jetForm: any) {
-    this.disabled=true;
-    this.api.post('jet-tool', jetForm.value).subscribe({
-      next: (res) => {
-        console.log(res);
-        this.submitted = true;
-        this.scrollToConfirmation = true;
-      },
-      error: (err) => {
-        console.error(err);
-      },
-      complete: () => {
-        console.log('Request completed');
-        this.disabled=false;
-      },
-    });
+    if ( this.jetForm.valid) {
+      this.disabled=true;
+      this.api.post('jet-tool', jetForm.value).subscribe({
+        next: (res) => {
+          console.log(res);
+          this.submitted = true;
+          this.scrollToConfirmation = true;
+        },
+        error: (err) => {
+          console.error(err);
+        },
+        complete: () => {
+          console.log('Request completed');
+          this.disabled=false;
+        },
+      });
+    } else {
+      this.jetForm.markAllAsTouched();
+    }
   }
 
   ngAfterViewChecked() {

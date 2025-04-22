@@ -97,22 +97,24 @@ export class EesComponent implements AfterViewChecked {
   }
 
   getFormData(eesForm: any) {
-    this.disabled = true;
-    this.api.post('ees-tool', eesForm.value).subscribe({
-      next: (res) => {
-        console.log(res);
-        this.submitted = true;
-        this.scrollToConfirmation = true;
-      },
-      error: (err) => {
-        console.error(err);
-        this.disabled = false;
-      },
-      complete: () => {
-        console.log('Request completed');
-        this.disabled = false;
-      },
-    });
+    if ( this.eesForm.valid) {
+      this.disabled = true;
+      this.api.post('contact', eesForm.value).subscribe({
+        next: (res) => {
+          this.submitted = true;
+          this.scrollToConfirmation = true;
+        },
+        error: (err) => {
+          this.disabled = false;
+        },
+        complete: () => {
+          this.disabled = false;
+        },
+      });
+    }
+    else {
+      this.eesForm.markAllAsTouched();
+    }
   }
 
   ngAfterViewChecked() {
