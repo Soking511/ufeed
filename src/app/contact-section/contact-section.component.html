@@ -52,8 +52,8 @@
 
             <div class="form-group col-12 my-3">
               <label for="">{{"Company Name"|translate}}</label>
-              <input class="form-control p-3" [class.is-valid]="isInputValid('email')" type="email" name=""
-                formControlName="company_name" placeholder="{{'Your Company'| translate}}" id="">
+              <input class="form-control p-3" [class.is-valid]="isInputValid('company_name')" type="company_name"
+                name="" formControlName="company_name" placeholder="{{'Your Company'| translate}}" id="">
               <p *ngIf="isValidInput('company_name')" class="py-2 text-danger">
                 {{ "Please make sure of company name" | translate }}
               </p>
