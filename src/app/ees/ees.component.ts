@@ -99,7 +99,7 @@ export class EesComponent implements AfterViewChecked {
   getFormData(eesForm: any) {
     if ( this.eesForm.valid) {
       this.disabled = true;
-      this.api.post('contact', eesForm.value).subscribe({
+      this.api.post('ees-tool', eesForm.value).subscribe({
         next: (res) => {
           this.submitted = true;
           this.scrollToConfirmation = true;
