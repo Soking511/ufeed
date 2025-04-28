@@ -123,7 +123,7 @@
 
 
                     <div class="form-group col-12 my-3">
-                        <label for="">{{"Title*" | translate}}</label>
+                        <label for="">{{"Title" | translate}}</label>
                         <input placeholder="Your Title" [class.is-valid]="courseForm.get('title')?.errors==null &&
                  courseForm.get('title')?.touched " formControlName="title" class="form-control p-3" id="">
                         <p *ngIf="courseForm.get('title')?.errors!=null && courseForm.get('title')?.touched "
