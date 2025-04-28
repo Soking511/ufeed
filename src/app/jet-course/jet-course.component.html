@@ -124,7 +124,7 @@
 
                     <div class="form-group col-12 my-3">
                         <label for="">{{"Title*" | translate}}</label>
-                        <input placeholder="ex: username@xyz" [class.is-valid]="courseForm.get('title')?.errors==null &&
+                        <input placeholder="Your Title" [class.is-valid]="courseForm.get('title')?.errors==null &&
                  courseForm.get('title')?.touched " formControlName="title" class="form-control p-3" id="">
                         <p *ngIf="courseForm.get('title')?.errors!=null && courseForm.get('title')?.touched "
                             class="py-2 text-danger">{{"Please Check Your Title" | translate}}</p>
