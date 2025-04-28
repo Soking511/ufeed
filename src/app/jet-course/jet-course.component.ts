@@ -9,7 +9,7 @@ import {
 import { TranslateModule } from '@ngx-translate/core';
 import { PartnerReferenceComponent } from '../../shared/components/partner-reference/partner-reference.component';
 import { ApiService } from '../services/api.service';
-import { ConfirmationPageComponent } from "../confirmation-page/confirmation-page.component";
+import { ConfirmationPageComponent } from '../confirmation-page/confirmation-page.component';
 
 @Component({
   selector: 'app-jet-course',
@@ -18,8 +18,8 @@ import { ConfirmationPageComponent } from "../confirmation-page/confirmation-pag
     ReactiveFormsModule,
     TranslateModule,
     PartnerReferenceComponent,
-    ConfirmationPageComponent
-],
+    ConfirmationPageComponent,
+  ],
   templateUrl: './jet-course.component.html',
   styleUrl: './jet-course.component.scss',
 })
