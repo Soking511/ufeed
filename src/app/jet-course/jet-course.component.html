@@ -113,22 +113,22 @@
             <div class="form-group col-12 my-3">
                 <label for="">{{"YOUR_NAME"|translate}}</label>
                 <input placeholder="{{'YOUR_NAME'|translate}}"
-                formControlName="username" [class.is-valid]="courseForm.get('username')?.errors == null && courseForm.get('username')?.touched"
+                formControlName="name" [class.is-valid]="courseForm.get('name')?.errors == null && courseForm.get('name')?.touched"
                  class="form-control p-3" id="">
-                 <p *ngIf="courseForm.get('username')?.errors != null && courseForm.get('username')?.touched"
+                 <p *ngIf="courseForm.get('name')?.errors != null && courseForm.get('name')?.touched"
                 class="py-2 text-danger">{{"CHECK_YOUR_NAME"|translate}}</p>
               </div>
 
               <div class="form-group col-12 my-3">
                 <label for="">{{"Contact Number*"|translate}}</label>
                 <input placeholder='{{"Your Phone Number"|translate}}'
-                [class.is-valid]="courseForm.get('contactNumber')?.errors==null &&
-                 courseForm.get('contactNumber')?.touched"
-                formControlName="contactNumber"
+                [class.is-valid]="courseForm.get('number')?.errors==null &&
+                 courseForm.get('number')?.touched"
+                formControlName="number"
                 class="form-control p-3" id="">
 
-                <p *ngIf="courseForm.get('contactNumber')?.errors!=null &&
-                courseForm.get('contactNumber')?.touched"
+                <p *ngIf="courseForm.get('number')?.errors!=null &&
+                courseForm.get('number')?.touched"
                 class="py-2 text-danger">{{"Please Check Your Phone Number" | translate}}</p>
               </div>
 
@@ -146,15 +146,15 @@
               <div class="form-group col-12 my-3">
                 <label for="">{{"Company Name" | translate}}</label>
                 <input placeholder='{{"Company Name" | translate}}'
-                formControlName="companyName" [class.is-valid]="courseForm.get('companyName')?.errors == null &&
-                courseForm.get('companyName')?.touched"
-                formControlName="companyName"
+                formControlName="company_name" [class.is-valid]="courseForm.get('company_name')?.errors == null &&
+                courseForm.get('company_name')?.touched"
+                formControlName="company_name"
                 class="form-control p-3" id="">
-                <p *ngIf="courseForm.get('companyName')?.errors!=null && courseForm.get('companyName')?.touched "
+                <p *ngIf="courseForm.get('company_name')?.errors!=null && courseForm.get('company_name')?.touched "
                 class="py-2 text-danger">{{"Please Fill Your Company Name"|translate}}</p>
               </div>
 
-              <button type="submit" [disabled]="courseForm.invalid == true"
+              <button type="submit" [disabled]="disabled"
               class=" my-3 p-3 btn col-12 btn-success" >{{"Submit" |translate}}</button>
 
             </form>
