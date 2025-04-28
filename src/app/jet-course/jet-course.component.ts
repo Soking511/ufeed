@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
@@ -9,6 +9,7 @@ import {
 import { TranslateModule } from '@ngx-translate/core';
 import { PartnerReferenceComponent } from '../../shared/components/partner-reference/partner-reference.component';
 import { ApiService } from '../services/api.service';
+import { ConfirmationPageComponent } from "../confirmation-page/confirmation-page.component";
 
 @Component({
   selector: 'app-jet-course',
@@ -17,7 +18,8 @@ import { ApiService } from '../services/api.service';
     ReactiveFormsModule,
     TranslateModule,
     PartnerReferenceComponent,
-  ],
+    ConfirmationPageComponent
+],
   templateUrl: './jet-course.component.html',
   styleUrl: './jet-course.component.scss',
 })
@@ -26,6 +28,7 @@ export class JetCourseComponent {
   submitted = false;
   disabled = false;
   scrollToConfirmation = false;
+  @ViewChild('confirmationPage') confirmationPage: ElementRef | undefined;
 
   // form data
   courseForm: FormGroup = new FormGroup({
@@ -51,6 +54,16 @@ export class JetCourseComponent {
   });
 
   // ---------
+
+  ngAfterViewChecked() {
+    if (this.submitted && this.scrollToConfirmation && this.confirmationPage) {
+      const element = document.getElementById('confirmationSection');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        this.scrollToConfirmation = false; // Prevent multiple scrolls
+      }
+    }
+  }
 
   getFormData(contactForm: any) {
     if (this.courseForm.valid) {

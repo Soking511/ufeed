@@ -1,29 +1,29 @@
 <section class="title d-flex ">
     <div class="container">
         <div class="row h-100">
-    <h1>
-       {{"JET Certification Course" | translate}}
-    </h1>
-    <h2>{{"Get Certified With" | translate}}<span class="py-2 px-2"><app-partner-reference/> </span></h2>
+            <h1>
+                {{"JET Certification Course" | translate}}
+            </h1>
+            <h2>{{"Get Certified With" | translate}}<span class="py-2 px-2"><app-partner-reference /> </span></h2>
 
-    <p class="py-4 w-75">
-        {{"course_desc"|translate}}
-    </p>
+            <p class="py-4 w-75">
+                {{"course_desc"|translate}}
+            </p>
 
-    </div>
+        </div>
     </div>
 </section>
 
 <!-- ------------- -->
 
 <section class="banner">
-<div class="container">
-    <div class="row">
-        <div class="feature-image-holder w-75">
-            <img class="img-fluid" src="public/news/image12.png" loading="lazy" alt="" >
+    <div class="container">
+        <div class="row">
+            <div class="feature-image-holder w-75">
+                <img class="img-fluid" src="public/news/image12.png" loading="lazy" alt="">
+            </div>
         </div>
     </div>
-</div>
 </section>
 
 <!-- ------------- -->
@@ -35,17 +35,18 @@
                 <div class="d-flex">
                     <span><img src="public/Star1.png" loading="lazy" alt=""></span>
                     <h3>{{"This Course is Delivered by " | translate}}</h3>
-                    <app-partner-reference/>
+                    <app-partner-reference />
                     <h3>{{"." | translate}}</h3>
                 </div>
 
                 <ul class="py-4">
-                        <li>{{"Ever-evolving landscape of HR practices" | translate}}</li>
-                        <li>{{"Understanding job design and evaluation concepts is paramount" | translate}}</li>
-                        <li>{{"UFeed recognizes the significance of empowering professionals" | translate}}</li>
-                        <li>{{"Tools and knowledge needed for organizational management" | translate}}</li>
-                        <li>{{"Introduction of the JET Certification program" | translate}}</li>
-                        <li>{{"Equip individuals with skills to harness the Job Evaluation Tool (JET) effectively" | translate}}</li>
+                    <li>{{"Ever-evolving landscape of HR practices" | translate}}</li>
+                    <li>{{"Understanding job design and evaluation concepts is paramount" | translate}}</li>
+                    <li>{{"UFeed recognizes the significance of empowering professionals" | translate}}</li>
+                    <li>{{"Tools and knowledge needed for organizational management" | translate}}</li>
+                    <li>{{"Introduction of the JET Certification program" | translate}}</li>
+                    <li>{{"Equip individuals with skills to harness the Job Evaluation Tool (JET) effectively" |
+                        translate}}</li>
                 </ul>
             </div>
 
@@ -55,23 +56,27 @@
                     <h3> {{"Building Internal Capacity with JET." | translate}}</h3>
                 </div>
                 <ul class="py-4">
-                    <li>{{"Deep understanding of principles and methodologies for job design and evaluation" | translate}}</li>
-                    <li>{{"JET Certification program provides comprehensive insights into job evaluation concepts" | translate}}</li>
-                    <li>{{"Learning to assess job significance in a structured, objective, and consistent manner" |translate}}   </li>
-                    <li>{{"Building internal capacity within organizations" | translate}}  </li>
-                    <li>{{"Teams fully equipped to leverage the capabilities of the JET tool" | translate}}  </li>
+                    <li>{{"Deep understanding of principles and methodologies for job design and evaluation" |
+                        translate}}</li>
+                    <li>{{"JET Certification program provides comprehensive insights into job evaluation concepts" |
+                        translate}}</li>
+                    <li>{{"Learning to assess job significance in a structured, objective, and consistent manner"
+                        |translate}} </li>
+                    <li>{{"Building internal capacity within organizations" | translate}} </li>
+                    <li>{{"Teams fully equipped to leverage the capabilities of the JET tool" | translate}} </li>
                 </ul>
             </div>
 
             <div class="col-md-6 three">
                 <div class="d-flex">
                     <span><img src="public/Star1.png" loading="lazy" alt=""></span>
-                    <h3>  {{"Becoming JET Certified." | translate}}</h3>
+                    <h3> {{"Becoming JET Certified." | translate}}</h3>
                 </div>
                 <ul class="py-4">
                     <li>{{"Earning JET Certification is not just about acquiring a credential" | translate}}</li>
                     <li>{{"Unlocking access to a powerful platform for designing grading structures" | translate}}</li>
-                    <li>{{"Participants equipped with skills and knowledge to navigate the UFeed Platform seamlessly" | translate}}</li>
+                    <li>{{"Participants equipped with skills and knowledge to navigate the UFeed Platform seamlessly" |
+                        translate}}</li>
                     <li>{{"Designing company grading structures"| translate}}</li>
                     <li>{{"Making informed decisions about compensation and organizational design" | translate}}</li>
                     <li>{{"JET Certification opens doors to a world of possibilities" | translate}}</li>
@@ -87,9 +92,11 @@
                     <li>{{"JET Certified professionals have exclusive access to the UFeed Platform" | translate}}</li>
                     <li>{{"Design company grading structures with the click of a button" |translate}}</li>
                     <li>{{"Intuitive interface and robust features for easy customization" | translate}}</li>
-                    <li>{{"Customize grading structures, analyze job roles, and ensure internal equity" | translate}}</li>
+                    <li>{{"Customize grading structures, analyze job roles, and ensure internal equity" | translate}}
+                    </li>
                     <li>{{"Approach job design and evaluation with confidence" | translate}}</li>
-                    <li>{{"Drive meaningful results with the tools and expertise gained from JET Certification" | translate}}</li>
+                    <li>{{"Drive meaningful results with the tools and expertise gained from JET Certification" |
+                        translate}}</li>
                 </ul>
             </div>
         </div>
@@ -101,66 +108,63 @@
 
 <section class="form-course py-5">
     <div class="container">
+        @if( !submitted ){
+
         <div class="row">
             <div class="col-md-6 my-5">
-                <h3>{{"Interested in our" |translate}} <span>{{"course?" | translate}} </span><br> {{"Fill out the form." | translate}}</h3>
+                <h3>{{"Interested in our" |translate}} <span>{{"course?" | translate}} </span><br> {{"Fill out the
+                    form." | translate}}</h3>
             </div>
             <div class="col-md-6 p-4">
 
-            <form action="" method="post" class="px-3" [formGroup]="courseForm"
-            (ngSubmit)="getFormData(courseForm)">
+                <form action="" method="post" class="px-3" [formGroup]="courseForm"
+                    (ngSubmit)="getFormData(courseForm)">
 
-            <div class="form-group col-12 my-3">
-                <label for="">{{"YOUR_NAME"|translate}}</label>
-                <input placeholder="{{'YOUR_NAME'|translate}}"
-                formControlName="name" [class.is-valid]="courseForm.get('name')?.errors == null && courseForm.get('name')?.touched"
-                 class="form-control p-3" id="">
-                 <p *ngIf="courseForm.get('name')?.errors != null && courseForm.get('name')?.touched"
-                class="py-2 text-danger">{{"CHECK_YOUR_NAME"|translate}}</p>
-              </div>
+                    <div class="form-group col-12 my-3">
+                        <label for="">{{"YOUR_NAME"|translate}}</label>
+                        <input placeholder="{{'YOUR_NAME'|translate}}" formControlName="name"
+                            [class.is-valid]="courseForm.get('name')?.errors == null && courseForm.get('name')?.touched"
+                            class="form-control p-3" id="">
+                        <p *ngIf="courseForm.get('name')?.errors != null && courseForm.get('name')?.touched"
+                            class="py-2 text-danger">{{"CHECK_YOUR_NAME"|translate}}</p>
+                    </div>
 
-              <div class="form-group col-12 my-3">
-                <label for="">{{"Contact Number*"|translate}}</label>
-                <input placeholder='{{"Your Phone Number"|translate}}'
-                [class.is-valid]="courseForm.get('number')?.errors==null &&
-                 courseForm.get('number')?.touched"
-                formControlName="number"
-                class="form-control p-3" id="">
+                    <div class="form-group col-12 my-3">
+                        <label for="">{{"Contact Number*"|translate}}</label>
+                        <input placeholder='{{"Your Phone Number"|translate}}' [class.is-valid]="courseForm.get('number')?.errors==null &&
+                 courseForm.get('number')?.touched" formControlName="number" class="form-control p-3" id="">
 
-                <p *ngIf="courseForm.get('number')?.errors!=null &&
-                courseForm.get('number')?.touched"
-                class="py-2 text-danger">{{"Please Check Your Phone Number" | translate}}</p>
-              </div>
+                        <p *ngIf="courseForm.get('number')?.errors!=null &&
+                courseForm.get('number')?.touched" class="py-2 text-danger">{{"Please Check Your Phone Number" |
+                            translate}}</p>
+                    </div>
 
-              <div class="form-group col-12 my-3">
-                <label for="">{{"Email*" | translate}}</label>
-                <input placeholder="ex: username@xyz"
-                [class.is-valid]="courseForm.get('email')?.errors==null &&
-                 courseForm.get('email')?.touched "
-                formControlName="email"
-                class="form-control p-3" id="">
-                <p *ngIf="courseForm.get('email')?.errors!=null && courseForm.get('email')?.touched "
-                class="py-2 text-danger">{{"Please Check Your Email" | translate}}</p>
-              </div>
+                    <div class="form-group col-12 my-3">
+                        <label for="">{{"Email*" | translate}}</label>
+                        <input placeholder="ex: username@xyz" [class.is-valid]="courseForm.get('email')?.errors==null &&
+                 courseForm.get('email')?.touched " formControlName="email" class="form-control p-3" id="">
+                        <p *ngIf="courseForm.get('email')?.errors!=null && courseForm.get('email')?.touched "
+                            class="py-2 text-danger">{{"Please Check Your Email" | translate}}</p>
+                    </div>
 
-              <div class="form-group col-12 my-3">
-                <label for="">{{"Company Name" | translate}}</label>
-                <input placeholder='{{"Company Name" | translate}}'
-                formControlName="company_name" [class.is-valid]="courseForm.get('company_name')?.errors == null &&
-                courseForm.get('company_name')?.touched"
-                formControlName="company_name"
-                class="form-control p-3" id="">
-                <p *ngIf="courseForm.get('company_name')?.errors!=null && courseForm.get('company_name')?.touched "
-                class="py-2 text-danger">{{"Please Fill Your Company Name"|translate}}</p>
-              </div>
+                    <div class="form-group col-12 my-3">
+                        <label for="">{{"Company Name" | translate}}</label>
+                        <input placeholder='{{"Company Name" | translate}}' formControlName="company_name"
+                            [class.is-valid]="courseForm.get('company_name')?.errors == null &&
+                courseForm.get('company_name')?.touched" formControlName="company_name" class="form-control p-3" id="">
+                        <p *ngIf="courseForm.get('company_name')?.errors!=null && courseForm.get('company_name')?.touched "
+                            class="py-2 text-danger">{{"Please Fill Your Company Name"|translate}}</p>
+                    </div>
 
-              <button type="submit" [disabled]="disabled"
-              class=" my-3 p-3 btn col-12 btn-success" >{{"Submit" |translate}}</button>
+                    <button type="submit" [disabled]="disabled" class=" my-3 p-3 btn col-12 btn-success">{{"Submit"
+                        |translate}}</button>
 
-            </form>
+                </form>
             </div>
         </div>
+        } @else {
+
+        <app-confirmation-page #confirmationPage id="confirmationSection" />
+        }
     </div>
 </section>
-
-
