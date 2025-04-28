@@ -30,13 +30,12 @@ export class JetCourseComponent {
   scrollToConfirmation = false;
   @ViewChild('confirmationPage') confirmationPage: ElementRef | undefined;
 
-  // form data
   courseForm: FormGroup = new FormGroup({
     name: new FormControl(null, [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
-      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/), // Allows spaces
+      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/),
     ]),
     title: new FormControl(null, [
       Validators.required,
@@ -58,14 +57,12 @@ export class JetCourseComponent {
     ]),
   });
 
-  // ---------
-
   ngAfterViewChecked() {
     if (this.submitted && this.scrollToConfirmation && this.confirmationPage) {
       const element = document.getElementById('confirmationSection');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        this.scrollToConfirmation = false; // Prevent multiple scrolls
+        this.scrollToConfirmation = false; 
       }
     }
   }
