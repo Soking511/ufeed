@@ -114,8 +114,8 @@
                 <h3>{{"Interested in our" |translate}} <span>{{"course?" | translate}} </span><br> {{"Fill out the
                     form." | translate}}</h3>
             </div>
-            @if( !submitted ){
             <div class="col-md-6 p-4">
+                @if( !submitted ){
 
                 <form action="" method="post" class="px-3" [formGroup]="courseForm"
                     (ngSubmit)="getFormData(courseForm)">
@@ -160,11 +160,11 @@
                         |translate}}</button>
 
                 </form>
-            </div>
-        } @else {
+            } @else {
 
-        <app-confirmation-page #confirmationPage id="confirmationSection" />
-        }
+            <app-confirmation-page #confirmationPage id="confirmationSection" />
+            }
+            </div>
         </div>
     </div>
 </section>
