@@ -234,6 +234,13 @@
 
 
                     <div class="form-group col-12 my-3">
+                        <label for="">{{"Email*"|translate}}</label>
+                        <input placeholder='{{"Email_placeholder" | translate}}' [class.is-valid]="isInputValid('email')" formControlName="email" class="form-control p-3" id="">
+                        <p *ngIf="isValidInput('email')"
+                            class="py-2 text-danger">{{"Please Check Your Email"|translate}}</p>
+                    </div>
+
+                    <div class="form-group col-12 my-3">
                         <label for="">{{"YOUR_number_of_employees"|translate}}</label>
                         <input placeholder='{{"YOUR_number_of_employees"|translate}}'
                             formControlName="number_of_employees"
@@ -260,13 +267,6 @@
 
                         <p *ngIf="isValidInput('number')" class="py-2 text-danger">{{"Please Check Your Phone
                             Number"|translate}}</p>
-                    </div>
-
-                    <div class="form-group col-12 my-3">
-                        <label for="">{{"Email*"|translate}}</label>
-                        <input placeholder='{{"Email_placeholder" | translate}}' [class.is-valid]="isInputValid('email')" formControlName="email" class="form-control p-3" id="">
-                        <p *ngIf="isValidInput('email')"
-                            class="py-2 text-danger">{{"Please Check Your Email"|translate}}</p>
                     </div>
 
                     <div class="form-group col-12 my-3">
