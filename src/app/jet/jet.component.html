@@ -7,7 +7,7 @@
 
             <p class="py-4">
                 {{"jet_page_desc"|translate}}
-                <app-partner-reference/>
+                <app-partner-reference />
                 {{"methodology, organizations can leverage JET to improve evaluations." | translate}}
             </p>
 
@@ -58,7 +58,7 @@
                         <p>
 
                             {{"Utilizes "|translate}}
-                            <app-partner-reference/>
+                            <app-partner-reference />
                             {{" methodology,harnessing vast knowledge and proficiency in reward
                             management"|translate}}
                         </p>
@@ -216,7 +216,8 @@
         <div class="row">
             @if (!submitted) {
             <div class="col-md-7 title-holder px-3">
-                <h2 class="text-left">{{"Elevate your efficiency with the" |translate}} <span>{{"JET by UFeed"|translate}}
+                <h2 class="text-left">{{"Elevate your efficiency with the" |translate}} <span>{{"JET by
+                        UFeed"|translate}}
                     </span></h2>
             </div>
             <div class="col-md-5 form-holder">
@@ -226,28 +227,27 @@
                     <div class="form-group col-12 my-3">
                         <label for="">{{"YOUR_NAME"|translate}}</label>
                         <input placeholder='{{"YOUR_NAME"|translate}}' formControlName="name"
-                            [class.is-valid]="isInputValid('name')"
-                            class="form-control p-3" id="">
-                        <p *ngIf="isValidInput('name')"
-                            class="py-2 text-danger">{{"CHECK_YOUR_NAME"|translate}}</p>
+                            [class.is-valid]="isInputValid('name')" class="form-control p-3" id="">
+                        <p *ngIf="isValidInput('name')" class="py-2 text-danger">{{"CHECK_YOUR_NAME"|translate}}</p>
                     </div>
 
 
                     <div class="form-group col-12 my-3">
                         <label for="">{{"Email*"|translate}}</label>
-                        <input placeholder='{{"Email_placeholder" | translate}}' [class.is-valid]="isInputValid('email')" formControlName="email" class="form-control p-3" id="">
-                        <p *ngIf="isValidInput('email')"
-                            class="py-2 text-danger">{{"Please Check Your Email"|translate}}</p>
+                        <input placeholder='{{"Email_placeholder" | translate}}'
+                            [class.is-valid]="isInputValid('email')" formControlName="email" class="form-control p-3"
+                            id="">
+                        <p *ngIf="isValidInput('email')" class="py-2 text-danger">{{"Please Check Your
+                            Email"|translate}}</p>
                     </div>
 
                     <div class="form-group col-12 my-3">
                         <label for="">{{"YOUR_number_of_employees"|translate}}</label>
                         <input placeholder='{{"YOUR_number_of_employees"|translate}}'
-                            formControlName="number_of_employees"
-                            [class.is-valid]="isInputValid('number_of_employees')"
+                            formControlName="number_of_employees" [class.is-valid]="isInputValid('number_of_employees')"
                             class="form-control p-3" id="" type="number" max="300" onpaste="return false;">
-                        <p *ngIf="isValidInput('number_of_employees')"
-                            class="py-2 text-danger">{{"CHECK_number_of_employees"|translate}}</p>
+                        <p *ngIf="isValidInput('number_of_employees')" class="py-2 text-danger">
+                            {{"CHECK_number_of_employees"|translate}}</p>
                     </div>
 
 
@@ -255,15 +255,17 @@
                         <label for="">{{"YOUR_number_of_departments"|translate}}</label>
                         <input placeholder='{{"YOUR_number_of_departments"|translate}}'
                             formControlName="number_of_departments"
-                            [class.is-valid]="isInputValid('number_of_departments')"
-                            class="form-control p-3" id="" type="number" max="300" onpaste="return false;">
-                        <p *ngIf="isValidInput('number_of_departments')"
-                            class="py-2 text-danger">{{"CHECK_number_of_departments"|translate}}</p>
+                            [class.is-valid]="isInputValid('number_of_departments')" class="form-control p-3" id=""
+                            type="number" max="300" onpaste="return false;">
+                        <p *ngIf="isValidInput('number_of_departments')" class="py-2 text-danger">
+                            {{"CHECK_number_of_departments"|translate}}</p>
                     </div>
 
                     <div class="form-group col-12 my-3">
                         <label for="">{{"Contact Number*" |translate}}</label>
-                        <input placeholder='{{"Your Phone Number"|translate}}' [class.is-valid]="isInputValid('number') " formControlName="number" class="form-control p-3" id="">
+                        <input placeholder='{{"Your Phone Number"|translate}}'
+                            [class.is-valid]="isInputValid('number') " formControlName="number" class="form-control p-3"
+                            id="">
 
                         <p *ngIf="isValidInput('number')" class="py-2 text-danger">{{"Please Check Your Phone
                             Number"|translate}}</p>
@@ -272,17 +274,17 @@
                     <div class="form-group col-12 my-3">
                         <label for="">{{'Company Name'|translate}}</label>
                         <input placeholder='{{"Your Company"|translate}}' formControlName="company_name"
-                            [class.is-valid]="jetForm.get('company_name')?.errors == null " formControlName="company_name" class="form-control p-3"
-                            id="">
-                        <p *ngIf="isValidInput('company_name') "
-                            class="py-2 text-danger">{{"Please Fill Your Company Name" |translate}}</p>
+                            [class.is-valid]="jetForm.get('company_name')?.errors == null "
+                            formControlName="company_name" class="form-control p-3" id="">
+                        <p *ngIf="isValidInput('company_name') " class="py-2 text-danger">{{"Please Fill Your Company
+                            Name" |translate}}</p>
                     </div>
                     <div class="form-group col-12 my-3">
                         <label for="">{{'TITLE'|translate}}</label>
-                        <input placeholder='{{"TITLE"|translate}}' formControlName="title" [class.is-valid]="isInputValid('title')" formControlName="title" class="form-control p-3"
+                        <input placeholder='{{"TITLE"|translate}}' formControlName="title"
+                            [class.is-valid]="isInputValid('title')" formControlName="title" class="form-control p-3"
                             id="">
-                        <p *ngIf="isValidInput('title')  "
-                            class="py-2 text-danger">{{"Please
+                        <p *ngIf="isValidInput('title')  " class="py-2 text-danger">{{"Please
                             Check Your Title" |translate}}</p>
                     </div>
 
