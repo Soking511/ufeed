@@ -120,16 +120,6 @@
                 <form action="" method="post" class="px-3" [formGroup]="courseForm"
                     (ngSubmit)="getFormData(courseForm)">
 
-
-
-                    <div class="form-group col-12 my-3">
-                        <label for="">{{"Title" | translate}}</label>
-                        <input placeholder="Your Title" [class.is-valid]="courseForm.get('title')?.errors==null &&
-                 courseForm.get('title')?.touched " formControlName="title" class="form-control p-3" id="">
-                        <p *ngIf="courseForm.get('title')?.errors!=null && courseForm.get('title')?.touched "
-                            class="py-2 text-danger">{{"Please Check Your Title" | translate}}</p>
-                    </div>
-
                     <div class="form-group col-12 my-3">
                         <label for="">{{"YOUR_NAME"|translate}}</label>
                         <input placeholder="{{'YOUR_NAME'|translate}}" formControlName="name"
@@ -137,6 +127,15 @@
                             class="form-control p-3" id="">
                         <p *ngIf="courseForm.get('name')?.errors != null && courseForm.get('name')?.touched"
                             class="py-2 text-danger">{{"CHECK_YOUR_NAME"|translate}}</p>
+                    </div>
+
+
+                    <div class="form-group col-12 my-3">
+                        <label for="">{{"Email*" | translate}}</label>
+                        <input placeholder="ex: username@xyz" [class.is-valid]="courseForm.get('email')?.errors==null &&
+                 courseForm.get('email')?.touched " formControlName="email" class="form-control p-3" id="">
+                        <p *ngIf="courseForm.get('email')?.errors!=null && courseForm.get('email')?.touched "
+                            class="py-2 text-danger">{{"Please Check Your Email" | translate}}</p>
                     </div>
 
                     <div class="form-group col-12 my-3">
@@ -150,14 +149,6 @@
                     </div>
 
                     <div class="form-group col-12 my-3">
-                        <label for="">{{"Email*" | translate}}</label>
-                        <input placeholder="ex: username@xyz" [class.is-valid]="courseForm.get('email')?.errors==null &&
-                 courseForm.get('email')?.touched " formControlName="email" class="form-control p-3" id="">
-                        <p *ngIf="courseForm.get('email')?.errors!=null && courseForm.get('email')?.touched "
-                            class="py-2 text-danger">{{"Please Check Your Email" | translate}}</p>
-                    </div>
-
-                    <div class="form-group col-12 my-3">
                         <label for="">{{"Company Name" | translate}}</label>
                         <input placeholder='{{"Company Name" | translate}}' formControlName="company_name"
                             [class.is-valid]="courseForm.get('company_name')?.errors == null &&
@@ -166,6 +157,13 @@
                             class="py-2 text-danger">{{"Please Fill Your Company Name"|translate}}</p>
                     </div>
 
+                    <div class="form-group col-12 my-3">
+                        <label for="">{{"Title" | translate}}</label>
+                        <input placeholder="Your Title" [class.is-valid]="courseForm.get('title')?.errors==null &&
+                 courseForm.get('title')?.touched " formControlName="title" class="form-control p-3" id="">
+                        <p *ngIf="courseForm.get('title')?.errors!=null && courseForm.get('title')?.touched "
+                            class="py-2 text-danger">{{"Please Check Your Title" | translate}}</p>
+                    </div>
                     <button type="submit" [disabled]="disabled" class=" my-3 p-3 btn col-12 btn-success">{{"Submit"
                         |translate}}</button>
 
