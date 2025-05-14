@@ -17,7 +17,7 @@ export interface PaginationInfo {
 })
 export class PaginationComponent implements OnChanges {
   @Input() paginationInfo!: PaginationInfo | null;
-  @Input() currentPage = 1;
+  @Input() currentPage = 0;
   @Output() pageChange = new EventEmitter<number>();
 
   totalPages = 0;
@@ -41,7 +41,7 @@ export class PaginationComponent implements OnChanges {
     if (this.currentPage < this.totalPages) {
       pages.push(this.currentPage + 1);
     }
-    
+
     this.pages = pages;
   }
 

@@ -34,13 +34,15 @@ export class NewsSectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchNews(this.currentPage);
-  }  fetchNews(page: number = 1): void {
+  }
+
+  fetchNews(page: number = 1): void {
     this.isLoading = true;
+    this.hasError = false; // Reset error state on new fetch
+    
     this.api.get('posts', page).subscribe({
       next: (response) => {
-        // Check if the response matches the DRF pagination format
         if (response && 'count' in response && 'results' in response) {
-          // Handle the DRF pagination response
           this.paginationInfo = {
             count: response.count,
             next: response.next,
@@ -48,14 +50,9 @@ export class NewsSectionComponent implements OnInit {
             results: response.results
           };
           this.newsItems = response.results;
-          
-          // If there's no next page and we're on page 1, hide pagination
-          if (response.next === null && response.previous === null) {
-            // We only have one page, so pagination isn't needed
-            console.log('Only one page of results is available');
-          }
+          this.currentPage = page;
         } else {
-          // If the response is not paginated, use it directly
+          // Handle non-paginated response (fallback)
           this.newsItems = response;
           this.paginationInfo = {
             count: response.length,
@@ -64,13 +61,14 @@ export class NewsSectionComponent implements OnInit {
             results: response
           };
         }
-        this.currentPage = page;
         this.isLoading = false;
       },
-      error: (error) => { 
+      error: (error) => {
         console.error('Error fetching news:', error);
         this.isLoading = false;
         this.hasError = true;
+        this.newsItems = [];
+        this.paginationInfo = null;
       },
     });
   }

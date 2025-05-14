@@ -11,6 +11,7 @@ export class ApiService {
 
   constructor(private http: HttpClient, private toastService: ToastService) {
     this.baseURL = 'https://api-ufeed.pulslytics.agency/api/';
+    // this.baseURL = 'http://localhost:8000/api/';
   }
 
   private getHeaders(): HttpHeaders {
@@ -19,8 +20,7 @@ export class ApiService {
 
     return headers;
   }
-
-  get<T>(route: string, page: number = 5, query?: string): Observable<any> {
+  get<T>(route: string, page: number = 1, query?: string): Observable<any> {
     const headers = this.getHeaders();
     const queryParams = [];
 
@@ -29,7 +29,7 @@ export class ApiService {
 
     const queryString =
       queryParams.length > 0 ? `?${queryParams.join('&')}` : '';
-    const url = `${this.baseURL}${route}/`;
+    const url = `${this.baseURL}${route}/${queryString}`;
 
     return this.http.get<any>(url, {
       headers,
