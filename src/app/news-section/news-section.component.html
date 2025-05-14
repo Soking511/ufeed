@@ -43,6 +43,16 @@
         <p>{{ "No news available at the moment." | translate }}</p>
       </div>
     </div>
+      <!-- Pagination component -->
+    <div class="row" *ngIf="!isLoading && !hasError && newsItems.length > 0 && (paginationInfo?.next || paginationInfo?.previous)">
+      <div class="col-12">
+        <app-pagination 
+          [paginationInfo]="paginationInfo"
+          [currentPage]="currentPage"
+          (pageChange)="onPageChange($event)">
+        </app-pagination>
+      </div>
+    </div>
   </div>
 </section>
 

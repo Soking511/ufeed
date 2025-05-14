@@ -1,0 +1,116 @@
+.pagination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  font-family: "Creato Display", sans-serif;
+
+  .pagination {
+    .page-item {
+      margin: 0 3px;
+
+      .page-link {
+        color: #625e5e;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        padding: 8px 14px;
+        
+        &:hover {
+          background-color: #f5f5f5;
+          color: #f86645;
+          box-shadow: 0px 3px 8px rgba(248, 102, 69, 0.15);
+        }
+        
+        &:focus {
+          box-shadow: none;
+          outline: none;
+        }
+      }
+      
+      &.active .page-link {
+        background-color: #f86645;
+        border-color: #f86645;
+        color: white;
+        box-shadow: 0px 4px 10px rgba(248, 102, 69, 0.3);
+      }
+      
+      &.disabled .page-link {
+        color: #b7b7b7;
+        pointer-events: none;
+        background-color: #f9f9f9;
+        border-color: #e0e0e0;
+      }
+      
+      &:first-child, &:last-child {
+        .page-link {
+          padding: 8px 12px;
+          i { font-size: 14px; }
+        }
+      }
+    }
+  }
+
+  .pagination-info {
+    color: #625e5e;
+    font-family: "Lora", serif;
+    margin-top: 15px;
+    font-size: 14px;
+    opacity: 0.85;
+  }
+
+  html[dir="rtl"] & {
+    .page-item {
+      &:first-child .page-link { border-radius: 0 8px 8px 0; }
+      &:last-child .page-link { border-radius: 8px 0 0 8px; }
+    }
+  }
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nav-button, .page-button {
+  min-width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background-color: #f86645;
+    color: white;
+    border-color: #f86645;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.active {
+    background-color: #f86645;
+    color: white;
+    border-color: #f86645;
+  }
+}
+
+.page-info {
+  font-size: 0.875rem;
+  color: #4a5568;
+}

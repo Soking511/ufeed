@@ -8,10 +8,14 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-not-found',
   standalone: true,
-  imports: [RouterModule, HeaderComponent, FooterComponent, TranslateModule, CommonModule],
+  imports: [
+    RouterModule,
+    HeaderComponent,
+    FooterComponent,
+    TranslateModule,
+    CommonModule,
+  ],
   templateUrl: './not-found.component.html',
-  styleUrl: './not-found.component.scss'
+  styleUrl: './not-found.component.scss',
 })
-export class NotFoundComponent {
-
-}
+export class NotFoundComponent {}
