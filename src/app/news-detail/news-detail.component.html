@@ -43,7 +43,8 @@
                         <img loading="lazy" [src]="newsItem.image" [alt]="newsItem.name" class="img-fluid rounded">
                     </div>
                     <div class="news-description">
-                        <h4 class="mb-3">{{ newsItem.sub_description }}</h4>
+                        <!-- <h4 class="mb-3">{{ newsItem.sub_description }}</h4> -->
+                        <h4 class="mb-3" [innerHTML]="newsItem.sub_description"></h4>
                         <div class="mt-4" [innerHTML]="newsItem.description"></div>
                     </div>
                 </div>
