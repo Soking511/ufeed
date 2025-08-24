@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     if (this.subscriptionPopup) {
       // This is the first visit, show the welcome popup
       setTimeout(() => {
-        this.subscriptionPopup?.openPopup('welcome');
+        this.subscriptionPopup?.openPopup();
         // Mark that the user has visited the home page
         // localStorage.setItem('hasVisitedHome', 'true');
       }, 1000); // Show popup after 2 seconds for better UX

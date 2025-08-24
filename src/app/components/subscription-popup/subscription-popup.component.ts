@@ -20,67 +20,68 @@ export class SubscriptionPopupComponent {
   @Output() closePopup = new EventEmitter<void>();
   isVisible = false;
   isSubmitting = false;
-  submitted = false;
-  isWelcomePopup = false;
+  currentStep: 'welcome' | 'registration' | 'success' = 'welcome';
 
-  // Updated to match jet-course.component.ts form structure exactly
+  // Updated form structure to match the new design
   subscriptionForm = new FormGroup({
     name: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
-      Validators.maxLength(20),
-      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._\s]{3,20}$/),
+      Validators.maxLength(50),
     ]),
     title: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
-      Validators.maxLength(20),
+      Validators.maxLength(50),
     ]),
-    number: new FormControl('', [
+    phone: new FormControl('', [
       Validators.required,
       Validators.pattern(
         /^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/
       ),
     ]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    company_name: new FormControl('', [
+    company: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
-      Validators.maxLength(20),
-      Validators.pattern(/^(?!.*[_.]{2})[a-zA-Z._]{3,20}$/),
+      Validators.maxLength(50),
     ]),
   });
 
   constructor(private apiService: ApiService) {}
 
-  openPopup(popupType: 'welcome' | 'subscription' = 'subscription') {
-    this.isWelcomePopup = popupType === 'welcome';
+  openPopup() {
     this.isVisible = true;
-    this.submitted = false;
-    this.subscriptionForm.reset(); // Reset form on open
+    this.currentStep = 'welcome';
+    this.subscriptionForm.reset();
   }
 
   close() {
     this.isVisible = false;
+    this.currentStep = 'welcome';
     this.closePopup.emit();
+  }
+
+  setCurrentStep(step: 'welcome' | 'registration' | 'success') {
+    this.currentStep = step;
   }
 
   onSubmit() {
     if (this.subscriptionForm.valid) {
       this.isSubmitting = true;
 
-      // Use the same API endpoint and data structure as jet-course.component.ts
+      // Use the same API endpoint and data structure
       this.apiService
         .post('course-inquiry', this.subscriptionForm.value)
         .subscribe({
           next: (res) => {
             this.isSubmitting = false;
-            this.submitted = true;
+            this.currentStep = 'success';
 
-            // Auto-close after 3 seconds
+            // Auto-close after 5 seconds
             setTimeout(() => {
               this.close();
-            }, 3000);
+            }, 5000);
           },
           error: (err) => {
             this.isSubmitting = false;
@@ -119,7 +120,7 @@ export class SubscriptionPopupComponent {
         return `Maximum length is ${control.errors['maxlength'].requiredLength} characters`;
       }
       if (control.errors['pattern']) {
-        if (controlName === 'number') {
+        if (controlName === 'phone') {
           return 'Please enter a valid phone number';
         }
         return 'Please enter a valid value';

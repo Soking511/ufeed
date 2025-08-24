@@ -4,135 +4,148 @@
             <i class="fas fa-times"></i>
         </button>
 
-        <!-- Welcome Popup Content -->
-        <div *ngIf="isWelcomePopup && !submitted" class="welcome-content">
-            <div class="popup-header">
-                <h2>{{ "Welcome to UFeed!" | translate }}</h2>
-                <p class="welcome-message">{{ "JOBMASTER and UFeed are excited to announce" |
-                    translate }}</p>
-            </div>
+        <div class="popup-body">
+            <!-- Welcome Step -->
+            <div *ngIf="currentStep === 'welcome'" class="welcome-step">
+                <div class="welcome-header">
+                    <!-- <div class="rocket-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div> -->
+                    <h1 class="welcome-title">Course JET</h1>
+                    <p class="welcome-subtitle">JOBMASTER and UFeed are excited to announce</p>
+                </div>
 
-            <div class="course-info">
-                <div class="course-highlight">
-                    <i class="fas fa-rocket"></i>
-                    <h3>{{ "Course Jet" | translate }}</h3>
-                    <p>{{ "marking your first step in developing a grading system" | translate }}</p>
-                    <div class="course-date">
-                        <!-- <i class="fas fa-calendar-alt"></i> -->
-                        <span>{{ "Course Date: 7-9 September, 2025" | translate }}</span>
-                    </div>
-                    <div class="evaluation-date">
-                        <i class="fas fa-clipboard-check"></i>
-                        <span>{{ "Evaluation will be on Wednesday, 10th" | translate }}</span>
+                <div class="course-description">
+                    <div class="course-dates">
+                        <div class="date-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>September 7-9, 2025</span>
+                        </div>
+                        <div class="date-item">
+                            <i class="fas fa-clipboard-check"></i>
+                            <span>Evaluation: Wednesday, 10th</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="course-features">
-                    <!-- feature 1 : JET Certification Course -->
-                    <div class="feature">
+                    <div class="feature-item">
                         <i class="fas fa-certificate"></i>
-                        <span>{{ "JET Certification Course" | translate }}</span>
+                        <div class="feature-content">
+                            <h3>Certification</h3>
+                            <p>Industry recognition</p>
+                        </div>
                     </div>
-                    <!-- feature 2 : JET AI-Enabled Platform -->
-                    <div class="feature">
+                    <div class="feature-item">
                         <i class="fas fa-robot"></i>
-                        <span>{{ "JET AI-Enabled Platform" | translate }}</span>
+                        <div class="feature-content">
+                            <h3>AI-Enabled Platform</h3>
+                            <p>Modern technology</p>
+                        </div>
                     </div>
-                    <!-- feature 3 : JET AI-Enabled Platform -->
-
-                    <!-- feature 2 : JET Certification Course -->
-                    <!-- <div class="feature">
-                        <i class="fas fa-clock"></i>
-                        <span>{{ "Flexible learning schedule" | translate }}</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-chart-line"></i>
-                        <span>{{ "Career advancement support" | translate }}</span>
-                    </div> -->
                 </div>
 
-                <div class="cta-section">
-                    <button class="cta-btn primary" (click)="openPopup('subscription')">
+                <div class="welcome-actions">
+                    <button class="btn-primary" (click)="setCurrentStep('registration')">
+                        Register Now!
                         <i class="fas fa-graduation-cap"></i>
-                        {{ "Register Now!" | translate }}
                     </button>
-                    <button class="cta-btn secondary" (click)="close()">
-                        {{ "Learn More Later" | translate }}
-                    </button>
+                    <!-- <button class="btn-secondary" (click)="close()">
+                        Learn More Later
+                    </button> -->
                 </div>
             </div>
-        </div>
 
-        <!-- Subscription Form Content -->
-        <div *ngIf="!isWelcomePopup && !submitted" class="subscription-content">
-            <div class="popup-header">
-                <h2>{{ "Join Course Jet" | translate }}</h2>
-                <p>{{ "Join our next certification round and get certified with JOBMASTER" | translate }}</p>
+            <!-- Registration Step -->
+            <div *ngIf="currentStep === 'registration'" class="registration-step">
+                <div class="registration-header">
+                    <h1 class="registration-title">Join Course JET</h1>
+                    <p class="registration-subtitle">Complete your registration below</p>
+                </div>
+
+                <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()" class="registration-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input id="name" type="text" formControlName="name" placeholder="Enter your full name"
+                            [class.invalid]="isInputValid('name')" />
+                        <div class="error-message" *ngIf="isInputValid('name')">
+                            {{ getErrorMessage('name') }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">Job Title</label>
+                        <input id="title" type="text" formControlName="title" placeholder="Enter your job title"
+                            [class.invalid]="isInputValid('title')" />
+                        <div class="error-message" *ngIf="isInputValid('title')">
+                            {{ getErrorMessage('title') }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input id="phone" type="tel" formControlName="phone" placeholder="Enter your phone number"
+                            [class.invalid]="isInputValid('phone')" />
+                        <div class="error-message" *ngIf="isInputValid('phone')">
+                            {{ getErrorMessage('phone') }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input id="email" type="email" formControlName="email" placeholder="Enter your email address"
+                            [class.invalid]="isInputValid('email')" />
+                        <div class="error-message" *ngIf="isInputValid('email')">
+                            {{ getErrorMessage('email') }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input id="company" type="text" formControlName="company" placeholder="Enter your company name"
+                            [class.invalid]="isInputValid('company')" />
+                        <div class="error-message" *ngIf="isInputValid('company')">
+                            {{ getErrorMessage('company') }}
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary submit-btn" [disabled]="isSubmitting">
+                        <div *ngIf="isSubmitting" class="loading-spinner"></div>
+                        <span *ngIf="!isSubmitting">
+                            Submit Application
+                            <i class="fas fa-graduation-cap"></i>
+                        </span>
+                        <span *ngIf="isSubmitting">Processing...</span>
+                    </button>
+                </form>
             </div>
 
-            <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()" class="popup-form">
-                <div class="form-group">
-                    <label for="name">{{ "Full Name" | translate }}</label>
-                    <input type="text" id="name" formControlName="name" class="form-control"
-                        [class.invalid]="isInputValid('name')" placeholder="{{ 'Enter your full name' | translate }}" />
-                    <div class="invalid-feedback" *ngIf="isInputValid('name')">
-                        {{ getErrorMessage('name') }}
+            <!-- Success Step -->
+            <div *ngIf="currentStep === 'success'" class="success-step">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h1 class="success-title">Application Submitted!</h1>
+                <p class="success-message">
+                    Thank you for your interest in Course JET. We'll review your application and contact you within 24
+                    hours
+                    with next steps.
+                </p>
+
+                <div class="next-steps">
+                    <h3>What's Next?</h3>
+                    <div class="steps-list">
+                        <div class="step-item">📧 Check your email for confirmation</div>
+                        <div class="step-item">📚 Receive pre-course materials</div>
+                        <div class="step-item">🎯 Join our exclusive community</div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="title">{{ "Job Title" | translate }}</label>
-                    <input type="text" id="title" formControlName="title" class="form-control"
-                        [class.invalid]="isInputValid('title')"
-                        placeholder="{{ 'Enter your job title' | translate }}" />
-                    <div class="invalid-feedback" *ngIf="isInputValid('title')">
-                        {{ getErrorMessage('title') }}
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="number">{{ "Phone Number" | translate }}</label>
-                    <input type="tel" id="number" formControlName="number" class="form-control"
-                        [class.invalid]="isInputValid('number')"
-                        placeholder="{{ 'Enter your phone number' | translate }}" />
-                    <div class="invalid-feedback" *ngIf="isInputValid('number')">
-                        {{ getErrorMessage('number') }}
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">{{ "Email" | translate }}</label>
-                    <input type="email" id="email" formControlName="email" class="form-control"
-                        [class.invalid]="isInputValid('email')"
-                        placeholder="{{ 'Enter your email address' | translate }}" />
-                    <div class="invalid-feedback" *ngIf="isInputValid('email')">
-                        {{ getErrorMessage('email') }}
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="company_name">{{ "Company Name" | translate }}</label>
-                    <input type="text" id="company_name" formControlName="company_name" class="form-control"
-                        [class.invalid]="isInputValid('company_name')"
-                        placeholder="{{ 'Enter your company name' | translate }}" />
-                    <div class="invalid-feedback" *ngIf="isInputValid('company_name')">
-                        {{ getErrorMessage('company_name') }}
-                    </div>
-                </div>
-
-                <button type="submit" class="submit-btn" [disabled]="isSubmitting">
-                    <span *ngIf="!isSubmitting">{{ "Submit Application" | translate }}</span>
-                    <span *ngIf="isSubmitting">{{ "Submitting..." | translate }}</span>
+                <button class="btn-primary" (click)="close()">
+                    <i class="fas fa-check-circle"></i>
+                    Continue
                 </button>
-            </form>
-        </div>
-
-        <!-- Success Message -->
-        <div *ngIf="submitted" class="success-message">
-            <i class="fas fa-check-circle"></i>
-            <h3>{{ "Thank You!" | translate }}</h3>
-            <p>{{ "Your course subscription request has been submitted successfully. We will contact you shortly with
-                further details." | translate }}</p>
+            </div>
         </div>
     </div>
 </div>
