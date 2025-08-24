@@ -10,6 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PartnerReferenceComponent } from '../../shared/components/partner-reference/partner-reference.component';
 import { ApiService } from '../services/api.service';
 import { ConfirmationPageComponent } from '../confirmation-page/confirmation-page.component';
+import { SubscriptionPopupComponent } from '../components/subscription-popup/subscription-popup.component';
 
 @Component({
   selector: 'app-jet-course',
@@ -19,6 +20,7 @@ import { ConfirmationPageComponent } from '../confirmation-page/confirmation-pag
     TranslateModule,
     PartnerReferenceComponent,
     ConfirmationPageComponent,
+    SubscriptionPopupComponent,
   ],
   templateUrl: './jet-course.component.html',
   styleUrl: './jet-course.component.scss',
@@ -29,6 +31,9 @@ export class JetCourseComponent {
   disabled = false;
   scrollToConfirmation = false;
   @ViewChild('confirmationPage') confirmationPage: ElementRef | undefined;
+  @ViewChild('subscriptionPopup') subscriptionPopup:
+    | SubscriptionPopupComponent
+    | undefined;
 
   courseForm: FormGroup = new FormGroup({
     name: new FormControl(null, [
@@ -62,7 +67,7 @@ export class JetCourseComponent {
       const element = document.getElementById('confirmationSection');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        this.scrollToConfirmation = false; 
+        this.scrollToConfirmation = false;
       }
     }
   }
@@ -84,6 +89,12 @@ export class JetCourseComponent {
       });
     } else {
       this.courseForm.markAllAsTouched();
+    }
+  }
+
+  openSubscriptionPopup() {
+    if (this.subscriptionPopup) {
+      this.subscriptionPopup.openPopup();
     }
   }
 }
