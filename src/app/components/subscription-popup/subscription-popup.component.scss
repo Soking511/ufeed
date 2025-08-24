@@ -80,6 +80,12 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 8px 25px rgba(55, 93, 149, 0.2);
+    border-color: rgba(55, 93, 149, 0.2);
+  }
 }
 
 .popup-header {
@@ -153,7 +159,6 @@
       i {
         font-size: 3.5rem;
         background: linear-gradient(135deg, #f86341 0%, #ff6b35 100%);
-        -webkit-background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -746,19 +751,51 @@
     }
   }
 
-  .subscription-content .popup-form .submit-btn {
-    padding: 16px;
-    font-size: 1.1rem;
+  .subscription-content .popup-form {
+    .form-group {
+      margin-bottom: 18px;
+
+      label {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+      }
+
+      .form-control {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+        border-radius: 8px;
+      }
+
+      .invalid-feedback {
+        font-size: 0.85rem;
+        margin-top: 6px;
+      }
+    }
+
+    .submit-btn {
+      padding: 16px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+    }
   }
 }
 
 @media (max-width: 480px) {
+  .popup-overlay {
+    padding: 10px;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+
   .popup-content {
     padding: 20px;
     margin: 15px;
     width: calc(100% - 30px);
     border-radius: 18px;
     max-height: 75vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
   }
 
   .popup-header {
@@ -777,41 +814,85 @@
   .welcome-content .course-info {
     .course-highlight {
       padding: 20px;
+      margin-bottom: 20px;
 
       i {
         font-size: 2.5rem;
+        margin-bottom: 15px;
       }
 
       h3 {
         font-size: 1.5rem;
+        margin-bottom: 12px;
       }
 
       p {
         font-size: 1rem;
+        margin-bottom: 15px;
       }
 
       .course-date {
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
+        margin-bottom: 10px;
+        display: block;
+        width: 100%;
+        justify-content: center;
       }
+
       .course-date i {
         color: white;
       }
+
       .evaluation-date {
         padding: 0.7rem 1.3rem;
         font-size: 0.85rem;
+        display: block;
+        width: 100%;
+        justify-content: center;
       }
     }
 
-    .course-features .feature {
-      padding: 15px;
-      font-size: 0.9rem;
+    .course-features {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+
+      .feature {
+        padding: 15px;
+        font-size: 0.9rem;
+        text-align: center;
+
+        i {
+          font-size: 1.5rem;
+          margin-bottom: 8px;
+        }
+
+        span {
+          font-size: 0.9rem;
+          line-height: 1.3;
+        }
+      }
     }
 
-    .cta-section .cta-btn {
-      padding: 14px 25px;
-      font-size: 1rem;
-      min-width: 180px;
+    .cta-section {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+
+      .cta-btn {
+        padding: 14px 25px;
+        font-size: 1rem;
+        min-width: 180px;
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+
+        i {
+          font-size: 1.1rem;
+        }
+      }
     }
   }
 
