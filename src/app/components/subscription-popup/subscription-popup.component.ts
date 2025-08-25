@@ -36,9 +36,9 @@ export class SubscriptionPopupComponent {
     ]),
     phone: new FormControl('', [
       Validators.required,
-      Validators.pattern(
-        /^(?:\+?\d{1,4}[\s-]?)?(?:\(?\d{1,4}\)?[\s-]?)?\d{7,10}$/
-      ),
+      Validators.pattern(/^[\d\s\-\+\(\)]+$/), // Allow digits, spaces, hyphens, plus, parentheses
+      Validators.minLength(7),
+      Validators.maxLength(15),
     ]),
     email: new FormControl('', [Validators.required, Validators.email]),
     company: new FormControl('', [
@@ -85,7 +85,8 @@ export class SubscriptionPopupComponent {
           },
           error: (err) => {
             this.isSubmitting = false;
-            // Handle error if needed
+            // Handle validation errors from API response
+            this.handleApiValidationErrors(err);
             console.error('Subscription submission error:', err);
           },
           complete: () => {
@@ -94,6 +95,22 @@ export class SubscriptionPopupComponent {
         });
     } else {
       this.subscriptionForm.markAllAsTouched();
+    }
+  }
+
+  private handleApiValidationErrors(error: any) {
+    if (error.error && typeof error.error === 'object') {
+      // Handle validation errors in the format: { "fieldName": ["error message"] }
+      Object.keys(error.error).forEach((fieldName) => {
+        const field = this.subscriptionForm.get(fieldName);
+        if (field && Array.isArray(error.error[fieldName])) {
+          // Set custom validation error
+          field.setErrors({
+            apiError: error.error[fieldName][0] || 'Validation failed',
+          });
+          field.markAsTouched();
+        }
+      });
     }
   }
 
@@ -107,6 +124,11 @@ export class SubscriptionPopupComponent {
   getErrorMessage(controlName: string): string {
     const control = this.subscriptionForm.get(controlName);
     if (control && control.errors) {
+      // Check for API validation errors first
+      if (control.errors['apiError']) {
+        return control.errors['apiError'];
+      }
+
       if (control.errors['required']) {
         return 'This field is required';
       }
@@ -114,14 +136,20 @@ export class SubscriptionPopupComponent {
         return 'Please enter a valid email address';
       }
       if (control.errors['minlength']) {
+        if (controlName === 'phone') {
+          return `Phone number must be at least ${control.errors['minlength'].requiredLength} characters`;
+        }
         return `Minimum length is ${control.errors['minlength'].requiredLength} characters`;
       }
       if (control.errors['maxlength']) {
+        if (controlName === 'phone') {
+          return `Phone number must not exceed ${control.errors['maxlength'].requiredLength} characters`;
+        }
         return `Maximum length is ${control.errors['maxlength'].requiredLength} characters`;
       }
       if (control.errors['pattern']) {
         if (controlName === 'phone') {
-          return 'Please enter a valid phone number';
+          return 'Please enter a valid phone number (digits, spaces, hyphens, +, parentheses only)';
         }
         return 'Please enter a valid value';
       }
