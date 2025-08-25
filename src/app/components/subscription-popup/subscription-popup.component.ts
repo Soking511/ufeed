@@ -102,23 +102,7 @@ export class SubscriptionPopupComponent {
     if (error.error && typeof error.error === 'object') {
       // Handle validation errors in the format: { "fieldName": ["error message"] }
       Object.keys(error.error).forEach((fieldName) => {
-        // Map API field names to form field names
-        let formFieldName = fieldName;
-
-        // Map common API field names to form field names
-        if (fieldName === 'number' || fieldName === 'phone_number') {
-          formFieldName = 'phone';
-        } else if (fieldName === 'full_name' || fieldName === 'name') {
-          formFieldName = 'name';
-        } else if (fieldName === 'job_title' || fieldName === 'title') {
-          formFieldName = 'title';
-        } else if (fieldName === 'email_address' || fieldName === 'email') {
-          formFieldName = 'email';
-        } else if (fieldName === 'company_name' || fieldName === 'company') {
-          formFieldName = 'company';
-        }
-
-        const field = this.subscriptionForm.get(formFieldName);
+        const field = this.subscriptionForm.get(fieldName);
         if (field && Array.isArray(error.error[fieldName])) {
           // Set custom validation error
           field.setErrors({
@@ -152,19 +136,19 @@ export class SubscriptionPopupComponent {
         return 'Please enter a valid email address';
       }
       if (control.errors['minlength']) {
-        if (controlName === 'phone') {
+        if (controlName === 'number') {
           return `Phone number must be at least ${control.errors['minlength'].requiredLength} characters`;
         }
         return `Minimum length is ${control.errors['minlength'].requiredLength} characters`;
       }
       if (control.errors['maxlength']) {
-        if (controlName === 'phone') {
+        if (controlName === 'number') {
           return `Phone number must not exceed ${control.errors['maxlength'].requiredLength} characters`;
         }
         return `Maximum length is ${control.errors['maxlength'].requiredLength} characters`;
       }
       if (control.errors['pattern']) {
-        if (controlName === 'phone') {
+        if (controlName === 'number') {
           return 'Please enter a valid phone number (digits, spaces, hyphens, +, parentheses only)';
         }
         return 'Please enter a valid value';
