@@ -8,8 +8,8 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [CommonModule,TranslateModule],
   templateUrl: './work-performance.component.html',
   styleUrl: './work-performance.component.scss'
-})
+}) 
 
 export class WorkPerformanceComponent {
- 
+
 }
