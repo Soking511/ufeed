@@ -1,155 +1,40 @@
 <div class="popup-overlay" *ngIf="isVisible" (click)="close()">
     <div class="popup-content" (click)="$event.stopPropagation()">
+        <!-- Close Button -->
         <button class="close-btn" (click)="close()">
             <i class="fas fa-times"></i>
         </button>
 
-        <div class="popup-body">
-            <!-- Welcome Step -->
-            <div *ngIf="currentStep === 'welcome'" class="welcome-step">
-                <div class="welcome-header">
-                    <!-- <div class="rocket-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div> -->
-                    <h1 class="welcome-title">Course JET</h1>
-                    <p class="welcome-subtitle">JOBMASTER and UFeed are excited to announce</p>
-                </div>
-
-                <div class="course-description">
-                    <div class="course-dates">
-                        <div class="date-item">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>September 7-9, 2025</span>
-                        </div>
-                        <div class="date-item">
-                            <i class="fas fa-clipboard-check"></i>
-                            <span>Evaluation: Wednesday, 10th</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="course-features">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h3>Certification</h3>
-                            <p>JET Certification Course</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h3>AI-Enabled Platform</h3>
-                            <p>Cutting-edge technology for enhanced learning experience</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="welcome-actions">
-                    <button class="btn-primary" (click)="setCurrentStep('registration')">
-                        Register Now!
-                        <i class="fas fa-graduation-cap"></i>
-                    </button>
-                    <!-- <button class="btn-secondary" (click)="close()">
-                        Learn More Later
-                    </button> -->
-                </div>
-            </div>
-
-            <!-- Registration Step -->
-            <div *ngIf="currentStep === 'registration'" class="registration-step">
-                <div class="registration-header">
-                    <h1 class="registration-title">Join Course JET</h1>
-                    <p class="registration-subtitle">Complete your registration below</p>
-                </div>
-
-                <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()" class="registration-form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input id="name" type="text" formControlName="name" placeholder="Enter your full name"
-                            [class.invalid]="isInputValid('name')" />
-                        <div class="error-message" *ngIf="isInputValid('name')">
-                            {{ getErrorMessage('name') }}
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="title">Job Title</label>
-                        <input id="title" type="text" formControlName="title" placeholder="Enter your job title"
-                            [class.invalid]="isInputValid('title')" />
-                        <div class="error-message" *ngIf="isInputValid('title')">
-                            {{ getErrorMessage('title') }}
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="number">Phone Number</label>
-                        <input id="number" type="tel" formControlName="number" placeholder="Enter your phone number"
-                            [class.invalid]="isInputValid('number')" />
-                        <div class="error-message" *ngIf="isInputValid('number')">
-                            {{ getErrorMessage('number') }}
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input id="email" type="email" formControlName="email" placeholder="Enter your email address"
-                            [class.invalid]="isInputValid('email')" />
-                        <div class="error-message" *ngIf="isInputValid('email')">
-                            {{ getErrorMessage('email') }}
-                        </div>
-                    </div>
-
-                    <div class="form-group company-field">
-                        <label for="company_name">Company Name</label>
-                        <input id="company_name" type="text" formControlName="company_name" placeholder="Enter your company name"
-                            [class.invalid]="isInputValid('company_name')" />
-                        <div class="error-message" *ngIf="isInputValid('company_name')">
-                            {{ getErrorMessage('company_name') }}
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn-primary submit-btn" [disabled]="isSubmitting">
-                        <div *ngIf="isSubmitting" class="loading-spinner"></div>
-                        <span *ngIf="!isSubmitting">
-                            Submit Application
-                            <i class="fas fa-graduation-cap"></i>
-                        </span>
-                        <span *ngIf="isSubmitting">Processing...</span>
-                    </button>
-                </form>
-            </div>
-
-            <!-- Success Step -->
-            <div *ngIf="currentStep === 'success'" class="success-step">
-                <div class="success-icon">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <h1 class="success-title">Application Submitted!</h1>
-                <p class="success-message">
-                    Thank you for your interest in Course JET. We'll review your application and contact you within 24
-                    hours
-                    with next steps.
-                </p>
-
-                <div class="next-steps">
-                    <h3>What's Next?</h3>
-                    <div class="steps-list">
-                        <div class="step-item">📧 Check your email for confirmation</div>
-                        <div class="step-item">📚 Receive pre-course materials</div>
-                        <div class="step-item">🎯 Join our exclusive community</div>
-                    </div>
-                </div>
-
-                <button class="btn-primary" (click)="close()">
-                    <i class="fas fa-check-circle"></i>
-                    Continue
-                </button>
-            </div>
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="/public/icon-UFeed.png" alt="UFeed" class="logo-image" />
         </div>
+
+        <!-- Title -->
+        <h2 class="popup-title">
+            JET Course
+        </h2>
+
+        <!-- Messages -->
+        <div class="messages-container">
+            <p class="message-text">
+                UFeed and <strong>JOBMASTER</strong> are pleased to announce the new JET Certification course
+                From 7 to 10 Sept
+                .
+
+            </p>
+            <!-- <p class="message-text">
+                This comprehensive program runs from <em class="highlight">September 7-9, 2025</em> with evaluation on
+                <code class="code-highlight">Wednesday, 10th</code>.
+            </p> -->
+        </div>
+
+
+
+        <!-- Action Button -->
+        <button class="btn-primary" (click)="navigateToRegistration()">
+            Book your seat Now
+            <i class="fas fa-graduation-cap"></i>
+        </button>
     </div>
 </div>

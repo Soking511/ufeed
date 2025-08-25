@@ -13,144 +13,110 @@
 .popup-content {
   position: relative;
   width: min(95vw, 24rem);
-  height: min(95vh, auto);
-  max-height: 90vh;
+  max-width: 28rem;
   background-color: white;
-  border-radius: clamp(0.5rem, 2.5vw, 1rem);
+  border-radius: clamp(0.75rem, 3vw, 1.5rem);
   box-shadow: 0 1rem 2rem -0.5rem rgba(0, 0, 0, 0.25);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: 640px) {
-    width: min(90vw, 28rem);
-    height: auto;
-  }
-
-  @media (min-width: 768px) {
-    width: min(85vw, 36rem);
-  }
+  padding: clamp(1.5rem, 4vw, 2rem);
+  text-align: center;
 }
 
 .close-btn {
   position: absolute;
-  top: clamp(0.5rem, 2.5vw, 1rem);
-  right: clamp(0.5rem, 2.5vw, 1rem);
+  top: clamp(0.75rem, 2.5vw, 1rem);
+  right: clamp(0.75rem, 2.5vw, 1rem);
   z-index: 10;
-  padding: clamp(0.25rem, 1.5vw, 0.375rem);
+  padding: clamp(0.5rem, 1.5vw, 0.75rem);
   border-radius: 50%;
   background-color: #f3f4f6;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  &:hover {
-    background-color: #e5e7eb;
-  }
 
   i {
-    height: clamp(0.75rem, 3.5vw, 1rem);
-    width: clamp(0.75rem, 3.5vw, 1rem);
+    height: clamp(0.875rem, 3.5vw, 1rem);
+    width: clamp(0.875rem, 3.5vw, 1rem);
     color: #6b7280;
   }
 }
 
-.popup-body {
-  padding: clamp(0.75rem, 3vw, 1.5rem);
-  overflow-y: auto;
-  flex: 1;
-}
-
-// Welcome Step Styles
-.welcome-step {
-  text-align: center;
-}
-
-.welcome-header {
-  margin-bottom: clamp(0.75rem, 4vw, 1.5rem);
-}
-
-.rocket-icon {
-  margin-bottom: clamp(0.5rem, 3vw, 1rem);
-
-  i {
-    height: clamp(2.5rem, 8vw, 4rem);
-    width: clamp(2.5rem, 8vw, 4rem);
-    color: #f86645;
-  }
-}
-
-.welcome-title {
-  font-size: clamp(1.125rem, 4.5vw, 2rem);
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 0.375rem;
-  line-height: 1.2;
-}
-
-.welcome-subtitle {
-  font-size: clamp(0.875rem, 3.5vw, 1.125rem);
-  color: #6b7280;
-  line-height: 1.4;
-}
-
-.course-description {
-  background-color: #f9fafb;
-  border-radius: clamp(0.375rem, 2vw, 0.75rem);
-  padding: clamp(0.5rem, 2.5vw, 1rem);
-  margin-bottom: clamp(0.75rem, 3vw, 1.5rem);
-}
-
-.description-text {
-  font-size: clamp(0.8rem, 3.5vw, 1rem);
-  color: #374151;
-  margin-bottom: clamp(0.75rem, 3vw, 1.5rem);
-  line-height: 1.6;
-}
-
-.course-dates {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(0.5rem, 2.5vw, 1rem);
-  justify-content: center;
-}
-
-.date-item {
+.logo-container {
+  width: clamp(4rem, 12vw, 5rem);
+  height: clamp(4rem, 12vw, 5rem);
+  margin: 0 auto clamp(1rem, 3vw, 1.5rem);
+  border-radius: 50%;
+  // background: linear-gradient(135deg, #f86645, #f86645 );
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  color: #6b7280;
+  box-shadow: 0 0.5rem 1rem rgba(248, 102, 69, 0.3);
+  transition: all 0.3s ease;
 
-  i {
-    height: clamp(0.875rem, 3vw, 1.25rem);
-    width: clamp(0.875rem, 3vw, 1.25rem);
-    flex-shrink: 0;
+}
+
+.logo-image {
+  width: clamp(2rem, 6vw, 2.5rem);
+  height: clamp(2rem, 6vw, 2.5rem);
+  border-radius: 50%;
+}
+
+.popup-title {
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  line-height: 1.2;
+}
+
+.messages-container {
+  margin-bottom: clamp(1.5rem, 4vw, 2rem);
+}
+
+.message-text {
+  font-size: clamp(0.875rem, 3.5vw, 1rem);
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: clamp(0.75rem, 2vw, 1rem);
+
+  &:last-child {
+    margin-bottom: 0;
   }
 
-  span {
-    font-size: clamp(0.8rem, 3.5vw, 1rem);
+  .highlight {
+    color: #111827;
+    font-weight: 600;
+  }
+
+  .code-highlight {
+    background-color: #f3f4f6;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+    font-size: 0.875em;
+    color: #111827;
   }
 }
 
 .course-features {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(0.5rem, 2.5vw, 1rem);
-  margin-bottom: clamp(1rem, 4vw, 2rem);
+  gap: clamp(0.75rem, 3vw, 1rem);
+  margin-bottom: clamp(1.5rem, 4vw, 2rem);
 }
 
 .feature-item {
   display: flex;
   align-items: flex-start;
-  gap: clamp(0.5rem, 2.5vw, 0.75rem);
-  padding: clamp(0.75rem, 3vw, 1.25rem);
+  gap: clamp(0.75rem, 3vw, 1rem);
+  padding: clamp(1rem, 3vw, 1.25rem);
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   border: 2px solid #e2e8f0;
-  border-radius: clamp(0.5rem, 2.5vw, 0.75rem);
+  border-radius: clamp(0.75rem, 3vw, 1rem);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -191,18 +157,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(2rem, 5vw, 2.75rem);
-  height: clamp(2rem, 5vw, 2.75rem);
+  width: clamp(2.5rem, 6vw, 3rem);
+  height: clamp(2.5rem, 6vw, 3rem);
   background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
   border-radius: 50%;
   transition: all 0.3s ease;
   flex-shrink: 0;
-  margin-top: 0.125rem;
 }
 
 .feature-icon i {
-  height: clamp(1rem, 3vw, 1.25rem);
-  width: clamp(1rem, 3vw, 1.25rem);
+  height: clamp(1.25rem, 3.5vw, 1.5rem);
+  width: clamp(1.25rem, 3.5vw, 1.5rem);
   color: #f86645;
   transition: color 0.3s ease;
 }
@@ -215,290 +180,93 @@
   h3 {
     font-weight: 700;
     color: #1e293b;
-    font-size: clamp(0.75rem, 3vw, 1rem);
+    font-size: clamp(0.875rem, 3.5vw, 1rem);
     margin-bottom: clamp(0.25rem, 1.5vw, 0.375rem);
     line-height: 1.3;
     display: flex;
     align-items: center;
     justify-content: center;
-    // letter-spacing: -0.025em;
   }
 
   p {
-    font-size: clamp(0.625rem, 2.5vw, 0.75rem);
+    font-size: clamp(0.75rem, 3vw, 0.875rem);
     color: #64748b;
     line-height: 1.5;
     margin: 0;
   }
 }
 
-.welcome-actions {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(0.375rem, 2vw, 0.75rem);
-}
-
-// Registration Step Styles
-.registration-step {
-  .registration-header {
-    text-align: center;
-    margin-bottom: clamp(0.75rem, 3vw, 1.5rem);
-  }
-
-  .registration-title {
-    font-size: clamp(1.25rem, 5vw, 1.875rem);
-    font-weight: 700;
-    color: #111827;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-  }
-
-  .registration-subtitle {
-    color: #6b7280;
-    font-size: clamp(0.8rem, 3.5vw, 1rem);
-    line-height: 1.4;
-  }
-}
-
-.registration-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(0.5rem, 2.5vw, 1.25rem);
-}
-
-.form-group {
-  label {
-    display: block;
-    font-size: clamp(0.8rem, 3.5vw, 0.875rem);
-    font-weight: 500;
-    color: #374151;
-    margin-bottom: 0.5rem;
-    line-height: 1.3;
-  }
-
-  input {
-    width: 100%;
-    padding: clamp(0.5rem, 2.5vw, 0.75rem) clamp(0.625rem, 3vw, 1rem);
-    border: 1px solid #d1d5db;
-    border-radius: clamp(0.5rem, 2vw, 0.75rem);
-    font-size: clamp(0.8rem, 3.5vw, 1rem);
-    transition: all 0.2s;
-    outline: none;
-    line-height: 1.4;
-
-    &:focus {
-      border-color: #f86645;
-      box-shadow: 0 0 0 2px rgba(248, 102, 69, 0.2);
-    }
-
-    &.invalid {
-      border-color: #ef4444;
-    }
-
-    &::placeholder {
-      color: #9ca3af;
-    }
-  }
-}
-
-.error-message {
-  color: #ef4444;
-  font-size: clamp(0.7rem, 3vw, 0.875rem);
-  margin-top: 0.25rem;
-  line-height: 1.3;
-}
-
-// Success Step Styles
-.success-step {
-  text-align: center;
-}
-
-.success-icon {
-  margin-bottom: clamp(0.75rem, 3vw, 1.5rem);
-
-  i {
-    height: clamp(3rem, 10vw, 5rem);
-    width: clamp(3rem, 10vw, 5rem);
-    color: #10b981;
-  }
-}
-
-.success-title {
-  font-size: clamp(1.25rem, 5vw, 1.875rem);
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: clamp(0.5rem, 2.5vw, 1rem);
-  line-height: 1.2;
-}
-
-.success-message {
-  font-size: clamp(0.8rem, 3.5vw, 1rem);
-  color: #6b7280;
-  margin-bottom: clamp(1rem, 4vw, 2rem);
-  line-height: 1.6;
-}
-
-.next-steps {
-  background-color: #f9fafb;
-  border-radius: clamp(0.5rem, 2.5vw, 1rem);
-  padding: clamp(0.75rem, 3vw, 1.5rem);
-  margin-bottom: clamp(1rem, 4vw, 2rem);
-
-  h3 {
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: clamp(0.5rem, 2.5vw, 0.75rem);
-    font-size: clamp(0.8rem, 3.5vw, 1rem);
-    line-height: 1.3;
-  }
-}
-
-.steps-list {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(0.375rem, 2vw, 0.5rem);
-  font-size: clamp(0.7rem, 3vw, 0.875rem);
-  color: #6b7280;
-  line-height: 1.4;
-}
-
-.step-item {
-  text-align: left;
-}
-
-// Button Styles
 .btn-primary {
   width: 100%;
   background-color: #f86645;
   color: white;
-  padding: clamp(0.5rem, 2.5vw, 0.875rem) clamp(0.875rem, 3.5vw, 1.75rem);
+  padding: clamp(0.75rem, 3vw, 1rem) clamp(1.25rem, 4vw, 1.75rem);
   border: none;
-  border-radius: clamp(0.375rem, 1.5vw, 0.625rem);
+  border-radius: clamp(0.5rem, 2vw, 0.75rem);
   font-weight: 600;
-  font-size: clamp(0.75rem, 3vw, 0.875rem);
+  font-size: clamp(0.875rem, 3.5vw, 1rem);
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 2.5rem;
+  min-height: 3rem;
   line-height: 1;
 
-  &:hover:not(:disabled) {
-    background-color: #e55a3c;
-  }
-
-  &:disabled {
-    background-color: rgba(248, 102, 69, 0.6);
-    cursor: not-allowed;
-  }
 
   i {
-    height: clamp(0.875rem, 3.5vw, 1.25rem);
-    width: clamp(0.875rem, 3.5vw, 1.25rem);
+    height: clamp(1rem, 3.5vw, 1.25rem);
+    width: clamp(1rem, 3.5vw, 1.25rem);
     flex-shrink: 0;
   }
 }
 
-.btn-secondary {
-  width: 100%;
-  background-color: #f3f4f6;
-  color: #374151;
-  padding: clamp(0.5rem, 2.5vw, 0.875rem) clamp(0.875rem, 3.5vw, 1.75rem);
-  border: none;
-  border-radius: clamp(0.375rem, 1.5vw, 0.625rem);
-  font-weight: 600;
-  font-size: clamp(0.75rem, 3vw, 0.875rem);
-  cursor: pointer;
-  transition: background-color 0.2s;
-  min-height: 2.5rem;
-  line-height: 1;
-
-  &:hover {
-    background-color: #e5e7eb;
-  }
-}
-
-.submit-btn {
-  margin-top: clamp(0.25rem, 1.5vw, 0.5rem);
-  grid-column: 1 / -1;
-}
-
-.company-field {
-  grid-column: 1 / -1;
-}
-
-.loading-spinner {
-  width: clamp(0.875rem, 3.5vw, 1.25rem);
-  height: clamp(0.875rem, 3.5vw, 1.25rem);
-  border: 2px solid white;
-  border-top: 2px solid transparent;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  flex-shrink: 0;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-// Additional responsive improvements
+// Responsive improvements
 @media (max-width: 480px) {
   .popup-content {
-    border-radius: 0.5rem;
-    margin: 0.375rem;
-  }
-
-  .registration-form {
-    grid-template-columns: 1fr;
-    gap: clamp(0.375rem, 2vw, 0.75rem);
+    border-radius: 1rem;
+    margin: 0.5rem;
+    padding: clamp(1.25rem, 3.5vw, 1.75rem);
   }
 
   .course-features {
-    gap: clamp(0.375rem, 2vw, 0.75rem);
+    gap: clamp(0.625rem, 2.5vw, 0.875rem);
   }
 
   .feature-item {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: clamp(0.625rem, 2.5vw, 1rem);
+    padding: clamp(0.875rem, 2.5vw, 1.125rem);
   }
 
   .feature-content {
     text-align: center;
 
     h3 {
-      font-size: clamp(0.7rem, 3vw, 0.875rem);
+      font-size: clamp(0.8rem, 3vw, 0.875rem);
     }
 
     p {
-      font-size: clamp(0.6rem, 2.5vw, 0.7rem);
+      font-size: clamp(0.7rem, 2.5vw, 0.8rem);
     }
   }
 
   .feature-icon {
-    width: clamp(1.75rem, 4.5vw, 2.5rem);
-    height: clamp(1.75rem, 4.5vw, 2.5rem);
-    margin-bottom: 0.375rem;
+    width: clamp(2.25rem, 5.5vw, 2.75rem);
+    height: clamp(2.25rem, 5.5vw, 2.75rem);
+    margin-bottom: 0.5rem;
   }
 }
 
 // Ensure proper scaling for very small screens
 @media (max-width: 320px) {
-  .popup-body {
-    padding: 0.75rem;
+  .popup-content {
+    padding: 1.25rem;
   }
 
-  .welcome-title,
-  .registration-title,
-  .success-title {
-    font-size: 1.125rem;
+  .popup-title {
+    font-size: 1.5rem;
   }
 }
