@@ -34,7 +34,7 @@ export class SubscriptionPopupComponent {
       Validators.minLength(3),
       Validators.maxLength(50),
     ]),
-    phone: new FormControl('', [
+    number: new FormControl('', [
       Validators.required,
       Validators.pattern(/^[\d\s\-\+\(\)]+$/), // Allow digits, spaces, hyphens, plus, parentheses
       Validators.minLength(7),
@@ -102,7 +102,23 @@ export class SubscriptionPopupComponent {
     if (error.error && typeof error.error === 'object') {
       // Handle validation errors in the format: { "fieldName": ["error message"] }
       Object.keys(error.error).forEach((fieldName) => {
-        const field = this.subscriptionForm.get(fieldName);
+        // Map API field names to form field names
+        let formFieldName = fieldName;
+
+        // Map common API field names to form field names
+        if (fieldName === 'number' || fieldName === 'phone_number') {
+          formFieldName = 'phone';
+        } else if (fieldName === 'full_name' || fieldName === 'name') {
+          formFieldName = 'name';
+        } else if (fieldName === 'job_title' || fieldName === 'title') {
+          formFieldName = 'title';
+        } else if (fieldName === 'email_address' || fieldName === 'email') {
+          formFieldName = 'email';
+        } else if (fieldName === 'company_name' || fieldName === 'company') {
+          formFieldName = 'company';
+        }
+
+        const field = this.subscriptionForm.get(formFieldName);
         if (field && Array.isArray(error.error[fieldName])) {
           // Set custom validation error
           field.setErrors({
