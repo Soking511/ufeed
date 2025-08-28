@@ -50,9 +50,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     // Ensure the popup component is available before trying to open it
-    setTimeout(() => {
-      this.checkFirstVisit();
-    }, 100);
+    // setTimeout(() => {
+    //   this.checkFirstVisit();
+    // }, 100);
   }
 
   private checkFirstVisit() {
@@ -60,11 +60,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     if (this.subscriptionPopup) {
       // This is the first visit, show the welcome popup
-      setTimeout(() => {
-        this.subscriptionPopup?.openPopup();
+      // setTimeout(() => {
+        // this.subscriptionPopup?.openPopup();
         // Mark that the user has visited the home page
         // localStorage.setItem('hasVisitedHome', 'true');
-      }, 1000); // Show popup after 2 seconds for better UX
+      // }, 1000); // Show popup after 2 seconds for better UX
     }
   }
 }
