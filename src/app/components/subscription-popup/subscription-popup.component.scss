@@ -81,11 +81,8 @@
   font-size: clamp(0.875rem, 3.5vw, 1rem);
   color: #6b7280;
   line-height: 1.6;
-  margin-bottom: clamp(0.75rem, 2vw, 1rem);
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  text-align: center;
 
   .highlight {
     color: #111827;
@@ -99,6 +96,17 @@
     font-family: monospace;
     font-size: 0.875em;
     color: #111827;
+  }
+}
+
+.course-info {
+  margin-bottom: 1.5rem;
+  
+  p {
+    margin: 0.75rem 0;
+    font-size: 1rem;
+    color: #374151;
+    line-height: 1.5;
   }
 }
 
