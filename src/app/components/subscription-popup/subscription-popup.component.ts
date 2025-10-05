@@ -16,7 +16,7 @@ export class SubscriptionPopupComponent {
   constructor(private router: Router) {}
 
   openPopup() {
-    this.isVisible = true;
+    // this.isVisible = true;
   }
 
   close() {
