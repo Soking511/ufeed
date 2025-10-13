@@ -23,10 +23,10 @@ export class ClientsComponent implements OnInit {
     'public/clients/9.png',
     'public/clients/10.png',
     'public/clients/11.png',
-    'public/clients/12.jpg',
-    'public/clients/13.jpg',
-    'public/clients/14.jpg',
-    'public/clients/15.jpg',
+    'public/clients/12.png',
+    'public/clients/13.png',
+    'public/clients/14.png',
+    'public/clients/15.png',
     'public/clients/16.png',
   ];
   clients = [
@@ -41,10 +41,10 @@ export class ClientsComponent implements OnInit {
     { id: '9', link: 'https://sharkeyasugar.com/', logo: 'public/clients/9.png' },
     { id: '10', link: 'https://www.epp-eg.com/', logo: 'public/clients/10.png' },
     { id: '11', link: '', logo: 'public/clients/11.png' },
-    { id: '12', link: '', logo: 'public/clients/12.jpg' },
-    { id: '13', link: '', logo: 'public/clients/13.jpg' },
-    { id: '14', link: '', logo: 'public/clients/14.jpg' },
-    { id: '15', link: '', logo: 'public/clients/15.jpg' },
+    { id: '12', link: '', logo: 'public/clients/12.png' },
+    { id: '13', link: '', logo: 'public/clients/13.png' },
+    { id: '14', link: '', logo: 'public/clients/14.png' },
+    { id: '15', link: '', logo: 'public/clients/15.png' },
     { id: '16', link: '', logo: 'public/clients/16.png' },
   ]
   currentOffset = 0;
