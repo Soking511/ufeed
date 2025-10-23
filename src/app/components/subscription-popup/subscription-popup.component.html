@@ -18,7 +18,7 @@
         <!-- Messages -->
         <div class="messages-container" *ngIf="!submitted">
             <p class="message-text">
-                <strong>UFEED</strong> will be supporting Egyptian companies — up to <strong>52 companies</strong> this month, until the end of October — with its tools (<strong>JET, EES</strong>), either fully or partially for free.
+                <strong>UFEED</strong> will be supporting Egyptian companies — up to <strong>52 companies</strong> this month, until the end of October — with its tools (<strong>JET, EES</strong>), either fully or partially sponsored.
             </p>
         </div>
 
@@ -91,16 +91,16 @@
 
             <!-- Full width for last input -->
             <div class="form-group">
-                <label for="jobPosition">Job Position <span class="required">*</span></label>
+                <label for="jobPosition">Job Title <span class="required">*</span></label>
                 <input 
                     id="jobPosition" 
                     type="text" 
                     formControlName="jobPosition"
-                    placeholder="Enter your job position"
+                    placeholder="Enter your job title"
                     [class.error]="jobPosition.invalid && (jobPosition.dirty || jobPosition.touched)">
                 <div class="error-message" *ngIf="jobPosition.invalid && (jobPosition.dirty || jobPosition.touched)">
-                    <span *ngIf="jobPosition.errors?.['required']">Job position is required</span>
-                    <span *ngIf="jobPosition.errors?.['minlength']">Job position must be at least 2 characters</span>
+                    <span *ngIf="jobPosition.errors?.['required']">Job title is required</span>
+                    <span *ngIf="jobPosition.errors?.['minlength']">Job title must be at least 2 characters</span>
                 </div>
             </div>
 
