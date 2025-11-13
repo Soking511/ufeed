@@ -1,121 +1,181 @@
 <div class="popup-overlay" *ngIf="isVisible" (click)="close()">
-    <div class="popup-content" (click)="$event.stopPropagation()">
+    <div class="popup-content" [ngClass]="{'webinar': feature === 'webinar' && !submitted}" (click)="$event.stopPropagation()">
         <!-- Close Button -->
         <button class="close-btn" (click)="close()" aria-label="Close popup" title="Close">
             <i class="fas fa-times"></i>
         </button>
 
-        <!-- Logo -->
-        <div class="logo-container" *ngIf="!submitted">
-            <img src="/public/icon-UFeed.png" alt="UFeed" class="logo-image" />
+        <!-- Shared Registration Form Template -->
+        <ng-template #formBlock>
+            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="registration-form" *ngIf="!submitted">
+                <!-- Error Message -->
+                <div class="form-error" *ngIf="submitError">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span>{{ submitError }}</span>
+                </div>
+                
+                <!-- 2x2 Grid for first 4 inputs -->
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input 
+                            id="fullName" 
+                            type="text" 
+                            formControlName="fullName"
+                            placeholder="Enter your full name"
+                            [class.error]="fullName.invalid && (fullName.dirty || fullName.touched)">
+                        <div class="error-message" *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)">
+                            <span *ngIf="fullName.errors?.['required']">Full name is required</span>
+                            <span *ngIf="fullName.errors?.['minlength']">Name must be at least 3 characters</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+                        <input 
+                            id="phoneNumber" 
+                            type="tel" 
+                            formControlName="phoneNumber"
+                            placeholder="Enter your phone number"
+                            [class.error]="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)">
+                        <div class="error-message" *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)">
+                            <span *ngIf="phoneNumber.errors?.['required']">Phone number is required</span>
+                            <span *ngIf="phoneNumber.errors?.['pattern']">Please enter a valid phone number (10-15 digits)</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">{{ feature === 'webinar' ? 'Email to receive the webinar link' : 'Email Address' }} <span class="required">*</span></label>
+                        <input 
+                            id="email" 
+                            type="email" 
+                            formControlName="email"
+                            [placeholder]="feature === 'webinar' ? 'Enter the email to receive the webinar link' : 'Enter your email address'"
+                            [class.error]="email.invalid && (email.dirty || email.touched)">
+                        <div class="error-message" *ngIf="email.invalid && (email.dirty || email.touched)">
+                            <span *ngIf="email.errors?.['required']">Email is required</span>
+                            <span *ngIf="email.errors?.['email']">Please enter a valid email address</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="companyName">Company Name <span class="required">*</span></label>
+                        <input 
+                            id="companyName" 
+                            type="text" 
+                            formControlName="companyName"
+                            placeholder="Enter your company name"
+                            [class.error]="companyName.invalid && (companyName.dirty || companyName.touched)">
+                        <div class="error-message" *ngIf="companyName.invalid && (companyName.dirty || companyName.touched)">
+                            <span *ngIf="companyName.errors?.['required']">Company name is required</span>
+                            <span *ngIf="companyName.errors?.['minlength']">Company name must be at least 2 characters</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Title + LinkedIn in one row for webinar -->
+                <div class="form-grid" *ngIf="feature === 'webinar'">
+                    <div class="form-group">
+                        <label for="jobPosition">Your Title/Role <span class="required">*</span></label>
+                        <input 
+                            id="jobPosition" 
+                            type="text" 
+                            formControlName="jobPosition"
+                            placeholder="Enter your title or role"
+                            [class.error]="jobPosition.invalid && (jobPosition.dirty || jobPosition.touched)">
+                        <div class="error-message" *ngIf="jobPosition.invalid && (jobPosition.dirty || jobPosition.touched)">
+                            <span *ngIf="jobPosition.errors?.['required']">Job title is required</span>
+                            <span *ngIf="jobPosition.errors?.['minlength']">Job title must be at least 2 characters</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="linkedinProfile">LinkedIn Profile Link <span class="required">*</span></label>
+                        <input 
+                            id="linkedinProfile" 
+                            type="url" 
+                            formControlName="linkedinProfile"
+                            placeholder="https://www.linkedin.com/in/your-profile"
+                            [class.error]="registrationForm.get('linkedinProfile')?.invalid && (registrationForm.get('linkedinProfile')?.dirty || registrationForm.get('linkedinProfile')?.touched)">
+                        <div class="error-message" *ngIf="registrationForm.get('linkedinProfile')?.invalid && (registrationForm.get('linkedinProfile')?.dirty || registrationForm.get('linkedinProfile')?.touched)">
+                            <span *ngIf="registrationForm.get('linkedinProfile')?.errors?.['required']">LinkedIn profile link is required</span>
+                            <span *ngIf="registrationForm.get('linkedinProfile')?.errors?.['pattern']">Enter a valid LinkedIn profile URL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full width for last input (non-webinar) -->
+                <div class="form-group" *ngIf="feature !== 'webinar'">
+                    <label for="jobPosition">Your Title/Role <span class="required">*</span></label>
+                    <input 
+                        id="jobPosition" 
+                        type="text" 
+                        formControlName="jobPosition"
+                        placeholder="Enter your title or role"
+                        [class.error]="jobPosition.invalid && (jobPosition.dirty || jobPosition.touched)">
+                    <div class="error-message" *ngIf="jobPosition.invalid && (jobPosition.dirty || jobPosition.touched)">
+                        <span *ngIf="jobPosition.errors?.['required']">Job title is required</span>
+                        <span *ngIf="jobPosition.errors?.['minlength']">Job title must be at least 2 characters</span>
+                    </div>
+                </div>
+
+                <!-- LinkedIn field already included above for webinar -->
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-primary" [disabled]="registrationForm.invalid || isSubmitting">
+                    <span *ngIf="!isSubmitting">
+                        {{ feature === 'webinar' ? 'Register for Webinar' : 'Register Now' }}
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
+                    <span *ngIf="isSubmitting" class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        Submitting...
+                    </span>
+                </button>
+            </form>
+        </ng-template>
+
+        <!-- Webinar two-column layout -->
+        <div class="webinar-grid" *ngIf="feature === 'webinar' && !submitted; else defaultContent">
+            <div class="left-pane">
+                <img src="/public/webinary.webp" alt="Webinar" class="webinar-image" />
+            </div>
+            <div class="right-pane">
+                <h2 class="popup-title">Webinar Registration</h2>
+                <div class="messages-container">
+                    <p class="message-text">
+                        Enter your details to receive the webinar link in your email.
+                    </p>
+                </div>
+                <ng-container *ngTemplateOutlet="formBlock"></ng-container>
+            </div>
         </div>
 
-        <!-- Title -->
-        <h2 class="popup-title" *ngIf="!submitted">
-            October Special Offer
-        </h2>
-
-        <!-- Messages -->
-        <div class="messages-container" *ngIf="!submitted">
-            <p class="message-text">
-                <strong>UFEED</strong> will be supporting Egyptian companies — up to <strong>52 companies</strong> this month, until the end of October — with its tools (<strong>JET, EES</strong>), either fully or partially sponsored.
-            </p>
-        </div>
-
-        <!-- Registration Form -->
-        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="registration-form" *ngIf="!submitted">
-            <!-- Error Message -->
-            <div class="form-error" *ngIf="submitError">
-                <i class="fas fa-exclamation-circle"></i>
-                <span>{{ submitError }}</span>
-            </div>
-            
-            <!-- 2x2 Grid for first 4 inputs -->
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="fullName">Full Name <span class="required">*</span></label>
-                    <input 
-                        id="fullName" 
-                        type="text" 
-                        formControlName="fullName"
-                        placeholder="Enter your full name"
-                        [class.error]="fullName.invalid && (fullName.dirty || fullName.touched)">
-                    <div class="error-message" *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)">
-                        <span *ngIf="fullName.errors?.['required']">Full name is required</span>
-                        <span *ngIf="fullName.errors?.['minlength']">Name must be at least 3 characters</span>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="phoneNumber">Phone Number <span class="required">*</span></label>
-                    <input 
-                        id="phoneNumber" 
-                        type="tel" 
-                        formControlName="phoneNumber"
-                        placeholder="Enter your phone number"
-                        [class.error]="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)">
-                    <div class="error-message" *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)">
-                        <span *ngIf="phoneNumber.errors?.['required']">Phone number is required</span>
-                        <span *ngIf="phoneNumber.errors?.['pattern']">Please enter a valid phone number (10-15 digits)</span>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address <span class="required">*</span></label>
-                    <input 
-                        id="email" 
-                        type="email" 
-                        formControlName="email"
-                        placeholder="Enter your email address"
-                        [class.error]="email.invalid && (email.dirty || email.touched)">
-                    <div class="error-message" *ngIf="email.invalid && (email.dirty || email.touched)">
-                        <span *ngIf="email.errors?.['required']">Email is required</span>
-                        <span *ngIf="email.errors?.['email']">Please enter a valid email address</span>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="companyName">Company Name <span class="required">*</span></label>
-                    <input 
-                        id="companyName" 
-                        type="text" 
-                        formControlName="companyName"
-                        placeholder="Enter your company name"
-                        [class.error]="companyName.invalid && (companyName.dirty || companyName.touched)">
-                    <div class="error-message" *ngIf="companyName.invalid && (companyName.dirty || companyName.touched)">
-                        <span *ngIf="companyName.errors?.['required']">Company name is required</span>
-                        <span *ngIf="companyName.errors?.['minlength']">Company name must be at least 2 characters</span>
-                    </div>
-                </div>
+        <!-- Default single-column layout -->
+        <ng-template #defaultContent>
+            <!-- Logo -->
+            <div class="logo-container" *ngIf="!submitted">
+                <img [src]="feature === 'webinar' ? '/public/webinary.webp' : '/public/icon-UFeed.png'" alt="UFeed" class="logo-image" />
             </div>
 
-            <!-- Full width for last input -->
-            <div class="form-group">
-                <label for="jobPosition">Job Title <span class="required">*</span></label>
-                <input 
-                    id="jobPosition" 
-                    type="text" 
-                    formControlName="jobPosition"
-                    placeholder="Enter your job title"
-                    [class.error]="jobPosition.invalid && (jobPosition.dirty || jobPosition.touched)">
-                <div class="error-message" *ngIf="jobPosition.invalid && (jobPosition.dirty || jobPosition.touched)">
-                    <span *ngIf="jobPosition.errors?.['required']">Job title is required</span>
-                    <span *ngIf="jobPosition.errors?.['minlength']">Job title must be at least 2 characters</span>
-                </div>
+            <!-- Title -->
+            <h2 class="popup-title" *ngIf="!submitted">
+                {{ feature === 'webinar' ? 'Webinar Registration' : 'October Special Offer' }}
+            </h2>
+
+            <!-- Messages -->
+            <div class="messages-container" *ngIf="!submitted">
+                <p class="message-text" *ngIf="feature === 'webinar'; else offerMsg">
+                    Enter your details to receive the webinar link in your email.
+                </p>
+                <ng-template #offerMsg>
+                    <p class="message-text">
+                        <strong>UFEED</strong> will be supporting Egyptian companies — up to <strong>52 companies</strong> this month, until the end of October — with its tools (<strong>JET, EES</strong>), either fully or partially sponsored.
+                    </p>
+                </ng-template>
             </div>
 
-            <!-- Submit Button -->
-            <button type="submit" class="btn-primary" [disabled]="registrationForm.invalid || isSubmitting">
-                <span *ngIf="!isSubmitting">
-                    Register Now
-                    <i class="fas fa-arrow-right"></i>
-                </span>
-                <span *ngIf="isSubmitting" class="loading-spinner">
-                    <i class="fas fa-spinner fa-spin"></i>
-                    Submitting...
-                </span>
-            </button>
-        </form>
+            <ng-container *ngTemplateOutlet="formBlock"></ng-container>
+        </ng-template>
 
         <!-- Success Message -->
         <div class="success-message" *ngIf="submitted">
@@ -124,20 +184,25 @@
             </div>
             <h3>Registration Successful!</h3>
             <p class="success-description">
-                Thank you for registering for the October Special Offer! 🎉
+                {{ feature === 'webinar' ? 'Thank you for registering for the webinar! 🎉' : 'Thank you for registering for the October Special Offer! 🎉' }}
             </p>
             <p class="success-info">
-                Our team will review your application and contact you within <strong>24-48 hours</strong> with more details about accessing <strong>JET</strong> and <strong>EES</strong> tools.
+                <ng-container *ngIf="feature === 'webinar'; else offerInfo">
+                    The webinar access link will be sent to your email. Please check your inbox and spam folder.
+                </ng-container>
+                <ng-template #offerInfo>
+                    Our team will review your application and contact you within <strong>24-48 hours</strong> with more details about accessing <strong>JET</strong> and <strong>EES</strong> tools.
+                </ng-template>
             </p>
             
             <div class="success-details">
                 <div class="detail-item">
                     <i class="fas fa-envelope"></i>
-                    <span>Check your email for confirmation</span>
+                    <span>{{ feature === 'webinar' ? 'Check your email for the webinar link' : 'Check your email for confirmation' }}</span>
                 </div>
                 <div class="detail-item">
                     <i class="fas fa-phone"></i>
-                    <span>We'll call you to discuss your needs</span>
+                    <span *ngIf="feature !== 'webinar'">We'll call you to discuss your needs</span>
                 </div>
             </div>
 

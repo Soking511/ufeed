@@ -13,7 +13,7 @@ import { ApiService } from '../../services/api.service';
 })
 export class SubscriptionPopupComponent {
   @Output() closePopup = new EventEmitter<void>();
-  @Input() feature: string = 'october_offer'; // Feature identifier from parent component
+  @Input() feature: string = 'webinar'; // Feature identifier from parent component
   
   isVisible = false;
   submitted = false;
@@ -32,6 +32,7 @@ export class SubscriptionPopupComponent {
     email: ['', [Validators.required, Validators.email]],
     companyName: ['', [Validators.required, Validators.minLength(2)]],
     jobPosition: ['', [Validators.required, Validators.minLength(2)]],
+    linkedinProfile: [''],
   });
 
   get fullName() {
@@ -54,8 +55,25 @@ export class SubscriptionPopupComponent {
     return this.registrationForm.get('jobPosition')!;
   }
 
+  get linkedinProfile() {
+    return this.registrationForm.get('linkedinProfile')!;
+  }
+
   openPopup() {
     this.isVisible = true;
+    // Adjust validators for webinar feature
+    const linkedinControl = this.registrationForm.get('linkedinProfile');
+    if (linkedinControl) {
+      if (this.feature === 'webinar') {
+        linkedinControl.setValidators([
+          Validators.required,
+          Validators.pattern(/^(https?:\/\/)?(www\.)?linkedin\.com\/.+$/i),
+        ]);
+      } else {
+        linkedinControl.clearValidators();
+      }
+      linkedinControl.updateValueAndValidity({ emitEvent: false });
+    }
   }
 
   close() {
@@ -88,7 +106,10 @@ export class SubscriptionPopupComponent {
         additional_info: {
           source: 'website_popup',
           user_agent: navigator.userAgent,
-          timestamp: new Date().toISOString()
+          timestamp: new Date().toISOString(),
+          ...(this.feature === 'webinar' && this.registrationForm.value.linkedinProfile
+            ? { linkedin_profile: this.registrationForm.value.linkedinProfile }
+            : {}),
         }
       };
       
