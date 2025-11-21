@@ -13,13 +13,16 @@ import { ApiService } from '../../services/api.service';
 })
 export class SubscriptionPopupComponent {
   @Output() closePopup = new EventEmitter<void>();
-  @Input() feature: string = 'national_initiative'; // Feature identifier from parent component
-  
+  @Input() feature: string = 'webinar'; // Deprecated: kept for backward compatibility
+
   isVisible = false;
   submitted = false;
   isSubmitting = false;
+  isLoadingFeature = false;
   autoCloseTimer = 5;
   submitError: string = '';
+  activeFeature: any = null; // Stores the currently active feature from backend
+  featureLoadError: string = '';
 
   private formBuilder = inject(FormBuilder);
   private router = inject(Router);
@@ -61,19 +64,45 @@ export class SubscriptionPopupComponent {
 
   openPopup() {
     this.isVisible = true;
-    // Adjust validators for webinar feature
-    const linkedinControl = this.registrationForm.get('linkedinProfile');
-    if (linkedinControl) {
-      if (this.feature === 'webinar') {
-        linkedinControl.setValidators([
-          Validators.required,
-          Validators.pattern(/^(https?:\/\/)?(www\.)?linkedin\.com\/.+$/i),
-        ]);
-      } else {
-        linkedinControl.clearValidators();
+    this.loadActiveFeature();
+  }
+
+  loadActiveFeature() {
+    this.isLoadingFeature = true;
+    this.featureLoadError = '';
+
+    this.apiService.getActiveFeature().subscribe({
+      next: (feature) => {
+        this.activeFeature = feature;
+        this.isLoadingFeature = false;
+
+        // Adjust LinkedIn validators based on feature settings
+        const linkedinControl = this.registrationForm.get('linkedinProfile');
+        if (linkedinControl) {
+          if (this.activeFeature.requires_linkedin) {
+            linkedinControl.setValidators([
+              Validators.required,
+              Validators.pattern(/^(https?:\/\/)?(www\.)?linkedin\.com\/.+$/i),
+            ]);
+          } else {
+            linkedinControl.clearValidators();
+          }
+          linkedinControl.updateValueAndValidity({ emitEvent: false });
+        }
+      },
+      error: (error) => {
+        this.isLoadingFeature = false;
+        console.error('Failed to load active feature:', error);
+
+        if (error.status === 404) {
+          // No active feature - close the popup as fallback
+          console.log('No active feature available, closing popup');
+          this.close();
+        } else {
+          this.featureLoadError = 'Failed to load feature details. Please try again later.';
+        }
       }
-      linkedinControl.updateValueAndValidity({ emitEvent: false });
-    }
+    });
   }
 
   close() {
@@ -83,7 +112,7 @@ export class SubscriptionPopupComponent {
     this.autoCloseTimer = 5;
     this.registrationForm.reset();
     this.closePopup.emit();
-    
+
     // Clear countdown interval if exists
     if (this.countdownInterval) {
       clearInterval(this.countdownInterval);
@@ -94,10 +123,10 @@ export class SubscriptionPopupComponent {
     if (this.registrationForm.valid) {
       this.isSubmitting = true;
       this.submitError = '';
-      
+
       // Prepare data in the format expected by backend
       const formData = {
-        feature: this.feature,
+        feature: this.activeFeature?.feature_type || this.feature, // Use active feature type or fallback
         full_name: this.registrationForm.value.fullName,
         phone_number: this.registrationForm.value.phoneNumber,
         email: this.registrationForm.value.email,
@@ -105,35 +134,36 @@ export class SubscriptionPopupComponent {
         job_position: this.registrationForm.value.jobPosition,
         additional_info: {
           source: 'website_popup',
+          feature_name: this.activeFeature?.name,
           user_agent: navigator.userAgent,
           timestamp: new Date().toISOString(),
-          ...(this.feature === 'webinar' && this.registrationForm.value.linkedinProfile
+          ...(this.activeFeature?.requires_linkedin && this.registrationForm.value.linkedinProfile
             ? { linkedin_profile: this.registrationForm.value.linkedinProfile }
             : {}),
         }
       };
-      
+
       // Submit to backend API
       this.apiService.post('feature-registration', formData).subscribe({
         next: (response) => {
           this.isSubmitting = false;
           this.submitted = true;
           console.log('Registration successful:', response);
-          
+
           // Start countdown timer
           this.startAutoCloseCountdown();
         },
         error: (error) => {
           this.isSubmitting = false;
           console.error('Registration failed:', error);
-          
+
           // Handle specific error messages
           if (error.error) {
             if (typeof error.error === 'string') {
               this.submitError = error.error;
             } else if (error.error.email) {
-              this.submitError = Array.isArray(error.error.email) 
-                ? error.error.email[0] 
+              this.submitError = Array.isArray(error.error.email)
+                ? error.error.email[0]
                 : error.error.email;
             } else if (error.error.detail) {
               this.submitError = error.error.detail;
@@ -143,7 +173,7 @@ export class SubscriptionPopupComponent {
           } else {
             this.submitError = 'Network error. Please check your connection and try again.';
           }
-          
+
           // Mark all fields as touched to show validation errors
           this.registrationForm.markAllAsTouched();
         }

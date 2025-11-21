@@ -10,8 +10,8 @@ export class ApiService {
   private baseURL: string;
 
   constructor(private http: HttpClient, private toastService: ToastService) {
-    this.baseURL = 'https://api-ufeed.pulslytics.agency/api/';
-    // this.baseURL = 'http://localhost:8000/api/';
+    // this.baseURL = 'https://api-ufeed.pulslytics.agency/api/';
+    this.baseURL = 'http://localhost:8001/api/';
   }
 
   private getHeaders(): HttpHeaders {
@@ -112,4 +112,16 @@ export class ApiService {
   fetch<T>(url: string): Observable<T> {
     return this.http.get<T>(url);
   }
+
+  /**
+   * Get the currently active feature for popup display
+   * Returns feature configuration including title, description, image, etc.
+   */
+  getActiveFeature(): Observable<any> {
+    const url = `${this.baseURL}active-feature/`;
+    return this.http.get<any>(url, {
+      withCredentials: true,
+    });
+  }
 }
+
