@@ -10,8 +10,8 @@ export class ApiService {
   private baseURL: string;
 
   constructor(private http: HttpClient, private toastService: ToastService) {
-    // this.baseURL = 'https://api-ufeed.pulslytics.agency/api/';
-    this.baseURL = 'http://localhost:8001/api/';
+    this.baseURL = 'https://api-ufeed.pulslytics.agency/api/';
+    // this.baseURL = 'http://localhost:8001/api/';
   }
 
   private getHeaders(): HttpHeaders {
