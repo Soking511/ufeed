@@ -123,7 +123,9 @@
                 <!-- Submit Button -->
                 <button type="submit" class="btn-primary" [disabled]="registrationForm.invalid || isSubmitting">
                     <span *ngIf="!isSubmitting">
-                        {{ feature === 'webinar' ? 'Register for Webinar' : 'Register Now' }}
+                        <ng-container *ngIf="feature === 'webinar'">Register for Webinar</ng-container>
+                        <ng-container *ngIf="feature === 'national-initiative'">Register for National Initiative</ng-container>
+                        <ng-container *ngIf="feature !== 'webinar' && feature !== 'national-initiative'">Register Now</ng-container>
                         <i class="fas fa-arrow-right"></i>
                     </span>
                     <span *ngIf="isSubmitting" class="loading-spinner">
@@ -153,25 +155,29 @@
         <!-- Default single-column layout -->
         <ng-template #defaultContent>
             <!-- Logo -->
-            <div class="logo-container" *ngIf="!submitted">
+            <div class="logo-container" *ngIf="!submitted && feature !== 'national-initiative'">
                 <img [src]="feature === 'webinar' ? '/public/webinary.webp' : '/public/icon-UFeed.png'" alt="UFeed" class="logo-image" />
             </div>
 
             <!-- Title -->
             <h2 class="popup-title" *ngIf="!submitted">
-                {{ feature === 'webinar' ? 'Webinar Registration' : 'October Special Offer' }}
+                <ng-container *ngIf="feature === 'webinar'">Webinar Registration</ng-container>
+                <ng-container *ngIf="feature === 'national-initiative'">UFeed National Initiative to Support Egyptian Companies</ng-container>
+                <ng-container *ngIf="feature !== 'webinar' && feature !== 'national-initiative'">October Special Offer</ng-container>
             </h2>
 
             <!-- Messages -->
             <div class="messages-container" *ngIf="!submitted">
-                <p class="message-text" *ngIf="feature === 'webinar'; else offerMsg">
+                <p class="message-text" *ngIf="feature === 'webinar'">
                     Enter your details to receive the webinar link in your email.
                 </p>
-                <ng-template #offerMsg>
-                    <p class="message-text">
-                        <strong>UFEED</strong> will be supporting Egyptian companies — up to <strong>52 companies</strong> this month, until the end of October — with its tools (<strong>JET, EES</strong>), either fully or partially sponsored.
-                    </p>
-                </ng-template>
+                <p class="message-text" *ngIf="feature === 'national-initiative'">
+                    We're excited to announce that <strong>UFeed</strong> will be providing full or partial support for Egyptian companies to access its advanced tools: <strong>JET</strong> and <strong>EES</strong> until the end of 2025.<br><br>
+                    Empower your organization, enhance employee experience, and accelerate performance with UFeed's smart solutions.
+                </p>
+                <p class="message-text" *ngIf="feature !== 'webinar' && feature !== 'national-initiative'">
+                    <strong>UFEED</strong> will be supporting Egyptian companies — up to <strong>52 companies</strong> this month, until the end of October — with its tools (<strong>JET, EES</strong>), either fully or partially sponsored.
+                </p>
             </div>
 
             <ng-container *ngTemplateOutlet="formBlock"></ng-container>
@@ -184,21 +190,29 @@
             </div>
             <h3>Registration Successful!</h3>
             <p class="success-description">
-                {{ feature === 'webinar' ? 'Thank you for registering for the webinar! 🎉' : 'Thank you for registering for the October Special Offer! 🎉' }}
+                <ng-container *ngIf="feature === 'webinar'">Thank you for registering for the webinar! 🎉</ng-container>
+                <ng-container *ngIf="feature === 'national-initiative'">Thank you for registering for the UFeed National Initiative! 🎉</ng-container>
+                <ng-container *ngIf="feature !== 'webinar' && feature !== 'national-initiative'">Thank you for registering for the October Special Offer! 🎉</ng-container>
             </p>
             <p class="success-info">
-                <ng-container *ngIf="feature === 'webinar'; else offerInfo">
+                <ng-container *ngIf="feature === 'webinar'">
                     The webinar access link will be sent to your email. Please check your inbox and spam folder.
                 </ng-container>
-                <ng-template #offerInfo>
+                <ng-container *ngIf="feature === 'national-initiative'">
                     Our team will review your application and contact you within <strong>24-48 hours</strong> with more details about accessing <strong>JET</strong> and <strong>EES</strong> tools.
-                </ng-template>
+                </ng-container>
+                <ng-container *ngIf="feature !== 'webinar' && feature !== 'national-initiative'">
+                    Our team will review your application and contact you within <strong>24-48 hours</strong> with more details about accessing <strong>JET</strong> and <strong>EES</strong> tools.
+                </ng-container>
             </p>
             
             <div class="success-details">
                 <div class="detail-item">
                     <i class="fas fa-envelope"></i>
-                    <span>{{ feature === 'webinar' ? 'Check your email for the webinar link' : 'Check your email for confirmation' }}</span>
+                    <span>
+                        <ng-container *ngIf="feature === 'webinar'">Check your email for the webinar link</ng-container>
+                        <ng-container *ngIf="feature !== 'webinar'">Check your email for confirmation</ng-container>
+                    </span>
                 </div>
             </div>
 
