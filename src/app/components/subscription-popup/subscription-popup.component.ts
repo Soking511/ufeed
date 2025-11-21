@@ -13,7 +13,7 @@ import { ApiService } from '../../services/api.service';
 })
 export class SubscriptionPopupComponent {
   @Output() closePopup = new EventEmitter<void>();
-  @Input() feature: string = 'national-initiative'; // Feature identifier from parent component
+  @Input() feature: string = 'national_initiative'; // Feature identifier from parent component
   
   isVisible = false;
   submitted = false;
