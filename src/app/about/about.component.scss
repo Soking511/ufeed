@@ -1,4 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/brittany-signature');
+/* styles.scss or component-level scss */
+@import url('https://arabicfonts.net/fonts/a-arslan-wessam-b-a-arslan-wessam-b');
+
 
 .title {
     color: #2A2B34;
@@ -379,6 +382,20 @@
                 text-transform: capitalize;
 
             }
+
+            .ceo-signiture-ar {
+                color: #43424C;
+                font-feature-settings: 'liga' off, 'clig' off;
+                font-family: 'A Arslan Wessam B', sans-serif;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 0;      /* Arabic usually looks better without spacing */
+                direction: rtl;        /* Right-to-left */
+                text-align: right;     /* Proper alignment */
+              }
+              
 
             .col-md-6 {
                 display: flex;

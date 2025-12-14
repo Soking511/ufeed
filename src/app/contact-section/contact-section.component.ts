@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+
 import {
   Component,
   ViewChild,
@@ -11,7 +12,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ApiService } from '../services/api.service';
 import { ConfirmationPageComponent } from '../confirmation-page/confirmation-page.component';
 
@@ -64,8 +65,15 @@ export class ContactSectionComponent implements AfterViewChecked {
 
   @ViewChild('confirmationPage') confirmationPage: ElementRef | undefined;
   private scrollToConfirmation = false;
+  lang: string = 'en';
 
-  constructor(private apiService: ApiService) {}
+
+  constructor(private apiService: ApiService, public translate: TranslateService) {}
+
+  ngOnInit(){
+    this.lang = this.translate.currentLang || this.translate.getDefaultLang() || 'en';
+  }
+
   getFormData(contactForm: any) {
     if ( this.contactForm.valid) {
       this.disabled = true;
@@ -97,15 +105,15 @@ export class ContactSectionComponent implements AfterViewChecked {
   }
 
   products = [
-    { value: 'JET', label: 'Job Evaluation Tool - JET' },
-    { value: 'EES', label: 'Employee Engagement Survey - EES' },
+    { value: 'JET', label: 'contact.form.product_jet' },
+    { value: 'EES', label: 'contact.form.product_ees' },
     // { value: 'Both', label: 'Both' },
   ];
 
   inquiries = [
-    { value: 'book a demo', label: 'Book a Demo' },
-    { value: 'get a quotation', label: 'Get a Quotation' },
-    { value: 'have an inquiry', label: 'Have an Inquiry' },
+    { value: 'book a demo', label: 'contact.form.inquiry_book_demo' },
+    { value: 'get a quotation', label: 'contact.form.inquiry_get_quotation' },
+    { value: 'have an inquiry', label: 'contact.form.inquiry_have_inquiry' },
   ];
 
   onProductSelectionChange(event: any, value: string): void {
@@ -160,5 +168,11 @@ export class ContactSectionComponent implements AfterViewChecked {
       return control.valid;
     }
     return false;
+  }
+
+  get titleStyle() {
+    return {
+      'font-size': this.lang === 'ar' ? '43px' : ''
+    };
   }
 }

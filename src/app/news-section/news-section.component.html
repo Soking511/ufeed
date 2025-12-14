@@ -6,7 +6,7 @@
     <div class="row" *ngIf="isLoading">
       <div class="col-12 text-center">
         <div class="spinner-border text-primary" role="status">
-          <span class="visually-hidden">Loading...</span>
+          <span class="visually-hidden">{{"news.loading" | translate}}</span>
         </div>
       </div>
     </div>
@@ -15,7 +15,7 @@
     <div class="row" *ngIf="hasError && !isLoading">
       <div class="col-12 text-center">
         <div class="alert alert-danger" role="alert">
-          {{ "Failed to load news. Please try again later." | translate }}
+          {{ "news.failed" | translate }}
         </div>
       </div>
     </div>
@@ -28,19 +28,23 @@
             <img loading="lazy" class="img-fluid imger-style" [src]="item.image" [alt]="item.name">
           </div>
           <div class="news-desc w-75 py-3">
-            <h4>{{ item.name }}</h4>
-            <p [innerHTML]="item.sub_description"> <br><br>
+            <h4>
+              {{ lang === 'ar' ? item.arName : item.name }}
+            </h4>
+          
+            <p [innerHTML]="lang === 'ar' ? item.arSub_description : item.sub_description">
+              <br><br>
               <small class="text-muted">{{ formatDate(item.created_at) }}</small>
             </p>
           </div>
-        </div>
+                  </div>
       </div>
     </div>
 
     <!-- Fallback if no news items are available -->
     <div class="row" *ngIf="!isLoading && !hasError && newsItems.length === 0">
       <div class="col-12 text-center">
-        <p>{{ "No news available at the moment." | translate }}</p>
+        <p>{{ "news.no_news" | translate }}</p>
       </div>
     </div>
     <!-- Pagination component -->

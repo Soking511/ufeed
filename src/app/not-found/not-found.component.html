@@ -5,16 +5,13 @@
     <div class="row justify-content-center align-items-center">
       <div class="col-md-8 text-center">
         <h1 class="error-code">404</h1>
-        <h2 class="error-title">{{ 'Page Not Found' | translate }}</h2>
-        <p class="error-message">{{ 'The page you are looking for might have been removed, had its name changed, or is
-          temporarily unavailable.' | translate }}</p>
+        <h2 class="error-title">{{ 'notfound.title' | translate }}</h2>
+        <p class="error-message">{{ 'notfound.description' | translate }}</p>
         <div class="action-buttons">
-          <a routerLink="/" class="btn primary-btn">{{ 'Return to Home' | translate }}</a>
-          <a routerLink="/contact-us" class="btn secondary-btn">{{ 'Contact Us' | translate }}</a>
+          <a routerLink="/" class="btn primary-btn">{{ 'notfound.return_home' | translate }}</a>
+          <a routerLink="/contact-us" class="btn secondary-btn">{{ 'notfound.contact_us' | translate }}</a>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<app-footer></app-footer>

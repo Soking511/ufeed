@@ -48,5 +48,16 @@ export class EnhanceSolutionComponent implements OnInit {
     }
   }
 
+  get imageSrc() {
+    const currentLanguage = localStorage.getItem('language') || 'en'; // Get current language (default to 'en')
+
+    if (currentLanguage === 'ar') {
+      return this.isJet ? 'public/ImagejetAr.png' : 'public/ImageeesAr.png';
+    }
+    return this.isJet ? 'public/Imagejet.png' : 'public/Imageees.png';
+  }
+  
+
+
   
 }
