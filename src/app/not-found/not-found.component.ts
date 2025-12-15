@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HeaderComponent } from '../header/header.component';
-import { FooterComponent } from '../footer/footer.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 
@@ -10,7 +8,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [
     RouterModule,
-    HeaderComponent,
     TranslateModule,
     CommonModule
 ],
