@@ -30,7 +30,9 @@
         <div class="news-content" *ngIf="!isLoading && !hasError && newsItem">
             <div class="row">
                 <div class="col-12 mb-4">
-                    <h2 class="news-title">{{ newsItem.name }}</h2>
+                <h2 class="news-title">
+                {{ currentLang === 'ar' ? newsItem.arName : newsItem.name }}
+                </h2>
                     <div class="news-meta">
                         <span class="date">{{ formatDate(newsItem.created_at) }}</span>
                     </div>
@@ -44,8 +46,8 @@
                     </div>
                     <div class="news-description">
                         <!-- <h4 class="mb-3">{{ newsItem.sub_description }}</h4> -->
-                        <h4 class="mb-3" [innerHTML]="newsItem.sub_description"></h4>
-                        <div class="mt-4" [innerHTML]="newsItem.description"></div>
+                        <h4 class="mb-3" [innerHTML]="currentLang === 'ar' ? newsItem.arSub_description : newsItem.sub_description"></h4>
+                        <div class="mt-4" [innerHTML]="currentLang === 'ar' ? newsItem.arDescription : newsItem.description"></div>
                     </div>
                 </div>
                 <!-- <div class="col-md-4">

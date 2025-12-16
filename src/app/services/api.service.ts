@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError, tap, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToastService } from './toast.service';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -10,8 +11,12 @@ export class ApiService {
   private baseURL: string;
 
   constructor(private http: HttpClient, private toastService: ToastService) {
-    this.baseURL = 'https://api-ufeed.pulslytics.agency/api/';
-    // this.baseURL = 'http://localhost:8001/api/';
+    // this.baseURL = 'https://api-ufeed.pulslytics.agency/api/';
+    // Use the API URL from environment for all builds. If you want to use the
+    // dev proxy instead, set `environment.apiUrl` to '/api' in `environment.ts`.
+    this.baseURL = environment.apiUrl
+      ? environment.apiUrl.replace(/\/+$/, '') + '/'
+      : '/api/';
   }
 
   private getHeaders(): HttpHeaders {

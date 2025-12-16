@@ -32,8 +32,8 @@
   "about.enhance.ees_title": "Employee Engagement \nSurvey - EES",
   "about.enhance.ees_desc": "Employee engagement surveys are a valuable tool for understanding employee satisfaction, motivation, and engagement levels.",
 
-  "about.ufeet_ml.line1": "UFeed is in the process of enabling machine learning",
-  "about.ufeet_ml.line2": "and artificial intelligence capabilities at an affordable price.",
+  "about.ufeed_ml.line1": "UFeed is in the process of enabling machine learning",
+  "about.ufeed_ml.line2": "and artificial intelligence capabilities at an affordable price.",
 
 
   "about.team.title": "Our Board",
@@ -154,6 +154,7 @@
   "contact.form.product_ees": "Employee Engagement Survey - EES",
 
   "contact.page.title": "Contact",
+  "contact.page.subtitle": "UFeed",
   "contact.page.desc": "Have questions or need assistance? Our team is ready to support you. Whether you're curious about our services, need help with a specific issue, or just want to provide feedback, we're all ears.",
   "contact.page.phone_number": "+2 02 251 7064 1/2/3/6/7",
   "contact.page.address": "14 c, Ahmed Kamel St. Off El- Laselki St. New Maadi, Cairo",
@@ -562,8 +563,58 @@
 
   "workperf.item4.number": "04",
   "workperf.item4.title": "Ineffective job role evaluations",
-  "workperf.item4.desc": "Fair and transparent job evaluations are essential for aligning roles with business goals and maintaining competitive pay to attract, retain, and ensure employee satisfaction."
+  "workperf.item4.desc": "Fair and transparent job evaluations are essential for aligning roles with business goals and maintaining competitive pay to attract, retain, and ensure employee satisfaction.",
 
+  "subscription.popup.loading": "Loading feature details...",
+  "subscription.popup.failed": "Failed to load feature details. Please try again later.",
+  "subscription.popup.retry": "Retry",
+  "subscription.popup.submit_error": "Registration failed. Please try again.",
+  "subscription.popup.submit_error2": "Network error. Please check your connection and try again.",
+
+  "subscription.popup.form.name_label": "Full Name",
+  "subscription.popup.form.name_placeholder": "Enter your full name",
+  "subscription.popup.form.name_error": "Full name is required.",
+  "subscription.popup.form.name_error2": "Name must be at least 3 characters.",
+  
+  "subscription.popup.form.phone_label": "Phone Number",
+  "subscription.popup.form.phone_placeholder": "Enter your phone number",
+  "subscription.popup.form.phone_error": "Please enter a valid phone number (10-15 digits).",
+  "subscription.popup.form.phone_error2": "Phone number is required.",
+
+  "subscription.popup.form.email_label": "Email Address",
+  "subscription.popup.form.email_label2": "Email to receive updates",
+  
+  "subscription.popup.form.email_placeholder": "Enter your email address",
+  "subscription.popup.form.email_error": "Email is required",
+  "subscription.popup.form.email_error2": "Please enter a valid email address",
+
+  "subscription.popup.form.company_name_label":"Company Name",
+  "subscription.popup.form.company_name_placeholder":"Enter your company name",
+  "subscription.popup.form.company_name_error":"Company name is required",
+  "subscription.popup.form.company_name_error2":"Company name must be at least 2 characters",
+
+  "subscription.popup.form.title":"Your Title/Role",
+  "subscription.popup.form.title.placeholder":"Enter your title or role",
+  "subscription.popup.form.title.error":"Job title is required",
+  "subscription.popup.form.title.error2":"Job title must be at least 2 characters",
+
+  "subscription.popup.form.linkedin":"LinkedIn Profile Link",
+  "subscription.popup.form.linkedin.placeholder":"https://www.linkedin.com/in/your-profile",
+  "subscription.popup.form.linkedin.error":"LinkedIn profile link is required",
+  "subscription.popup.form.linkedin.error2":"Enter a valid LinkedIn profile URL",
+  
+  "subscription.popup.form.submit":"Register Now",
+  "subscription.popup.form.submitting":"Submitting...",
+  "subscription.popup.form.successful":"Registration Successful!",
+  "subscription.popup.form.success":"Thank you for registering for ",
+  "subscription.popup.form.success2":"Thank you for registering! 🎉",
+  "subscription.popup.form.success_msg_prefix":"Our team will review your application and contact you within ",
+  "subscription.popup.form.success_msg_hours":"24-48 hours",
+  "subscription.popup.form.success_msg_sufix":"with more details.",
+  "subscription.popup.form.confirmation":"Check your email for confirmation",
+  
+
+  "subscription.popup.form.failure":"Submission failed. Please try again later."
 
 
 }

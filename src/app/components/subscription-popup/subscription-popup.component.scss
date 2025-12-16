@@ -688,3 +688,45 @@
     opacity: 0;
   }
 }
+
+/* RTL container for Arabic */
+.popup-content.rtl {
+  direction: rtl;       /* text flows right-to-left */
+  /* do NOT set text-align here, we'll control it per element */
+}
+
+/* Center the popup title and description */
+.popup-content.rtl .popup-title,
+.popup-content.rtl .message-text {
+  text-align: center;
+}
+
+/* Right-align form labels and inputs */
+.popup-content.rtl .right-pane {
+  text-align: right;
+}
+
+.popup-content.rtl .form-grid {
+  direction: rtl;
+}
+
+.popup-content.rtl label {
+  text-align: right;
+}
+
+.popup-content.rtl input {
+  text-align: right;
+}
+
+/* Mirror webinar grid */
+.popup-content.rtl .webinar-grid {
+  direction: rtl;
+}
+
+.popup-content.rtl .left-pane {
+  order: 2; /* moves left pane to the right */
+}
+
+.popup-content.rtl .right-pane {
+  order: 1; /* moves right pane to the left */
+}

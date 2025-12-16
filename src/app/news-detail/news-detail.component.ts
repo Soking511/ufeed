@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ApiService } from '../services/api.service';
 
 interface NewsItem {
   id: string;
   name: string;
+  arName: string;
   description: string;
+  arDescription: string;
   sub_description: string;
+  arSub_description: string;
   image: string;
   created_at: string;
   updated_at: string;
@@ -25,12 +28,17 @@ export class NewsDetailComponent implements OnInit {
   newsItem: NewsItem | null = null;
   isLoading = true;
   hasError = false;
+  currentLang: string;
+
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private api: ApiService
-  ) {}
+    private api: ApiService,
+    private translateService: TranslateService
+  ) {
+    this.currentLang = this.translateService.currentLang || 'en'; // default to 'en' if not defined
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {

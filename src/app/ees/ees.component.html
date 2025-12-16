@@ -36,7 +36,7 @@
                 <div class="col-md-5 my-4">
                     <div class="jet-feature">
                         <img class="img-fluid" loading="lazy" src="public/ees/01.png" alt="">
-                        <h4 class="py-3">{{"ees.benefits.enhanced_understanding_title" |translate}}</h4>
+                        <h4 style="white-space: pre-line" class="py-3">{{"ees.benefits.enhanced_understanding_title" |translate}}</h4>
                         <p>
                             {{"ees.benefits.enhanced_understanding_desc"|translate}}
 
@@ -211,11 +211,11 @@
     <div class="container">
         <div class="row">
             @if (!submitted) {
-            <div class="col-md-7 title-holder px-3">
-                <h2 class="text-left">{{"ees.cta.elevate_prefix" |translate}} <span>{{"ees.cta.tool_title"|translate}}
+            <div class="col-md-5 title-holder px-3">
+                <h2 style="white-space: pre-line" class="text-left">{{"ees.cta.elevate_prefix" |translate}} <span>{{"ees.cta.tool_title"|translate}}
                     </span></h2>
             </div>
-            <div class="col-md-5 form-holder">
+            <div class="col-md-7 form-holder">
 
                 <form action="" method="post" class="px-3" [formGroup]="eesForm" (ngSubmit)="getFormData(eesForm)">
 

@@ -116,13 +116,16 @@
 <!-- end section enhance work performance -->
 
 <!-- Start UFeed Text -->
-<div class="ufeed-text">
+<div class="ufeed-text" >
     <div class="container">
 
-        <div class="text">
+        <div class="text" >
             <img class="qoute2 d-lg-block d-md-block d-none" src="public/quotes2.svg" alt="quote">
-            <p><span><img src="public/icon.svg" alt="icon"></span> {{"about.ufeet_ml.line1" | translate}}
-                <span><img src="public/icon2.svg" alt="icon"></span> {{"about.ufeet_ml.line2" | translate}} <span><img src="public/icon3.svg" alt="icon"></span>
+            <p 
+            [class.texxt]="translate.currentLang !== 'ar'"
+            [class.texxt-ar]="translate.currentLang === 'ar'"
+            ><span><img src="public/icon.svg" alt="icon"></span> {{"about.ufeed_ml.line1" | translate}}
+                <span><img src="public/icon2.svg" alt="icon"></span> {{"about.ufeed_ml.line2" | translate}} <span><img src="public/icon3.svg" alt="icon"></span>
             </p>
             <img class="qoute  d-lg-block d-md-block d-none" src="public/quotes.svg" alt="quote">
         </div>

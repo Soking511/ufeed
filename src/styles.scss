@@ -25,6 +25,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Arslan Wessam';
+  src: url('../public/fonts/Arslan-Wessam.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 // -----------------------------
 *::-webkit-scrollbar {
   width: 6px;
