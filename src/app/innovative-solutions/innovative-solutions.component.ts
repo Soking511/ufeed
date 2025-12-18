@@ -36,44 +36,38 @@ export class InnovativeSolutionsComponent {
       (this.activeIndex !== null && this.activeIndex !== index)
     );
   }
-
   solutions = [
     {
       icon: 'public/icons/teenyicons_tick-circle-outline.png',
-      title: 'Holistic Solutions',
-      description:
-        'UFeed is powering the HC industry with limitless solutions through access to knowledge of well-structured methodologies and tools as well as data analytics utilization.',
+      title: 'innovation.feature.holistic_title',
+      description: 'innovation.feature.holistic_desc',
     },
     {
       icon: 'public/icons/ph_user-focus-thin.png',
-      title: 'User Friendly Focus',
-      description:
-        'Solutions are built to be easily accessible and user-friendly, so users can access UFeed solutions with ease.',
+      title: 'innovation.feature.user_friendly_title',
+      description: 'innovation.feature.user_friendly_desc',
     },
     {
       icon: 'public/icons/hugeicons_customize.png',
-      title: 'Custom Access Management',
-      description:
-        'Empowers customizing interface for each client based on their needs to validate who has which access level to do what!',
+      title: 'innovation.feature.custom_access_title',
+      description: 'innovation.feature.custom_access_desc',
     },
     {
       icon: 'public/icons/iconamoon_shield-thin.png',
-      title: 'Self Service Guided with Expertise',
-      description:
-        'Leveraging over 25 years of expertise, we empower organizations by equipping them with the skills to independently implement and maximize the benefits of our solutions.',
+      title: 'innovation.feature.self_service_title',
+      description: 'innovation.feature.self_service_desc',
     },
     {
       icon: 'public/icons/hugeicons_stars.png',
-      title: 'AI-Enabled with \n Power of Data',
-      description:
-        'By harnessing the power of vast datasets and advanced AI algorithms, organizations can gain unprecedented insights, optimize processes, and make informed decisions with remarkable precision',
+      title: 'innovation.feature.ai_enabled_title',
+      description: 'innovation.feature.ai_enabled_desc',
     },
     {
       icon: 'public/icons/circum_dollar.png',
-      title: 'UFeed Cost Affordability',
-      description:
-        'Compared to other competitors in the HC domain, UFeed represents a very affordable cost vs Value.',
-    },
+      title: 'innovation.feature.cost_affordability_title',
+      description: 'innovation.feature.cost_affordability_desc',
+    }
   ];
+  
   
 }

@@ -1,5 +1,8 @@
 <div class="popup-overlay" *ngIf="isVisible" (click)="close()">
-    <div class="popup-content" [ngClass]="{'webinar': activeFeature?.image_url && !submitted}"
+    <div class="popup-content" [ngClass]="{
+        'webinar': activeFeature?.image_url && !submitted,
+        'rtl': currentLang === 'ar'
+        }"
         (click)="$event.stopPropagation()">
         <!-- Close Button -->
         <button class="close-btn" (click)="close()" aria-label="Close popup" title="Close">
@@ -11,14 +14,14 @@
             <!-- Loading State -->
             <div class="loading-state" *ngIf="isLoadingFeature">
                 <i class="fas fa-spinner fa-spin"></i>
-                <p>Loading feature details...</p>
+                <p>{{"subscription.popup.loading" | translate}}</p>
             </div>
 
             <!-- Error State -->
             <div class="error-state" *ngIf="featureLoadError && !isLoadingFeature">
                 <i class="fas fa-exclamation-circle"></i>
-                <p>{{ featureLoadError }}</p>
-                <button class="btn-secondary" (click)="loadActiveFeature()">Retry</button>
+                <p>{{ featureLoadError | translate}}</p>
+                <button class="btn-secondary" (click)="loadActiveFeature()">{{"subscription.popup.retry" | translate}}</button>
             </div>
 
             <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="registration-form"
@@ -26,56 +29,58 @@
                 <!-- Error Message -->
                 <div class="form-error" *ngIf="submitError">
                     <i class="fas fa-exclamation-circle"></i>
-                    <span>{{ submitError }}</span>
+                    <span>{{ submitError | translate}}</span>
                 </div>
 
                 <!-- 2x2 Grid for first 4 inputs -->
                 <div class="form-grid">
                     <div class="form-group">
-                        <label for="fullName">Full Name <span class="required">*</span></label>
-                        <input id="fullName" type="text" formControlName="fullName" placeholder="Enter your full name"
+                        <label for="fullName">{{"subscription.popup.form.name_label" | translate}}<span class="required">*</span></label>
+                        <input id="fullName" type="text" formControlName="fullName" 
+                        placeholder= "{{'subscription.popup.form.name_label'|translate}}" 
                             [class.error]="fullName.invalid && (fullName.dirty || fullName.touched)">
                         <div class="error-message" *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)">
-                            <span *ngIf="fullName.errors?.['required']">Full name is required</span>
-                            <span *ngIf="fullName.errors?.['minlength']">Name must be at least 3 characters</span>
+                            <span *ngIf="fullName.errors?.['required']">{{"subscription.popup.form.name_error" | translate}}</span>
+                            <span *ngIf="fullName.errors?.['minlength']">{{"subscription.popup.form.name_error2" | translate}}</span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+                        <label for="phoneNumber">{{"subscription.popup.form.phone_label" | translate}}<span class="required">*</span></label>
                         <input id="phoneNumber" type="tel" formControlName="phoneNumber"
-                            placeholder="Enter your phone number"
+                            placeholder="{{'subscription.popup.form.phone_placeholder' | translate}}"
                             [class.error]="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)">
                         <div class="error-message"
                             *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)">
-                            <span *ngIf="phoneNumber.errors?.['required']">Phone number is required</span>
-                            <span *ngIf="phoneNumber.errors?.['pattern']">Please enter a valid phone number (10-15
-                                digits)</span>
+                            <span *ngIf="phoneNumber.errors?.['required']">{{"subscription.popup.form.phone_error2" | translate}}</span>
+                            <span *ngIf="phoneNumber.errors?.['pattern']">{{"subscription.popup.form.phone_error" | translate}}</span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">{{ activeFeature?.requires_linkedin ? 'Email to receive updates' : 'Email
-                            Address' }} <span class="required">*</span></label>
+                        <label for="email">
+                            {{"subscription.popup.form.email_label" | translate}}
+                        <span class="required">*</span>
+                        </label>
+
                         <input id="email" type="email" formControlName="email"
-                            [placeholder]="activeFeature?.requires_linkedin ? 'Enter your email address' : 'Enter your email address'"
+                            [placeholder]="'subscription.popup.form.email_placeholder' | translate"
                             [class.error]="email.invalid && (email.dirty || email.touched)">
                         <div class="error-message" *ngIf="email.invalid && (email.dirty || email.touched)">
-                            <span *ngIf="email.errors?.['required']">Email is required</span>
-                            <span *ngIf="email.errors?.['email']">Please enter a valid email address</span>
+                            <span *ngIf="email.errors?.['required']">{{"subscription.popup.form.email_error" | translate}}</span>
+                            <span *ngIf="email.errors?.['email']">{{"subscription.popup.form.email_error2" | translate}}</span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="companyName">Company Name <span class="required">*</span></label>
+                        <label for="companyName">{{"subscription.popup.form.company_name_label" | translate}}<span class="required">*</span></label>
                         <input id="companyName" type="text" formControlName="companyName"
-                            placeholder="Enter your company name"
+                            placeholder="{{'subscription.popup.form.company_name_placeholder' | translate}}"
                             [class.error]="companyName.invalid && (companyName.dirty || companyName.touched)">
                         <div class="error-message"
                             *ngIf="companyName.invalid && (companyName.dirty || companyName.touched)">
-                            <span *ngIf="companyName.errors?.['required']">Company name is required</span>
-                            <span *ngIf="companyName.errors?.['minlength']">Company name must be at least 2
-                                characters</span>
+                            <span *ngIf="companyName.errors?.['required']">{{"subscription.popup.form.company_name_error" | translate}}</span>
+                            <span *ngIf="companyName.errors?.['minlength']">{{"subscription.popup.form.company_name_error2" | translate}}</span>
                         </div>
                     </div>
                 </div>
@@ -83,56 +88,54 @@
                 <!-- Job Title + LinkedIn in one row if LinkedIn required -->
                 <div class="form-grid" *ngIf="activeFeature?.requires_linkedin">
                     <div class="form-group">
-                        <label for="jobPosition">Your Title/Role <span class="required">*</span></label>
+                        <label for="jobPosition">{{"subscription.popup.form.title" | translate}}<span class="required">*</span></label>
                         <input id="jobPosition" type="text" formControlName="jobPosition"
-                            placeholder="Enter your title or role"
+                            placeholder="{{'subscription.popup.form.title.placeholder' | translate}}"
                             [class.error]="jobPosition.invalid && (jobPosition.dirty || jobPosition.touched)">
                         <div class="error-message"
                             *ngIf="jobPosition.invalid && (jobPosition.dirty || jobPosition.touched)">
-                            <span *ngIf="jobPosition.errors?.['required']">Job title is required</span>
-                            <span *ngIf="jobPosition.errors?.['minlength']">Job title must be at least 2
-                                characters</span>
+                            <span *ngIf="jobPosition.errors?.['required']">{{"subscription.popup.form.title.error"|translate}}</span>
+                            <span *ngIf="jobPosition.errors?.['minlength']">{{"subscription.popup.form.title.error" | translate}}</span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="linkedinProfile">LinkedIn Profile Link <span class="required">*</span></label>
+                        <label for="linkedinProfile">{{"subscription.popup.form.linkedin" | translate}} <span class="required">*</span></label>
                         <input id="linkedinProfile" type="url" formControlName="linkedinProfile"
                             placeholder="https://www.linkedin.com/in/your-profile"
                             [class.error]="registrationForm.get('linkedinProfile')?.invalid && (registrationForm.get('linkedinProfile')?.dirty || registrationForm.get('linkedinProfile')?.touched)">
                         <div class="error-message"
                             *ngIf="registrationForm.get('linkedinProfile')?.invalid && (registrationForm.get('linkedinProfile')?.dirty || registrationForm.get('linkedinProfile')?.touched)">
-                            <span *ngIf="registrationForm.get('linkedinProfile')?.errors?.['required']">LinkedIn profile
-                                link is required</span>
-                            <span *ngIf="registrationForm.get('linkedinProfile')?.errors?.['pattern']">Enter a valid
-                                LinkedIn profile URL</span>
+                            <span *ngIf="registrationForm.get('linkedinProfile')?.errors?.['required']">{{"subscription.popup.form.linkedin.error"}}</span>
+                            <span *ngIf="registrationForm.get('linkedinProfile')?.errors?.['pattern']">{{"subscription.popup.form.linkedin.error2"}}</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Full width for job title if LinkedIn not required -->
                 <div class="form-group" *ngIf="!activeFeature?.requires_linkedin">
-                    <label for="jobPosition">Your Title/Role <span class="required">*</span></label>
+                    <label for="jobPosition">{{"subscription.popup.form.title" | translate}} <span class="required">*</span></label>
                     <input id="jobPosition" type="text" formControlName="jobPosition"
-                        placeholder="Enter your title or role"
+                        placeholder="{{'subscription.popup.form.title.placeholder' | translate}}"
                         [class.error]="jobPosition.invalid && (jobPosition.dirty || jobPosition.touched)">
                     <div class="error-message"
                         *ngIf="jobPosition.invalid && (jobPosition.dirty || jobPosition.touched)">
-                        <span *ngIf="jobPosition.errors?.['required']">Job title is required</span>
-                        <span *ngIf="jobPosition.errors?.['minlength']">Job title must be at least 2 characters</span>
+                        <span *ngIf="jobPosition.errors?.['required']">{{"subscription.popup.form.title.error"|translate}}</span>
+                        <span *ngIf="jobPosition.errors?.['minlength']">{{"subscription.popup.form.title.error2"|translate}}</span>
                     </div>
                 </div>
 
                 <!-- Submit Button -->
                 <button type="submit" class="btn-primary" [disabled]="registrationForm.invalid || isSubmitting">
                     <span *ngIf="!isSubmitting">
-                        {{ activeFeature?.button_text || 'Register Now' }}
+                        {{ (currentLang === 'ar' ? activeFeature?.arButton_text : activeFeature?.button_text) || ('subscription.popup.form.submit' | translate) }}
                         <i class="fas fa-arrow-right"></i>
                     </span>
                     <span *ngIf="isSubmitting" class="loading-spinner">
                         <i class="fas fa-spinner fa-spin"></i>
-                        Submitting...
+                        {{"subscription.popup.form.submitting" | translate}}
                     </span>
-                </button>
+                    </button>
+
             </form>
         </ng-template>
 
@@ -141,13 +144,19 @@
             <div class="left-pane">
                 <img [src]="activeFeature.image_url" [alt]="activeFeature.title" class="webinar-image" />
             </div>
-            <div class="right-pane">
-                <h2 class="popup-title">{{ activeFeature.title }}</h2>
-                <div class="messages-container">
-                    <p class="message-text">{{ activeFeature.description }}</p>
-                </div>
-                <ng-container *ngTemplateOutlet="formBlock"></ng-container>
-            </div>
+        <div class="right-pane">
+        <h2 class="popup-title">
+            {{ currentLang === 'ar' ? activeFeature.arTitle : activeFeature.title }}
+        </h2>
+
+        <div class="messages-container">
+            <p class="message-text">
+            {{ currentLang === 'ar' ? activeFeature.arDescription : activeFeature.description }}
+            </p>
+        </div>
+
+        <ng-container *ngTemplateOutlet="formBlock"></ng-container>
+        </div>
         </div>
 
         <!-- Default single-column layout (no image) -->
@@ -159,38 +168,42 @@
 
             <!-- Title -->
             <h2 class="popup-title" *ngIf="!submitted && !isLoadingFeature && !featureLoadError">
-                {{ activeFeature?.title || 'Special Offer' }}
+                {{ currentLang === 'ar' 
+                    ? (activeFeature?.arTitle || 'عرض خاص') 
+                    : (activeFeature?.title || 'Special Offer') }}
             </h2>
 
             <!-- Messages -->
             <div class="messages-container" *ngIf="!submitted && !isLoadingFeature && !featureLoadError">
                 <p class="message-text">
-                    {{ activeFeature?.description || 'Register now to take advantage of this special offer.' }}
+                {{ currentLang === 'ar' 
+                    ? (activeFeature?.arDescription || 'سجّل الآن للاستفادة من هذا العرض الخاص.') 
+                    : (activeFeature?.description || 'Register now to take advantage of this special offer.') }}
                 </p>
             </div>
 
-            <ng-container *ngTemplateOutlet="formBlock"></ng-container>
-        </ng-template>
+        <ng-container *ngTemplateOutlet="formBlock"></ng-container>
+</ng-template>
 
         <!-- Success Message -->
         <div class="success-message" *ngIf="submitted">
             <div class="success-icon-wrapper">
                 <i class="fas fa-check-circle"></i>
             </div>
-            <h3>Registration Successful!</h3>
+            <h3>{{"subscription.popup.form.successful" | translate}}</h3>
             <p class="success-description">
-                {{ activeFeature?.title ? 'Thank you for registering for ' + activeFeature.title + '! 🎉' : 'Thank you
-                for registering! 🎉' }}
+                {{ activeFeature?.title ? '{{"subscription.popup.form.success" | translate}}' + activeFeature.title + '! 🎉' : '{{"subscription.popup.form.success2" | translate}}' }}
             </p>
             <p class="success-info">
-                Our team will review your application and contact you within <strong>24-48 hours</strong> with more
-                details.
+                {{"subscription.popup.form.success_msg_prefix" | translate}} 
+                <strong>{{"subscription.popup.form.success_msg_hours" | translate}}</strong>
+                 {{"subscription.popup.form.success_msg_sufix" | translate}}
             </p>
 
             <div class="success-details">
                 <div class="detail-item">
                     <i class="fas fa-envelope"></i>
-                    <span>Check your email for confirmation</span>
+                    <span>{{"subscription.popup.form.confirmation" | translate}}</span>
                 </div>
             </div>
 

@@ -11,10 +11,9 @@ import { CommonModule } from '@angular/common';
   imports: [
     RouterModule,
     HeaderComponent,
-    FooterComponent,
     TranslateModule,
-    CommonModule,
-  ],
+    CommonModule
+],
   templateUrl: './not-found.component.html',
   styleUrl: './not-found.component.scss',
 })

@@ -30,7 +30,7 @@
 
     /* Common styles for input, textarea, and select */
     input,
-    textarea,
+    textarea ,
     select {
       background-color: transparent !important;
       color: #fff;
@@ -38,6 +38,10 @@
       padding-right: 35px !important;
       /* Space for dropdown arrow */
     }
+    textarea.is-valid {
+      background-image: none !important;
+    }
+
 
     /* Placeholder color for input and textarea */
     input::placeholder,
