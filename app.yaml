@@ -1,0 +1,12 @@
+runtime: nodejs18
+
+handlers:
+  # Serve static files (JS, CSS, images, fonts)
+  - url: /(.*\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf))
+    static_files: docs/\1
+    upload: docs/.*\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf)
+
+  # Serve index.html for Angular routes (SPA fallback)
+  - url: /.*
+    static_files: docs/index.html
+    upload: docs/index.html
