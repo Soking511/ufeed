@@ -1,5 +1,4 @@
 @import url('https://fonts.cdnfonts.com/css/brittany-signature');
-/* styles.scss or component-level scss */
 
 .title {
     color: #2A2B34;
@@ -106,9 +105,6 @@
 
                     &:hover {
                         border-color: #f86341;
-                    }
-                    span {
-                        color: #545454;
                     }
                 }
             }
@@ -230,22 +226,12 @@
             direction: ltr;
             unicode-bidi: isolate;
 
-            .texxt {
+            p {
                 font-size: 51px;
                 font-weight: 700;
                 text-align: center;
                 color: #2A2B34;
                 font-family: 'Creato Display', sans-serif;
-                padding: 20px;
-                unicode-bidi: plaintext;
-            }
-
-            .texxt-ar {
-                font-size: 51px;
-                font-weight: 700;
-                text-align: center;
-                color: #2A2B34;
-                font-family: 'GE SS Two Medium', sans-serif; // <-- imported font
                 padding: 20px;
                 unicode-bidi: plaintext;
             }
@@ -393,20 +379,6 @@
                 text-transform: capitalize;
 
             }
-
-            .ceo-signiture-ar {
-                color: #43424C;
-                font-feature-settings: 'liga' off, 'clig' off;
-                font-family: 'Arslan Wessam', sans-serif; // <-- use your TTF font
-                font-size: 24px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-                letter-spacing: 0;      /* Arabic usually looks better without spacing */
-                direction: rtl;        /* Right-to-left */
-                text-align: right;     /* Proper alignment */
-              }
-              
 
             .col-md-6 {
                 display: flex;

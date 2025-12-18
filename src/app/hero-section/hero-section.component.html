@@ -4,7 +4,7 @@
     <!-- Background video -->
     <video autoplay muted loop id="bg-video" #bgVideo loading="lazy" preload="auto">
       <source src="public/12.mp4" type="video/mp4">
-      {{ "hero.video_not_supported"|translate}}
+      {{ "Your browser does not support the video tag"|translate}}
     </video>
 
     <!-- Gradient overlay -->
@@ -12,12 +12,16 @@
 
     <!-- Content over the video -->
     <div class="content w-75 m-auto mt-5 px-5">
-      <h1>{{"hero.title_prefix"|translate}} <span> {{"hero.title_main"|translate}}</span>
-        {{"hero.title_suffix"|translate}}</h1>
-      <p class="p-3">{{"hero.description" | translate}}</p>
+      <h1>{{"Utilize AI to Elevate Your"|translate}} <span> {{"Human Capital"|translate}}</span>
+        {{"Strategy"|translate}}</h1>
+      <p class="p-3">{{
+        "At UFeed, we specialize in transforming human capital management,providing superior data analytics and
+        insights. Elevate your organization's potential with UFeed"
+        | translate
+        }}</p>
       <div class="row py-4 buttons">
-        <a class="hero-cta book-a-demo" href="#bookNow">{{"hero.cta.book_demo"|translate}}</a>
-        <a class="hero-cta" href="" routerLink="/contact-us">{{"hero.cta.contact_us"|translate}}</a>
+        <a class="hero-cta book-a-demo" href="#bookNow">{{"Book A Demo"|translate}}</a>
+        <a class="hero-cta" href="" routerLink="/contact-us">{{"Contact Us"|translate}}</a>
       </div>
     </div>
 

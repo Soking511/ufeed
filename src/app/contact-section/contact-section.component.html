@@ -6,63 +6,61 @@
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="form-holder p-5">
-          <h2 class="pb-5" [ngStyle]="titleStyle">
-            {{"contact.form.section_title" | translate}}
-          </h2>
-      
+          <h2 class="pb-5">{{"Begin Your Human Capital Organizational Journey with Us !" | translate}}</h2>
+
 
           <form action="" method="post" [formGroup]="contactForm" (ngSubmit)="getFormData(contactForm)">
 
             <div class="form-group col-12 my-3">
-              <label for="">{{ "contact.form.name_label" | translate }}</label>
+              <label for="">{{ "YOUR_NAME" | translate }}</label>
               <input [class.is-valid]="isInputValid('name')" class="form-control p-3" formControlName="name" type="text"
-                placeholder="{{ 'contact.form.name_label' | translate }}" id="">
+                placeholder="{{ 'YOUR_NAME' | translate }}" id="">
 
               <p *ngIf="isValidInput('name')" class="py-2 text-danger">
-                {{ "contact.form.name_error" | translate }}
+                {{ "CHECK_YOUR_NAME" | translate }}
               </p>
             </div>
 
             <div class="row py-0 my-3 group">
 
               <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                <label for="">{{"contact.form.contact_number_label"|translate}}</label>
+                <label for="">{{"Contact Number*"|translate}}</label>
                 <input [class.is-valid]="isInputValid('phone_number') " class="form-control p-3" type="text"
-                  formControlName="phone_number" name="" placeholder="{{'contact.form.contact_number_placeholder'|translate}}" id="">
-                <p *ngIf="isValidInput('phone_number')" class="py-2 text-danger">
-                  {{"contact.form.contact_number_error"|translate}}</p>
+                  formControlName="phone_number" name="" placeholder="{{'Your Phone Number'|translate}}" id="">
+                <p *ngIf="isValidInput('phone_number')" class="py-2 text-danger">{{"Please Check Your
+                  Phone Number"|translate}}</p>
               </div>
 
               <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                <label for="">{{"contact.form.email_label" | translate}}</label>
+                <label for="">{{"Email*" | translate}}</label>
                 <input [class.is-valid]="isInputValid('email') " class="form-control p-3" type="email" name=""
-                  formControlName="email" placeholder='{{"contact.form.email_placeholder" | translate}}' id="">
-                <p *ngIf="isValidInput('email')" class="py-2 text-danger">
-                  {{"contact.form.email_error" | translate}}</p>
+                  formControlName="email" placeholder='{{"Email_placeholder" | translate}}' id="">
+                <p *ngIf="isValidInput('email')" class="py-2 text-danger">{{"Please Check Your Email"
+                  | translate}}</p>
               </div>
 
             </div>
 
             <div class="form-group col-12 my-3">
-              <label for="">{{"contact.form.title_label"|translate}}</label>
+              <label for="">{{"Title"|translate}}</label>
               <input [class.is-valid]="isInputValid('title')" class="form-control p-3" type="text"
-                formControlName="title" name="" placeholder="{{'contact.form.title_placeholder'|translate}}" id="">
+                formControlName="title" name="" placeholder="{{'Title'|translate}}" id="">
               <p *ngIf="isValidInput('title')" class="py-2 text-danger">
-                {{ "contact.form.title_error" | translate }}
+                {{ "Please make sure of title" | translate }}
               </p>
             </div>
 
             <div class="form-group col-12 my-3">
-              <label for="">{{"contact.form.company_name_label"|translate}}</label>
+              <label for="">{{"Company Name"|translate}}</label>
               <input class="form-control p-3" [class.is-valid]="isInputValid('company_name')" type="company_name"
-                name="" formControlName="company_name" placeholder="{{'contact.form.company_name_placeholder'| translate}}" id="">
+                name="" formControlName="company_name" placeholder="{{'Your Company'| translate}}" id="">
               <p *ngIf="isValidInput('company_name')" class="py-2 text-danger">
-                {{ "contact.form.company_name_error" | translate }}
+                {{ "Please make sure of company name" | translate }}
               </p>
             </div>
 
             <div class="form-group col-12 my-3">
-              <label for="inputState">{{ "contact.form.inquiry_label" | translate }}</label>
+              <label for="inputState">{{ "Select Your Inquiry*" | translate }}</label>
 
               <div class="custom-checkbox-wrapper">
                 <div *ngFor="let inquiry of inquiries">
@@ -74,13 +72,13 @@
               </div>
 
               <p *ngIf="isValidInput('inquiry_type') " class="py-2 text-danger">
-                {{ "contact.form.inquiry_error" | translate }}
+                {{ "Please Choose Your Inquiry" | translate }}
               </p>
             </div>
 
 
             <div class="form-group col-12 my-3">
-              <label for="inputProduct">{{ "contact.form.product_label" | translate }}</label>
+              <label for="inputProduct">{{ "Select Product*" | translate }}</label>
 
               <div class="custom-checkbox-wrapper">
                 <div *ngFor="let product of products">
@@ -92,22 +90,22 @@
               </div>
 
               <p *ngIf="isValidInput('product') " class="py-2 text-danger">
-                {{ "contact.form.product_error" | translate }}
+                {{ "Please Choose Your Product" | translate }}
               </p>
             </div>
 
 
             <div class="form-group col-12 my-3">
-              <label for="">{{"contact.form.message_label"|translate}}</label>
+              <label for="">{{"Message"|translate}}</label>
               <textarea name="" [class.is-valid]="isInputValid('message')" class="form-control p-3"
-                placeholder="{{'contact.form.message_placeholder'|translate}}" formControlName="message" id=""></textarea>
+                placeholder="{{'Your Message'|translate}}" formControlName="message" id=""></textarea>
               <p *ngIf="isValidInput('message')" class="py-2 text-danger">
-                {{ "contact.form.message_error" | translate }}
+                {{ "Please make sure of message" | translate }}
               </p>
             </div>
 
             <button type="submit" [disabled]="disabled"
-              class=" my-3 p-3 btn col-12 ">{{"contact.form.submit"|translate}}</button>
+              class=" my-3 p-3 btn col-12 ">{{"Submit"|translate}}</button>
           </form>
 
         </div>

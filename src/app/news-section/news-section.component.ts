@@ -9,11 +9,8 @@ import { PaginationComponent, PaginationInfo } from '../shared/pagination/pagina
 interface NewsItem {
   id: string;
   name: string;
-  arName: string;
   description: string;
-  arDescription: string;
   sub_description: string;
-  arSub_description: string;
   image: string;
   created_at: string;
   updated_at: string;
@@ -32,8 +29,6 @@ export class NewsSectionComponent implements OnInit {
   hasError = false;
   paginationInfo: PaginationInfo | null = null;
   currentPage = 1;
-
-  lang = localStorage.getItem('lang') || 'en';
 
   constructor(private api: ApiService) {}
 
