@@ -3,13 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
-
 
 @Component({
   selector: 'app-subscription-popup',
   standalone: true,
-  imports: [CommonModule, TranslateModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './subscription-popup.component.html',
   styleUrls: ['./subscription-popup.component.scss'],
 })
@@ -17,12 +15,6 @@ export class SubscriptionPopupComponent {
   @Output() closePopup = new EventEmitter<void>();
   @Input() feature: string = 'webinar'; // Deprecated: kept for backward compatibility
 
-  currentLang: string;
-
-  constructor(private translateService: TranslateService) {
-    // Get the current language from the translation service
-    this.currentLang = this.translateService.currentLang || 'en'; // default to 'en' if not defined
-  }
   isVisible = false;
   submitted = false;
   isSubmitting = false;
@@ -107,7 +99,7 @@ export class SubscriptionPopupComponent {
           console.log('No active feature available, closing popup');
           this.close();
         } else {
-          this.featureLoadError = 'subscription.popup.failed';
+          this.featureLoadError = 'Failed to load feature details. Please try again later.';
         }
       }
     });
@@ -176,10 +168,10 @@ export class SubscriptionPopupComponent {
             } else if (error.error.detail) {
               this.submitError = error.error.detail;
             } else {
-              this.submitError = 'subscription.popup.submit_error';
+              this.submitError = 'Registration failed. Please try again.';
             }
           } else {
-            this.submitError = 'subscription.popup.submit_error2';
+            this.submitError = 'Network error. Please check your connection and try again.';
           }
 
           // Mark all fields as touched to show validation errors

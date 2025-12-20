@@ -1,7 +1,7 @@
 <section class="enhance-solution pb-5">
   <!-- Title Section with fade-in animation -->
   <h2 class="w-75 m-auto text-center fade-in">
-    {{"enhance.title_prefix"|translate}}<span> {{"enhance.title_suffix"|translate}}</span> {{"enhance.with_ufeeds"| translate}}<span></span>
+    {{"Boost Your Team's"|translate}}<span> {{"Efficiency"|translate}}</span> {{"with UFeed’s"| translate}}<span></span>
   </h2>
 
   <div class="container fade-in">
@@ -11,8 +11,8 @@
         <div class="row">
           <div class="col-9">
             <h3 class="text-left fade-in">
-              <div *ngIf="isJet">{{ 'enhance.jet.title' | translate }}</div>
-              <div *ngIf="!isJet">{{ 'enhance.ees.title' | translate }}</div>
+              <div *ngIf="isJet">{{ 'Job Evaluation \nTool - JET' | translate }}</div>
+              <div *ngIf="!isJet">{{ 'Employee Engagement \nSurvey - EES' | translate }}</div>
             </h3>
           </div>
           <div class="col-3 d-flex justify-content-between controls">
@@ -30,8 +30,8 @@
           </div>
           <div class="col-12 desc">
             <p class="pr">
-              <span *ngIf="isJet">{{ 'enhance.jet.description' | translate }}</span>
-              <span *ngIf="!isJet">{{ 'enhance.ees.description' | translate }}</span>
+              <span *ngIf="isJet">{{ 'JET_DESCRIPTION' | translate }}</span>
+              <span *ngIf="!isJet">{{ 'EES_DESCRIPTION' | translate }}</span>
             </p>
           </div>
         </div>
@@ -40,22 +40,22 @@
         <div *ngIf="isJet; else eesContentTemplate" class="row justify-content-between jet_elements fade-in">
           <div class="col-5 d-flex">
             <img loading="lazy" src="public/jet/langs.png" alt="" />
-            <h5>{{"enhance.features.bilingual_interface" |translate}}</h5>
+            <h5>{{"Bilingual Interface" |translate}}</h5>
           </div>
           <div class="col-5 d-flex">
             <img loading="lazy" src="public/jet/stars.png" alt="" />
-            <h5>{{"enhance.features.intelligent_job_evaluation" |translate}}</h5>
+            <h5>{{"Intelligent Job Evaluation" |translate}}</h5>
           </div>
           <div class="col-5 d-flex">
             <img loading="lazy" src="public/jet/part.png" alt="" />
-            <h5>{{"enhance.features.automated_ja_data" |translate}}</h5>
+            <h5>{{"Automated JA Data" |translate}}</h5>
           </div>
           <div class="col-5 d-flex">
             <img loading="lazy" src="public/jet/globals.png" alt="" />
-            <h5>{{"enhance.features.international_grading" |translate}}</h5>
+            <h5>{{"International Grading" |translate}}</h5>
           </div>
           <a href="" routerLink="/jet" routerLinkActive="active" class="btn-jet py-2 my-3 fade-in">
-            {{"enhance.features.explore_jet" | translate}}
+            {{"Explore Job Evaluation Tool" | translate}}
           </a>
         </div>
 
@@ -64,22 +64,22 @@
           <div class="row justify-content-between jet_elements fade-in">
             <div class="col-5 d-flex">
               <img loading="lazy" src="public/ees/a.png" alt="" />
-              <h5>{{"enhance.features.bilingual_interface" |translate}}</h5>
+              <h5>{{"Bilingual Interface" |translate}}</h5>
             </div>
             <div class="col-5 d-flex">
               <img loading="lazy" src="public/ees/b.png" alt="" />
-              <h5>{{"enhance.features.instant_self_service" |translate}}</h5>
+              <h5>{{"Instant Self-Service Access" |translate}}</h5>
             </div>
             <div class="col-5 d-flex">
               <img loading="lazy" src="public/ees/c.png" alt="" />
-              <h5>{{"enhance.features.customizable_demographics" |translate}}</h5>
+              <h5>{{"Customizable Demographics" |translate}}</h5>
             </div>
             <div class="col-5 d-flex">
               <img loading="lazy" src="public/ees/d.png" alt="" />
-              <h5>{{"enhance.features.benchmark_capabilities" |translate}}</h5>
+              <h5>{{"Benchmark Capabilities" |translate}}</h5>
             </div>
             <a href="" routerLink="/ees" routerLinkActive="active" class="btn-jet py-2 my-3 fade-in">
-              {{"enhance.ees.full_title" | translate}}
+              {{"Employee Engagement Survey - EES" | translate}}
             </a>
           </div>
         </ng-template>
@@ -87,7 +87,7 @@
       <!-- right (Image Section with fade-in animation) -->
       <div class="col-md-6">
         <div class="img-holder animated-image fade-in">
-          <img class="shadow rounded img-fluid fade-in" [src]="imageSrc" alt="" />
+          <img class="shadow rounded img-fluid fade-in" [src]="isJet ? 'public/Imagejet.png' : 'public/Imageees.png'" alt="" />
         </div>
       </div>
     </div>
