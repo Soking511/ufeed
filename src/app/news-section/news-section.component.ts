@@ -30,10 +30,14 @@ export class NewsSectionComponent implements OnInit {
   paginationInfo: PaginationInfo | null = null;
   currentPage = 1;
 
+  lang: string = 'en'; // default
+
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
     this.fetchNews(this.currentPage);
+    this.lang = localStorage.getItem('lang') || 'en';
+
   }
 
   fetchNews(page: number = 1): void {
