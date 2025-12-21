@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslationService } from '../services/translation.service';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ApiService } from '../services/api.service';
 import { PaginationComponent, PaginationInfo } from '../shared/pagination/pagination.component';
 
@@ -33,15 +33,17 @@ export class NewsSectionComponent implements OnInit {
   paginationInfo: PaginationInfo | null = null;
   currentPage = 1;
 
-  lang: string = 'en'; // default
+  lang: string; // default
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private translateService: TranslateService) {
+    // Load language from localStorage first
+    this.lang = this.translateService.currentLang || 'en'; // default to 'en' if not defined
+  }
 
   ngOnInit(): void {
-    this.fetchNews(this.currentPage);
-    this.lang = localStorage.getItem('lang') || 'en';
-
-  }
+  // Then fetch news using the correct language
+  this.fetchNews(this.currentPage);
+}
 
   fetchNews(page: number = 1): void {
     this.isLoading = true;
