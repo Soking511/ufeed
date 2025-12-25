@@ -1,0 +1,67 @@
+[debug] [2025-12-24T14:26:39.891Z] ----------------------------------------------------------------------
+[debug] [2025-12-24T14:26:39.893Z] Command:       /Users/asem/.nvm/versions/node/v24.11.1/bin/node /Users/asem/.nvm/versions/node/v24.11.1/bin/firebase init hosting
+[debug] [2025-12-24T14:26:39.893Z] CLI Version:   15.1.0
+[debug] [2025-12-24T14:26:39.893Z] Platform:      darwin
+[debug] [2025-12-24T14:26:39.893Z] Node Version:  v24.11.1
+[debug] [2025-12-24T14:26:39.893Z] Time:          Wed Dec 24 2025 16:26:39 GMT+0200 (Eastern European Standard Time)
+[debug] [2025-12-24T14:26:39.893Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Volumes/Personal/Work/Ufeed/UfeedWebsiteFrontend/ufeed
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2025-12-24T14:26:41.405Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-12-24T14:26:41.406Z] > authorizing via signed-in user (asemfathi352@gmail.com)
+[debug] [2025-12-24T14:27:09.595Z] Checked if tokens are valid: true, expires at: 1766589964730
+[debug] [2025-12-24T14:27:09.596Z] Checked if tokens are valid: true, expires at: 1766589964730
+[debug] [2025-12-24T14:27:09.597Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1/projects:checkProjectId [none]
+[debug] [2025-12-24T14:27:09.597Z] >>> [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"proposedId":"ufeedfrontend"}
+[debug] [2025-12-24T14:27:10.239Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1/projects:checkProjectId 200
+[debug] [2025-12-24T14:27:10.240Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"projectIdStatus":"PROJECT_ID_AVAILABLE","suggestedProjectId":"ufeedfrontend"}
+[debug] [2025-12-24T14:27:19.913Z] Checked if tokens are valid: true, expires at: 1766589964730
+[debug] [2025-12-24T14:27:19.914Z] Checked if tokens are valid: true, expires at: 1766589964730
+[debug] [2025-12-24T14:27:19.914Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2025-12-24T14:27:19.914Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"ufeedfrontend","name":"ufeedfrontend"}
+[debug] [2025-12-24T14:27:21.191Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 200
+[debug] [2025-12-24T14:27:21.191Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"name":"operations/create_project.global.9123935972826382748"}
+[debug] [2025-12-24T14:27:21.193Z] Checked if tokens are valid: true, expires at: 1766589964730
+[debug] [2025-12-24T14:27:21.193Z] Checked if tokens are valid: true, expires at: 1766589964730
+[debug] [2025-12-24T14:27:21.193Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.9123935972826382748 [none]
+[debug] [2025-12-24T14:27:21.991Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.9123935972826382748 200
+[debug] [2025-12-24T14:27:21.992Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.9123935972826382748 {"name":"operations/create_project.global.9123935972826382748"}
+[debug] [2025-12-24T14:27:22.493Z] [Project Creation Poller] Retrying task index 0
+[debug] [2025-12-24T14:27:22.494Z] Checked if tokens are valid: true, expires at: 1766589964730
+[debug] [2025-12-24T14:27:22.494Z] Checked if tokens are valid: true, expires at: 1766589964730
+[debug] [2025-12-24T14:27:22.494Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.9123935972826382748 [none]
+[debug] [2025-12-24T14:27:22.768Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.9123935972826382748 200
+[debug] [2025-12-24T14:27:22.769Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.9123935972826382748 {"name":"operations/create_project.global.9123935972826382748","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true,"ready":true},"done":true,"response":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.Project","projectNumber":"792601938916","projectId":"ufeedfrontend","lifecycleState":"ACTIVE","name":"ufeedfrontend","createTime":"2025-12-24T14:27:22.025075Z"}}
+[debug] [2025-12-24T14:27:22.770Z] Checked if tokens are valid: true, expires at: 1766589964730
+[debug] [2025-12-24T14:27:22.770Z] Checked if tokens are valid: true, expires at: 1766589964730
+[debug] [2025-12-24T14:27:22.771Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/ufeedfrontend:addFirebase [none]
+[debug] [2025-12-24T14:27:24.126Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/ufeedfrontend:addFirebase 403
+[debug] [2025-12-24T14:27:24.126Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/ufeedfrontend:addFirebase {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-12-24T14:27:24.127Z] Request to https://firebase.googleapis.com/v1beta1/projects/ufeedfrontend:addFirebase had HTTP Error: 403, The caller does not have permission
+[debug] [2025-12-24T14:27:24.438Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/ufeedfrontend:addFirebase had HTTP Error: 403, The caller does not have permission
+    at responseToError (/Users/asem/.nvm/versions/node/v24.11.1/lib/node_modules/firebase-tools/lib/responseToError.js:53:12)
+    at RetryOperation._fn (/Users/asem/.nvm/versions/node/v24.11.1/lib/node_modules/firebase-tools/lib/apiv2.js:322:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[error] 
+[error] Error: Failed to add Firebase to Google Cloud Platform project. See firebase-debug.log for more info.
