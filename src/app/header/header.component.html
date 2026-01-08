@@ -20,10 +20,10 @@
 
       <ul class="navbar-nav  mb-2 mb-lg-0 w-100  justify-content-center ">
         <li class="nav-item px-3">
-          <a class="nav-link active" aria-current="page" routerLink="">{{ 'header.home' | translate }}</a>
+          <a class="nav-link active" aria-current="page" routerLink="">{{ 'home' | translate }}</a>
         </li>
         <li class="nav-item px-3">
-          <a class="nav-link" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">{{ 'header.about' |
+          <a class="nav-link" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">{{ 'about' |
             translate }}</a>
         </li>
 
@@ -34,16 +34,16 @@
         <li class="nav-item dropdown px-3" (mouseenter)="openDropdown($event)" (mouseleave)="closeDropdown($event)">
           <a class="dropdown-toggle nav-link" id="dropdownMenuLink" href="#" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
-            {{'header.products'| translate}} <i class="fa-solid fa-arrow-down"></i>
+            {{'products'| translate}} <i class="fa-solid fa-arrow-down"></i>
           </a>
           <ul class="dropdown-menu px-4" aria-labelledby="dropdownMenuButton">
             <li class="d-flex justify-content-between align-items-center"><a class="dropdown-item" routerLink="/jet">
-                {{"header.products.jet" | translate}}</a><i class="fa-solid fa-arrow-right"></i></li>
+                {{"Job Evaluation Tool - JET" | translate}}</a><i class="fa-solid fa-arrow-right"></i></li>
             <li class="d-flex justify-content-between align-items-center"><a class="dropdown-item"
-                routerLink="/ees">{{"header.products.ees" | translate}}</a><i
+                routerLink="/ees">{{"Employee Engagement Survey - EES" | translate}}</a><i
                 class="fa-solid fa-arrow-right"></i></li>
             <li class="d-flex justify-content-between align-items-center"><a class="dropdown-item"
-                routerLink="/coming-soon">{{"header.products.coming_soon" | translate}}</a><i
+                routerLink="/coming-soon">{{"UFeed Products - Coming Soon" | translate}}</a><i
                 class="fa-solid fa-arrow-right"></i></li>
           </ul>
         </li>
@@ -51,14 +51,14 @@
         <!-- ------------------ -->
 
         <li class="nav-item px-3">
-          <a class="nav-link " routerLink="become-apartner">{{ 'header.become_partner'| translate}}</a>
+          <a class="nav-link " routerLink="become-apartner">{{ 'Become A Partner'| translate}}</a>
         </li>
       </ul>
 
       <div class="col-md-4 d-flex justify-content-around btns-holder">
 
         <a class="header-cta contact-button" routerLink="/contact-us">
-          {{"header.get_in_touch" | translate}}
+          {{"Get in touch" | translate}}
         </a>
 
         <a class="header-cta free-trial" href="https://ufeed.thepost.digital/authentication/register" target="_blank">
@@ -70,7 +70,7 @@
       </div>
 
 
-      <div class="switcher-holder">
+      <!-- <div class="switcher-holder">
         <a class="lang_switcher ar-btn" *ngIf="currentLanguage !== 'ar'" (click)="switchLanguage('ar')">
           <span><i class="fa-solid fa-globe"></i></span>
           <img src="./public/arabic.png" alt="">
@@ -80,7 +80,7 @@
           <img src="./public/en.png" alt="">
           <span><i class="fa-solid fa-globe"></i></span>
         </a>
-      </div>
+      </div> -->
 
 
     </div>

@@ -9,11 +9,8 @@ import { PaginationComponent, PaginationInfo } from '../shared/pagination/pagina
 interface NewsItem {
   id: string;
   name: string;
-  arName: string;
   description: string;
-  arDescription: string;
   sub_description: string;
-  arSub_description: string;
   image: string;
   created_at: string;
   updated_at: string;
